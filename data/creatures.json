@@ -1,18 +1,6 @@
 {
     "Items": [
         {
-            "cardId": "70",
-            "name": " Daylight",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/daylight.png",
-            "rulesText": "Fairy creatures get +1/+1 and Vampires creatures get -1 ATK."
-        },
-        {
             "cardId": "58",
             "name": " Fugue The Ancient Keeper",
             "manaCost": 25,
@@ -23,18 +11,6 @@
             "def": 20,
             "image": "./images/cards/fugue_the_ancient_keeper.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "48eb2c8a05",
-            "name": "A New Era",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/a_new_era.png",
-            "rulesText": "Play; Add 1 spell card from your deck to your hand."
         },
         {
             "cardId": "95",
@@ -73,18 +49,6 @@
             "rulesText": "Death; Summon a Dragon from your deck that cost 4 or less Mana to summon."
         },
         {
-            "cardId": "25",
-            "name": "Berserker Rage",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/berserker_rage.png",
-            "rulesText": "After a creature you control deals Life damage by battle, you can active this card.\n\nHand; Draw one card at a time up to 10 and reveal that card to the enemy, if it is a creature card you can use this effect again until you draw a card that isn't a creature. \nDeal 1 Life damage to the enemy when a creature is drawn by this effect.\nBanish your hand at the end of this turn."
-        },
-        {
             "cardId": "49972be670",
             "name": "Black Dragon",
             "manaCost": 7,
@@ -95,30 +59,6 @@
             "def": 7,
             "image": "./images/cards/black_dragon.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "5c840f292d",
-            "name": "Black Fiendish Dragon",
-            "manaCost": 12,
-            "attribute": "Dark",
-            "archetype": "Dragon",
-            "cardType": "Fusion",
-            "atk": 6,
-            "def": 8,
-            "image": "./images/cards/black_fiendish_dragon.png",
-            "rulesText": "Fusion; Fiendish Skull + Black Dragon\n\nWhen this card attacks and destroys 1 creature by battle, deal that creatures DEF as Life damage to the enemy."
-        },
-        {
-            "cardId": "f169e93ba3",
-            "name": "Black Hole",
-            "manaCost": 8,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/black_hole.png",
-            "rulesText": "Play; Destroy all creatures on the field."
         },
         {
             "cardId": "8b73a932de",
@@ -157,18 +97,6 @@
             "rulesText": "Seal; Destroy 1 Machine you control and 1 creature the enemy controls, then deal 2 Life damage to the enemy.\n"
         },
         {
-            "cardId": "16",
-            "name": "Blue Cheese",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/blue_cheese.png",
-            "rulesText": "Remove 15 Milk Tokens from your field then draw 5 cards."
-        },
-        {
             "cardId": "d2f6f9b3ef",
             "name": "Blue Stone Dragon",
             "manaCost": 5,
@@ -181,18 +109,6 @@
             "rulesText": "Haste"
         },
         {
-            "cardId": "4ad451066f",
-            "name": "Bright Sky",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/bright_sky.png",
-            "rulesText": "Both players must turn their deck upside down and proceed with the current duel."
-        },
-        {
             "cardId": "76",
             "name": "Charge-O-Tron",
             "manaCost": 5,
@@ -203,42 +119,6 @@
             "def": 5,
             "image": "./images/cards/charge_o_tron.png",
             "rulesText": "Seal; This card gains 1 Charge Token. \nYou can spend Tokens on this card instead of spending Mana to summon Machines.\n"
-        },
-        {
-            "cardId": "15",
-            "name": "Cheese Breaker",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cheese_breaker.png",
-            "rulesText": "Seal; Pay 2 Milk Tokens, give 1 Cow creature Haste."
-        },
-        {
-            "cardId": "17",
-            "name": "Cheese Factory",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cheese_factory.png",
-            "rulesText": "Destroy; 1 Farm Land you control to play this card.\nSeal; destroy 1 Cow creature you control to gain 3 Milk Tokens on this card"
-        },
-        {
-            "cardId": "61",
-            "name": "Chilled Magician",
-            "manaCost": 5,
-            "attribute": "Water",
-            "archetype": "Spellcaster",
-            "cardType": "Fusion",
-            "atk": 0,
-            "def": 4,
-            "image": "./images/cards/chilled_magician.png",
-            "rulesText": "Fusion; Wonder Magician + Magician Apprentice."
         },
         {
             "cardId": "13",
@@ -263,18 +143,6 @@
             "def": 6,
             "image": "./images/cards/cosmic_black_dragon.png",
             "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to your hand.\nTOON World can't be destroyed by monster effects."
-        },
-        {
-            "cardId": "b70e1ab04b",
-            "name": "Cosmic Bookmark",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_bookmark.png",
-            "rulesText": "Add a TOON monster from your field into your hand then summon a TOON monster from your hand that cost less than the one added."
         },
         {
             "cardId": "09a3e9a107",
@@ -361,30 +229,6 @@
             "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Draw a card."
         },
         {
-            "cardId": "1eebd84010",
-            "name": "Cosmic Page Flip",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_page_flip.png",
-            "rulesText": "If TOON World is Sealed, Unseal it then return a TOON montser you control back to your deck."
-        },
-        {
-            "cardId": "ded34478f9",
-            "name": "Cosmic Protection",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_protection.png",
-            "rulesText": "If TOON World would be destroyed, you can destroy a TOON monster you control instead."
-        },
-        {
             "cardId": "18d11abfa3",
             "name": "Cosmic Rabbit",
             "manaCost": 2,
@@ -395,18 +239,6 @@
             "def": 1,
             "image": "./images/cards/cosmic_rabbit.png",
             "rulesText": "You can only control 1 TOON monster at a time.\nBattlecry; Add TOON World from your deck to your hand."
-        },
-        {
-            "cardId": "a0c078f518",
-            "name": "Cosmic Shadow",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_shadow.png",
-            "rulesText": "Add a TOON monster from your Grave into your deck."
         },
         {
             "cardId": "ae2a29dc3d",
@@ -445,42 +277,6 @@
             "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to the deck.\nTOON World can't be destroyed by spell effects."
         },
         {
-            "cardId": "ab983e7681",
-            "name": "Cosmic World",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_world.png",
-            "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost."
-        },
-        {
-            "cardId": "7cda6791ff",
-            "name": "Counter Blade",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/counter_blade.png",
-            "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature on the field."
-        },
-        {
-            "cardId": "42d5c8a1d2",
-            "name": "Counter Spell",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/counter_spell.png",
-            "rulesText": "Hand; When any effect is activated, negate that effect until end of turn."
-        },
-        {
             "cardId": "86",
             "name": "Cross-Blade",
             "manaCost": 5,
@@ -491,18 +287,6 @@
             "def": 2,
             "image": "./images/cards/cross_blade.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "15cea99720",
-            "name": "Cup of Wealth",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cup_of_wealth.png",
-            "rulesText": "Play; Draw 2 cards."
         },
         {
             "cardId": "11",
@@ -553,18 +337,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "d813c24280",
-            "name": "Dark Dragoon Magician",
-            "manaCost": 12,
-            "attribute": "Fire",
-            "archetype": "Spellcaster/Dragon",
-            "cardType": "Fusion",
-            "atk": 6,
-            "def": 6,
-            "image": "./images/cards/dark_dragoon_magician.png",
-            "rulesText": "Fusion; Black Dragon + Magician of Chaos + 2 Dark Swordsman\n\r\nCannot be destroyed by Spell effects \nQuick; Negate an effect until the end of turn."
-        },
-        {
             "cardId": "833b430f37",
             "name": "Dark Eyes Fiend",
             "manaCost": 2,
@@ -577,42 +349,6 @@
             "rulesText": "Battlecry; Show the top 3 cards of your deck, add 1 of those to your hand then shuffle."
         },
         {
-            "cardId": "72",
-            "name": "Dark Lair",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dark_lair.png",
-            "rulesText": "Fiend creatures get +1/+1 and Fairy creatures get -1 DEF."
-        },
-        {
-            "cardId": "d1f054677f",
-            "name": "Dark Offering",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dark_offering.png",
-            "rulesText": "Play; Reveal 1 creature from your hand or deck that cannot be summoned without Dark Offering.\nSend creatures from your field or hand whose mana is equal to or more then the revealed creature, Summon that creature."
-        },
-        {
-            "cardId": "12f6a48744",
-            "name": "Dark Snake Syndrome",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dark_snake_syndrome.png",
-            "rulesText": "When a monster with Venom Tokens is destroyed by battle, this card gains a Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card."
-        },
-        {
             "cardId": "edd6abd2a7",
             "name": "Dark Swordsman",
             "manaCost": 2,
@@ -623,30 +359,6 @@
             "def": 2,
             "image": "./images/cards/dark_swordsman.png",
             "rulesText": "After this card attacks, unseal itself once for every equipment card attached."
-        },
-        {
-            "cardId": "166d0fe66c",
-            "name": "Dark Trader",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dark_trader.png",
-            "rulesText": "Seal; Pay 2 Life to draw a card."
-        },
-        {
-            "cardId": "66",
-            "name": "Darkness",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darkness.png",
-            "rulesText": "Dark creatures get +1 ATK and Light creatures get -1 DEF."
         },
         {
             "cardId": "24b473263f",
@@ -673,30 +385,6 @@
             "rulesText": "Death; Add a 3 Mana cost or lower Darksider from your deck to your hand."
         },
         {
-            "cardId": "8cccc76533",
-            "name": "Darksider Calling",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_calling.png",
-            "rulesText": "Play; Add 1 Darksider creature from your grave to your hand, but you cannot summon creatures for the rest of this turn.\n"
-        },
-        {
-            "cardId": "56",
-            "name": "Darksider Chaos Angel",
-            "manaCost": 12,
-            "attribute": "Dark",
-            "archetype": "Legendary",
-            "cardType": "Fusion",
-            "atk": 10,
-            "def": 10,
-            "image": "./images/cards/darksider_chaos_angel.png",
-            "rulesText": "Fusion; Darksider Ruler + Darksider Dragon Overlord + 2 different Darksider creatures.\nCannot be Summoned without listed cards.\n\nThis card cannot be destroyed by spell effects. \n\nBattlecry; Destroy all other cards on the field. \nSeal; Add 2 banished Darksider cards to your hand."
-        },
-        {
             "cardId": "50",
             "name": "Darksider Dagger",
             "manaCost": 5,
@@ -709,42 +397,6 @@
             "rulesText": "Battlecry; Destroy 1 spell on the field."
         },
         {
-            "cardId": "3dbd2f351f",
-            "name": "Darksider Dealing",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_dealing.png",
-            "rulesText": "Play; Both players draw 1 card, then discard 1 card."
-        },
-        {
-            "cardId": "55",
-            "name": "Darksider Dragon Overlord",
-            "manaCost": 12,
-            "attribute": "Dark",
-            "archetype": "Fiend",
-            "cardType": "Fusion",
-            "atk": 5,
-            "def": 8,
-            "image": "./images/cards/darksider_dragon_overlord.png",
-            "rulesText": "Fusion; Darksider Ruler + 1 Dragon + 2 different Darksider creatures.\n\nBattlecry; Each player discards 1 card. \nQuick; Change the effect of 1 card to \"The enemy discards 1 card\" until the end of turn.\nDeath; Summon a different Darksider from your grave to the field. "
-        },
-        {
-            "cardId": "cc48c858b9",
-            "name": "Darksider Gate",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_gate.png",
-            "rulesText": "Seal; Choose 1 effect.\n\nDiscard then draw 1 card.\nDestroy this card, add 1 Darksider creature from your Grave to your hand."
-        },
-        {
             "cardId": "0a61f7a6e7",
             "name": "Darksider Goldmen",
             "manaCost": 6,
@@ -755,18 +407,6 @@
             "def": 6,
             "image": "./images/cards/darksider_goldmen.png",
             "rulesText": "Discarded; By a creature effect, shuffle this card back into your deck.\n\nBattlecry; Destroy 1 creature on the field."
-        },
-        {
-            "cardId": "0a6d2e2fb2",
-            "name": "Darksider Grimoire",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_grimoire.png",
-            "rulesText": "When a creature effect has you discard, this gains 1 Dark Token.\n\nSpend Dark Tokens\n3- Draw 1 card.\n5- Add 1 Darksider from your grave to your hand.\n8- Destroy 1 creature."
         },
         {
             "cardId": "49",
@@ -841,18 +481,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "54",
-            "name": "Darksider Punishment",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_punishment.png",
-            "rulesText": "Play; Banish 3 Darksider cards from your grave then discard 1 card."
-        },
-        {
             "cardId": "da714cc181",
             "name": "Darksider Ruler",
             "manaCost": 8,
@@ -901,18 +529,6 @@
             "rulesText": "Discarded; Summon instead."
         },
         {
-            "cardId": "78c9682fd2",
-            "name": "Darksider Study",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/darksider_study.png",
-            "rulesText": "Play; Discard 1 card, then add 1 creature Darksider from your deck to your hand.\n\nActivateFromGrave; If this Card is in your grave, you can banish 1 creature in your grave and destroy 1 Mana to add this card to your hand\n"
-        },
-        {
             "cardId": "5f61f4d668",
             "name": "Darksider Warrior",
             "manaCost": 3,
@@ -937,30 +553,6 @@
             "rulesText": "During Battle Phase, this creature can attack twice."
         },
         {
-            "cardId": "bb85d0f052",
-            "name": "Data World",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/data_world.png",
-            "rulesText": "Seal; Banish creatures from your field that is needed for a Fusion creature, summon that Fusion creature."
-        },
-        {
-            "cardId": "b3493dd8ed",
-            "name": "Dealer's Trade",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dealers_trade.png",
-            "rulesText": "Play; Draw 3 cards then shuffle 2 cards from your hand back into your deck."
-        },
-        {
             "cardId": "02",
             "name": "Dement the Eternal One",
             "manaCost": 10,
@@ -983,30 +575,6 @@
             "def": 2,
             "image": "./images/cards/dragon_charmer.png",
             "rulesText": "All dragon creatures are sealed and stay sealed while this card is on the field"
-        },
-        {
-            "cardId": "1c0b1d9bab",
-            "name": "Dragon Fireball",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dragon_fireball.png",
-            "rulesText": "While you control a Dragon monster choose one:\nDestroy a spell on the field\n-or-\nDeal 5 Life damage to the enemy"
-        },
-        {
-            "cardId": "5a0f1d22c9",
-            "name": "Dragon Hills",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dragon_hills.png",
-            "rulesText": "Seal; Discard a card then use one of the following effects.\nAdd a level 4 or lower Dragon from deck to hand.\n-or-\nSend a Dragon from deck to Grave then draw a card."
         },
         {
             "cardId": "69f3076f9a",
@@ -1081,18 +649,6 @@
             "rulesText": "Special; Destroy a spell on the field.\nSeal; Discard a card, add a Wind monster from your Grave to your hand."
         },
         {
-            "cardId": "cd328ab8c3",
-            "name": "Dragon Lord Supreme",
-            "manaCost": 10,
-            "attribute": "Fire",
-            "archetype": "Fusion/Dragon",
-            "cardType": "Fusion",
-            "atk": 5,
-            "def": 8,
-            "image": "./images/cards/dragon_lord_supreme.png",
-            "rulesText": "Cannot be Summoned without listed cards.\n3 different level 8 Dragon Lord monsters.\nSpecial; Add 2 Banish Dragons into your deck.\nSeal; Banish 2 Dragon Lords from Grave to destroy 2 cards on the field.\nDeath; You can Banish 2 Fire monsters to return this to your Fusion deck instead."
-        },
-        {
             "cardId": "65cf40d702",
             "name": "Dragon Lord Waves",
             "manaCost": 8,
@@ -1115,18 +671,6 @@
             "def": 1,
             "image": "./images/cards/dragon_lord_wing.png",
             "rulesText": "Battlecry; Discard a Dragon to add Dragon Lord Storms from deck to hand.\nDeath; Banish this and a Dragon in your Grave then summon Dragon Lord Storms from hand."
-        },
-        {
-            "cardId": "0255f2abfc",
-            "name": "Dragons Rampage",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/dragons_rampage.png",
-            "rulesText": "Any monster destroyed by a Dragon in battle deal Life damage to the enemy equal to that monster DEF."
         },
         {
             "cardId": "101",
@@ -1165,18 +709,6 @@
             "rulesText": "Battlecry; Add a Magician Spell from Grave back to your hand."
         },
         {
-            "cardId": "4e7608309b",
-            "name": "Endless Reptiles",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/endless_reptiles.png",
-            "rulesText": "Non-Reptile monsters you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed."
-        },
-        {
             "cardId": "1ff674f188",
             "name": "Eye Restrict",
             "manaCost": 1,
@@ -1199,18 +731,6 @@
             "def": 12,
             "image": "./images/cards/farzel_the_flame_god.png",
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nBattlecry; Pay Life, this card gains ATK equal to the amount paid. \nOnce during your turn, you can banish 1 of your creatures to have this card gain ATK equal to the banished creature until the end of turn."
-        },
-        {
-            "cardId": "19",
-            "name": "Farm Land",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/farm_land.png",
-            "rulesText": "Gain 1 Milk Token when summoning 1 creature with Cow in their name."
         },
         {
             "cardId": "cebbf3e404",
@@ -1261,30 +781,6 @@
             "rulesText": "Battlecry; Add 1 Fire creature from your deck to your hand."
         },
         {
-            "cardId": "24c5168590",
-            "name": "Flaming Swordsman",
-            "manaCost": 5,
-            "attribute": "Earth",
-            "archetype": "Warrior",
-            "cardType": "Fusion",
-            "atk": 4,
-            "def": 6,
-            "image": "./images/cards/flaming_swordsman.png",
-            "rulesText": "Fusion; Elf Warrior + 1 Fire card.\n\nGains +3 ATK when attacking until the end of turn."
-        },
-        {
-            "cardId": "68",
-            "name": "Forest",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/forest.png",
-            "rulesText": "Wind creatures get +1 ATK and Fire creatures get -1 DEF."
-        },
-        {
             "cardId": "9db1e7d377",
             "name": "Forest Sprite",
             "manaCost": 2,
@@ -1307,78 +803,6 @@
             "def": 2,
             "image": "./images/cards/forest_witch.png",
             "rulesText": "Death; Add 1 spell from your Deck to your hand that cost 3 or less Mana."
-        },
-        {
-            "cardId": "69",
-            "name": "Fossil Canyon",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/fossil_canyon.png",
-            "rulesText": "Dino creatures get +1/+1 and Fish creatures get -1 ATK."
-        },
-        {
-            "cardId": "3af75fd2f3",
-            "name": "Frost Wave",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/frost_wave.png",
-            "rulesText": "Play; Negate the effect of all enemy creatures on the field until the end of turn."
-        },
-        {
-            "cardId": "28",
-            "name": "Fusion Deploy",
-            "manaCost": 8,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/fusion_deploy.png",
-            "rulesText": "Play; Reveal 1 Fusion creature in your Spatial Deck, add 1 creature that is listed on that fusion card to your hand from your deck."
-        },
-        {
-            "cardId": "29",
-            "name": "Fusion Recall",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/fusion_recall.png",
-            "rulesText": "Play; Add 1 Fusion Spell and 1 creature from your grave to your hand, from the last Fusion card that was summoned.\n"
-        },
-        {
-            "cardId": "30",
-            "name": "Fusion Scrapyard",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/fusion_scrapyard.png",
-            "rulesText": "Seal; During your turn if you summon a Fusion card, you can add 1 Fusion Spell/creature card used for that Fusion back to your hand from your grave."
-        },
-        {
-            "cardId": "d9d9bedaca",
-            "name": "Fusion Spell",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/fusion_spell.png",
-            "rulesText": "Play; Summon 1 Fusion creature by sending the listed cards for that Fusion creature from your hand or field to the Grave.  \n\r\nDraw 2 cards after a Fusion creature is summoned."
         },
         {
             "cardId": "40",
@@ -1405,18 +829,6 @@
             "rulesText": "Sweet Magician Girl + Magician of Faith\nMagician Spell cards can be used while a Magician monster is being used to defend against a attacking monster."
         },
         {
-            "cardId": "21",
-            "name": "Good Work Ethics",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/good_work_ethics.png",
-            "rulesText": "Can only be Activated while you control a Cheese Factory.\nSeal; Pay 9 Milk Tokens, Add 1 Spell card or Cow creature from your deck to your hand. "
-        },
-        {
             "cardId": "26",
             "name": "Gorlock God of Darkness",
             "manaCost": 14,
@@ -1439,18 +851,6 @@
             "def": 2,
             "image": "./images/cards/great_white.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "20",
-            "name": "Greenest Grass",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/greenest_grass.png",
-            "rulesText": "Creatures you control with Cow in their name gain +1 ATK and +1 DEF."
         },
         {
             "cardId": "110",
@@ -1477,18 +877,6 @@
             "rulesText": "You can discard this card to adda Maze of the Gardian card from your deck to your hand.\nWhile Maze of the Guardian is on the field, this card can't be attacked by enemy monsters."
         },
         {
-            "cardId": "e6434bf606",
-            "name": "Guardian Shadow Maze",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/guardian_shadow_maze.png",
-            "rulesText": "Any monster summon below level 3 is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add a Guardian card from your Grave to your hand."
-        },
-        {
             "cardId": "fa2fd34f96",
             "name": "Guardian Striker",
             "manaCost": 4,
@@ -1499,18 +887,6 @@
             "def": 2,
             "image": "./images/cards/guardian_striker.png",
             "rulesText": "While Maze of the Guardian is on the field, this card can't be attacked by enemy monsters.\nWhen a monster is summon, you can Seal this card to have both this card and the summon monster battle."
-        },
-        {
-            "cardId": "94b9a504a4",
-            "name": "Guardian Summoning",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/guardian_summoning.png",
-            "rulesText": "You can put a Sanjin, Kazjin or Suzjin from your deck or hand on the field as a spell card."
         },
         {
             "cardId": "7dc06ded39",
@@ -1597,30 +973,6 @@
             "rulesText": "This effect is unaffected by all other card effects.\n\nBattlecry; If you have 4 different \"The Sealed One\" cards in your hand, banish this card and the 4 other cards to summon \"The Legendary Baal\".\n"
         },
         {
-            "cardId": "47",
-            "name": "Heavenly Twin Blade",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Equipment",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/heavenly_twin_blade.png",
-            "rulesText": "When the equipped creature declares an attack, the creature it attacks has its effects negated until the end of turn."
-        },
-        {
-            "cardId": "861e4b105b",
-            "name": "Herald of Light",
-            "manaCost": 6,
-            "attribute": "Light",
-            "archetype": "Spellcaster",
-            "cardType": "Fusion",
-            "atk": 4,
-            "def": 4,
-            "image": "./images/cards/herald_of_light.png",
-            "rulesText": "Fusion; Forest Witch + Petit Fairy + Petit Fairy\n\nQuick; Negate a spell effect until the end of turn.\nDeath; Add 1 Spell from your grave to your hand."
-        },
-        {
             "cardId": "45",
             "name": "Hidden Worm Bag",
             "manaCost": 3,
@@ -1631,30 +983,6 @@
             "def": 1,
             "image": "./images/cards/hidden_worm_bag.png",
             "rulesText": "Battlecry; You can turn this card into Equipment and equip it to a creature you control.\n\nSeal; Play 1 Equipment Spell from your deck to a creature you control only if this is attached to a creature. You must pay its Mana cost."
-        },
-        {
-            "cardId": "a94759cc5d",
-            "name": "Holy Awe",
-            "manaCost": 8,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/holy_awe.png",
-            "rulesText": "Play; Seal all enemy creatures."
-        },
-        {
-            "cardId": "9eb53206ee",
-            "name": "Holy Awe Bottle",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/holy_awe_bottle.png",
-            "rulesText": "The enemy \"Holy Awe\" spells are negated."
         },
         {
             "cardId": "93ff275c3d",
@@ -1679,18 +1007,6 @@
             "def": 6,
             "image": "./images/cards/horned_metal_fiend.png",
             "rulesText": "SpecialSummon; Summon by sending 1 Horned Fiend with Metal Armor equipped to the Grave.\nCannot be Summoned without listed cards.\n\nHaste\nSeal; Add 1 spell card from your deck to your hand."
-        },
-        {
-            "cardId": "31",
-            "name": "Howling Mine",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/howling_mine.png",
-            "rulesText": "While this card is unsealed and any player draws a card at the start of their turn, they draw another one.\n"
         },
         {
             "cardId": "99",
@@ -1727,18 +1043,6 @@
             "def": 1,
             "image": "./images/cards/jamming_virus.png",
             "rulesText": "After you draw a card seal this card,Roll\n\n1-5= Destroy all Spells with mana cost equal to the number rolled.\n6= Destroy all Spells with mana cost of 6 or higher."
-        },
-        {
-            "cardId": "95c340922f",
-            "name": "Knight Dragon Rider",
-            "manaCost": 6,
-            "attribute": "Earth",
-            "archetype": "Warrior/Dragon",
-            "cardType": "Fusion",
-            "atk": 5,
-            "def": 5,
-            "image": "./images/cards/knight_dragon_rider.png",
-            "rulesText": "Fusion; Elf Warrior + Moon Dragon\n\nDeath; Add 1 Warrior from your grave to your hand."
         },
         {
             "cardId": "32",
@@ -1789,30 +1093,6 @@
             "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand."
         },
         {
-            "cardId": "f9979d4e06",
-            "name": "Level Up!",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/level_up.png",
-            "rulesText": "Give a monster with LVL in its name a Exp Token."
-        },
-        {
-            "cardId": "dbaa2d822a",
-            "name": "Library of the Magician",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/library_of_the_magician.png",
-            "rulesText": "When you play a spell, this card gains a Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to use one effect.\n3, Draw a card.\n6, Add a spell card from your Grave to your hand."
-        },
-        {
             "cardId": "e3323c3505",
             "name": "Light Dragon of Divine",
             "manaCost": 10,
@@ -1823,18 +1103,6 @@
             "def": 7,
             "image": "./images/cards/light_dragon_of_divine.png",
             "rulesText": "Cannot be summoned, summon by returning 12 Lightborn monsters from your Grave to your deck.\nAt the end of the turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy ALL other cards on the field."
-        },
-        {
-            "cardId": "ebb67c4c26",
-            "name": "Light Shining Dragon",
-            "manaCost": 12,
-            "attribute": "Light",
-            "archetype": "Dragon",
-            "cardType": "Fusion",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/light_shining_dragon.png",
-            "rulesText": "Fusion; Light Dragon of Divine + Herald of Light + White Dragon\n\r\nBattlecry; Get +1/+1 for each Light creature in your grave. \nDeath; Destroy all cards on the field."
         },
         {
             "cardId": "ed5677ec8e",
@@ -1909,66 +1177,6 @@
             "rulesText": "Seal; Mill a card then summon a level 3 or lower Lightborn from Grave.\nAt the end of your turn, Mill a card."
         },
         {
-            "cardId": "75acdfd10c",
-            "name": "Lightborn Reborn",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lightborn_reborn.png",
-            "rulesText": "Summon a level 3 or lower Lightborn monster from your grave."
-        },
-        {
-            "cardId": "cb6ec5e59d",
-            "name": "Lightborn Recharge",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lightborn_recharge.png",
-            "rulesText": "Whenever a Lightborn monster effect makes you Mill, gain 1 Life."
-        },
-        {
-            "cardId": "873c47bf2d",
-            "name": "Lightborn Shield",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lightborn_shield.png",
-            "rulesText": "When a Lightborn monster is attacked, you can Mill 3 cards to negate the attack."
-        },
-        {
-            "cardId": "05c85af1f7",
-            "name": "Lightborn Shrine",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lightborn_shrine.png",
-            "rulesText": "Gain a Light Token when using a Mill effect.\nSeal; Pay Tokens on this card to use one effect.\n3, Draw a card.\n5, Add a monster from your Grave to hand.\n8, Destroy a card on the field."
-        },
-        {
-            "cardId": "50fd563f8f",
-            "name": "Lightborn Solar Ray",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lightborn_solar_ray.png",
-            "rulesText": "Target a monster then Mill 4, that monster takes 1 damage for each Lightborn monster send to the Grave.\nIf that monster is destroyed by this effect, add 2 Lightborn monsters from your Grave to your deck."
-        },
-        {
             "cardId": "62b2bd98c4",
             "name": "Lightborn Tamer",
             "manaCost": 2,
@@ -2005,18 +1213,6 @@
             "rulesText": "If send from deck to Grave, you can summon this card instead."
         },
         {
-            "cardId": "c7fa752d11",
-            "name": "Lockdown",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/lockdown.png",
-            "rulesText": "Both players are unable to ADD cards from their deck to their hand (beside drawing)."
-        },
-        {
             "cardId": "12b62cb7cd",
             "name": "Lord of Dragons",
             "manaCost": 2,
@@ -2039,18 +1235,6 @@
             "def": 6,
             "image": "./images/cards/lord_of_toxic_snakes.png",
             "rulesText": "Venom Serpent + 3 Reptile monsters\nVenom Token gain effects are doubled.\nIf this would be destroyed by battle, Banish a Venom monster in your Grave instead."
-        },
-        {
-            "cardId": "89",
-            "name": "Lucky 6 Slots",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Equipment",
-            "cardType": "Spell",
-            "atk": 0,
-            "def": 1,
-            "image": "./images/cards/lucky_6_slots.png",
-            "rulesText": "Equip only to \"Slot Machine\".\n\nThe equipped creature gains +2 ATK.\nAfter \"Slot Machine\" activates its effect, you may Seal this card; reroll the result.\n (If three \"Lucky 6 Slots\" are equipped to the same \"Slot Machine\", you may Seal all three instead; choose the result instead of rolling.\n"
         },
         {
             "cardId": "80",
@@ -2089,42 +1273,6 @@
             "rulesText": "Once per turn, you can pay 10 Life to give this card +9 ATK until the end of turn.\n"
         },
         {
-            "cardId": "7058aa8fca",
-            "name": "Madness from the Grave",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/madness_from_the_grave.png",
-            "rulesText": "If a effect is activated in a Chain, You can activate this effect to that card. Negate that card and Banish that card then send all copies of that card from your deck to your Grave."
-        },
-        {
-            "cardId": "62",
-            "name": "Magic Fusion",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magic_fusion.png",
-            "rulesText": "Play: Reveal 1 non-effect Fusion creature. Pay 5 Life for each mana it cost; if you do, summon it, ignoring its Fusion cost."
-        },
-        {
-            "cardId": "386b73d7d7",
-            "name": "Magical Borderline",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magical_borderline.png",
-            "rulesText": "Hand; Negate an attack and end the Battle Phase."
-        },
-        {
             "cardId": "24",
             "name": "Magical Forest Plants",
             "manaCost": 2,
@@ -2161,30 +1309,6 @@
             "rulesText": "If this card is used for a Fusion summon of a Magician named monster add a spell card from your Grave to your hand."
         },
         {
-            "cardId": "13f4729b0b",
-            "name": "Magician Dark Blast",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_dark_blast.png",
-            "rulesText": "Target a Magician named monster you control and another monster on the field.\nDeal damage to that monster equal to the Magician monsters ATK."
-        },
-        {
-            "cardId": "1d7563e301",
-            "name": "Magician Illusion",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_illusion.png",
-            "rulesText": "When a Magician is attacked, negate the attack then return that Magician back to your hand."
-        },
-        {
             "cardId": "71853bbc06",
             "name": "Magician Lord of Storm",
             "manaCost": 8,
@@ -2195,18 +1319,6 @@
             "def": 6,
             "image": "./images/cards/magician_lord_of_storm.png",
             "rulesText": "Cannot be summoned, Banish 3 other Magicians and 5 Spell Tokens you control to summon.\nSpecial; Destroy up to 3 spell cards on the field.\nSeal; Add a spell card from your Grave back to your hand."
-        },
-        {
-            "cardId": "cbe07d1300",
-            "name": "Magician Magic Robe",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_magic_robe.png",
-            "rulesText": "Pay 10 Life then summon a Magician from your deck."
         },
         {
             "cardId": "dbaa407974",
@@ -2257,54 +1369,6 @@
             "rulesText": "Cannot be summoned, summon from hand when you win the coin toss with \"Time Wizard\" effect while controlling a Magician monster, Banish that Magician monster.\nSeal; Add a spell card from Grave to hand."
         },
         {
-            "cardId": "072876df71",
-            "name": "Magician Scrolls",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_scrolls.png",
-            "rulesText": "Add a Magician spell card from your deck to your hand."
-        },
-        {
-            "cardId": "a5cad2fc76",
-            "name": "Magician Shield Wall",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_shield_wall.png",
-            "rulesText": "When a Magician is attacked, Destroy the attacking monster."
-        },
-        {
-            "cardId": "03913bffb7",
-            "name": "Magician Spell Book",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_spell_book.png",
-            "rulesText": "When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn."
-        },
-        {
-            "cardId": "62d2dade54",
-            "name": "Magician Spell Orb",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magician_spell_orb.png",
-            "rulesText": "Target a card, that card gains a Spell Token. if you chain this spell to another spell you played this turn. That card gains another Token."
-        },
-        {
             "cardId": "97",
             "name": "Mantis",
             "manaCost": 2,
@@ -2327,30 +1391,6 @@
             "def": 9,
             "image": "./images/cards/maze_guardian.png",
             "rulesText": "Cannot be summoned, summon by sending each Sanjin, Kazjin and Suzjin from field to Grave.\nSeal; Destroy a monster or spell.\nDeath; Summon a Twin Guardian from your deck or hand ignoring its summoning cost."
-        },
-        {
-            "cardId": "d82942475c",
-            "name": "Maze of the Guardian",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/maze_of_the_guardian.png",
-            "rulesText": "Seal; Add a Guardian card from your deck to your hand.\n-or-\nYou can put a Sanjin, Kazjin or Suzjin into your spells from your deck."
-        },
-        {
-            "cardId": "64",
-            "name": "Meadow",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/meadow.png",
-            "rulesText": "Light creatures get +1 DEF and Dark creatures get -1 ATK."
         },
         {
             "cardId": "27581c6e51",
@@ -2399,18 +1439,6 @@
             "def": 4,
             "image": "./images/cards/mecha_soldier.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "425ada3fbc",
-            "name": "Metal Armor",
-            "manaCost": 4,
-            "attribute": "Neutral",
-            "archetype": "Equipment",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/metal_armor.png",
-            "rulesText": "Play; Equip to 1 creature you control. It gains +1 ATK and +2 DEF.\n\nThe Creature equipped with this becomes a Machine."
         },
         {
             "cardId": "bb59ccfb10",
@@ -2485,30 +1513,6 @@
             "rulesText": "At the end of the turn, Unseal this card."
         },
         {
-            "cardId": "67",
-            "name": "Mountains",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/mountains.png",
-            "rulesText": "Fire creatures get +1 ATK and Wind creatures get -1 DEF."
-        },
-        {
-            "cardId": "93",
-            "name": "Muk Muk",
-            "manaCost": 6,
-            "attribute": "Dark",
-            "archetype": "Fiend",
-            "cardType": "Fusion",
-            "atk": 4,
-            "def": 4,
-            "image": "./images/cards/muk_muk.png",
-            "rulesText": "Fusion; Dark Eyes Fiend + Dark Eyes Fiend + Dark Eyes Fiend"
-        },
-        {
             "cardId": "774dfa602c",
             "name": "Nib the Primal Lord",
             "manaCost": 10,
@@ -2521,42 +1525,6 @@
             "rulesText": "Hand; pay 4 Mana to activate from your hand.\nBanish 1 creature the enemy controls, then summon this creature to the enemy field. \nThis creatures ATK and DEF becomes the ATK and DEF of the Banished creature."
         },
         {
-            "cardId": "71",
-            "name": "Ocean ",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/ocean.png",
-            "rulesText": "Fish creatures get +1/+1 and Dino creatures get -1 ATK."
-        },
-        {
-            "cardId": "87",
-            "name": "Over-Tech Blaster Dragon ",
-            "manaCost": 10,
-            "attribute": "Dark",
-            "archetype": "Machine",
-            "cardType": "Fusion",
-            "atk": 8,
-            "def": 8,
-            "image": "./images/cards/over_tech_blaster_dragon.png",
-            "rulesText": "Fusion; Triple Barrel Dragon + Blaster Spider + X Double Cannon\nCannot be Summoned without listed cards.\n\r\nSeal; Roll,\n1= draw 1 card. \n2-4= Deal 5 Damage to 1 creature on the field. \n5= Deal 3 Damage to all enemy creatures. \n6= Destroy up to 2 cards on the field.\r\n"
-        },
-        {
-            "cardId": "74",
-            "name": "Paradise ",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/paradise.png",
-            "rulesText": "Beast creatures get +1/+1 and Dragon creatures get -1 DEF."
-        },
-        {
             "cardId": "96",
             "name": "Petit Fairy",
             "manaCost": 4,
@@ -2567,30 +1535,6 @@
             "def": 3,
             "image": "./images/cards/petit_fairy.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "2fb4d9930d",
-            "name": "Phantom Night Fiend",
-            "manaCost": 5,
-            "attribute": "Dark",
-            "archetype": "Fiend",
-            "cardType": "Fusion",
-            "atk": 4,
-            "def": 4,
-            "image": "./images/cards/phantom_night_fiend.png",
-            "rulesText": "Fusion; Dark Eyes Fiend + Hairy Fiend + Forest Witch\n\nBattlecry; Draw 5 cards then shuffle 3 cards from your hand back into your deck."
-        },
-        {
-            "cardId": "8c686f4df1",
-            "name": "Power Swap",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 0,
-            "def": 1,
-            "image": "./images/cards/power_swap.png",
-            "rulesText": "Play; Swap the ATK and DEF of a creature until the end of turn."
         },
         {
             "cardId": "03",
@@ -2689,18 +1633,6 @@
             "rulesText": "Each effect must be activated in order.\nSeal; Pay 3 Life\nSeal; Draw a card.\nSeal; Add a Exp Token to a card.\nSeal; Destroy this card and add a card from your deck to your hand."
         },
         {
-            "cardId": "38",
-            "name": "QUICK DRAW!",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/quick_draw.png",
-            "rulesText": "Play; Discard 1 card. \nMill cards equal to the number of cards on the enemy field, then draw 1 card and reveal it. \nIf that card is QUICK DRAW! send it to the grave, then destroy all enemy cards on the field and deal 6 Life damage for each card Milled by this effect."
-        },
-        {
             "cardId": "12",
             "name": "Raging Battle Cow",
             "manaCost": 2,
@@ -2711,54 +1643,6 @@
             "def": 2,
             "image": "./images/cards/raging_battle_cow.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "193fbbd4d6",
-            "name": "Reckless Greed",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/reckless_greed.png",
-            "rulesText": "Play; Banish 5 cards from the top of your Deck, then add 1 card from your deck to your hand."
-        },
-        {
-            "cardId": "91",
-            "name": "Relaxing Cow",
-            "manaCost": 2,
-            "attribute": "Earth",
-            "archetype": "Beast",
-            "cardType": "Fusion",
-            "atk": 1,
-            "def": 3,
-            "image": "./images/cards/relaxing_cow.png",
-            "rulesText": "Fusion; Dairy Cow + Dairy Cow"
-        },
-        {
-            "cardId": "b35ea3e26a",
-            "name": "Returning Dragon",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/returning_dragon.png",
-            "rulesText": "Destroy a Dragon you control then Banish 2 Dragons from your Grave.\nSummon a different banished Dragon with less Mana cost then the one destroyed."
-        },
-        {
-            "cardId": "c8a929a743",
-            "name": "Returning Souls",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/returning_souls.png",
-            "rulesText": "Play; When you have 6 or more creatures in your grave.\nBanish 1 creature in your grave, then shuffle 5 creatures from your grave into your deck, draw 1 card."
         },
         {
             "cardId": "c1113c3bc8",
@@ -2785,18 +1669,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "a57f431165",
-            "name": "Sealed Sarcophagus",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/sealed_sarcophagus.png",
-            "rulesText": "Play; Banish 1 card from your deck, after the start of your third turn after this card's activation, add the banished card to your hand."
-        },
-        {
             "cardId": "d4dc1d3a0c",
             "name": "Shield Warrior",
             "manaCost": 3,
@@ -2819,18 +1691,6 @@
             "def": 4,
             "image": "./images/cards/ship_sail_sailors.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "90",
-            "name": "Shipsunk Sea-Ken",
-            "manaCost": 6,
-            "attribute": "Water",
-            "archetype": "Serpant",
-            "cardType": "Fusion",
-            "atk": 3,
-            "def": 6,
-            "image": "./images/cards/shipsunk_sea_ken.png",
-            "rulesText": "Fusion; Ship Sail Sailors + White Kraken"
         },
         {
             "cardId": "37",
@@ -2869,18 +1729,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "92",
-            "name": "Skelly Skeleton",
-            "manaCost": 3,
-            "attribute": "Dark",
-            "archetype": "Undead",
-            "cardType": "Fusion",
-            "atk": 2,
-            "def": 3,
-            "image": "./images/cards/skelly_skeleton.png",
-            "rulesText": "Fusion; Skeleton + Skeleton"
-        },
-        {
             "cardId": "323a549a5b",
             "name": "Slot Machine",
             "manaCost": 5,
@@ -2891,18 +1739,6 @@
             "def": 6,
             "image": "./images/cards/slot_machine.png",
             "rulesText": "Seal; Roll,\n\n1= Destroy this card. \n2-5= Give all Machine creatures you control +2 ATK until the end of this turn. \n6= Add 1 Machine to your hand from your Deck."
-        },
-        {
-            "cardId": "1c50f37df8",
-            "name": "Soul Binding Gate",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/soul_binding_gate.png",
-            "rulesText": "This effect only works if you control a creature that has more ATK than your Life.\nDestroy any summoned creature that has more ATK than your Life. \nWhen your highest ATK creature leaves the field, destroy this card."
         },
         {
             "cardId": "35",
@@ -2917,18 +1753,6 @@
             "rulesText": "While this card is on your field, all your spells cost 1 less Mana.\nWhenever you play a spell, take 1 Life damage.\n"
         },
         {
-            "cardId": "9d5dffd341",
-            "name": "Soul Retrieval",
-            "manaCost": 12,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/soul_retrieval.png",
-            "rulesText": "Play; Summon 1 creature from your Grave."
-        },
-        {
             "cardId": "106",
             "name": "Sparkling",
             "manaCost": 2,
@@ -2939,18 +1763,6 @@
             "def": 1,
             "image": "./images/cards/sparkling.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "c839c66574",
-            "name": "Spell Stun",
-            "manaCost": 8,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/spell_stun.png",
-            "rulesText": "This card is not affected by spell effects.\n\nPlay; Seal all enemy spell cards on the field until the end of the next turn.\n"
         },
         {
             "cardId": "08b5b38cdc",
@@ -3121,18 +1933,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "85",
-            "name": "Stop Seal ",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 0,
-            "def": 1,
-            "image": "./images/cards/stop_seal.png",
-            "rulesText": "Play; Unseal 1 creature."
-        },
-        {
             "cardId": "baf180958a",
             "name": "Supreme King Guardian",
             "manaCost": 12,
@@ -3157,90 +1957,6 @@
             "rulesText": "Seal; Discard a spell card to draw a card."
         },
         {
-            "cardId": "2f0802c45c",
-            "name": "Sword of 1000 Souls",
-            "manaCost": 20,
-            "attribute": "Neutral",
-            "archetype": "Equipment",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/sword_of_1000_souls.png",
-            "rulesText": "This card can't be negated.\n\n+5 ATK.\nAfter the equipped creature attacks, Seal all the enemy creatures and Mana until the end of their turn.\nDestroy this card after the battle phase."
-        },
-        {
-            "cardId": "999999",
-            "name": "Test card",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/test_card.png",
-            "rulesText": "Play; Negate an effect on the field until the end of turn."
-        },
-        {
-            "cardId": "46",
-            "name": "The Cursed Blade",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Equipment",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/the_cursed_blade.png",
-            "rulesText": "+2 ATK but the equipped creature takes double DEF damage."
-        },
-        {
-            "cardId": "94",
-            "name": "The Hooded One",
-            "manaCost": 8,
-            "attribute": "Earth",
-            "archetype": "Humanoid",
-            "cardType": "Fusion",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/the_hooded_one.png",
-            "rulesText": "Fusion Cost: Fugue The Ancient Keeper + Nib the Primal Lord"
-        },
-        {
-            "cardId": "60",
-            "name": "The Legendary Baal ",
-            "manaCost": 12,
-            "attribute": "Dark",
-            "archetype": "Legendary",
-            "cardType": "Fusion",
-            "atk": 0,
-            "def": 10,
-            "image": "./images/cards/the_legendary_baal.png",
-            "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn."
-        },
-        {
-            "cardId": "53cf647c0a",
-            "name": "The Primal Warrior",
-            "manaCost": 12,
-            "attribute": "Dark",
-            "archetype": "Legendary",
-            "cardType": "Fusion",
-            "atk": 5,
-            "def": 10,
-            "image": "./images/cards/the_primal_warrior.png",
-            "rulesText": "Fusion; Nib the Primal Lord + 1 Warrior Fusion\nCannot be Summoned without listed cards.\n\nBattlecry; Destroy all other creatures on the field.\nNeither player can summon creatures."
-        },
-        {
-            "cardId": "88",
-            "name": "The Unstoppable Mech Fortress ",
-            "manaCost": 12,
-            "attribute": "Earth",
-            "archetype": "Machine",
-            "cardType": "Fusion",
-            "atk": 2,
-            "def": 10,
-            "image": "./images/cards/the_unstoppable_mech_fortress.png",
-            "rulesText": "Fusion; War Machine-Dragoon + Mecha Soldier + 3 Mech Defender\r\nCannot be Summoned without listed cards.\n\nOther Machines you control cannot be attacked. \nSeal; Add 1 Machine from your deck to your Hand.\nDeath; Add 3 Machines from your grave back to your hand.\r\n"
-        },
-        {
             "cardId": "98",
             "name": "Thorny Plant",
             "manaCost": 2,
@@ -3253,18 +1969,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "85c65e9ea8",
-            "name": "Thunder Strike",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/thunder_strike.png",
-            "rulesText": "Play; Destroy 1 spell card on the field."
-        },
-        {
             "cardId": "4e70c7cc42",
             "name": "Thunder Strike Dragon",
             "manaCost": 4,
@@ -3275,54 +1979,6 @@
             "def": 3,
             "image": "./images/cards/thunder_strike_dragon.png",
             "rulesText": "Battlecry; Add a monster with Thunder Dragon in its name from deck to hand."
-        },
-        {
-            "cardId": "c27de47046",
-            "name": "Time Changing Crystal",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/time_changing_crystal.png",
-            "rulesText": "Each turn you draw 2 cards instead of 1 but you cannot use Spell or Creature effects from your hand during the enemy turn."
-        },
-        {
-            "cardId": "84",
-            "name": "Time Machine ",
-            "manaCost": 5,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 0,
-            "def": 1,
-            "image": "./images/cards/time_machine.png",
-            "rulesText": "Play; If the last creature that died by battle was your Machine, then summon that Machine back to the field, sealed."
-        },
-        {
-            "cardId": "6f0152c09b",
-            "name": "Toll",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/toll.png",
-            "rulesText": "Each player must pay 1 Life to attack with a creature."
-        },
-        {
-            "cardId": "f63935257f",
-            "name": "Toxic  Bite",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/toxic_bite.png",
-            "rulesText": "Add a Venom Monster from your deck to your hand and give a monster a Venom Token"
         },
         {
             "cardId": "645fa3cd64",
@@ -3409,18 +2065,6 @@
             "rulesText": "Battlecry; Gain +1 ATK and DEF for each different Venom monster in your Grave.\nDeath; Summon 2 Venom monsters from your Grave."
         },
         {
-            "cardId": "647f5eab7a",
-            "name": "Toxic  Shot",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/toxic_shot.png",
-            "rulesText": "You can only activate this while you control a Venom monster.\nSend a Venom named monster from your deck to your Grave then give a monster on the field 2 Venom Tokens."
-        },
-        {
             "cardId": "4dc3c45fa7",
             "name": "Toxic  Snake",
             "manaCost": 2,
@@ -3443,18 +2087,6 @@
             "def": 1,
             "image": "./images/cards/toxic_striker.png",
             "rulesText": "Battlecry; Add a Venom Token to a monster on the field."
-        },
-        {
-            "cardId": "f2a78c1c4e",
-            "name": "Toxic  Swamp",
-            "manaCost": 2,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/toxic_swamp.png",
-            "rulesText": "Any monster summoned without Venom in its name Gains a Venom Token.\nMonsters with a Venom Token lose -1 ATK for each token. Any monsters with 0 ATK and at least 4 Venom Tokens is destroyed."
         },
         {
             "cardId": "41",
@@ -3529,78 +2161,6 @@
             "rulesText": "Cannot be summoned, summon by sending both Kazjin and Suzjin from field to Grave.\nSpecial; Destroy a spell on the field.\nDeath; Put a Kazjin or Suzjin from Grave into your Spells."
         },
         {
-            "cardId": "8be014b900",
-            "name": "Twin-Mouth Thunder Dragon",
-            "manaCost": 8,
-            "attribute": "Earth",
-            "archetype": "Dragon",
-            "cardType": "Fusion",
-            "atk": 6,
-            "def": 4,
-            "image": "./images/cards/twin_mouth_thunder_dragon.png",
-            "rulesText": "Fusion; Thunder Strike Dragon + Thunder Strike Dragon\n\nUnseal this card at the end of turn."
-        },
-        {
-            "cardId": "f57d409214",
-            "name": "Ultimate Black Dragon",
-            "manaCost": 12,
-            "attribute": "Fire",
-            "archetype": "Dragon",
-            "cardType": "Fusion",
-            "atk": 12,
-            "def": 13,
-            "image": "./images/cards/ultimate_black_dragon.png",
-            "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon\n\nDuring Battle Phase, this creature can attack twice."
-        },
-        {
-            "cardId": "ed080ae52a",
-            "name": "Ultimate Chimera",
-            "manaCost": 11,
-            "attribute": "Light",
-            "archetype": "ALL",
-            "cardType": "Fusion",
-            "atk": 7,
-            "def": 8,
-            "image": "./images/cards/ultimate_chimera.png",
-            "rulesText": "Fusion; 1 Beast + 1 Beast-Warrior + 1 Dragon + 1 Reptile\n\nBattlecry; Destroy up to 3 Creatures on the field with less DEF than this card.\nDeath; Draw 1 card."
-        },
-        {
-            "cardId": "7b81b77aed",
-            "name": "Ultimate Eye Restrict",
-            "manaCost": 3,
-            "attribute": "Dark",
-            "archetype": "Fiend",
-            "cardType": "Fusion",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/ultimate_eye_restrict.png",
-            "rulesText": "Fusion;  Dark Eyes Fiend + Dark Eyes Fiend + Eye Restrict\n\nPetrify all other creatures on the field."
-        },
-        {
-            "cardId": "c2e1570d2e",
-            "name": "Ultimate White Dragon",
-            "manaCost": 12,
-            "attribute": "Light",
-            "archetype": "Dragon",
-            "cardType": "Fusion",
-            "atk": 13,
-            "def": 12,
-            "image": "./images/cards/ultimate_white_dragon.png",
-            "rulesText": "Fusion; White Dragon + White Dragon + White Dragon\n\nDuring Battle Phase, this creature can attack twice."
-        },
-        {
-            "cardId": "73",
-            "name": "Vally ",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/vally.png",
-            "rulesText": "Dragon creatures get +1/+1 and Fish creatures get -1 DEF."
-        },
-        {
             "cardId": "107",
             "name": "Vampire Prowler",
             "manaCost": 4,
@@ -3611,18 +2171,6 @@
             "def": 4,
             "image": "./images/cards/vampire_prowler.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "3b71032829",
-            "name": "Waking Fiend Dragon",
-            "manaCost": 6,
-            "attribute": "Dark",
-            "archetype": "Fiend",
-            "cardType": "Fusion",
-            "atk": 2,
-            "def": 4,
-            "image": "./images/cards/waking_fiend_dragon.png",
-            "rulesText": "Fusion; Moon Dragon + Horned Fiend\n\r\nWhen a Seal effect is activated, negated it. \r\n"
         },
         {
             "cardId": "bcdfd1d187",
@@ -3649,30 +2197,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "63",
-            "name": "Waste Land",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/waste_land.png",
-            "rulesText": "Earth creatures get +1 DEF and Water creatures get -1 ATK."
-        },
-        {
-            "cardId": "65",
-            "name": "Wetlands",
-            "manaCost": 1,
-            "attribute": "Neutral",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/wetlands.png",
-            "rulesText": "Water creatures get +1 DEF and Earth creatures get -1 ATK."
-        },
-        {
             "cardId": "c5dd1ec7bc",
             "name": "White Dragon",
             "manaCost": 7,
@@ -3683,18 +2207,6 @@
             "def": 6,
             "image": "./images/cards/white_dragon.png",
             "rulesText": ""
-        },
-        {
-            "cardId": "525fda9cb0",
-            "name": "White Hole",
-            "manaCost": 8,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/white_hole.png",
-            "rulesText": "Play; Destroy all Spells on the field."
         },
         {
             "cardId": "103",
