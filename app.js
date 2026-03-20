@@ -5,6 +5,7 @@ const PAGE_SIZE = 48;
 const DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
 
 const deckState = loadDeck();
+let currentModalCard = null;
 
 const searchInput = document.getElementById("searchInput");
 const manaFilter = document.getElementById("manaFilter");
@@ -342,6 +343,7 @@ function renderCards(cards) {
 }
 
 function openModal(card) {
+  currentModalCard = card;
   modalImage.src = card.image || "";
   modalImage.alt = card.name || "";
   modalName.textContent = card.name || "";
@@ -391,6 +393,19 @@ closeModal.addEventListener("click", () => {
 });
 
 cardModal.addEventListener("click", (e) => {
+  const addBtn = e.target.closest(".modal-add-deck-btn");
+  if (addBtn) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (currentModalCard) {
+      addCardToDeck(currentModalCard);
+      if (!cardModal.classList.contains("hidden")) {
+        openModal(currentModalCard);
+      }
+    }
+    return;
+  }
+
   if (e.target === cardModal) {
     cardModal.classList.add("hidden");
   }
@@ -411,6 +426,9 @@ document.addEventListener("keydown", (e) => {
 ui.sortSelect.addEventListener("change", refreshView);
 ui.clearButton.addEventListener("click", clearFilters);
 ui.loadMoreButton.addEventListener("click", loadMoreCards);
+ui.scrollDeckButton.addEventListener("click", () => {
+  ui.deckPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+});
 ui.clearDeckButton.addEventListener("click", clearDeck);
 ui.exportDeckButton.addEventListener("click", exportDeck);
 
@@ -474,11 +492,55 @@ function hideHoverPreview() {
   ui.hoverPreview.classList.remove("show");
 }
 
+
+function getDeckSection(card) {
+  return isFusionCard(card) ? "fusion" : "main";
+}
+
+function getCardCopyLimit(card) {
+  return String(card?.archetype || "").toLowerCase() === "legendary" ? 1 : 3;
+}
+
+function getCardCopiesInSection(card, section) {
+  const list = section === "fusion" ? deckState.fusion : deckState.main;
+  return list.filter((item) => String(item.name || "") === String(card?.name || "")).length;
+}
+
+function summarizeDeckSection(items) {
+  const map = new Map();
+
+  items.forEach((card, index) => {
+    const key = String(card.name || "");
+    if (!map.has(key)) {
+      map.set(key, {
+        card,
+        count: 1,
+        firstIndex: index
+      });
+    } else {
+      map.get(key).count += 1;
+    }
+  });
+
+  return Array.from(map.values()).sort((a, b) =>
+    String(a.card.name || "").localeCompare(String(b.card.name || ""))
+  );
+}
+
 function addCardToDeck(card) {
   try {
     if (!card) return;
 
-    if (isFusionCard(card)) {
+    const section = getDeckSection(card);
+    const copyLimit = getCardCopyLimit(card);
+    const currentCopies = getCardCopiesInSection(card, section);
+
+    if (currentCopies >= copyLimit) {
+      toast(`${card.name || "Card"} is already at ${copyLimit}/${copyLimit}`);
+      return;
+    }
+
+    if (section === "fusion") {
       if (deckState.fusion.length >= 10) {
         toast("Fusion deck is full (max 10)");
         return;
@@ -487,7 +549,7 @@ function addCardToDeck(card) {
       deckState.fusion.push(card);
       saveDeck();
       renderDeck();
-      toast(`${card.name || "Card"} added to Fusion Deck`);
+      toast(`${card.name || "Card"} added to Fusion Deck (${currentCopies + 1}/${copyLimit})`);
       return;
     }
 
@@ -499,7 +561,7 @@ function addCardToDeck(card) {
     deckState.main.push(card);
     saveDeck();
     renderDeck();
-    toast(`${card.name || "Card"} added to Main Deck`);
+    toast(`${card.name || "Card"} added to Main Deck (${currentCopies + 1}/${copyLimit})`);
   } catch (error) {
     console.error("addCardToDeck failed:", error);
     alert(`Add to Deck failed: ${error.message}`);
@@ -560,20 +622,23 @@ function renderDeck() {
     ui.deckStatus.textContent = status;
     ui.deckStatus.className = `deck-status ${mainCount >= 60 && mainCount <= 80 && fusionCount <= 10 ? "valid" : "warning"}`;
 
-    ui.mainDeckList.innerHTML = deckState.main.length
-      ? deckState.main.map((card, index) => `
+    const mainSummary = summarizeDeckSection(deckState.main);
+    const fusionSummary = summarizeDeckSection(deckState.fusion);
+
+    ui.mainDeckList.innerHTML = mainSummary.length
+      ? mainSummary.map((entry) => `
         <li class="deck-item">
-          <span>${escapeHtml(card.name || "")}</span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-index="${index}">Remove</button>
+          <span>${escapeHtml(entry.card.name || "")} <strong>${entry.count}/${getCardCopyLimit(entry.card)}</strong></span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-index="${entry.firstIndex}">Remove 1</button>
         </li>
       `).join("")
       : `<li class="deck-empty">No main deck cards yet.</li>`;
 
-    ui.fusionDeckList.innerHTML = deckState.fusion.length
-      ? deckState.fusion.map((card, index) => `
+    ui.fusionDeckList.innerHTML = fusionSummary.length
+      ? fusionSummary.map((entry) => `
         <li class="deck-item">
-          <span>${escapeHtml(card.name || "")}</span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-index="${index}">Remove</button>
+          <span>${escapeHtml(entry.card.name || "")} <strong>${entry.count}/${getCardCopyLimit(entry.card)}</strong></span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-index="${entry.firstIndex}">Remove 1</button>
         </li>
       `).join("")
       : `<li class="deck-empty">No fusion cards yet.</li>`;
@@ -649,6 +714,7 @@ function ensureEnhancementUI() {
       </select>
     </label>
     <button type="button" id="clearFiltersBtn" class="mini-btn">Clear Filters</button>
+    <button type="button" id="scrollDeckBtn" class="mini-btn">Deck Builder</button>
     <button type="button" id="loadMoreBtn" class="mini-btn">Load More</button>
   `;
 
@@ -689,9 +755,14 @@ function ensureEnhancementUI() {
   `;
   cardGrid.parentElement.appendChild(deckPanel);
 
+  if (cardGrid) {
+    cardGrid.style.gridTemplateColumns = "repeat(7, minmax(0, 1fr))";
+  }
+
   return {
     sortSelect: toolbar.querySelector("#sortSelect"),
     clearButton: toolbar.querySelector("#clearFiltersBtn"),
+    scrollDeckButton: toolbar.querySelector("#scrollDeckBtn"),
     loadMoreButton: toolbar.querySelector("#loadMoreBtn"),
     hoverPreview,
     toastEl,
@@ -739,7 +810,7 @@ function injectEnhancementStyles() {
     .deck-controls{display:flex;gap:10px;margin-bottom:14px}
     .deck-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .deck-list{list-style:none;padding:0;margin:0;max-height:320px;overflow:auto;border:1px solid #2c2c2c;border-radius:12px;background:#0c0c0c}
-    .deck-item,.deck-empty{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid #1f1f1f}
+    .deck-item,.deck-empty{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid #1f1f1f;gap:12px}
     .deck-item:last-child,.deck-empty:last-child{border-bottom:none}
     .modal-rules-wrap{display:flex;flex-direction:column;gap:10px}
     .modal-keywords{display:flex;gap:6px;flex-wrap:wrap}
@@ -752,7 +823,10 @@ function injectEnhancementStyles() {
     .archetype-tag{background:#344e41}
     .attr-fire{background:#c1121f}.attr-water{background:#0077b6}.attr-earth{background:#6b705c}.attr-wind{background:#2a9d8f}.attr-light{background:#e9c46a;color:#111}.attr-dark{background:#3c096c}.attr-neutral{background:#6c757d}.attr-none{background:#495057}
     .type-creature{background:#7f5539}.type-fusion{background:#5a189a}.type-spell{background:#1d3557}.type-trap{background:#9d4edd}.type-unknown{background:#444}
-    @media (max-width: 900px){.deck-columns{grid-template-columns:1fr}.hover-preview{display:none}}
+    .deck-item strong{margin-left:8px;color:#8ecae6}
+    @media (max-width: 1400px){#cardGrid{grid-template-columns:repeat(6, minmax(0, 1fr)) !important}}
+    @media (max-width: 1200px){#cardGrid{grid-template-columns:repeat(5, minmax(0, 1fr)) !important}}
+    @media (max-width: 900px){.deck-columns{grid-template-columns:1fr}.hover-preview{display:none}#cardGrid{grid-template-columns:repeat(3, minmax(0, 1fr)) !important}}
   `;
   document.head.appendChild(style);
 }
