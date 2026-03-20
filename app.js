@@ -46,10 +46,10 @@ function cleanRulesText(rulesText) {
   if (!rulesText) return "";
 
   return String(rulesText)
-    .replace(/\bHand;\s*/gi, "")
-    .replace(/\bPlay;\s*/gi, "")
-    .replace(/\bFusion;\s*/gi, "")
-    .replace(/\bSpecialSummon;\s*/gi, "")
+    .replace(/^Hand;\s*/i, "")
+    .replace(/^Play;\s*/i, "")
+    .replace(/^Fusion;\s*/i, "")
+    .replace(/^SpecialSummon;\s*/i, "")
     .trim();
 }
 
