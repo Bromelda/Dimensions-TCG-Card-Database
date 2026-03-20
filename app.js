@@ -323,10 +323,14 @@ function renderCards(cards) {
       openModal(card);
     });
 
-    div.querySelector(".add-deck-btn").addEventListener("click", (e) => {
-      e.stopPropagation();
-      addCardToDeck(card);
-    });
+    const addDeckBtn = div.querySelector(".add-deck-btn");
+    if (addDeckBtn) {
+      addDeckBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        addCardToDeck(card);
+      });
+    }
 
     div.addEventListener("click", () => openModal(card));
     div.addEventListener("mouseenter", (e) => showHoverPreview(card, e));
@@ -366,7 +370,11 @@ function openModal(card) {
 
   const addBtn = modalRules.querySelector(".modal-add-deck-btn");
   if (addBtn) {
-    addBtn.addEventListener("click", () => addCardToDeck(card));
+    addBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      addCardToDeck(card);
+    });
   }
 
   decorateModalLabels(card);
@@ -467,96 +475,126 @@ function hideHoverPreview() {
 }
 
 function addCardToDeck(card) {
-  if (isFusionCard(card)) {
-    if (deckState.fusion.length >= 10) {
-      toast("Fusion deck is full (max 10)");
+  try {
+    if (!card) return;
+
+    if (isFusionCard(card)) {
+      if (deckState.fusion.length >= 10) {
+        toast("Fusion deck is full (max 10)");
+        return;
+      }
+
+      deckState.fusion.push(card);
+      saveDeck();
+      renderDeck();
+      toast(`${card.name || "Card"} added to Fusion Deck`);
       return;
     }
-    deckState.fusion.push(card);
+
+    if (deckState.main.length >= 80) {
+      toast("Main deck is full (max 80)");
+      return;
+    }
+
+    deckState.main.push(card);
     saveDeck();
     renderDeck();
-    toast(`${card.name} added to Fusion Deck`);
-    return;
+    toast(`${card.name || "Card"} added to Main Deck`);
+  } catch (error) {
+    console.error("addCardToDeck failed:", error);
+    alert(`Add to Deck failed: ${error.message}`);
   }
-
-  if (deckState.main.length >= 80) {
-    toast("Main deck is full (max 80)");
-    return;
-  }
-
-  deckState.main.push(card);
-  saveDeck();
-  renderDeck();
-  toast(`${card.name} added to Main Deck`);
 }
 
 function removeCardFromDeck(index, section) {
-  if (section === "fusion") {
-    deckState.fusion.splice(index, 1);
-  } else {
-    deckState.main.splice(index, 1);
-  }
+  try {
+    if (section === "fusion") {
+      deckState.fusion.splice(index, 1);
+    } else {
+      deckState.main.splice(index, 1);
+    }
 
-  saveDeck();
-  renderDeck();
+    saveDeck();
+    renderDeck();
+  } catch (error) {
+    console.error("removeCardFromDeck failed:", error);
+    alert(`Remove failed: ${error.message}`);
+  }
 }
 
 function clearDeck() {
-  deckState.main = [];
-  deckState.fusion = [];
-  saveDeck();
-  renderDeck();
-  toast("Deck cleared");
+  try {
+    deckState.main = [];
+    deckState.fusion = [];
+    saveDeck();
+    renderDeck();
+    toast("Deck cleared");
+  } catch (error) {
+    console.error("clearDeck failed:", error);
+    alert(`Clear deck failed: ${error.message}`);
+  }
 }
 
 function renderDeck() {
-  const mainCount = deckState.main.length;
-  const fusionCount = deckState.fusion.length;
+  try {
+    if (!ui || !ui.mainDeckCount || !ui.fusionDeckCount || !ui.mainDeckList || !ui.fusionDeckList || !ui.deckStatus || !ui.deckPanel) {
+      console.error("Deck UI is missing");
+      return;
+    }
 
-  ui.mainDeckCount.textContent = `${mainCount}/80`;
-  ui.fusionDeckCount.textContent = `${fusionCount}/10`;
+    const mainCount = deckState.main.length;
+    const fusionCount = deckState.fusion.length;
 
-  let status = "Main Deck needs at least 60 cards.";
-  if (mainCount >= 60 && mainCount <= 80) {
-    status = "Main Deck size is valid.";
-  }
-  if (mainCount > 80) {
-    status = "Main Deck exceeds 80 cards.";
-  }
-  if (fusionCount > 10) {
-    status = "Fusion Deck exceeds 10 cards.";
-  }
+    ui.mainDeckCount.textContent = `${mainCount}/80`;
+    ui.fusionDeckCount.textContent = `${fusionCount}/10`;
 
-  ui.deckStatus.textContent = status;
-  ui.deckStatus.className = `deck-status ${mainCount >= 60 && mainCount <= 80 && fusionCount <= 10 ? "valid" : "warning"}`;
+    let status = "Main Deck needs at least 60 cards.";
+    if (mainCount >= 60 && mainCount <= 80 && fusionCount <= 10) {
+      status = "Deck is valid.";
+    } else if (mainCount > 80) {
+      status = "Main Deck exceeds 80 cards.";
+    } else if (fusionCount > 10) {
+      status = "Fusion Deck exceeds 10 cards.";
+    }
 
-  ui.mainDeckList.innerHTML = deckState.main.length
-    ? deckState.main.map((card, index) => `
-      <li class="deck-item">
-        <span>${escapeHtml(card.name || "")}</span>
-        <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-index="${index}">Remove</button>
-      </li>
-    `).join("")
-    : `<li class="deck-empty">No main deck cards yet.</li>`;
+    ui.deckStatus.textContent = status;
+    ui.deckStatus.className = `deck-status ${mainCount >= 60 && mainCount <= 80 && fusionCount <= 10 ? "valid" : "warning"}`;
 
-  ui.fusionDeckList.innerHTML = deckState.fusion.length
-    ? deckState.fusion.map((card, index) => `
-      <li class="deck-item">
-        <span>${escapeHtml(card.name || "")}</span>
-        <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-index="${index}">Remove</button>
-      </li>
-    `).join("")
-    : `<li class="deck-empty">No fusion cards yet.</li>`;
+    ui.mainDeckList.innerHTML = deckState.main.length
+      ? deckState.main.map((card, index) => `
+        <li class="deck-item">
+          <span>${escapeHtml(card.name || "")}</span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-index="${index}">Remove</button>
+        </li>
+      `).join("")
+      : `<li class="deck-empty">No main deck cards yet.</li>`;
 
-  ui.deckPanel.querySelectorAll(".remove-deck-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      removeCardFromDeck(Number(btn.dataset.index), btn.dataset.section);
+    ui.fusionDeckList.innerHTML = deckState.fusion.length
+      ? deckState.fusion.map((card, index) => `
+        <li class="deck-item">
+          <span>${escapeHtml(card.name || "")}</span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-index="${index}">Remove</button>
+        </li>
+      `).join("")
+      : `<li class="deck-empty">No fusion cards yet.</li>`;
+
+    ui.deckPanel.querySelectorAll(".remove-deck-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        removeCardFromDeck(Number(btn.dataset.index), btn.dataset.section);
+      });
     });
-  });
+  } catch (error) {
+    console.error("renderDeck failed:", error);
+    alert(`Render deck failed: ${error.message}`);
+  }
 }
 
 function saveDeck() {
-  localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(deckState));
+  try {
+    localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(deckState));
+  } catch (error) {
+    console.warn("Could not save deck to localStorage:", error);
+  }
 }
 
 function loadDeck() {
@@ -568,7 +606,8 @@ function loadDeck() {
       main: Array.isArray(parsed.main) ? parsed.main : [],
       fusion: Array.isArray(parsed.fusion) ? parsed.fusion : []
     };
-  } catch {
+  } catch (error) {
+    console.warn("Could not load deck from localStorage:", error);
     return { main: [], fusion: [] };
   }
 }
