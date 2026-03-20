@@ -15,6 +15,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .topbar h1 {
@@ -57,11 +58,12 @@ main {
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover {
   transform: scale(1.02);
+  border-color: #555;
 }
 
 .card img {
@@ -98,11 +100,12 @@ main {
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  z-index: 100;
 }
 
 .hidden {
@@ -119,11 +122,17 @@ main {
   gap: 20px;
   padding: 20px;
   position: relative;
+  border: 1px solid #333;
 }
 
 .modal-content img {
   width: 100%;
   border-radius: 10px;
+  background: #222;
+}
+
+.modal-info h2 {
+  margin-top: 0;
 }
 
 .modal-info pre {
@@ -131,6 +140,7 @@ main {
   background: #111;
   padding: 12px;
   border-radius: 8px;
+  border: 1px solid #2d2d2d;
 }
 
 .close-btn {
@@ -143,4 +153,18 @@ main {
   padding: 8px 12px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #444;
+}
+
+@media (max-width: 800px) {
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 280px;
+  }
 }
