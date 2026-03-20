@@ -16,21 +16,29 @@ const modalMana = document.getElementById("modalMana");
 const modalAttribute = document.getElementById("modalAttribute");
 const modalArchetype = document.getElementById("modalArchetype");
 const modalType = document.getElementById("modalType");
+const modalStats = document.getElementById("modalStats");
 const modalRules = document.getElementById("modalRules");
 
 fetch("./data/cards.json")
-  .then(response => response.json())
-  .then(cards => {
+  .then((response) => response.json())
+  .then((cards) => {
     allCards = cards;
     buildFilters(cards);
     renderCards(cards);
+  })
+  .catch((error) => {
+    console.error("Failed to load cards.json", error);
+    resultsCount.textContent = "Failed to load card database.";
   });
 
 function buildFilters(cards) {
-  const manaValues = [...new Set(cards.map(c => c.manaCost))].sort((a, b) => a - b);
-  const attributes = [...new Set(cards.map(c => c.attribute).filter(Boolean))].sort();
-  const archetypes = [...new Set(cards.map(c => c.archetype).filter(Boolean))].sort();
-  const types = [...new Set(cards.map(c => c.cardType).filter(Boolean))].sort();
+  const manaValues = [...new Set(cards.map((c) => c.manaCost))]
+    .filter((v) => v !== null && v !== undefined && v !== "")
+    .sort((a, b) => a - b);
+
+  const attributes = [...new Set(cards.map((c) => c.attribute).filter(Boolean))].sort();
+  const archetypes = [...new Set(cards.map((c) => c.archetype).filter(Boolean))].sort();
+  const types = [...new Set(cards.map((c) => c.cardType).filter(Boolean))].sort();
 
   for (const mana of manaValues) {
     const option = document.createElement("option");
@@ -68,12 +76,14 @@ function getFilteredCards() {
   const archetype = archetypeFilter.value;
   const type = typeFilter.value;
 
-  return allCards.filter(card => {
+  return allCards.filter((card) => {
     const matchesSearch =
       !search ||
-      card.name.toLowerCase().includes(search) ||
+      (card.name || "").toLowerCase().includes(search) ||
       (card.rulesText || "").toLowerCase().includes(search) ||
-      (card.archetype || "").toLowerCase().includes(search);
+      (card.archetype || "").toLowerCase().includes(search) ||
+      (card.attribute || "").toLowerCase().includes(search) ||
+      (card.cardType || "").toLowerCase().includes(search);
 
     const matchesMana = !mana || String(card.manaCost) === mana;
     const matchesAttribute = !attribute || card.attribute === attribute;
@@ -84,6 +94,10 @@ function getFilteredCards() {
   });
 }
 
+function isStatsCard(card) {
+  return card.cardType === "Creature" || card.cardType === "Fusion";
+}
+
 function renderCards(cards) {
   cardGrid.innerHTML = "";
   resultsCount.textContent = `${cards.length} card(s) found`;
@@ -91,15 +105,17 @@ function renderCards(cards) {
   for (const card of cards) {
     const div = document.createElement("div");
     div.className = "card";
+
     div.innerHTML = `
-      <img src="${card.image}" alt="${card.name}">
+      <img src="${card.image}" alt="${escapeHtml(card.name || "")}" loading="lazy">
       <div class="card-body">
-        <h3>${card.name}</h3>
+        <h3>${escapeHtml(card.name || "")}</h3>
         <div class="tags">
-          <span class="tag">Mana ${card.manaCost}</span>
-          <span class="tag">${card.attribute || "None"}</span>
-          <span class="tag">${card.archetype || "None"}</span>
-          <span class="tag">${card.cardType}</span>
+          <span class="tag">Mana ${card.manaCost ?? 0}</span>
+          <span class="tag">${escapeHtml(card.attribute || "None")}</span>
+          <span class="tag">${escapeHtml(card.archetype || "None")}</span>
+          <span class="tag">${escapeHtml(card.cardType || "Unknown")}</span>
+          ${isStatsCard(card) ? `<span class="tag">ATK ${card.atk ?? 0} / DEF ${card.def ?? 0}</span>` : ""}
         </div>
       </div>
     `;
@@ -110,13 +126,14 @@ function renderCards(cards) {
 }
 
 function openModal(card) {
-  modalImage.src = card.image;
-  modalImage.alt = card.name;
-  modalName.textContent = card.name;
-  modalMana.textContent = card.manaCost;
+  modalImage.src = card.image || "";
+  modalImage.alt = card.name || "";
+  modalName.textContent = card.name || "";
+  modalMana.textContent = card.manaCost ?? 0;
   modalAttribute.textContent = card.attribute || "None";
   modalArchetype.textContent = card.archetype || "None";
-  modalType.textContent = card.cardType;
+  modalType.textContent = card.cardType || "Unknown";
+  modalStats.textContent = isStatsCard(card) ? `${card.atk ?? 0} / ${card.def ?? 0}` : "-";
   modalRules.textContent = card.rulesText || "";
   cardModal.classList.remove("hidden");
 }
@@ -131,7 +148,22 @@ cardModal.addEventListener("click", (e) => {
   }
 });
 
-[searchInput, manaFilter, attributeFilter, archetypeFilter, typeFilter].forEach(el => {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    cardModal.classList.add("hidden");
+  }
+});
+
+[searchInput, manaFilter, attributeFilter, archetypeFilter, typeFilter].forEach((el) => {
   el.addEventListener("input", () => renderCards(getFilteredCards()));
   el.addEventListener("change", () => renderCards(getFilteredCards()));
 });
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
