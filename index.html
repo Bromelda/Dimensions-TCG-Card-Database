@@ -8,10 +8,16 @@
 </head>
 <body>
   <header class="topbar">
-    <h1>Card Database</h1>
+    <div class="topbar-row">
+      <div>
+        <h1>Card Database</h1>
+        <p class="subtitle">Browse cards, build decks, and compare effects fast.</p>
+      </div>
+      <button id="toggleDeckBtn" class="secondary-btn" type="button">Deck Builder</button>
+    </div>
 
     <div class="filters">
-      <input id="searchInput" type="text" placeholder="Search cards..." />
+      <input id="searchInput" type="text" placeholder="Search cards... (try: mana:3 attribute:fire dragon atk>=2000)" />
 
       <select id="manaFilter">
         <option value="">Any Mana</option>
@@ -28,31 +34,120 @@
       <select id="typeFilter">
         <option value="">Any Type</option>
       </select>
+
+      <select id="sortSelect">
+        <option value="name-asc">Sort: Name A-Z</option>
+        <option value="name-desc">Sort: Name Z-A</option>
+        <option value="mana-asc">Sort: Mana Low-High</option>
+        <option value="mana-desc">Sort: Mana High-Low</option>
+        <option value="atk-desc">Sort: Highest ATK</option>
+        <option value="def-desc">Sort: Highest DEF</option>
+        <option value="attribute-asc">Sort: Attribute</option>
+        <option value="type-asc">Sort: Type</option>
+      </select>
+
+      <button id="clearFiltersBtn" class="secondary-btn" type="button">Clear Filters</button>
     </div>
   </header>
 
-  <main>
-    <div id="resultsCount" class="results-count"></div>
-    <div id="cardGrid" class="card-grid"></div>
+  <main class="page-layout">
+    <section class="content-area">
+      <div class="toolbar-row">
+        <div id="resultsCount" class="results-count">Loading cards...</div>
+        <button id="loadMoreBtn" class="secondary-btn hidden" type="button">Load More</button>
+      </div>
+      <div id="emptyState" class="empty-state hidden">No cards matched your search.</div>
+      <div id="cardGrid" class="card-grid"></div>
+    </section>
+
+    <aside id="deckPanel" class="deck-panel hidden">
+      <div class="deck-panel-header">
+        <div>
+          <h2>Deck Builder</h2>
+          <p id="deckStatus" class="deck-status">Main: 0/60-80 · Fusion: 0/10</p>
+        </div>
+        <button id="closeDeckBtn" class="close-btn small-close" type="button">X</button>
+      </div>
+
+      <div class="deck-summary-grid">
+        <div class="summary-card">
+          <span>Main Deck</span>
+          <strong id="mainDeckCount">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Fusion Deck</span>
+          <strong id="fusionDeckCount">0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Avg Mana</span>
+          <strong id="avgManaValue">0.0</strong>
+        </div>
+      </div>
+
+      <div id="deckWarning" class="deck-warning"></div>
+
+      <div class="deck-actions">
+        <button id="clearDeckBtn" class="danger-btn" type="button">Clear Deck</button>
+      </div>
+
+      <div class="deck-columns">
+        <section>
+          <div class="section-heading">Main Deck</div>
+          <div id="mainDeckList" class="deck-list"></div>
+        </section>
+        <section>
+          <div class="section-heading">Fusion Deck</div>
+          <div id="fusionDeckList" class="deck-list"></div>
+        </section>
+      </div>
+    </aside>
   </main>
+
+  <div id="cardPreview" class="card-preview hidden"></div>
+  <div id="toast" class="toast hidden"></div>
 
   <div id="cardModal" class="modal hidden">
     <div class="modal-content">
       <button id="closeModal" class="close-btn" type="button">X</button>
       <img id="modalImage" src="" alt="" />
       <div class="modal-info">
-        <h2 id="modalName"></h2>
-        <p><strong>Mana:</strong> <span id="modalMana"></span></p>
-        <p><strong>Attribute:</strong> <span id="modalAttribute"></span></p>
-        <p><strong>Archetype:</strong> <span id="modalArchetype"></span></p>
-        <p><strong>Type:</strong> <span id="modalType"></span></p>
-        <p><strong>ATK / DEF:</strong> <span id="modalStats"></span></p>
-        <p><strong>Rules:</strong></p>
+        <div class="modal-header-row">
+          <div>
+            <h2 id="modalName"></h2>
+            <div id="modalKeywordBadges" class="keyword-row"></div>
+          </div>
+          <button id="modalAddDeckBtn" class="primary-btn" type="button">Add to Deck</button>
+        </div>
+
+        <div class="details-grid">
+          <div class="detail-card">
+            <span>Mana</span>
+            <strong id="modalMana"></strong>
+          </div>
+          <div class="detail-card">
+            <span>Attribute</span>
+            <strong id="modalAttribute"></strong>
+          </div>
+          <div class="detail-card">
+            <span>Archetype</span>
+            <strong id="modalArchetype"></strong>
+          </div>
+          <div class="detail-card">
+            <span>Type</span>
+            <strong id="modalType"></strong>
+          </div>
+          <div class="detail-card detail-card-wide">
+            <span>ATK / DEF</span>
+            <strong id="modalStats"></strong>
+          </div>
+        </div>
+
+        <div class="section-heading">Rules</div>
         <pre id="modalRules"></pre>
       </div>
     </div>
   </div>
 
-  <script src="app.js?v=2"></script>
+  <script src="app.js"></script>
 </body>
 </html>
