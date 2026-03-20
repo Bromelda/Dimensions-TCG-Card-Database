@@ -20,15 +20,26 @@ const modalStats = document.getElementById("modalStats");
 const modalRules = document.getElementById("modalRules");
 
 fetch("./data/cards.json")
-  .then((response) => response.json())
-  .then((cards) => {
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status} loading cards.json`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const cards = Array.isArray(data) ? data : (data.Items || []);
+
+    if (!Array.isArray(cards)) {
+      throw new Error("cards.json did not contain an array or Items array");
+    }
+
     allCards = cards;
     buildFilters(cards);
     renderCards(cards);
   })
   .catch((error) => {
-    console.error("Failed to load cards.json", error);
-    resultsCount.textContent = "Failed to load card database.";
+    console.error("Failed to load card database:", error);
+    resultsCount.textContent = `Failed to load card database: ${error.message}`;
   });
 
 function buildFilters(cards) {
@@ -39,6 +50,11 @@ function buildFilters(cards) {
   const attributes = [...new Set(cards.map((c) => c.attribute).filter(Boolean))].sort();
   const archetypes = [...new Set(cards.map((c) => c.archetype).filter(Boolean))].sort();
   const types = [...new Set(cards.map((c) => c.cardType).filter(Boolean))].sort();
+
+  manaFilter.innerHTML = `<option value="">Any Mana</option>`;
+  attributeFilter.innerHTML = `<option value="">Any Attribute</option>`;
+  archetypeFilter.innerHTML = `<option value="">Any Archetype</option>`;
+  typeFilter.innerHTML = `<option value="">Any Type</option>`;
 
   for (const mana of manaValues) {
     const option = document.createElement("option");
