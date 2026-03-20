@@ -42,6 +42,17 @@ fetch("./data/cards.json")
     resultsCount.textContent = `Failed to load card database: ${error.message}`;
   });
 
+function cleanRulesText(rulesText) {
+  if (!rulesText) return "";
+
+  return String(rulesText)
+    .replace(/\bHand;\s*/gi, "")
+    .replace(/\bPlay;\s*/gi, "")
+    .replace(/\bFusion;\s*/gi, "")
+    .replace(/\bSpecialSummon;\s*/gi, "")
+    .trim();
+}
+
 function buildFilters(cards) {
   const manaValues = [...new Set(cards.map((c) => c.manaCost))]
     .filter((v) => v !== null && v !== undefined && v !== "")
@@ -93,10 +104,12 @@ function getFilteredCards() {
   const type = typeFilter.value;
 
   return allCards.filter((card) => {
+    const cleanedRules = cleanRulesText(card.rulesText || "").toLowerCase();
+
     const matchesSearch =
       !search ||
       (card.name || "").toLowerCase().includes(search) ||
-      (card.rulesText || "").toLowerCase().includes(search) ||
+      cleanedRules.includes(search) ||
       (card.archetype || "").toLowerCase().includes(search) ||
       (card.attribute || "").toLowerCase().includes(search) ||
       (card.cardType || "").toLowerCase().includes(search);
@@ -150,7 +163,7 @@ function openModal(card) {
   modalArchetype.textContent = card.archetype || "None";
   modalType.textContent = card.cardType || "Unknown";
   modalStats.textContent = isStatsCard(card) ? `${card.atk ?? 0} / ${card.def ?? 0}` : "-";
-  modalRules.textContent = card.rulesText || "";
+  modalRules.textContent = cleanRulesText(card.rulesText || "");
   cardModal.classList.remove("hidden");
 }
 
