@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Database</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Card Database</h1>
+
+    <div class="filters">
+      <input id="searchInput" type="text" placeholder="Search cards..." />
+
+      <select id="manaFilter">
+        <option value="">Any Mana</option>
+      </select>
+
+      <select id="attributeFilter">
+        <option value="">Any Attribute</option>
+      </select>
+
+      <select id="archetypeFilter">
+        <option value="">Any Archetype</option>
+      </select>
+
+      <select id="typeFilter">
+        <option value="">Any Type</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <div id="resultsCount" class="results-count"></div>
+    <div id="cardGrid" class="card-grid"></div>
+  </main>
+
+  <div id="cardModal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close-btn">X</button>
+      <img id="modalImage" src="" alt="" />
+      <div class="modal-info">
+        <h2 id="modalName"></h2>
+        <p><strong>Mana:</strong> <span id="modalMana"></span></p>
+        <p><strong>Attribute:</strong> <span id="modalAttribute"></span></p>
+        <p><strong>Archetype:</strong> <span id="modalArchetype"></span></p>
+        <p><strong>Type:</strong> <span id="modalType"></span></p>
+        <p><strong>Rules:</strong></p>
+        <pre id="modalRules"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
