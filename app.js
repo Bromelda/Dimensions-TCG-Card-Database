@@ -67,6 +67,13 @@ const emptyState = document.getElementById("emptyState");
 const sortSelect = document.getElementById("sortSelect");
 const deckStatsSummary = document.getElementById("deckStatsSummary");
 const deckStatsWarnings = document.getElementById("deckStatsWarnings");
+const fusionSuggestions = document.getElementById("fusionSuggestions");
+const deckCollapseBtn = document.getElementById("deckCollapseBtn");
+const copyDeckCodeBtn = document.getElementById("copyDeckCodeBtn");
+const importDeckCodeBtn = document.getElementById("importDeckCodeBtn");
+const copyDeckLinkBtn = document.getElementById("copyDeckLinkBtn");
+
+let searchIndex = null;
 
 const cardPreview = document.getElementById("cardPreview");
 const toastEl = document.getElementById("toast");
@@ -104,6 +111,7 @@ fetch("./data/cards.json")
     }
 
     allCards = cards.map(normalizeCardData);
+    buildSearchIndex(allCards);
     buildFilters(allCards);
     hydrateDeckLibraryAgainstCardPool();
     applyUiState();
@@ -245,7 +253,8 @@ function getFilteredCards() {
   const deckMode = deckViewFilter.value;
   const hideFull = hideFullToggle.checked;
 
-  let cards = allCards.filter((card) => {
+  const candidateCards = getSearchCandidates(search);
+  let cards = candidateCards.filter((card) => {
     const matchesSearch = matchesAdvancedSearch(card, {
       raw: search,
       cleanedRules: card.cleanedRules,
@@ -275,6 +284,47 @@ function getFilteredCards() {
   cards = sortCards(cards, sortMode);
 
   return cards;
+}
+
+function buildSearchIndex(cards) {
+  const tokenMap = new Map();
+  for (const card of cards) {
+    const tokens = tokenizeSearchText(card.searchBlob || "");
+    for (const token of tokens) {
+      if (!tokenMap.has(token)) tokenMap.set(token, new Set());
+      tokenMap.get(token).add(card.cardId);
+    }
+  }
+  searchIndex = { tokenMap, cardsById: new Map(cards.map((card) => [card.cardId, card])) };
+}
+
+function getSearchCandidates(search) {
+  if (!searchIndex || !search) return allCards;
+  const tokens = (search.match(/(?:[^\s"]+|"[^"]*")+/g) || [])
+    .map((token) => token.trim())
+    .filter((token) => token && !isFieldToken(token))
+    .map((token) => stripQuotes(token).toLowerCase())
+    .filter(Boolean);
+
+  if (!tokens.length) return allCards;
+
+  let candidateIds = null;
+  for (const token of tokens) {
+    const tokenSet = searchIndex.tokenMap.get(token);
+    if (!tokenSet) return [];
+    if (candidateIds === null) {
+      candidateIds = new Set(tokenSet);
+      continue;
+    }
+    candidateIds = new Set([...candidateIds].filter((id) => tokenSet.has(id)));
+    if (!candidateIds.size) return [];
+  }
+
+  return [...candidateIds].map((id) => searchIndex.cardsById.get(id)).filter(Boolean);
+}
+
+function tokenizeSearchText(value) {
+  return [...new Set(String(value || "").toLowerCase().match(/[a-z0-9]+/g) || [])];
 }
 
 function matchesAdvancedSearch(card, context) {
@@ -666,6 +716,12 @@ exportDeckBtn.addEventListener("click", () => exportDeck("json"));
 exportDeckTxtBtn.addEventListener("click", () => exportDeck("txt"));
 importDeckBtn.addEventListener("click", () => importDeckInput.click());
 importDeckInput.addEventListener("change", handleImportDeck);
+if (copyDeckCodeBtn) copyDeckCodeBtn.addEventListener("click", copyCurrentDeckCode);
+if (importDeckCodeBtn) importDeckCodeBtn.addEventListener("click", promptImportDeckCode);
+if (copyDeckLinkBtn) copyDeckLinkBtn.addEventListener("click", copyCurrentDeckLink);
+if (deckCollapseBtn) {
+  deckCollapseBtn.addEventListener("click", toggleDeckCollapse);
+}
 duplicateDeckBtn.addEventListener("click", duplicateCurrentDeck);
 renameDeckBtn.addEventListener("click", renameCurrentDeck);
 deleteDeckBtn.addEventListener("click", deleteCurrentDeck);
@@ -913,13 +969,21 @@ function renderDeckStats() {
   const attrCounts = countBy(deckState.main, (card) => card.attribute);
   const archeCounts = countBy(deckState.main, (card) => card.archetype);
   const warnings = [];
+  const suggestions = getFusionSuggestions();
 
-  const fusionNames = new Set(deckState.fusion.map((card) => String(card.name || "").toLowerCase()));
   for (const fusionCard of deckState.fusion) {
-    const hint = getFusionHint(fusionCard).toLowerCase();
-    const possibleMatches = deckState.main.filter((card) => hint.includes(String(card.name || "").toLowerCase()));
-    if (!possibleMatches.length && hint) {
-      warnings.push(`${fusionCard.name}: materials may be missing from Main Deck.`);
+    const required = parseFusionMaterials(fusionCard);
+    if (!required.length) continue;
+    const mainCounts = countDeckNames(deckState.main);
+    const missing = [];
+    for (const requirement of required) {
+      const owned = mainCounts.get(requirement.name.toLowerCase()) || 0;
+      if (owned < requirement.count) {
+        missing.push(`${requirement.name} (${owned}/${requirement.count})`);
+      }
+    }
+    if (missing.length) {
+      warnings.push(`${fusionCard.name}: missing ${missing.join(", ")}.`);
     }
   }
 
@@ -932,6 +996,88 @@ function renderDeckStats() {
   deckStatsWarnings.innerHTML = warnings.length
     ? warnings.map((item) => `<div>${escapeHtml(item)}</div>`).join("")
     : `<div>No fusion material warnings found.</div>`;
+
+  if (fusionSuggestions) {
+    fusionSuggestions.innerHTML = suggestions.length
+      ? suggestions.map((item) => `
+        <div class="suggestion-item">
+          <div class="suggestion-meta">
+            <strong>${escapeHtml(item.card.name || "Unknown Fusion")}</strong>
+            <small>${escapeHtml(item.status)}</small>
+          </div>
+          <button type="button" class="mini-btn fusion-suggest-btn" data-card-id="${escapeHtml(item.card.cardId)}">Add Fusion</button>
+        </div>
+      `).join("")
+      : `<div>No fusion suggestions yet.</div>`;
+
+    fusionSuggestions.querySelectorAll('.fusion-suggest-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const card = allCards.find((entry) => entry.cardId === btn.dataset.cardId);
+        if (card) {
+          addCardToDeck(card);
+          refreshView();
+        }
+      });
+    });
+  }
+}
+
+function countDeckNames(items) {
+  const map = new Map();
+  for (const card of items) {
+    const key = String(card?.name || '').toLowerCase();
+    map.set(key, (map.get(key) || 0) + 1);
+  }
+  return map;
+}
+
+function parseFusionMaterials(card) {
+  if (!isFusionCard(card)) return [];
+  const text = String(card.cleanedRules || card.rulesText || '');
+  let line = text.split(/[.!?]/)[0] || '';
+  line = line.replace(/^fusion(?:\s+cost)?\s*:\s*/i, '').trim();
+  if (!line) return [];
+
+  const parts = line.split(/\s*\+\s*/).map((part) => part.trim()).filter(Boolean);
+  const requirements = [];
+  for (let part of parts) {
+    part = part.replace(/^\d+\s+different\s+/i, '');
+    const exact = part.match(/^(\d+)\s+(.+)$/i);
+    const count = exact ? Number(exact[1]) : 1;
+    const rawName = exact ? exact[2] : part;
+    const name = tidySpaces(rawName.replace(/(card|creature|monster|monsters)/gi, ''));
+    if (!name || /^(fire|water|wind|earth|light|dark|neutral)$/i.test(name)) continue;
+    if (/^(different|listed cards|summon by using|cannot be summoned)/i.test(name)) continue;
+    requirements.push({ name, count });
+  }
+  return requirements;
+}
+
+function getFusionSuggestions() {
+  const mainCounts = countDeckNames(deckState.main);
+  const ownedFusion = new Set(deckState.fusion.map((card) => String(card.name || '').toLowerCase()));
+  return allCards
+    .filter((card) => isFusionCard(card) && !ownedFusion.has(String(card.name || '').toLowerCase()))
+    .map((card) => {
+      const requirements = parseFusionMaterials(card);
+      if (!requirements.length) return null;
+      let matched = 0;
+      const missing = [];
+      for (const requirement of requirements) {
+        const owned = mainCounts.get(requirement.name.toLowerCase()) || 0;
+        if (owned >= requirement.count) matched += 1;
+        else missing.push(`${requirement.name} (${owned}/${requirement.count})`);
+      }
+      if (!matched) return null;
+      return {
+        card,
+        score: matched / requirements.length,
+        status: missing.length ? `Missing: ${missing.join(', ')}` : 'All listed materials found in Main Deck'
+      };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score || String(a.card.name || '').localeCompare(String(b.card.name || '')))
+    .slice(0, 6);
 }
 
 function countBy(items, getter) {
@@ -1169,6 +1315,108 @@ function downloadFile(filename, content, mimeType) {
   setTimeout(() => URL.revokeObjectURL(url), 0);
 }
 
+function generateDeckCode(deck) {
+  const compact = {
+    name: deck.name || 'Shared Deck',
+    main: summarizeDeckSection(deck.main).flatMap((entry) => Array(entry.count).fill(entry.card.name)),
+    fusion: summarizeDeckSection(deck.fusion).flatMap((entry) => Array(entry.count).fill(entry.card.name))
+  };
+  return btoa(unescape(encodeURIComponent(JSON.stringify(compact))));
+}
+
+function decodeDeckCode(code) {
+  const decoded = JSON.parse(decodeURIComponent(escape(atob(String(code || '').trim()))));
+  const nameMap = new Map(allCards.map((card) => [String(card.name || '').toLowerCase(), card]));
+  const deck = {
+    id: cryptoRandomId(),
+    name: tidySpaces(decoded.name) || 'Imported Deck',
+    main: Array.isArray(decoded.main) ? decoded.main.map((name) => nameMap.get(String(name || '').toLowerCase()) || normalizeCardData({ name })) : [],
+    fusion: Array.isArray(decoded.fusion) ? decoded.fusion.map((name) => nameMap.get(String(name || '').toLowerCase()) || normalizeCardData({ name, cardType: 'Fusion' })) : []
+  };
+  return sanitizeDeck(deck);
+}
+
+function loadDeckFromCode(code) {
+  const imported = decodeDeckCode(code);
+  appState.deckLibrary.decks.push(imported);
+  appState.activeDeckId = imported.id;
+  deckState = imported;
+  persistDeckState(`Imported ${imported.name}`);
+  refreshView();
+}
+
+function copyTextToClipboard(value, message) {
+  const text = String(value || '');
+  if (!text) return;
+  if (navigator.clipboard?.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(() => toast(message))
+      .catch(() => fallbackCopyText(text, message));
+    return;
+  }
+  fallbackCopyText(text, message);
+}
+
+function fallbackCopyText(value, message) {
+  const input = document.createElement('textarea');
+  input.value = value;
+  input.setAttribute('readonly', '');
+  input.style.position = 'absolute';
+  input.style.left = '-9999px';
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  input.remove();
+  toast(message);
+}
+
+function copyCurrentDeckCode() {
+  copyTextToClipboard(generateDeckCode(sanitizeDeck(deckState)), 'Deck code copied');
+}
+
+function promptImportDeckCode() {
+  const code = window.prompt('Paste deck code:');
+  if (!code) return;
+  try {
+    loadDeckFromCode(code);
+  } catch (error) {
+    console.error('Deck code import failed:', error);
+    toast(`Invalid deck code`);
+  }
+}
+
+function copyCurrentDeckLink() {
+  const url = new URL(window.location.href);
+  url.searchParams.set('deck', generateDeckCode(sanitizeDeck(deckState)));
+  copyTextToClipboard(url.toString(), 'Share link copied');
+}
+
+function maybeLoadDeckFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const deckCode = params.get('deck');
+  if (!deckCode) return;
+  try {
+    const imported = decodeDeckCode(deckCode);
+    const existing = appState.deckLibrary.decks.find((deck) => generateDeckCode(deck) === deckCode);
+    if (!existing) {
+      appState.deckLibrary.decks.push(imported);
+      appState.activeDeckId = imported.id;
+      deckState = imported;
+      saveDeckLibrary();
+      toast(`Loaded shared deck: ${imported.name}`);
+    }
+  } catch (error) {
+    console.warn('Could not load deck from URL:', error);
+  }
+}
+
+function toggleDeckCollapse() {
+  if (!deckPanel || !deckCollapseBtn) return;
+  const isCollapsed = deckPanel.classList.toggle('collapsed');
+  deckCollapseBtn.textContent = isCollapsed ? 'Expand' : 'Collapse';
+  deckCollapseBtn.setAttribute('aria-expanded', String(!isCollapsed));
+}
+
 function applyUiState() {
   const ui = appState.ui || {};
   searchInput.value = ui.search || "";
@@ -1181,6 +1429,7 @@ function applyUiState() {
   hideFullToggle.checked = Boolean(ui.hideFull);
   sortSelect.value = ui.sort || "name-asc";
   readUiFromUrl();
+  maybeLoadDeckFromUrl();
 }
 
 function saveUiState() {

@@ -15,7 +15,6 @@
       </div>
       <div class="topbar-actions">
         <button id="mobileFiltersToggle" class="secondary-btn mobile-only" type="button" aria-expanded="false">Filters</button>
-        <button id="toggleDeckBtn" class="secondary-btn" type="button">Deck Builder</button>
       </div>
     </div>
 
@@ -85,13 +84,15 @@
       <div id="cardGrid" class="card-grid"></div>
     </section>
 
-    <aside id="deckPanel" class="deck-panel hidden">
+    <aside id="deckPanel" class="deck-panel">
       <div class="deck-panel-header">
         <div>
           <h2>Deck Builder</h2>
           <p id="deckStatus" class="deck-status">Main: 0/60-80 · Fusion: 0/10</p>
         </div>
-        <button id="closeDeckBtn" class="close-btn small-close" type="button" aria-label="Close deck builder">X</button>
+        <div class="deck-header-actions">
+          <button id="deckCollapseBtn" class="secondary-btn mobile-only" type="button" aria-expanded="true" aria-label="Collapse deck builder">Collapse</button>
+        </div>
       </div>
 
       <div class="deck-manager">
@@ -130,6 +131,8 @@
         <div id="deckStatsSummary" class="deck-stats-summary">No stats yet.</div>
         <div class="section-heading sub-heading">Checks</div>
         <div id="deckStatsWarnings" class="deck-stats-warnings">No fusion material warnings found.</div>
+        <div class="section-heading sub-heading">Fusion Suggestions</div>
+        <div id="fusionSuggestions" class="deck-suggestions">No fusion suggestions yet.</div>
       </section>
 
       <div class="deck-actions wrap-actions">
@@ -137,6 +140,9 @@
         <button id="exportDeckBtn" class="secondary-btn" type="button">Export JSON</button>
         <button id="exportDeckTxtBtn" class="secondary-btn" type="button">Export TXT</button>
         <button id="importDeckBtn" class="secondary-btn" type="button">Import Deck</button>
+        <button id="copyDeckCodeBtn" class="secondary-btn" type="button">Copy Deck Code</button>
+        <button id="importDeckCodeBtn" class="secondary-btn" type="button">Import Code</button>
+        <button id="copyDeckLinkBtn" class="secondary-btn" type="button">Copy Share Link</button>
         <input id="importDeckInput" type="file" accept=".json,application/json" class="hidden" />
       </div>
 

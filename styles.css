@@ -40,6 +40,18 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   justify-content: space-between;
   gap: 12px;
 }
+.modal-header-row {
+  align-items: flex-start;
+  padding-right: 112px;
+}
+.modal-header-row > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+.modal-nav-row {
+  justify-content: flex-start;
+  flex: 0 0 auto;
+}
 .topbar h1, .deck-panel h2 { margin: 0; }
 .subtitle { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
 .filters-panel { margin-top: 16px; }
@@ -221,7 +233,6 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   .topbar-actions { align-items: stretch; }
   .filters { grid-template-columns: 1fr; gap: 8px; }
   .toolbar-row, .topbar-row { align-items: flex-start; flex-direction: column; }
-  #toggleDeckBtn { position: sticky; top: 74px; z-index: 15; }
   .deck-item { grid-template-columns: 1fr auto; }
   .deck-item .remove-deck-btn { grid-column: 1 / -1; }
 }
@@ -241,5 +252,49 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   .modal { padding: 12px; }
   .modal-content { padding: 16px; gap: 16px; }
   .modal-info h2 { font-size: 24px; }
+  .modal-header-row {
+    padding-right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .modal-nav-row { width: 100%; }
   .close-btn { padding: 7px 10px; }
+}
+
+
+.deck-header-actions { display: flex; align-items: center; gap: 8px; }
+.deck-suggestions { display: grid; gap: 8px; color: #e4e4e4; font-size: 14px; }
+.suggestion-item {
+  display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center;
+  padding: 10px; background: #202020; border: 1px solid #2d2d2d; border-radius: 10px;
+}
+.suggestion-meta { display: flex; flex-direction: column; gap: 4px; }
+.suggestion-meta small { color: var(--muted); }
+.deck-panel.collapsed .deck-manager,
+.deck-panel.collapsed .deck-summary-grid,
+.deck-panel.collapsed #deckWarning,
+.deck-panel.collapsed .deck-stats-box,
+.deck-panel.collapsed .wrap-actions,
+.deck-panel.collapsed .deck-columns { display: none; }
+.deck-panel.collapsed { overflow: hidden; }
+
+@media (max-width: 640px) {
+  .deck-panel {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    top: auto;
+    z-index: 40;
+    max-height: min(78dvh, 720px);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+  }
+    .deck-panel.collapsed { max-height: 82px; }
+  .deck-panel .deck-panel-header { position: sticky; top: 0; background: linear-gradient(180deg, #191919 0%, #141414 100%); z-index: 2; padding-bottom: 4px; }
+}
+
+@media (max-width: 480px) {
+  .deck-panel { left: 8px; right: 8px; bottom: 8px; padding: 14px; }
+  .suggestion-item { grid-template-columns: 1fr; }
 }
