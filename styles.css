@@ -462,13 +462,41 @@ select {
 }
 
 @media (max-width: 800px) {
-  .modal-content {
-    grid-template-columns: 1fr;
+  .topbar {
+    padding: 16px;
+  }
+
+  .page-layout {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .filters {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
   }
 
   .card img,
   .card-preview img {
-    height: 280px;
+    height: 220px;
+  }
+
+  .card-body h3 {
+    font-size: 16px;
+  }
+
+  .tag,
+  .keyword-badge {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .modal-content {
+    grid-template-columns: 1fr;
   }
 
   .details-grid,
@@ -486,5 +514,89 @@ select {
 
   .card-preview {
     display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 14px;
+  }
+
+  .topbar-row,
+  .toolbar-row,
+  .deck-panel-header,
+  .modal-header-row,
+  .deck-actions {
+    gap: 10px;
+  }
+
+  .page-layout {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .card-body h3 {
+    font-size: 14px;
+  }
+
+  .card-rules-preview {
+    font-size: 12px;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .card-actions button {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .details-grid,
+  .deck-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card-wide {
+    grid-column: span 1;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .modal-info h2 {
+    font-size: 24px;
+  }
+
+  .close-btn {
+    padding: 7px 10px;
   }
 }
