@@ -11,42 +11,67 @@
     <div class="topbar-row">
       <div>
         <h1>Card Database</h1>
-        <p class="subtitle">Browse cards, build decks, and compare effects fast.</p>
+        <p class="subtitle">Browse cards, build decks, compare effects, and save named decks.</p>
       </div>
-      <button id="toggleDeckBtn" class="secondary-btn" type="button">Deck Builder</button>
+      <div class="topbar-actions">
+        <button id="mobileFiltersToggle" class="secondary-btn mobile-only" type="button" aria-expanded="false">Filters</button>
+        <button id="toggleDeckBtn" class="secondary-btn" type="button">Deck Builder</button>
+      </div>
     </div>
 
-    <div class="filters">
-      <input id="searchInput" type="text" placeholder="Search cards... (try: mana:3 attribute:fire dragon atk>=2000)" />
+    <div id="filtersPanel" class="filters-panel">
+      <div class="filters">
+        <input id="searchInput" type="text" aria-label="Search cards" placeholder="Search cards... (try: text:&quot;draw 1&quot; deck:main copies>=1)" />
 
-      <select id="manaFilter">
-        <option value="">Any Mana</option>
-      </select>
+        <select id="manaFilter" aria-label="Filter by mana">
+          <option value="">Any Mana</option>
+        </select>
 
-      <select id="attributeFilter">
-        <option value="">Any Attribute</option>
-      </select>
+        <select id="attributeFilter" aria-label="Filter by attribute">
+          <option value="">Any Attribute</option>
+        </select>
 
-      <select id="archetypeFilter">
-        <option value="">Any Archetype</option>
-      </select>
+        <select id="archetypeFilter" aria-label="Filter by archetype">
+          <option value="">Any Archetype</option>
+        </select>
 
-      <select id="typeFilter">
-        <option value="">Any Type</option>
-      </select>
+        <select id="typeFilter" aria-label="Filter by type">
+          <option value="">Any Type</option>
+        </select>
 
-      <select id="sortSelect">
-        <option value="name-asc">Sort: Name A-Z</option>
-        <option value="name-desc">Sort: Name Z-A</option>
-        <option value="mana-asc">Sort: Mana Low-High</option>
-        <option value="mana-desc">Sort: Mana High-Low</option>
-        <option value="atk-desc">Sort: Highest ATK</option>
-        <option value="def-desc">Sort: Highest DEF</option>
-        <option value="attribute-asc">Sort: Attribute</option>
-        <option value="type-asc">Sort: Type</option>
-      </select>
+        <select id="fusionFilter" aria-label="Filter fusion cards">
+          <option value="">Any Section</option>
+          <option value="fusion">Fusion Only</option>
+          <option value="main">Main Deck Cards Only</option>
+        </select>
 
-      <button id="clearFiltersBtn" class="secondary-btn" type="button">Clear Filters</button>
+        <select id="deckViewFilter" aria-label="Filter by deck presence">
+          <option value="">Any Deck State</option>
+          <option value="in-deck">Show Only Cards In Deck</option>
+          <option value="not-in-deck">Show Only Cards Not In Deck</option>
+          <option value="main">Main Deck Section</option>
+          <option value="fusion">Fusion Deck Section</option>
+        </select>
+
+        <select id="sortSelect" aria-label="Sort cards">
+          <option value="name-asc">Sort: Name A-Z</option>
+          <option value="name-desc">Sort: Name Z-A</option>
+          <option value="mana-asc">Sort: Mana Low-High</option>
+          <option value="mana-desc">Sort: Mana High-Low</option>
+          <option value="atk-desc">Sort: Highest ATK</option>
+          <option value="def-desc">Sort: Highest DEF</option>
+          <option value="attribute-asc">Sort: Attribute</option>
+          <option value="type-asc">Sort: Type</option>
+          <option value="deck-copies">Sort: Copies In Deck</option>
+        </select>
+
+        <label class="toggle-chip" for="hideFullToggle">
+          <input id="hideFullToggle" type="checkbox" />
+          <span>Hide full cards</span>
+        </label>
+
+        <button id="clearFiltersBtn" class="secondary-btn" type="button">Clear Filters</button>
+      </div>
     </div>
   </header>
 
@@ -66,7 +91,21 @@
           <h2>Deck Builder</h2>
           <p id="deckStatus" class="deck-status">Main: 0/60-80 · Fusion: 0/10</p>
         </div>
-        <button id="closeDeckBtn" class="close-btn small-close" type="button">X</button>
+        <button id="closeDeckBtn" class="close-btn small-close" type="button" aria-label="Close deck builder">X</button>
+      </div>
+
+      <div class="deck-manager">
+        <label class="field-label" for="deckSelect">Saved Decks</label>
+        <select id="deckSelect" aria-label="Choose saved deck"></select>
+        <div class="deck-name-row">
+          <input id="deckNameInput" type="text" placeholder="Deck name" aria-label="Current deck name" />
+          <button id="renameDeckBtn" class="secondary-btn" type="button">Rename</button>
+        </div>
+        <div class="deck-manager-actions">
+          <button id="newDeckBtn" class="secondary-btn" type="button">New</button>
+          <button id="duplicateDeckBtn" class="secondary-btn" type="button">Duplicate</button>
+          <button id="deleteDeckBtn" class="danger-btn" type="button">Delete</button>
+        </div>
       </div>
 
       <div class="deck-summary-grid">
@@ -86,8 +125,19 @@
 
       <div id="deckWarning" class="deck-warning"></div>
 
-      <div class="deck-actions">
+      <section class="deck-stats-box">
+        <div class="section-heading">Deck Stats</div>
+        <div id="deckStatsSummary" class="deck-stats-summary">No stats yet.</div>
+        <div class="section-heading sub-heading">Checks</div>
+        <div id="deckStatsWarnings" class="deck-stats-warnings">No fusion material warnings found.</div>
+      </section>
+
+      <div class="deck-actions wrap-actions">
         <button id="clearDeckBtn" class="danger-btn" type="button">Clear Deck</button>
+        <button id="exportDeckBtn" class="secondary-btn" type="button">Export JSON</button>
+        <button id="exportDeckTxtBtn" class="secondary-btn" type="button">Export TXT</button>
+        <button id="importDeckBtn" class="secondary-btn" type="button">Import Deck</button>
+        <input id="importDeckInput" type="file" accept=".json,application/json" class="hidden" />
       </div>
 
       <div class="deck-columns">
@@ -104,17 +154,21 @@
   </main>
 
   <div id="cardPreview" class="card-preview hidden"></div>
-  <div id="toast" class="toast hidden"></div>
+  <div id="toast" class="toast hidden" aria-live="polite"></div>
 
-  <div id="cardModal" class="modal hidden">
+  <div id="cardModal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="modalName">
     <div class="modal-content">
-      <button id="closeModal" class="close-btn" type="button">X</button>
+      <button id="closeModal" class="close-btn" type="button" aria-label="Close details">X</button>
       <img id="modalImage" src="" alt="" />
       <div class="modal-info">
         <div class="modal-header-row">
           <div>
             <h2 id="modalName"></h2>
             <div id="modalKeywordBadges" class="keyword-row"></div>
+          </div>
+          <div class="modal-nav-row">
+            <button id="modalPrevBtn" class="secondary-btn" type="button">Prev</button>
+            <button id="modalNextBtn" class="secondary-btn" type="button">Next</button>
           </div>
         </div>
 
@@ -135,10 +189,21 @@
             <span>Type</span>
             <strong id="modalType"></strong>
           </div>
-          <div class="detail-card detail-card-wide">
+          <div class="detail-card">
             <span>ATK / DEF</span>
             <strong id="modalStats"></strong>
           </div>
+          <div class="detail-card">
+            <span>Deck Copies</span>
+            <strong id="modalDeckCount"></strong>
+          </div>
+        </div>
+
+        <div id="modalImageStatus" class="modal-meta"></div>
+        <div id="modalFusionHint" class="modal-meta hidden"></div>
+
+        <div class="deck-actions modal-actions">
+          <button id="modalAddDeckBtn" class="primary-btn" type="button">Add to Deck</button>
         </div>
 
         <div class="section-heading">Rules</div>

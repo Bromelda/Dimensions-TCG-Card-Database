@@ -1,21 +1,48 @@
+
 let allCards = [];
 let filteredCards = [];
 let visibleCount = 0;
 const PAGE_SIZE = 48;
-const DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
+const DECK_LIBRARY_STORAGE_KEY = "dimensions_tcg_decks_v2";
+const LEGACY_DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
+const UI_STORAGE_KEY = "dimensions_tcg_ui_v2";
 
-const deckState = loadDeck();
+const appState = {
+  activeDeckId: null,
+  deckLibrary: loadDeckLibrary(),
+  currentModalCard: null,
+  currentModalIndex: -1,
+  modalLastFocus: null,
+  mobileFiltersOpen: false,
+  previewEnabled: window.matchMedia("(hover: hover) and (pointer: fine)").matches,
+  ui: loadUiState()
+};
+
+if (!appState.deckLibrary.decks.length) {
+  appState.deckLibrary = createDefaultDeckLibrary();
+  saveDeckLibrary();
+}
+if (!appState.deckLibrary.activeDeckId || !appState.deckLibrary.decks.some((d) => d.id === appState.deckLibrary.activeDeckId)) {
+  appState.deckLibrary.activeDeckId = appState.deckLibrary.decks[0]?.id || null;
+}
+appState.activeDeckId = appState.deckLibrary.activeDeckId;
+let deckState = getActiveDeck();
 
 const searchInput = document.getElementById("searchInput");
 const manaFilter = document.getElementById("manaFilter");
 const attributeFilter = document.getElementById("attributeFilter");
 const archetypeFilter = document.getElementById("archetypeFilter");
 const typeFilter = document.getElementById("typeFilter");
+const fusionFilter = document.getElementById("fusionFilter");
+const deckViewFilter = document.getElementById("deckViewFilter");
+const hideFullToggle = document.getElementById("hideFullToggle");
 const cardGrid = document.getElementById("cardGrid");
 const resultsCount = document.getElementById("resultsCount");
 const loadMoreBtn = document.getElementById("loadMoreBtn");
 const clearFiltersBtn = document.getElementById("clearFiltersBtn");
 const toggleDeckBtn = document.getElementById("toggleDeckBtn");
+const mobileFiltersToggle = document.getElementById("mobileFiltersToggle");
+const filtersPanel = document.getElementById("filtersPanel");
 const deckPanel = document.getElementById("deckPanel");
 const closeDeckBtn = document.getElementById("closeDeckBtn");
 const mainDeckCount = document.getElementById("mainDeckCount");
@@ -26,8 +53,20 @@ const deckWarning = document.getElementById("deckWarning");
 const mainDeckList = document.getElementById("mainDeckList");
 const fusionDeckList = document.getElementById("fusionDeckList");
 const clearDeckBtn = document.getElementById("clearDeckBtn");
+const exportDeckBtn = document.getElementById("exportDeckBtn");
+const exportDeckTxtBtn = document.getElementById("exportDeckTxtBtn");
+const importDeckBtn = document.getElementById("importDeckBtn");
+const importDeckInput = document.getElementById("importDeckInput");
+const duplicateDeckBtn = document.getElementById("duplicateDeckBtn");
+const renameDeckBtn = document.getElementById("renameDeckBtn");
+const deleteDeckBtn = document.getElementById("deleteDeckBtn");
+const newDeckBtn = document.getElementById("newDeckBtn");
+const deckSelect = document.getElementById("deckSelect");
+const deckNameInput = document.getElementById("deckNameInput");
 const emptyState = document.getElementById("emptyState");
 const sortSelect = document.getElementById("sortSelect");
+const deckStatsSummary = document.getElementById("deckStatsSummary");
+const deckStatsWarnings = document.getElementById("deckStatsWarnings");
 
 const cardPreview = document.getElementById("cardPreview");
 const toastEl = document.getElementById("toast");
@@ -43,6 +82,12 @@ const modalType = document.getElementById("modalType");
 const modalStats = document.getElementById("modalStats");
 const modalRules = document.getElementById("modalRules");
 const modalKeywordBadges = document.getElementById("modalKeywordBadges");
+const modalDeckCount = document.getElementById("modalDeckCount");
+const modalImageStatus = document.getElementById("modalImageStatus");
+const modalFusionHint = document.getElementById("modalFusionHint");
+const modalPrevBtn = document.getElementById("modalPrevBtn");
+const modalNextBtn = document.getElementById("modalNextBtn");
+const modalAddDeckBtn = document.getElementById("modalAddDeckBtn");
 
 fetch("./data/cards.json")
   .then((response) => {
@@ -58,8 +103,10 @@ fetch("./data/cards.json")
       throw new Error("cards.json did not contain an array or Items array");
     }
 
-    allCards = cards;
-    buildFilters(cards);
+    allCards = cards.map(normalizeCardData);
+    buildFilters(allCards);
+    hydrateDeckLibraryAgainstCardPool();
+    applyUiState();
     refreshView();
     renderDeck();
   })
@@ -68,14 +115,68 @@ fetch("./data/cards.json")
     resultsCount.textContent = `Failed to load card database: ${error.message}`;
   });
 
+function normalizeCardData(rawCard) {
+  const card = { ...rawCard };
+  card.cardId = String(card.cardId || card.id || cryptoRandomId());
+  card.name = tidySpaces(card.name);
+  card.attribute = normalizeTitleValue(card.attribute, "None");
+  card.archetype = normalizeTitleValue(card.archetype, "None");
+  card.cardType = normalizeCardType(card.cardType);
+  card.manaCost = normalizeNumber(card.manaCost);
+  card.atk = normalizeNumber(card.atk);
+  card.def = normalizeNumber(card.def);
+  card.rulesText = normalizeRulesText(card.rulesText);
+  card.image = normalizeImagePath(card.image);
+  card.keywords = extractKeywords(card.rulesText || "");
+  card.cleanedRules = cleanRulesText(card.rulesText || "");
+  card.searchBlob = [card.name, card.cleanedRules, card.archetype, card.attribute, card.cardType, ...card.keywords].join(" ").toLowerCase();
+  card.isLegendary = String(card.archetype || "").toLowerCase() === "legendary";
+  card.imageIssue = !card.image;
+  return card;
+}
+
+function normalizeRulesText(value) {
+  return tidySpaces(String(value || "").replace(/\s*\n\s*/g, " ").replace(/\s*;\s*/g, "; ").replace(/\s*\.\s*/g, ". "));
+}
+
+function normalizeTitleValue(value, fallback) {
+  const text = tidySpaces(value);
+  if (!text) return fallback;
+  return text
+    .split(" ")
+    .map((part) => part ? part[0].toUpperCase() + part.slice(1) : part)
+    .join(" ");
+}
+
+function normalizeCardType(value) {
+  const v = tidySpaces(value).toLowerCase();
+  if (!v) return "Unknown";
+  if (v === "fusion") return "Fusion";
+  if (v === "spell") return "Spell";
+  if (v === "creature") return "Creature";
+  return normalizeTitleValue(v, "Unknown");
+}
+
+function normalizeNumber(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : 0;
+}
+
+function normalizeImagePath(value) {
+  const text = tidySpaces(value);
+  if (!text) return "";
+  return text.replace(/\\/g, "/");
+}
+
+function tidySpaces(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
 function cleanRulesText(rulesText) {
   if (!rulesText) return "";
 
   return String(rulesText)
-    .replace(/^Hand;\s*/i, "")
-    .replace(/^Play;\s*/i, "")
-    .replace(/^Fusion;\s*/i, "")
-    .replace(/^SpecialSummon;\s*/i, "")
+    .replace(/^(Hand|Play|Fusion|SpecialSummon)\s*;\s*/i, "")
     .trim();
 }
 
@@ -112,37 +213,24 @@ function buildFilters(cards) {
   const archetypes = [...new Set(cards.map((c) => c.archetype).filter(Boolean))].sort();
   const types = [...new Set(cards.map((c) => c.cardType).filter(Boolean))].sort();
 
-  manaFilter.innerHTML = `<option value="">Any Mana</option>`;
-  attributeFilter.innerHTML = `<option value="">Any Attribute</option>`;
-  archetypeFilter.innerHTML = `<option value="">Any Archetype</option>`;
-  typeFilter.innerHTML = `<option value="">Any Type</option>`;
+  fillSelect(manaFilter, "Any Mana", manaValues);
+  fillSelect(attributeFilter, "Any Attribute", attributes);
+  fillSelect(archetypeFilter, "Any Archetype", archetypes);
+  fillSelect(typeFilter, "Any Type", types);
+}
 
-  for (const mana of manaValues) {
-    const option = document.createElement("option");
-    option.value = mana;
-    option.textContent = mana;
-    manaFilter.appendChild(option);
-  }
+function fillSelect(select, placeholder, values) {
+  select.innerHTML = "";
+  const initial = document.createElement("option");
+  initial.value = "";
+  initial.textContent = placeholder;
+  select.appendChild(initial);
 
-  for (const value of attributes) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    attributeFilter.appendChild(option);
-  }
-
-  for (const value of archetypes) {
+  for (const value of values) {
     const option = document.createElement("option");
     option.value = value;
     option.textContent = value;
-    archetypeFilter.appendChild(option);
-  }
-
-  for (const value of types) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    typeFilter.appendChild(option);
+    select.appendChild(option);
   }
 }
 
@@ -153,23 +241,35 @@ function getFilteredCards() {
   const archetype = archetypeFilter.value;
   const type = typeFilter.value;
   const sortMode = sortSelect.value;
+  const fusionMode = fusionFilter.value;
+  const deckMode = deckViewFilter.value;
+  const hideFull = hideFullToggle.checked;
 
   let cards = allCards.filter((card) => {
-    const cleanedRules = cleanRulesText(card.rulesText || "").toLowerCase();
-    const keywords = extractKeywords(card.rulesText || "").map((k) => k.toLowerCase());
-
     const matchesSearch = matchesAdvancedSearch(card, {
       raw: search,
-      cleanedRules,
-      keywords
+      cleanedRules: card.cleanedRules,
+      keywords: card.keywords
     });
 
     const matchesMana = !mana || String(card.manaCost) === mana;
     const matchesAttribute = !attribute || card.attribute === attribute;
     const matchesArchetype = !archetype || card.archetype === archetype;
     const matchesType = !type || card.cardType === type;
+    const matchesFusion = fusionMode === "" || (fusionMode === "fusion" ? isFusionCard(card) : !isFusionCard(card));
+    const section = getDeckSection(card);
+    const copies = getCardCopiesInSection(card, section);
+    const limit = getCardCopyLimit(card);
+    const inDeck = copies > 0;
+    const matchesDeckMode =
+      deckMode === "" ||
+      (deckMode === "in-deck" && inDeck) ||
+      (deckMode === "not-in-deck" && !inDeck) ||
+      (deckMode === "main" && section === "main") ||
+      (deckMode === "fusion" && section === "fusion");
+    const matchesHideFull = !hideFull || copies < limit;
 
-    return matchesSearch && matchesMana && matchesAttribute && matchesArchetype && matchesType;
+    return matchesSearch && matchesMana && matchesAttribute && matchesArchetype && matchesType && matchesFusion && matchesDeckMode && matchesHideFull;
   });
 
   cards = sortCards(cards, sortMode);
@@ -181,8 +281,8 @@ function matchesAdvancedSearch(card, context) {
   const raw = context.raw;
   if (!raw) return true;
 
-  const tokens = raw.split(/\s+/).filter(Boolean);
-  const textHaystack = [
+  const tokens = raw.match(/(?:[^\s"]+|"[^"]*")+/g) || [];
+  const textHaystack = card.searchBlob || [
     card.name || "",
     context.cleanedRules || "",
     card.archetype || "",
@@ -191,11 +291,14 @@ function matchesAdvancedSearch(card, context) {
     ...context.keywords
   ].join(" ").toLowerCase();
 
-  for (const token of tokens) {
+  for (let token of tokens) {
+    token = token.trim();
+    if (!token) continue;
     if (isFieldToken(token)) {
       if (!matchesFieldToken(card, token)) return false;
     } else {
-      if (!textHaystack.includes(token)) return false;
+      const needle = stripQuotes(token).toLowerCase();
+      if (!textHaystack.includes(needle)) return false;
     }
   }
 
@@ -203,11 +306,12 @@ function matchesAdvancedSearch(card, context) {
 }
 
 function isFieldToken(token) {
-  return /^(mana|atk|def|attribute|type|archetype|keyword|name)\s*[:<>=]/i.test(token);
+  return /^(mana|atk|def|attribute|type|archetype|keyword|name|text|deck|legendary|has|copies|section|fusion)\s*[:<>=]/i.test(token);
 }
 
 function matchesFieldToken(card, token) {
-  const numericMatch = token.match(/^(mana|atk|def)\s*(>=|<=|=|>|<|:)\s*(\d+)$/i);
+  const normalizedToken = token.replace(/^section\s*[:=]/i, "deck:");
+  const numericMatch = normalizedToken.match(/^(mana|atk|def|copies)\s*(>=|<=|=|>|<|:)\s*(\d+)$/i);
   if (numericMatch) {
     const field = numericMatch[1].toLowerCase();
     const operator = numericMatch[2] === ":" ? "=" : numericMatch[2];
@@ -215,7 +319,8 @@ function matchesFieldToken(card, token) {
     const actual =
       field === "mana" ? Number(card.manaCost || 0)
       : field === "atk" ? Number(card.atk || 0)
-      : Number(card.def || 0);
+      : field === "def" ? Number(card.def || 0)
+      : getCardCopiesInSection(card, getDeckSection(card));
 
     switch (operator) {
       case "=": return actual === expected;
@@ -227,21 +332,44 @@ function matchesFieldToken(card, token) {
     }
   }
 
-  const textMatch = token.match(/^(attribute|type|archetype|keyword|name)\s*[:=]\s*(.+)$/i);
+  const textMatch = normalizedToken.match(/^(attribute|type|archetype|keyword|name|text|deck|legendary|has|fusion)\s*[:=]\s*(.+)$/i);
   if (textMatch) {
     const field = textMatch[1].toLowerCase();
-    const value = textMatch[2].toLowerCase();
+    const value = stripQuotes(textMatch[2]).toLowerCase();
 
     if (field === "attribute") return String(card.attribute || "").toLowerCase().includes(value);
     if (field === "type") return String(card.cardType || "").toLowerCase().includes(value);
     if (field === "archetype") return String(card.archetype || "").toLowerCase().includes(value);
     if (field === "name") return String(card.name || "").toLowerCase().includes(value);
-    if (field === "keyword") {
-      return extractKeywords(card.rulesText || "").some((k) => k.toLowerCase().includes(value));
+    if (field === "text") return String(card.cleanedRules || "").toLowerCase().includes(value);
+    if (field === "keyword") return card.keywords.some((k) => k.toLowerCase().includes(value));
+    if (field === "deck") {
+      const section = getDeckSection(card);
+      const copies = getCardCopiesInSection(card, section);
+      if (value === "main" || value === "fusion") return section === value;
+      if (value === "yes" || value === "true") return copies > 0;
+      if (value === "no" || value === "false") return copies === 0;
+    }
+    if (field === "fusion") {
+      const fusion = isFusionCard(card);
+      return value === "true" || value === "yes" ? fusion : value === "false" || value === "no" ? !fusion : true;
+    }
+    if (field === "legendary") {
+      return value === "true" || value === "yes" ? card.isLegendary : value === "false" || value === "no" ? !card.isLegendary : true;
+    }
+    if (field === "has") {
+      if (value === "rules") return Boolean(card.cleanedRules);
+      if (value === "image") return Boolean(card.image);
+      if (value === "keywords") return card.keywords.length > 0;
+      if (value === "stats") return isStatsCard(card);
     }
   }
 
   return true;
+}
+
+function stripQuotes(value) {
+  return String(value || "").replace(/^"|"$/g, "").trim();
 }
 
 function sortCards(cards, sortMode) {
@@ -270,6 +398,8 @@ function sortCards(cards, sortMode) {
     case "type":
     case "type-asc":
       return copy.sort((a, b) => String(a.cardType || "").localeCompare(String(b.cardType || "")) || String(a.name || "").localeCompare(String(b.name || "")));
+    case "deck-copies":
+      return copy.sort((a, b) => getCardCopiesInSection(b, getDeckSection(b)) - getCardCopiesInSection(a, getDeckSection(a)) || String(a.name || "").localeCompare(String(b.name || "")));
     default:
       return copy;
   }
@@ -284,10 +414,12 @@ function isFusionCard(card) {
 }
 
 function refreshView() {
+  saveUiState();
   filteredCards = getFilteredCards();
   visibleCount = Math.min(PAGE_SIZE, filteredCards.length);
   renderCards(filteredCards.slice(0, visibleCount));
   updateLoadMore();
+  syncUrlFromUi();
 }
 
 function renderCards(cards) {
@@ -302,17 +434,21 @@ function renderCards(cards) {
   if (emptyState) emptyState.classList.add("hidden");
 
   for (const card of cards) {
-    const div = document.createElement("div");
+    const div = document.createElement("article");
     div.className = "card";
+    div.tabIndex = 0;
+    div.setAttribute("role", "button");
+    div.setAttribute("aria-label", `Open details for ${card.name || "card"}`);
 
-    const keywords = extractKeywords(card.rulesText || "");
-    const cleanedRules = cleanRulesText(card.rulesText || "");
+    const keywords = card.keywords;
+    const cleanedRules = card.cleanedRules;
     const section = getDeckSection(card);
     const copies = getCardCopiesInSection(card, section);
     const limit = getCardCopyLimit(card);
+    const isFull = copies >= limit;
 
     div.innerHTML = `
-      <img src="${escapeHtml(card.image || "")}" alt="${escapeHtml(card.name || "")}" loading="lazy">
+      <img src="${escapeHtml(card.image || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}" loading="lazy" decoding="async">
       <div class="card-body">
         <h3>${escapeHtml(card.name || "")}</h3>
         <div class="tags">
@@ -321,20 +457,20 @@ function renderCards(cards) {
           <span class="tag archetype-tag">${escapeHtml(card.archetype || "None")}</span>
           <span class="tag type-${slugify(card.cardType || "unknown")}">${escapeHtml(card.cardType || "Unknown")}</span>
           ${isStatsCard(card) ? `<span class="tag stats-tag">ATK ${card.atk ?? 0} / DEF ${card.def ?? 0}</span>` : ""}
+          ${card.imageIssue ? `<span class="tag issue-tag">Image Missing</span>` : ""}
+          ${isFull ? `<span class="tag full-tag">Full</span>` : ""}
         </div>
         ${keywords.length ? `<div class="keyword-row">${keywords.map((k) => `<span class="keyword-badge">${escapeHtml(k)}</span>`).join("")}</div>` : ""}
-        <p class="card-rules-preview">${escapeHtml(shorten(cleanedRules, 90))}</p>
+        <p class="card-rules-preview">${escapeHtml(shorten(cleanedRules || "No rules text.", 90))}</p>
         <div class="card-actions">
           <button class="mini-btn details-btn" type="button">Details</button>
-          <button class="mini-btn add-deck-btn" type="button">Add to Deck (${copies}/${limit})</button>
+          <button class="mini-btn add-deck-btn" type="button" ${isFull ? "disabled" : ""}>${copies ? `Add (${copies}/${limit})` : `Add to Deck (${copies}/${limit})`}</button>
         </div>
       </div>
     `;
 
     const img = div.querySelector("img");
-    img.addEventListener("error", () => {
-      img.src = createFallbackImage(card.name || "No Image");
-    });
+    attachImageFallback(img, card.name || "No Image");
 
     div.querySelector(".details-btn").addEventListener("click", (e) => {
       e.stopPropagation();
@@ -352,16 +488,30 @@ function renderCards(cards) {
     }
 
     div.addEventListener("click", () => openModal(card));
-    div.addEventListener("mouseenter", (e) => showHoverPreview(card, e));
-    div.addEventListener("mousemove", moveHoverPreview);
-    div.addEventListener("mouseleave", hideHoverPreview);
+    div.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openModal(card);
+      }
+    });
+
+    if (appState.previewEnabled) {
+      div.addEventListener("mouseenter", (e) => showHoverPreview(card, e));
+      div.addEventListener("mousemove", moveHoverPreview);
+      div.addEventListener("mouseleave", hideHoverPreview);
+    }
 
     cardGrid.appendChild(div);
   }
 }
 
 function openModal(card) {
-  modalImage.src = card.image || "";
+  const index = filteredCards.findIndex((item) => item.cardId === card.cardId);
+  appState.currentModalCard = card;
+  appState.currentModalIndex = index;
+  appState.modalLastFocus = document.activeElement;
+
+  modalImage.src = card.image || createFallbackImage(card.name || "No Image");
   modalImage.alt = card.name || "";
   modalName.textContent = card.name || "";
   modalMana.textContent = card.manaCost ?? 0;
@@ -370,21 +520,38 @@ function openModal(card) {
   modalType.textContent = card.cardType || "Unknown";
   modalStats.textContent = isStatsCard(card) ? `${card.atk ?? 0} / ${card.def ?? 0}` : "-";
 
-  modalImage.onerror = () => {
-    modalImage.src = createFallbackImage(card.name || "No Image");
-  };
+  attachImageFallback(modalImage, card.name || "No Image", () => {
+    modalImageStatus.textContent = "Showing fallback image";
+  });
+  preloadImage(card.image);
 
-  const keywords = extractKeywords(card.rulesText || "");
-  const cleanedRules = cleanRulesText(card.rulesText || "");
+  const keywords = card.keywords;
+  const cleanedRules = card.cleanedRules;
+  const section = getDeckSection(card);
+  const copies = getCardCopiesInSection(card, section);
+  const limit = getCardCopyLimit(card);
 
-  if (modalKeywordBadges) {
-    modalKeywordBadges.innerHTML = keywords.map((k) => `<span class="keyword-badge">${escapeHtml(k)}</span>`).join("");
-  }
-
+  modalKeywordBadges.innerHTML = keywords.map((k) => `<span class="keyword-badge">${escapeHtml(k)}</span>`).join("");
   modalRules.textContent = cleanedRules || "No rules text.";
+  modalDeckCount.textContent = `${copies}/${limit} in ${section === "fusion" ? "Fusion" : "Main"} Deck`;
+  modalImageStatus.textContent = card.imageIssue ? "Image path missing from data" : "";
+  modalFusionHint.textContent = getFusionHint(card);
+  modalFusionHint.classList.toggle("hidden", !modalFusionHint.textContent);
+  modalAddDeckBtn.textContent = `Add to ${section === "fusion" ? "Fusion" : "Main"} Deck`;
+  modalAddDeckBtn.disabled = copies >= limit;
+  modalPrevBtn.disabled = appState.currentModalIndex <= 0;
+  modalNextBtn.disabled = appState.currentModalIndex < 0 || appState.currentModalIndex >= filteredCards.length - 1;
 
   decorateModalLabels(card);
   cardModal.classList.remove("hidden");
+  trapFocusToModal();
+}
+
+function getFusionHint(card) {
+  if (!isFusionCard(card)) return "";
+  const text = card.cleanedRules || "";
+  const beforePeriod = text.split(/[.!?]/)[0] || "";
+  return beforePeriod ? `Fusion hint: ${beforePeriod}.` : "Fusion card";
 }
 
 function decorateModalLabels(card) {
@@ -392,28 +559,83 @@ function decorateModalLabels(card) {
   modalType.className = `detail-pill type-${slugify(card.cardType || "unknown")}`;
 }
 
-closeModal.addEventListener("click", () => {
+function closeModalAndRestoreFocus() {
   cardModal.classList.add("hidden");
+  hideHoverPreview();
+  const focusTarget = appState.modalLastFocus;
+  if (focusTarget && typeof focusTarget.focus === "function") {
+    focusTarget.focus();
+  }
+}
+
+closeModal.addEventListener("click", closeModalAndRestoreFocus);
+modalPrevBtn.addEventListener("click", () => moveModal(-1));
+modalNextBtn.addEventListener("click", () => moveModal(1));
+modalAddDeckBtn.addEventListener("click", () => {
+  if (appState.currentModalCard) {
+    addCardToDeck(appState.currentModalCard);
+    if (appState.currentModalCard) openModal(appState.currentModalCard);
+    refreshView();
+  }
 });
 
 cardModal.addEventListener("click", (e) => {
   if (e.target === cardModal) {
-    cardModal.classList.add("hidden");
+    closeModalAndRestoreFocus();
   }
 });
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    cardModal.classList.add("hidden");
-    hideHoverPreview();
+    closeModalAndRestoreFocus();
+  }
+
+  if (!cardModal.classList.contains("hidden")) {
+    if (e.key === "ArrowRight") moveModal(1);
+    if (e.key === "ArrowLeft") moveModal(-1);
+    if (e.key === "Tab") handleModalTabTrap(e);
   }
 });
 
-[searchInput, manaFilter, attributeFilter, archetypeFilter, typeFilter].forEach((el) => {
+function moveModal(step) {
+  if (appState.currentModalIndex < 0) return;
+  const nextIndex = appState.currentModalIndex + step;
+  if (nextIndex < 0 || nextIndex >= filteredCards.length) return;
+  openModal(filteredCards[nextIndex]);
+}
+
+function trapFocusToModal() {
+  setTimeout(() => {
+    const first = getFocusableElements(cardModal)[0];
+    if (first) first.focus();
+  }, 0);
+}
+
+function handleModalTabTrap(event) {
+  const focusable = getFocusableElements(cardModal);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function getFocusableElements(container) {
+  return [...container.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')]
+    .filter((el) => !el.classList.contains("hidden"));
+}
+
+[searchInput, manaFilter, attributeFilter, archetypeFilter, typeFilter, fusionFilter, deckViewFilter].forEach((el) => {
   el.addEventListener("input", debounce(refreshView, 150));
   el.addEventListener("change", refreshView);
 });
-
+hideFullToggle.addEventListener("change", refreshView);
 sortSelect.addEventListener("change", refreshView);
 clearFiltersBtn.addEventListener("click", clearFilters);
 loadMoreBtn.addEventListener("click", loadMoreCards);
@@ -421,10 +643,15 @@ loadMoreBtn.addEventListener("click", loadMoreCards);
 if (toggleDeckBtn) {
   toggleDeckBtn.addEventListener("click", () => {
     deckPanel.classList.remove("hidden");
-    deckPanel.scrollIntoView({
-      behavior: "smooth",
-      block: "end"
-    });
+    deckPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+}
+
+if (mobileFiltersToggle) {
+  mobileFiltersToggle.addEventListener("click", () => {
+    appState.mobileFiltersOpen = !appState.mobileFiltersOpen;
+    filtersPanel.classList.toggle("mobile-open", appState.mobileFiltersOpen);
+    mobileFiltersToggle.setAttribute("aria-expanded", String(appState.mobileFiltersOpen));
   });
 }
 
@@ -435,6 +662,18 @@ if (closeDeckBtn) {
 }
 
 clearDeckBtn.addEventListener("click", clearDeck);
+exportDeckBtn.addEventListener("click", () => exportDeck("json"));
+exportDeckTxtBtn.addEventListener("click", () => exportDeck("txt"));
+importDeckBtn.addEventListener("click", () => importDeckInput.click());
+importDeckInput.addEventListener("change", handleImportDeck);
+duplicateDeckBtn.addEventListener("click", duplicateCurrentDeck);
+renameDeckBtn.addEventListener("click", renameCurrentDeck);
+deleteDeckBtn.addEventListener("click", deleteCurrentDeck);
+newDeckBtn.addEventListener("click", createNewDeckFromInput);
+deckSelect.addEventListener("change", onDeckSelectChange);
+deckNameInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") renameCurrentDeck();
+});
 
 function clearFilters() {
   searchInput.value = "";
@@ -442,6 +681,9 @@ function clearFilters() {
   attributeFilter.value = "";
   archetypeFilter.value = "";
   typeFilter.value = "";
+  fusionFilter.value = "";
+  deckViewFilter.value = "";
+  hideFullToggle.checked = false;
   sortSelect.value = "name-asc";
   refreshView();
   toast("Filters cleared");
@@ -464,11 +706,12 @@ function updateLoadMore() {
 }
 
 function showHoverPreview(card, event) {
-  const keywords = extractKeywords(card.rulesText || "");
-  const cleanedRules = cleanRulesText(card.rulesText || "");
+  if (!appState.previewEnabled) return;
+  const keywords = card.keywords;
+  const cleanedRules = card.cleanedRules;
 
   cardPreview.innerHTML = `
-    <img src="${escapeHtml(card.image || "")}" alt="${escapeHtml(card.name || "")}">
+    <img src="${escapeHtml(card.image || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}">
     <div class="hover-preview-body">
       <div class="hover-preview-title">${escapeHtml(card.name || "")}</div>
       <div class="hover-preview-tags">
@@ -477,15 +720,13 @@ function showHoverPreview(card, event) {
         <span class="tag type-${slugify(card.cardType || "unknown")}">${escapeHtml(card.cardType || "Unknown")}</span>
       </div>
       ${keywords.length ? `<div class="keyword-row">${keywords.map((k) => `<span class="keyword-badge">${escapeHtml(k)}</span>`).join("")}</div>` : ""}
-      <div class="hover-preview-rules">${escapeHtml(shorten(cleanedRules, 120))}</div>
+      <div class="hover-preview-rules">${escapeHtml(shorten(cleanedRules || "No rules text.", 120))}</div>
     </div>
   `;
 
   const previewImg = cardPreview.querySelector("img");
   if (previewImg) {
-    previewImg.addEventListener("error", () => {
-      previewImg.src = createFallbackImage(card.name || "No Image");
-    });
+    attachImageFallback(previewImg, card.name || "No Image");
   }
 
   cardPreview.classList.remove("hidden");
@@ -495,8 +736,10 @@ function showHoverPreview(card, event) {
 
 function moveHoverPreview(event) {
   const offset = 18;
-  cardPreview.style.left = `${event.clientX + offset}px`;
-  cardPreview.style.top = `${event.clientY + offset}px`;
+  const maxX = window.innerWidth - cardPreview.offsetWidth - 8;
+  const maxY = window.innerHeight - cardPreview.offsetHeight - 8;
+  cardPreview.style.left = `${Math.min(event.clientX + offset, maxX)}px`;
+  cardPreview.style.top = `${Math.min(event.clientY + offset, maxY)}px`;
 }
 
 function hideHoverPreview() {
@@ -509,7 +752,7 @@ function getDeckSection(card) {
 }
 
 function getCardCopyLimit(card) {
-  return String(card?.archetype || "").toLowerCase() === "legendary" ? 1 : 3;
+  return card?.isLegendary ? 1 : 3;
 }
 
 function getCardCopiesInSection(card, section) {
@@ -520,21 +763,17 @@ function getCardCopiesInSection(card, section) {
 function summarizeDeckSection(items) {
   const map = new Map();
 
-  items.forEach((card, index) => {
+  items.forEach((card) => {
     const key = String(card.name || "");
     if (!map.has(key)) {
-      map.set(key, {
-        card,
-        count: 1,
-        firstIndex: index
-      });
+      map.set(key, { card, count: 1 });
     } else {
       map.get(key).count += 1;
     }
   });
 
   return Array.from(map.values()).sort((a, b) =>
-    String(a.card.name || "").localeCompare(String(b.card.name || ""))
+    b.count - a.count || String(a.card.name || "").localeCompare(String(b.card.name || ""))
   );
 }
 
@@ -558,9 +797,7 @@ function addCardToDeck(card) {
       }
 
       deckState.fusion.push(card);
-      saveDeck();
-      renderDeck();
-      toast(`${card.name || "Card"} added to Fusion Deck (${currentCopies + 1}/${copyLimit})`);
+      persistDeckState(`${card.name || "Card"} added to Fusion Deck (${currentCopies + 1}/${copyLimit})`);
       return;
     }
 
@@ -570,25 +807,21 @@ function addCardToDeck(card) {
     }
 
     deckState.main.push(card);
-    saveDeck();
-    renderDeck();
-    toast(`${card.name || "Card"} added to Main Deck (${currentCopies + 1}/${copyLimit})`);
+    persistDeckState(`${card.name || "Card"} added to Main Deck (${currentCopies + 1}/${copyLimit})`);
   } catch (error) {
     console.error("addCardToDeck failed:", error);
     alert(`Add to Deck failed: ${error.message}`);
   }
 }
 
-function removeCardFromDeck(index, section) {
+function removeCardFromDeck(cardName, section) {
   try {
-    if (section === "fusion") {
-      deckState.fusion.splice(index, 1);
-    } else {
-      deckState.main.splice(index, 1);
-    }
+    const list = section === "fusion" ? deckState.fusion : deckState.main;
+    const index = list.findIndex((card) => String(card.name || "") === String(cardName || ""));
+    if (index === -1) return;
+    list.splice(index, 1);
 
-    saveDeck();
-    renderDeck();
+    persistDeckState();
     refreshView();
   } catch (error) {
     console.error("removeCardFromDeck failed:", error);
@@ -600,10 +833,8 @@ function clearDeck() {
   try {
     deckState.main = [];
     deckState.fusion = [];
-    saveDeck();
-    renderDeck();
+    persistDeckState("Deck cleared");
     refreshView();
-    toast("Deck cleared");
   } catch (error) {
     console.error("clearDeck failed:", error);
     alert(`Clear deck failed: ${error.message}`);
@@ -640,8 +871,12 @@ function renderDeck() {
     mainDeckList.innerHTML = mainSummary.length
       ? mainSummary.map((entry) => `
         <div class="deck-item">
-          <span>${escapeHtml(entry.card.name || "")} <strong>${entry.count}/${getCardCopyLimit(entry.card)}</strong></span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-index="${entry.firstIndex}">Remove 1</button>
+          <div class="deck-item-name">
+            <span>${escapeHtml(entry.card.name || "")}</span>
+            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
+          </div>
+          <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
         </div>
       `).join("")
       : `<div class="deck-empty">No main deck cards yet.</div>`;
@@ -649,44 +884,373 @@ function renderDeck() {
     fusionDeckList.innerHTML = fusionSummary.length
       ? fusionSummary.map((entry) => `
         <div class="deck-item">
-          <span>${escapeHtml(entry.card.name || "")} <strong>${entry.count}/${getCardCopyLimit(entry.card)}</strong></span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-index="${entry.firstIndex}">Remove 1</button>
+          <div class="deck-item-name">
+            <span>${escapeHtml(entry.card.name || "")}</span>
+            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
+          </div>
+          <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
         </div>
       `).join("")
       : `<div class="deck-empty">No fusion cards yet.</div>`;
 
     deckPanel.querySelectorAll(".remove-deck-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        removeCardFromDeck(Number(btn.dataset.index), btn.dataset.section);
+        removeCardFromDeck(btn.dataset.name, btn.dataset.section);
       });
     });
+
+    renderDeckStats();
+    renderDeckSelect();
   } catch (error) {
     console.error("renderDeck failed:", error);
     alert(`Render deck failed: ${error.message}`);
   }
 }
 
-function saveDeck() {
-  try {
-    localStorage.setItem(DECK_STORAGE_KEY, JSON.stringify(deckState));
-  } catch (error) {
-    console.warn("Could not save deck to localStorage:", error);
+function renderDeckStats() {
+  const typeCounts = countBy(deckState.main, (card) => card.cardType);
+  const attrCounts = countBy(deckState.main, (card) => card.attribute);
+  const archeCounts = countBy(deckState.main, (card) => card.archetype);
+  const warnings = [];
+
+  const fusionNames = new Set(deckState.fusion.map((card) => String(card.name || "").toLowerCase()));
+  for (const fusionCard of deckState.fusion) {
+    const hint = getFusionHint(fusionCard).toLowerCase();
+    const possibleMatches = deckState.main.filter((card) => hint.includes(String(card.name || "").toLowerCase()));
+    if (!possibleMatches.length && hint) {
+      warnings.push(`${fusionCard.name}: materials may be missing from Main Deck.`);
+    }
+  }
+
+  deckStatsSummary.innerHTML = `
+    <div><strong>Types:</strong> ${formatCountList(typeCounts)}</div>
+    <div><strong>Attributes:</strong> ${formatCountList(attrCounts)}</div>
+    <div><strong>Top Archetypes:</strong> ${formatCountList(archeCounts, 4)}</div>
+  `;
+
+  deckStatsWarnings.innerHTML = warnings.length
+    ? warnings.map((item) => `<div>${escapeHtml(item)}</div>`).join("")
+    : `<div>No fusion material warnings found.</div>`;
+}
+
+function countBy(items, getter) {
+  const map = new Map();
+  for (const item of items) {
+    const key = getter(item) || "None";
+    map.set(key, (map.get(key) || 0) + 1);
+  }
+  return Array.from(map.entries()).sort((a, b) => b[1] - a[1] || String(a[0]).localeCompare(String(b[0])));
+}
+
+function formatCountList(entries, limit = 6) {
+  if (!entries.length) return "None";
+  return entries.slice(0, limit).map(([key, value]) => `${escapeHtml(key)} (${value})`).join(" · ");
+}
+
+function persistDeckState(message) {
+  syncActiveDeckReference();
+  saveDeckLibrary();
+  renderDeck();
+  if (message) toast(message);
+}
+
+function syncActiveDeckReference() {
+  const index = appState.deckLibrary.decks.findIndex((deck) => deck.id === appState.activeDeckId);
+  if (index >= 0) {
+    appState.deckLibrary.decks[index] = sanitizeDeck(deckState);
   }
 }
 
-function loadDeck() {
+function sanitizeDeck(deck) {
+  return {
+    id: String(deck.id || cryptoRandomId()),
+    name: tidySpaces(deck.name) || "Untitled Deck",
+    main: Array.isArray(deck.main) ? deck.main.map((card) => normalizeCardData(card)) : [],
+    fusion: Array.isArray(deck.fusion) ? deck.fusion.map((card) => normalizeCardData(card)) : []
+  };
+}
+
+function loadDeckLibrary() {
   try {
-    const raw = localStorage.getItem(DECK_STORAGE_KEY);
-    if (!raw) return { main: [], fusion: [] };
-    const parsed = JSON.parse(raw);
-    return {
-      main: Array.isArray(parsed.main) ? parsed.main : [],
-      fusion: Array.isArray(parsed.fusion) ? parsed.fusion : []
-    };
+    const raw = localStorage.getItem(DECK_LIBRARY_STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      return {
+        activeDeckId: parsed.activeDeckId || null,
+        decks: Array.isArray(parsed.decks) ? parsed.decks.map(sanitizeDeck) : []
+      };
+    }
+
+    const legacyRaw = localStorage.getItem(LEGACY_DECK_STORAGE_KEY);
+    if (legacyRaw) {
+      const legacy = JSON.parse(legacyRaw);
+      const migrated = {
+        id: cryptoRandomId(),
+        name: "My Deck",
+        main: Array.isArray(legacy.main) ? legacy.main.map(normalizeCardData) : [],
+        fusion: Array.isArray(legacy.fusion) ? legacy.fusion.map(normalizeCardData) : []
+      };
+      return { activeDeckId: migrated.id, decks: [migrated] };
+    }
   } catch (error) {
-    console.warn("Could not load deck from localStorage:", error);
-    return { main: [], fusion: [] };
+    console.warn("Could not load deck library:", error);
   }
+  return createDefaultDeckLibrary();
+}
+
+function createDefaultDeckLibrary() {
+  const deck = {
+    id: cryptoRandomId(),
+    name: "My Deck",
+    main: [],
+    fusion: []
+  };
+  return { activeDeckId: deck.id, decks: [deck] };
+}
+
+function getActiveDeck() {
+  return sanitizeDeck(appState.deckLibrary.decks.find((deck) => deck.id === appState.activeDeckId) || createDefaultDeckLibrary().decks[0]);
+}
+
+function saveDeckLibrary() {
+  try {
+    appState.deckLibrary.activeDeckId = appState.activeDeckId;
+    localStorage.setItem(DECK_LIBRARY_STORAGE_KEY, JSON.stringify(appState.deckLibrary));
+  } catch (error) {
+    console.warn("Could not save decks to localStorage:", error);
+  }
+}
+
+function hydrateDeckLibraryAgainstCardPool() {
+  const pool = new Map(allCards.map((card) => [String(card.name || "").toLowerCase(), card]));
+  appState.deckLibrary.decks = appState.deckLibrary.decks.map((deck) => ({
+    ...deck,
+    main: deck.main.map((card) => pool.get(String(card.name || "").toLowerCase()) || normalizeCardData(card)),
+    fusion: deck.fusion.map((card) => pool.get(String(card.name || "").toLowerCase()) || normalizeCardData(card))
+  }));
+  deckState = getActiveDeck();
+  syncActiveDeckReference();
+  saveDeckLibrary();
+}
+
+function renderDeckSelect() {
+  deckSelect.innerHTML = appState.deckLibrary.decks.map((deck) => `
+    <option value="${escapeHtml(deck.id)}" ${deck.id === appState.activeDeckId ? "selected" : ""}>${escapeHtml(deck.name)}</option>
+  `).join("");
+  deckNameInput.value = deckState.name || "";
+}
+
+function onDeckSelectChange() {
+  const nextId = deckSelect.value;
+  const nextDeck = appState.deckLibrary.decks.find((deck) => deck.id === nextId);
+  if (!nextDeck) return;
+  appState.activeDeckId = nextId;
+  deckState = sanitizeDeck(nextDeck);
+  saveDeckLibrary();
+  renderDeck();
+  refreshView();
+}
+
+function createNewDeckFromInput() {
+  const name = tidySpaces(deckNameInput.value) || `Deck ${appState.deckLibrary.decks.length + 1}`;
+  const deck = { id: cryptoRandomId(), name, main: [], fusion: [] };
+  appState.deckLibrary.decks.push(deck);
+  appState.activeDeckId = deck.id;
+  deckState = sanitizeDeck(deck);
+  persistDeckState(`Created ${name}`);
+  refreshView();
+}
+
+function renameCurrentDeck() {
+  const name = tidySpaces(deckNameInput.value);
+  if (!name) {
+    toast("Enter a deck name first");
+    return;
+  }
+  deckState.name = name;
+  persistDeckState(`Renamed to ${name}`);
+}
+
+function duplicateCurrentDeck() {
+  const copy = sanitizeDeck({
+    ...deckState,
+    id: cryptoRandomId(),
+    name: `${deckState.name || "Deck"} Copy`
+  });
+  appState.deckLibrary.decks.push(copy);
+  appState.activeDeckId = copy.id;
+  deckState = copy;
+  persistDeckState(`Duplicated ${copy.name}`);
+  refreshView();
+}
+
+function deleteCurrentDeck() {
+  if (appState.deckLibrary.decks.length <= 1) {
+    toast("Keep at least one deck saved");
+    return;
+  }
+  const removedName = deckState.name || "Deck";
+  appState.deckLibrary.decks = appState.deckLibrary.decks.filter((deck) => deck.id !== appState.activeDeckId);
+  appState.activeDeckId = appState.deckLibrary.decks[0].id;
+  deckState = sanitizeDeck(appState.deckLibrary.decks[0]);
+  persistDeckState(`Deleted ${removedName}`);
+  refreshView();
+}
+
+function exportDeck(format) {
+  const deck = sanitizeDeck(deckState);
+  const safeName = slugify(deck.name || "deck") || "deck";
+  if (format === "txt") {
+    const lines = [
+      `${deck.name}`,
+      `Main Deck (${deck.main.length})`,
+      ...summarizeDeckSection(deck.main).map((entry) => `${entry.count}x ${entry.card.name}`),
+      "",
+      `Fusion Deck (${deck.fusion.length})`,
+      ...summarizeDeckSection(deck.fusion).map((entry) => `${entry.count}x ${entry.card.name}`)
+    ];
+    downloadFile(`${safeName}.txt`, lines.join("\n"), "text/plain;charset=utf-8");
+    toast("Deck exported as TXT");
+    return;
+  }
+
+  const payload = JSON.stringify({
+    exportedAt: new Date().toISOString(),
+    deck
+  }, null, 2);
+  downloadFile(`${safeName}.json`, payload, "application/json;charset=utf-8");
+  toast("Deck exported as JSON");
+}
+
+function handleImportDeck(event) {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const text = String(reader.result || "");
+      const imported = parseImportedDeck(text, file.name || "Imported Deck");
+      appState.deckLibrary.decks.push(imported);
+      appState.activeDeckId = imported.id;
+      deckState = imported;
+      persistDeckState(`Imported ${imported.name}`);
+      refreshView();
+    } catch (error) {
+      console.error("Import failed:", error);
+      toast(`Import failed: ${error.message}`);
+    } finally {
+      importDeckInput.value = "";
+    }
+  };
+  reader.readAsText(file);
+}
+
+function parseImportedDeck(text, fallbackName) {
+  const parsed = JSON.parse(text);
+  const rawDeck = parsed.deck || parsed;
+  return sanitizeDeck({
+    id: cryptoRandomId(),
+    name: tidySpaces(rawDeck.name) || tidySpaces(fallbackName.replace(/\.[^.]+$/, "")) || "Imported Deck",
+    main: rawDeck.main || [],
+    fusion: rawDeck.fusion || []
+  });
+}
+
+function downloadFile(filename, content, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 0);
+}
+
+function applyUiState() {
+  const ui = appState.ui || {};
+  searchInput.value = ui.search || "";
+  manaFilter.value = ui.mana || "";
+  attributeFilter.value = ui.attribute || "";
+  archetypeFilter.value = ui.archetype || "";
+  typeFilter.value = ui.type || "";
+  fusionFilter.value = ui.fusion || "";
+  deckViewFilter.value = ui.deckMode || "";
+  hideFullToggle.checked = Boolean(ui.hideFull);
+  sortSelect.value = ui.sort || "name-asc";
+  readUiFromUrl();
+}
+
+function saveUiState() {
+  appState.ui = {
+    search: searchInput.value,
+    mana: manaFilter.value,
+    attribute: attributeFilter.value,
+    archetype: archetypeFilter.value,
+    type: typeFilter.value,
+    fusion: fusionFilter.value,
+    deckMode: deckViewFilter.value,
+    hideFull: hideFullToggle.checked,
+    sort: sortSelect.value
+  };
+  try {
+    localStorage.setItem(UI_STORAGE_KEY, JSON.stringify(appState.ui));
+  } catch (error) {
+    console.warn("Could not save UI state:", error);
+  }
+}
+
+function loadUiState() {
+  try {
+    const raw = localStorage.getItem(UI_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function syncUrlFromUi() {
+  const params = new URLSearchParams();
+  if (searchInput.value) params.set("search", searchInput.value);
+  if (manaFilter.value) params.set("mana", manaFilter.value);
+  if (attributeFilter.value) params.set("attribute", attributeFilter.value);
+  if (archetypeFilter.value) params.set("archetype", archetypeFilter.value);
+  if (typeFilter.value) params.set("type", typeFilter.value);
+  if (fusionFilter.value) params.set("fusion", fusionFilter.value);
+  if (deckViewFilter.value) params.set("deckView", deckViewFilter.value);
+  if (hideFullToggle.checked) params.set("hideFull", "1");
+  if (sortSelect.value && sortSelect.value !== "name-asc") params.set("sort", sortSelect.value);
+  const next = `${location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+  history.replaceState(null, "", next);
+}
+
+function readUiFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  searchInput.value = params.get("search") || searchInput.value;
+  manaFilter.value = params.get("mana") || manaFilter.value;
+  attributeFilter.value = params.get("attribute") || attributeFilter.value;
+  archetypeFilter.value = params.get("archetype") || archetypeFilter.value;
+  typeFilter.value = params.get("type") || typeFilter.value;
+  fusionFilter.value = params.get("fusion") || fusionFilter.value;
+  deckViewFilter.value = params.get("deckView") || deckViewFilter.value;
+  hideFullToggle.checked = params.get("hideFull") === "1" || hideFullToggle.checked;
+  sortSelect.value = params.get("sort") || sortSelect.value;
+}
+
+function attachImageFallback(img, label, onFallback) {
+  if (!img) return;
+  img.addEventListener("error", () => {
+    img.src = createFallbackImage(label);
+    if (typeof onFallback === "function") onFallback();
+  }, { once: true });
+}
+
+function preloadImage(src) {
+  if (!src) return;
+  const img = new Image();
+  img.src = src;
 }
 
 function createFallbackImage(label) {
@@ -747,4 +1311,8 @@ function escapeXml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&apos;");
+}
+
+function cryptoRandomId() {
+  return `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
 }
