@@ -2,7 +2,6 @@
 let allCards = [];
 let filteredCards = [];
 let visibleCount = 0;
-const PAGE_SIZE = 48;
 const DECK_LIBRARY_STORAGE_KEY = "dimensions_tcg_decks_v2";
 const LEGACY_DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
 const UI_STORAGE_KEY = "dimensions_tcg_ui_v2";
@@ -466,8 +465,8 @@ function isFusionCard(card) {
 function refreshView() {
   saveUiState();
   filteredCards = getFilteredCards();
-  visibleCount = Math.min(PAGE_SIZE, filteredCards.length);
-  renderCards(filteredCards.slice(0, visibleCount));
+  visibleCount = filteredCards.length;
+  renderCards(filteredCards);
   updateLoadMore();
   syncUrlFromUi();
 }
@@ -746,19 +745,13 @@ function clearFilters() {
 }
 
 function loadMoreCards() {
-  visibleCount = Math.min(visibleCount + PAGE_SIZE, filteredCards.length);
-  renderCards(filteredCards.slice(0, visibleCount));
+  visibleCount = filteredCards.length;
+  renderCards(filteredCards);
   updateLoadMore();
 }
 
 function updateLoadMore() {
-  const remaining = filteredCards.length - visibleCount;
-  if (remaining > 0) {
-    loadMoreBtn.classList.remove("hidden");
-    loadMoreBtn.textContent = `Load More (${remaining} remaining)`;
-  } else {
-    loadMoreBtn.classList.add("hidden");
-  }
+  loadMoreBtn.classList.add("hidden");
 }
 
 function showHoverPreview(card, event) {
