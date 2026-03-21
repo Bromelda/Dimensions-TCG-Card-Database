@@ -807,6 +807,46 @@ function getDeckSection(card) {
   return isFusionCard(card) ? "fusion" : "main";
 }
 
+function addFusionSuggestionPackage(fusionCard) {
+  if (!fusionCard) return;
+
+  addCardToDeck(fusionCard);
+
+  const required = parseFusionMaterials(fusionCard);
+  for (const requirement of required) {
+    let remaining = Number(requirement.count || 1);
+    if (!remaining) continue;
+
+    const exactMatches = allCards.filter((card) =>
+      !isFusionCard(card) &&
+      String(card.name || "").toLowerCase() === String(requirement.name || "").toLowerCase()
+    );
+
+    for (const materialCard of exactMatches) {
+      const section = getDeckSection(materialCard);
+      const currentCopies = getCardCopiesInSection(materialCard, section);
+      const limit = getCardCopyLimit(materialCard);
+      const missingCopies = Math.max(0, Math.min(limit - currentCopies, remaining));
+
+      for (let i = 0; i < missingCopies; i += 1) {
+        addCardToDeck(materialCard);
+      }
+
+      remaining -= missingCopies;
+      if (remaining <= 0) break;
+    }
+  }
+
+  const fusionSpell = allCards.find((card) =>
+    !isFusionCard(card) && String(card.name || "").toLowerCase() === "fusion spell"
+  );
+
+  if (fusionSpell && getCardCopiesInSection(fusionSpell, "main") < 1) {
+    addCardToDeck(fusionSpell);
+  }
+}
+
+
 function getCardCopyLimit(card) {
   return card?.isLegendary ? 1 : 3;
 }
@@ -1014,7 +1054,7 @@ function renderDeckStats() {
       btn.addEventListener('click', () => {
         const card = allCards.find((entry) => entry.cardId === btn.dataset.cardId);
         if (card) {
-          addCardToDeck(card);
+          addFusionSuggestionPackage(card);
           refreshView();
         }
       });
