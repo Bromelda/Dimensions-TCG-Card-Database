@@ -14,7 +14,7 @@ const appState = {
   currentModalIndex: -1,
   modalLastFocus: null,
   mobileFiltersOpen: false,
-  previewEnabled: window.matchMedia("(hover: hover) and (pointer: fine)").matches,
+  previewEnabled: false,
   ui: loadUiState()
 };
 
