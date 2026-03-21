@@ -240,13 +240,14 @@ select {
 
 .deck-panel {
   position: sticky;
-  top: 110px;
+  top: 96px;
   background: linear-gradient(180deg, #191919 0%, #141414 100%);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 16px;
-  max-height: calc(100vh - 140px);
+  max-height: calc(100dvh - 116px);
   overflow: auto;
+  scrollbar-gutter: stable;
 }
 
 .deck-status,
