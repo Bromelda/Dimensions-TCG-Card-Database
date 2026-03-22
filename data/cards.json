@@ -25,18 +25,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "48eb2c8a05",
-            "name": "A New Era",
-            "manaCost": 6,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/a_new_era.png",
-            "rulesText": "Play; Add 1 spell card from your deck to your hand."
-        },
-        {
             "cardId": "95",
             "name": "Amalgam",
             "manaCost": 8,
@@ -61,7 +49,7 @@
             "rulesText": "After a Magician spell is played. You can Seal this card to add a different Magician spell from your Grave back to your hand."
         },
         {
-            "cardId": "84ecd564f3",
+            "cardId": "200",
             "name": "Baby Dragon",
             "manaCost": 2,
             "attribute": "Earth",
@@ -70,7 +58,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/baby_dragon.png",
-            "rulesText": "Death; Summon a Dragon from your deck that cost 4 or less Mana to summon."
+            "rulesText": "Death; Summon 1 Dragon from your deck that cost 4 or less Mana."
         },
         {
             "cardId": "25",
@@ -85,7 +73,7 @@
             "rulesText": "After a creature you control deals Life damage by battle, you can active this card.\n\nHand; Draw one card at a time up to 10 and reveal that card to the enemy, if it is a creature card you can use this effect again until you draw a card that isn't a creature. \nDeal 1 Life damage to the enemy when a creature is drawn by this effect.\nBanish your hand at the end of this turn."
         },
         {
-            "cardId": "49972be670",
+            "cardId": "127",
             "name": "Black Dragon",
             "manaCost": 7,
             "attribute": "Fire",
@@ -97,7 +85,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "5c840f292d",
+            "cardId": "186",
             "name": "Black Fiendish Dragon",
             "manaCost": 12,
             "attribute": "Dark",
@@ -109,7 +97,7 @@
             "rulesText": "Fusion; Fiendish Skull + Black Dragon\n\nWhen this card attacks and destroys 1 creature by battle, deal that creatures DEF as Life damage to the enemy."
         },
         {
-            "cardId": "f169e93ba3",
+            "cardId": "141",
             "name": "Black Hole",
             "manaCost": 8,
             "attribute": "Neutral",
@@ -121,7 +109,7 @@
             "rulesText": "Play; Destroy all creatures on the field."
         },
         {
-            "cardId": "8b73a932de",
+            "cardId": "128",
             "name": "Black Metal Dragon",
             "manaCost": 8,
             "attribute": "Dark",
@@ -169,7 +157,7 @@
             "rulesText": "Remove 15 Milk Tokens from your field then draw 5 cards."
         },
         {
-            "cardId": "d2f6f9b3ef",
+            "cardId": "201",
             "name": "Blue Stone Dragon",
             "manaCost": 5,
             "attribute": "Earth",
@@ -181,7 +169,7 @@
             "rulesText": "Haste"
         },
         {
-            "cardId": "4ad451066f",
+            "cardId": "142",
             "name": "Bright Sky",
             "manaCost": 1,
             "attribute": "Neutral",
@@ -457,7 +445,7 @@
             "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost."
         },
         {
-            "cardId": "7cda6791ff",
+            "cardId": "143",
             "name": "Counter Blade",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -469,7 +457,7 @@
             "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature on the field."
         },
         {
-            "cardId": "42d5c8a1d2",
+            "cardId": "144",
             "name": "Counter Spell",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -493,7 +481,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "15cea99720",
+            "cardId": "145",
             "name": "Cup of Wealth",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -517,7 +505,7 @@
             "rulesText": "Battlecry; Show the top 4 cards of your deck, add any card with Cheese/Cow in their name to your hand."
         },
         {
-            "cardId": "5c49657c61",
+            "cardId": "129",
             "name": "Cyber Gimzo",
             "manaCost": 6,
             "attribute": "Dark",
@@ -553,7 +541,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "d813c24280",
+            "cardId": "187",
             "name": "Dark Dragoon Magician",
             "manaCost": 12,
             "attribute": "Fire",
@@ -565,7 +553,7 @@
             "rulesText": "Fusion; Black Dragon + Magician of Chaos + 2 Dark Swordsman\n\r\nCannot be destroyed by Spell effects \nQuick; Negate an effect until the end of turn."
         },
         {
-            "cardId": "833b430f37",
+            "cardId": "146",
             "name": "Dark Eyes Fiend",
             "manaCost": 2,
             "attribute": "Dark",
@@ -589,7 +577,7 @@
             "rulesText": "Fiend creatures get +1/+1 and Fairy creatures get -1 DEF."
         },
         {
-            "cardId": "d1f054677f",
+            "cardId": "147",
             "name": "Dark Offering",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -613,7 +601,7 @@
             "rulesText": "When a monster with Venom Tokens is destroyed by battle, this card gains a Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card."
         },
         {
-            "cardId": "edd6abd2a7",
+            "cardId": "148",
             "name": "Dark Swordsman",
             "manaCost": 2,
             "attribute": "Dark",
@@ -625,7 +613,7 @@
             "rulesText": "After this card attacks, unseal itself once for every equipment card attached."
         },
         {
-            "cardId": "166d0fe66c",
+            "cardId": "149",
             "name": "Dark Trader",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -649,7 +637,7 @@
             "rulesText": "Dark creatures get +1 ATK and Light creatures get -1 DEF."
         },
         {
-            "cardId": "24b473263f",
+            "cardId": "112",
             "name": "Darksider Bane",
             "manaCost": 1,
             "attribute": "Dark",
@@ -661,7 +649,7 @@
             "rulesText": "Discarded; Summon to the enemy field.\n\nDeath; owner sends 1 Mana to the grave.\n\n"
         },
         {
-            "cardId": "c8f6837091",
+            "cardId": "113",
             "name": "Darksider Beast",
             "manaCost": 2,
             "attribute": "Dark",
@@ -673,7 +661,7 @@
             "rulesText": "Death; Add a 3 Mana cost or lower Darksider from your deck to your hand."
         },
         {
-            "cardId": "8cccc76533",
+            "cardId": "114",
             "name": "Darksider Calling",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -709,7 +697,7 @@
             "rulesText": "Battlecry; Destroy 1 spell on the field."
         },
         {
-            "cardId": "3dbd2f351f",
+            "cardId": "115",
             "name": "Darksider Dealing",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -733,7 +721,7 @@
             "rulesText": "Fusion; Darksider Ruler + 1 Dragon + 2 different Darksider creatures.\n\nBattlecry; Each player discards 1 card. \nQuick; Change the effect of 1 card to \"The enemy discards 1 card\" until the end of turn.\nDeath; Summon a different Darksider from your grave to the field. "
         },
         {
-            "cardId": "cc48c858b9",
+            "cardId": "116",
             "name": "Darksider Gate",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -742,10 +730,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_gate.png",
-            "rulesText": "Seal; Choose 1 effect.\n\nDiscard then draw 1 card.\nDestroy this card, add 1 Darksider creature from your Grave to your hand."
+            "rulesText": "Seal; Choose 1 effect.\n\n1: Discard then draw 1 card.\n2: Destroy this card, add 1 Darksider creature from your grave to your hand."
         },
         {
-            "cardId": "0a61f7a6e7",
+            "cardId": "117",
             "name": "Darksider Goldmen",
             "manaCost": 6,
             "attribute": "Dark",
@@ -757,7 +745,7 @@
             "rulesText": "Discarded; By a creature effect, shuffle this card back into your deck.\n\nBattlecry; Destroy 1 creature on the field."
         },
         {
-            "cardId": "0a6d2e2fb2",
+            "cardId": "118",
             "name": "Darksider Grimoire",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -793,7 +781,7 @@
             "rulesText": "Discarded; by a creature effect, Summon 1 Fiend from your deck that cost 3 Mana or less."
         },
         {
-            "cardId": "94c653b28f",
+            "cardId": "119",
             "name": "Darksider Hunter",
             "manaCost": 3,
             "attribute": "Dark",
@@ -805,7 +793,7 @@
             "rulesText": "Discarded; Draw 1 card."
         },
         {
-            "cardId": "fbabbac625",
+            "cardId": "120",
             "name": "Darksider Knight",
             "manaCost": 5,
             "attribute": "Dark",
@@ -853,7 +841,7 @@
             "rulesText": "Play; Banish 3 Darksider cards from your grave then discard 1 card."
         },
         {
-            "cardId": "da714cc181",
+            "cardId": "121",
             "name": "Darksider Ruler",
             "manaCost": 8,
             "attribute": "Dark",
@@ -865,7 +853,7 @@
             "rulesText": "SpecialSummon;  Summon by Banishing 3 Darksider creatures on your field.\nCannot be Summoned without listed cards.\n\nBattlecry; Discard 1 card then draw 1 card.\nSeal; Discard 2 card and destroy 1 creature on the field.\n"
         },
         {
-            "cardId": "12be3ee054",
+            "cardId": "122",
             "name": "Darksider Scholar",
             "manaCost": 1,
             "attribute": "Dark",
@@ -877,7 +865,7 @@
             "rulesText": "Discarded; Add this card into your Mana pool, Sealed."
         },
         {
-            "cardId": "43b74ccfdc",
+            "cardId": "123",
             "name": "Darksider Shield",
             "manaCost": 2,
             "attribute": "Dark",
@@ -889,7 +877,7 @@
             "rulesText": "Battlecry; Add 1 Darksider Gate from your deck to your hand."
         },
         {
-            "cardId": "492d99f7e2",
+            "cardId": "124",
             "name": "Darksider Spearman",
             "manaCost": 2,
             "attribute": "Dark",
@@ -901,7 +889,7 @@
             "rulesText": "Discarded; Summon instead."
         },
         {
-            "cardId": "78c9682fd2",
+            "cardId": "125",
             "name": "Darksider Study",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -910,10 +898,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_study.png",
-            "rulesText": "Play; Discard 1 card, then add 1 creature Darksider from your deck to your hand.\n\nActivateFromGrave; If this Card is in your grave, you can banish 1 creature in your grave and destroy 1 Mana to add this card to your hand\n"
+            "rulesText": "Play; Discard 1 card, then add 1 Darksider creature from your deck to your hand.\n\nActivateFromGrave; If this Card is in your grave, you can banish 1 creature in your grave and destroy 1 Mana to add this card to your hand\n"
         },
         {
-            "cardId": "5f61f4d668",
+            "cardId": "126",
             "name": "Darksider Warrior",
             "manaCost": 3,
             "attribute": "Dark",
@@ -937,7 +925,7 @@
             "rulesText": "During Battle Phase, this creature can attack twice."
         },
         {
-            "cardId": "bb85d0f052",
+            "cardId": "150",
             "name": "Data World",
             "manaCost": 6,
             "attribute": "Neutral",
@@ -949,7 +937,7 @@
             "rulesText": "Seal; Banish creatures from your field that is needed for a Fusion creature, summon that Fusion creature."
         },
         {
-            "cardId": "b3493dd8ed",
+            "cardId": "151",
             "name": "Dealer's Trade",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -982,10 +970,10 @@
             "atk": 1,
             "def": 2,
             "image": "./images/cards/dragon_charmer.png",
-            "rulesText": "All dragon creatures are sealed and stay sealed while this card is on the field"
+            "rulesText": "All Dragon creatures are sealed."
         },
         {
-            "cardId": "1c0b1d9bab",
+            "cardId": "202",
             "name": "Dragon Fireball",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -994,10 +982,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragon_fireball.png",
-            "rulesText": "While you control a Dragon monster choose one:\nDestroy a spell on the field\n-or-\nDeal 5 Life damage to the enemy"
+            "rulesText": "Play; While you control a Dragon creature choose 1 effect:\n\n1: Destroy 1 spell.\n2: Deal 5 Life damage to the enemy."
         },
         {
-            "cardId": "5a0f1d22c9",
+            "cardId": "203",
             "name": "Dragon Hills",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -1006,10 +994,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragon_hills.png",
-            "rulesText": "Seal; Discard a card then use one of the following effects.\nAdd a level 4 or lower Dragon from deck to hand.\n-or-\nSend a Dragon from deck to Grave then draw a card."
+            "rulesText": "Seal; Discard 1 card then choose 1 effect.\n\n1: Add a 4 Mana or lower Dragon from your deck to your hand.\n2: Send 1 Dragon from your deck to your grave, then draw 1 card."
         },
         {
-            "cardId": "69f3076f9a",
+            "cardId": "204",
             "name": "Dragon Lord Drip",
             "manaCost": 3,
             "attribute": "Water",
@@ -1018,10 +1006,10 @@
             "atk": 1,
             "def": 2,
             "image": "./images/cards/dragon_lord_drip.png",
-            "rulesText": "Battlecry; Discard a Dragon to add Dragon Lord Waves from deck to hand.\nDeath; Banish this and a Dragon in your Grave then summon Dragon Lord Waves from hand."
+            "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Waves from your deck to your hand.\nDeath; Banish this and 1 Dragon in your grave, then summon Dragon Lord Waves from your hand."
         },
         {
-            "cardId": "3dc91262c0",
+            "cardId": "205",
             "name": "Dragon Lord Flames",
             "manaCost": 8,
             "attribute": "Fire",
@@ -1030,10 +1018,10 @@
             "atk": 6,
             "def": 3,
             "image": "./images/cards/dragon_lord_flames.png",
-            "rulesText": "Special; Deal 3 Life damage to the enemy.\nSeal; Discard a card, add a Fire monster from your Grave to your hand."
+            "rulesText": "Battlecry;  Deal 3 Life damage to the enemy.\nSeal; Discard 1 card, add 1 Fire creature from your grave to your hand."
         },
         {
-            "cardId": "13a90a5294",
+            "cardId": "206",
             "name": "Dragon Lord Peb",
             "manaCost": 3,
             "attribute": "Earth",
@@ -1042,22 +1030,22 @@
             "atk": 1,
             "def": 2,
             "image": "./images/cards/dragon_lord_peb.png",
-            "rulesText": "Battlecry; Discard a Dragon to add Dragon Lord Stones from deck to hand.\nDeath; Banish this and a Dragon in your Grave then summon Dragon Lord Stones from hand."
+            "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Stones from your deck to your hand.\nDeath; Banish this card and 1 Dragon in your grave, then summon Dragon Lord Stones from your hand."
         },
         {
-            "cardId": "284fd77b9a",
+            "cardId": "207",
             "name": "Dragon Lord Spark",
             "manaCost": 3,
-            "attribute": "Wind",
+            "attribute": "Fire",
             "archetype": "Dragon",
             "cardType": "Creature",
             "atk": 2,
             "def": 1,
             "image": "./images/cards/dragon_lord_spark.png",
-            "rulesText": "Battlecry; Discard a Dragon to add Dragon Lord Flames from deck to hand.\nDeath; Banish this and a Dragon in your Grave then summon Dragon Lord Stones from hand."
+            "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Flames from your deck to your hand.\nDeath; Banish this card and 1 Dragon in your grave, then summon Dragon Lord Flames from your hand."
         },
         {
-            "cardId": "298235e8f5",
+            "cardId": "208",
             "name": "Dragon Lord Stones",
             "manaCost": 8,
             "attribute": "Earth",
@@ -1066,10 +1054,10 @@
             "atk": 4,
             "def": 5,
             "image": "./images/cards/dragon_lord_stones.png",
-            "rulesText": "Special; Destroy a monster on the field.\nSeal; Discard a card, add a Dragon card from your Grave to your hand."
+            "rulesText": "Battlecry; Destroy 1 creature.\nSeal; Discard 1 card, add 1 Dragon card from your grave to your hand."
         },
         {
-            "cardId": "b7b29e21f6",
+            "cardId": "209",
             "name": "Dragon Lord Storms",
             "manaCost": 8,
             "attribute": "Wind",
@@ -1078,22 +1066,22 @@
             "atk": 5,
             "def": 4,
             "image": "./images/cards/dragon_lord_storms.png",
-            "rulesText": "Special; Destroy a spell on the field.\nSeal; Discard a card, add a Wind monster from your Grave to your hand."
+            "rulesText": "Battlecry; Destroy 1 spell.\nSeal; Discard 1 card, add 1 Wind creature from your grave to your hand."
         },
         {
-            "cardId": "cd328ab8c3",
+            "cardId": "210",
             "name": "Dragon Lord Supreme",
             "manaCost": 10,
             "attribute": "Fire",
-            "archetype": "Fusion/Dragon",
+            "archetype": "Dragon",
             "cardType": "Fusion",
             "atk": 5,
             "def": 8,
             "image": "./images/cards/dragon_lord_supreme.png",
-            "rulesText": "Cannot be Summoned without listed cards.\n3 different level 8 Dragon Lord monsters.\nSpecial; Add 2 Banish Dragons into your deck.\nSeal; Banish 2 Dragon Lords from Grave to destroy 2 cards on the field.\nDeath; You can Banish 2 Fire monsters to return this to your Fusion deck instead."
+            "rulesText": "Fusion; 3 different 8 Mana cost Dragon Lord creatures.\nCannot be Summoned without listed cards.\n\n\nBattlecry; Add 2 Banished Dragons into your deck.\nSeal; Banish 2 Dragon Lord creatures from your grave to destroy 2 cards.\nDeath; You can Banish 2 Fire creatures from your grave to return this card to your Spatial deck instead."
         },
         {
-            "cardId": "65cf40d702",
+            "cardId": "211",
             "name": "Dragon Lord Waves",
             "manaCost": 8,
             "attribute": "Water",
@@ -1102,10 +1090,10 @@
             "atk": 3,
             "def": 6,
             "image": "./images/cards/dragon_lord_waves.png",
-            "rulesText": "Special; Draw 2 cards or show the top 4 cards of your deck, add one of those to your hand and shuffle the deck.\nSeal; Discard a card, add a Water monster from your Grave to your hand."
+            "rulesText": "Battlecry; Draw 2 cards or reveal the top 4 cards of your deck, add one revealed card to your hand.\nSeal; Discard 1 card, add 1 Water creature from your grave to your hand."
         },
         {
-            "cardId": "e1e3971fea",
+            "cardId": "212",
             "name": "Dragon Lord Wing",
             "manaCost": 3,
             "attribute": "Wind",
@@ -1114,10 +1102,10 @@
             "atk": 2,
             "def": 1,
             "image": "./images/cards/dragon_lord_wing.png",
-            "rulesText": "Battlecry; Discard a Dragon to add Dragon Lord Storms from deck to hand.\nDeath; Banish this and a Dragon in your Grave then summon Dragon Lord Storms from hand."
+            "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Storms from your deck to your hand.\nDeath; Banish this and 1 Dragon in your grave, then summon Dragon Lord Storms from your hand."
         },
         {
-            "cardId": "0255f2abfc",
+            "cardId": "213",
             "name": "Dragons Rampage",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -1126,7 +1114,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragons_rampage.png",
-            "rulesText": "Any monster destroyed by a Dragon in battle deal Life damage to the enemy equal to that monster DEF."
+            "rulesText": "Any creature destroyed by a Dragon in battle deals Life damage to the enemy equal to the creatures DEF."
         },
         {
             "cardId": "101",
@@ -1141,7 +1129,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "1547b40729",
+            "cardId": "152",
             "name": "Elf Warrior",
             "manaCost": 5,
             "attribute": "Earth",
@@ -1177,7 +1165,7 @@
             "rulesText": "Non-Reptile monsters you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed."
         },
         {
-            "cardId": "1ff674f188",
+            "cardId": "153",
             "name": "Eye Restrict",
             "manaCost": 1,
             "attribute": "Dark",
@@ -1225,7 +1213,7 @@
             "rulesText": "After Casting a Spell card from your hand, deal 1 Life damage to the enemy player."
         },
         {
-            "cardId": "e0f539e818",
+            "cardId": "154",
             "name": "Fiendish Skull",
             "manaCost": 6,
             "attribute": "Dark",
@@ -1249,7 +1237,7 @@
             "rulesText": "This card is always Sealed, cannot be Unsealed. \nEnemy Spell cards in their hand cost 1 more Mana.  \n "
         },
         {
-            "cardId": "def8b125e3",
+            "cardId": "155",
             "name": "Flaming Dragon",
             "manaCost": 4,
             "attribute": "Fire",
@@ -1261,7 +1249,7 @@
             "rulesText": "Battlecry; Add 1 Fire creature from your deck to your hand."
         },
         {
-            "cardId": "24c5168590",
+            "cardId": "188",
             "name": "Flaming Swordsman",
             "manaCost": 5,
             "attribute": "Earth",
@@ -1285,7 +1273,7 @@
             "rulesText": "Wind creatures get +1 ATK and Fire creatures get -1 DEF."
         },
         {
-            "cardId": "9db1e7d377",
+            "cardId": "156",
             "name": "Forest Sprite",
             "manaCost": 2,
             "attribute": "Earth",
@@ -1297,7 +1285,7 @@
             "rulesText": "Battlecry; Add the top card of your deck to your mana pool."
         },
         {
-            "cardId": "a50e89af14",
+            "cardId": "157",
             "name": "Forest Witch",
             "manaCost": 4,
             "attribute": "Dark",
@@ -1321,7 +1309,7 @@
             "rulesText": "Dino creatures get +1/+1 and Fish creatures get -1 ATK."
         },
         {
-            "cardId": "3af75fd2f3",
+            "cardId": "158",
             "name": "Frost Wave",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -1369,7 +1357,7 @@
             "rulesText": "Seal; During your turn if you summon a Fusion card, you can add 1 Fusion Spell/creature card used for that Fusion back to your hand from your grave."
         },
         {
-            "cardId": "d9d9bedaca",
+            "cardId": "159",
             "name": "Fusion Spell",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -1573,7 +1561,7 @@
             "rulesText": "While Maze of the Guardian is on the field, this card can't be attacked by enemy monsters.\nSeal; Deal 3 Life damage to the enemy."
         },
         {
-            "cardId": "159d81e87d",
+            "cardId": "160",
             "name": "Hairy Fiend",
             "manaCost": 2,
             "attribute": "Dark",
@@ -1585,7 +1573,7 @@
             "rulesText": "Death; Add 1 creature from your deck to your hand that cost 2 or less Mana."
         },
         {
-            "cardId": "fe8c27229a",
+            "cardId": "161",
             "name": "Head of the Sealed One",
             "manaCost": 10,
             "attribute": "Dark",
@@ -1609,7 +1597,7 @@
             "rulesText": "When the equipped creature declares an attack, the creature it attacks has its effects negated until the end of turn."
         },
         {
-            "cardId": "861e4b105b",
+            "cardId": "189",
             "name": "Herald of Light",
             "manaCost": 6,
             "attribute": "Light",
@@ -1633,7 +1621,7 @@
             "rulesText": "Battlecry; You can turn this card into Equipment and equip it to a creature you control.\n\nSeal; Play 1 Equipment Spell from your deck to a creature you control only if this is attached to a creature. You must pay its Mana cost."
         },
         {
-            "cardId": "a94759cc5d",
+            "cardId": "163",
             "name": "Holy Awe",
             "manaCost": 8,
             "attribute": "Neutral",
@@ -1645,7 +1633,7 @@
             "rulesText": "Play; Seal all enemy creatures."
         },
         {
-            "cardId": "9eb53206ee",
+            "cardId": "162",
             "name": "Holy Awe Bottle",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -1657,7 +1645,7 @@
             "rulesText": "The enemy \"Holy Awe\" spells are negated."
         },
         {
-            "cardId": "93ff275c3d",
+            "cardId": "130",
             "name": "Horned Fiend",
             "manaCost": 4,
             "attribute": "Dark",
@@ -1669,7 +1657,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "a5a1ac8250",
+            "cardId": "131",
             "name": "Horned Metal Fiend",
             "manaCost": 6,
             "attribute": "Dark",
@@ -1729,7 +1717,7 @@
             "rulesText": "After you draw a card seal this card,Roll\n\n1-5= Destroy all Spells with mana cost equal to the number rolled.\n6= Destroy all Spells with mana cost of 6 or higher."
         },
         {
-            "cardId": "95c340922f",
+            "cardId": "190",
             "name": "Knight Dragon Rider",
             "manaCost": 6,
             "attribute": "Earth",
@@ -1753,7 +1741,7 @@
             "rulesText": "Hand; Pay 2 Mana to activate from hand.\nSend 1 creature on the enemy field to the grave, then summon this to the enemy field.\nDeal 2 Life damage to the controller of this card when they draw a card."
         },
         {
-            "cardId": "dd9e544b95",
+            "cardId": "164",
             "name": "Left Arm of The Sealed One",
             "manaCost": 1,
             "attribute": "Dark",
@@ -1765,7 +1753,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "30c0c8434c",
+            "cardId": "165",
             "name": "Left Leg of The Sealed One",
             "manaCost": 1,
             "attribute": "Dark",
@@ -1825,7 +1813,7 @@
             "rulesText": "Cannot be summoned, summon by returning 12 Lightborn monsters from your Grave to your deck.\nAt the end of the turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy ALL other cards on the field."
         },
         {
-            "cardId": "ebb67c4c26",
+            "cardId": "191",
             "name": "Light Shining Dragon",
             "manaCost": 12,
             "attribute": "Light",
@@ -2005,7 +1993,7 @@
             "rulesText": "If send from deck to Grave, you can summon this card instead."
         },
         {
-            "cardId": "c7fa752d11",
+            "cardId": "166",
             "name": "Lockdown",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -2017,7 +2005,7 @@
             "rulesText": "Both players are unable to ADD cards from their deck to their hand (beside drawing)."
         },
         {
-            "cardId": "12b62cb7cd",
+            "cardId": "214",
             "name": "Lord of Dragons",
             "manaCost": 2,
             "attribute": "Dark",
@@ -2089,7 +2077,7 @@
             "rulesText": "Once per turn, you can pay 10 Life to give this card +9 ATK until the end of turn.\n"
         },
         {
-            "cardId": "7058aa8fca",
+            "cardId": "185",
             "name": "Madness from the Grave",
             "manaCost": 1,
             "attribute": "Neutral",
@@ -2113,18 +2101,6 @@
             "rulesText": "Play: Reveal 1 non-effect Fusion creature. Pay 5 Life for each mana it cost; if you do, summon it, ignoring its Fusion cost."
         },
         {
-            "cardId": "386b73d7d7",
-            "name": "Magical Borderline",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magical_borderline.png",
-            "rulesText": "Hand; Negate an attack and end the Battle Phase."
-        },
-        {
             "cardId": "24",
             "name": "Magical Forest Plants",
             "manaCost": 2,
@@ -2135,6 +2111,18 @@
             "def": 1,
             "image": "./images/cards/magical_forest_plants.png",
             "rulesText": "Death; Summon 1 Magical Forest Plants from your deck."
+        },
+        {
+            "cardId": "167",
+            "name": "Magicial Borderline",
+            "manaCost": 3,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/magicial_borderline.png",
+            "rulesText": "Hand; Negate an attack and end the Battle Phase."
         },
         {
             "cardId": "b2bc8775b1",
@@ -2353,7 +2341,7 @@
             "rulesText": "Light creatures get +1 DEF and Dark creatures get -1 ATK."
         },
         {
-            "cardId": "27581c6e51",
+            "cardId": "132",
             "name": "Mech Defender",
             "manaCost": 3,
             "attribute": "Earth",
@@ -2401,7 +2389,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "425ada3fbc",
+            "cardId": "133",
             "name": "Metal Armor",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -2413,7 +2401,7 @@
             "rulesText": "Play; Equip to 1 creature you control. It gains +1 ATK and +2 DEF.\n\nThe Creature equipped with this becomes a Machine."
         },
         {
-            "cardId": "bb59ccfb10",
+            "cardId": "134",
             "name": "Metal Scarecrow",
             "manaCost": 0,
             "attribute": "Dark",
@@ -2473,7 +2461,7 @@
             "rulesText": "If this card was summon by Molten Dragon Lvl2 effect, gain Haste.\nWhen this attacks, Mill a card from the enemy deck."
         },
         {
-            "cardId": "12d8dcd17d",
+            "cardId": "215",
             "name": "Moon Dragon",
             "manaCost": 6,
             "attribute": "Earth",
@@ -2482,7 +2470,7 @@
             "atk": 5,
             "def": 5,
             "image": "./images/cards/moon_dragon.png",
-            "rulesText": "At the end of the turn, Unseal this card."
+            "rulesText": "At the end of turn, Unseal this card."
         },
         {
             "cardId": "67",
@@ -2509,7 +2497,7 @@
             "rulesText": "Fusion; Dark Eyes Fiend + Dark Eyes Fiend + Dark Eyes Fiend"
         },
         {
-            "cardId": "774dfa602c",
+            "cardId": "168",
             "name": "Nib the Primal Lord",
             "manaCost": 10,
             "attribute": "Dark",
@@ -2569,7 +2557,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "2fb4d9930d",
+            "cardId": "192",
             "name": "Phantom Night Fiend",
             "manaCost": 5,
             "attribute": "Dark",
@@ -2581,7 +2569,7 @@
             "rulesText": "Fusion; Dark Eyes Fiend + Hairy Fiend + Forest Witch\n\nBattlecry; Draw 5 cards then shuffle 3 cards from your hand back into your deck."
         },
         {
-            "cardId": "8c686f4df1",
+            "cardId": "169",
             "name": "Power Swap",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -2666,14 +2654,14 @@
         },
         {
             "cardId": "09",
-            "name": "Pyscho Warrrior Scout",
+            "name": "Psycho Warrrior Scout",
             "manaCost": 2,
             "attribute": "Earth",
             "archetype": "Humanoid",
             "cardType": "Creature",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/pyscho_warrrior_scout.png",
+            "image": "./images/cards/psycho_warrrior_scout.png",
             "rulesText": "When another Psycho Warrior is summoned, you can seal this card to add 1 card from your deck to your mana pool."
         },
         {
@@ -2713,7 +2701,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "193fbbd4d6",
+            "cardId": "170",
             "name": "Reckless Greed",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -2737,7 +2725,19 @@
             "rulesText": "Fusion; Dairy Cow + Dairy Cow"
         },
         {
-            "cardId": "b35ea3e26a",
+            "cardId": "217",
+            "name": "Resting Dragon",
+            "manaCost": 3,
+            "attribute": "Earth",
+            "archetype": "Dragon",
+            "cardType": "Creature",
+            "atk": 2,
+            "def": 4,
+            "image": "./images/cards/resting_dragon.png",
+            "rulesText": ""
+        },
+        {
+            "cardId": "216",
             "name": "Returning Dragon",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -2746,10 +2746,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/returning_dragon.png",
-            "rulesText": "Destroy a Dragon you control then Banish 2 Dragons from your Grave.\nSummon a different banished Dragon with less Mana cost then the one destroyed."
+            "rulesText": "Play; Destroy 1 Dragon you control, then banish 2 Dragons from your grave.\nSummon 1 different banished Dragon with less Mana cost then the one destroyed."
         },
         {
-            "cardId": "c8a929a743",
+            "cardId": "171",
             "name": "Returning Souls",
             "manaCost": 6,
             "attribute": "Neutral",
@@ -2761,7 +2761,7 @@
             "rulesText": "Play; When you have 6 or more creatures in your grave.\nBanish 1 creature in your grave, then shuffle 5 creatures from your grave into your deck, draw 1 card."
         },
         {
-            "cardId": "c1113c3bc8",
+            "cardId": "172",
             "name": "Right Arm of The Sealed One",
             "manaCost": 1,
             "attribute": "Dark",
@@ -2773,7 +2773,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "3b23f3a49c",
+            "cardId": "173",
             "name": "Right Leg of The Sealed One",
             "manaCost": 1,
             "attribute": "Dark",
@@ -2785,7 +2785,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "a57f431165",
+            "cardId": "175",
             "name": "Sealed Sarcophagus",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -2797,7 +2797,7 @@
             "rulesText": "Play; Banish 1 card from your deck, after the start of your third turn after this card's activation, add the banished card to your hand."
         },
         {
-            "cardId": "d4dc1d3a0c",
+            "cardId": "174",
             "name": "Shield Warrior",
             "manaCost": 3,
             "attribute": "Earth",
@@ -2881,7 +2881,7 @@
             "rulesText": "Fusion; Skeleton + Skeleton"
         },
         {
-            "cardId": "323a549a5b",
+            "cardId": "135",
             "name": "Slot Machine",
             "manaCost": 5,
             "attribute": "Earth",
@@ -2893,7 +2893,7 @@
             "rulesText": "Seal; Roll,\n\n1= Destroy this card. \n2-5= Give all Machine creatures you control +2 ATK until the end of this turn. \n6= Add 1 Machine to your hand from your Deck."
         },
         {
-            "cardId": "1c50f37df8",
+            "cardId": "176",
             "name": "Soul Binding Gate",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -2917,7 +2917,7 @@
             "rulesText": "While this card is on your field, all your spells cost 1 less Mana.\nWhenever you play a spell, take 1 Life damage.\n"
         },
         {
-            "cardId": "9d5dffd341",
+            "cardId": "177",
             "name": "Soul Retrieval",
             "manaCost": 12,
             "attribute": "Neutral",
@@ -2941,7 +2941,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "c839c66574",
+            "cardId": "178",
             "name": "Spell Stun",
             "manaCost": 8,
             "attribute": "Neutral",
@@ -2951,18 +2951,6 @@
             "def": 1,
             "image": "./images/cards/spell_stun.png",
             "rulesText": "This card is not affected by spell effects.\n\nPlay; Seal all enemy spell cards on the field until the end of the next turn.\n"
-        },
-        {
-            "cardId": "08b5b38cdc",
-            "name": "Spiked Dragon",
-            "manaCost": 3,
-            "attribute": "Earth",
-            "archetype": "Dragon",
-            "cardType": "Creature",
-            "atk": 2,
-            "def": 4,
-            "image": "./images/cards/spiked_dragon.png",
-            "rulesText": ""
         },
         {
             "cardId": "ba5fdb2ab1",
@@ -3001,7 +2989,7 @@
             "rulesText": "If this card was summon by Spirit magician LVL2 effect, draw 3 cards.\nWhen a monster on the field is destroyed, place it on the bottom of the owners deck instead."
         },
         {
-            "cardId": "d975519b9a",
+            "cardId": "179",
             "name": "Spore",
             "manaCost": 2,
             "attribute": "Earth",
@@ -3157,7 +3145,7 @@
             "rulesText": "Seal; Discard a spell card to draw a card."
         },
         {
-            "cardId": "2f0802c45c",
+            "cardId": "180",
             "name": "Sword of 1000 Souls",
             "manaCost": 20,
             "attribute": "Neutral",
@@ -3217,7 +3205,7 @@
             "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn."
         },
         {
-            "cardId": "53cf647c0a",
+            "cardId": "193",
             "name": "The Primal Warrior",
             "manaCost": 12,
             "attribute": "Dark",
@@ -3253,7 +3241,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "85c65e9ea8",
+            "cardId": "181",
             "name": "Thunder Strike",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -3265,7 +3253,7 @@
             "rulesText": "Play; Destroy 1 spell card on the field."
         },
         {
-            "cardId": "4e70c7cc42",
+            "cardId": "218",
             "name": "Thunder Strike Dragon",
             "manaCost": 4,
             "attribute": "Wind",
@@ -3274,10 +3262,10 @@
             "atk": 3,
             "def": 3,
             "image": "./images/cards/thunder_strike_dragon.png",
-            "rulesText": "Battlecry; Add a monster with Thunder Dragon in its name from deck to hand."
+            "rulesText": "Battlecry; Add 1 Thunder Strike Dragon from your deck to your hand."
         },
         {
-            "cardId": "c27de47046",
+            "cardId": "182",
             "name": "Time Changing Crystal",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -3301,7 +3289,7 @@
             "rulesText": "Play; If the last creature that died by battle was your Machine, then summon that Machine back to the field, sealed."
         },
         {
-            "cardId": "6f0152c09b",
+            "cardId": "183",
             "name": "Toll",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -3529,7 +3517,7 @@
             "rulesText": "Cannot be summoned, summon by sending both Kazjin and Suzjin from field to Grave.\nSpecial; Destroy a spell on the field.\nDeath; Put a Kazjin or Suzjin from Grave into your Spells."
         },
         {
-            "cardId": "8be014b900",
+            "cardId": "194",
             "name": "Twin-Mouth Thunder Dragon",
             "manaCost": 8,
             "attribute": "Earth",
@@ -3541,7 +3529,7 @@
             "rulesText": "Fusion; Thunder Strike Dragon + Thunder Strike Dragon\n\nUnseal this card at the end of turn."
         },
         {
-            "cardId": "f57d409214",
+            "cardId": "195",
             "name": "Ultimate Black Dragon",
             "manaCost": 12,
             "attribute": "Fire",
@@ -3553,7 +3541,7 @@
             "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon\n\nDuring Battle Phase, this creature can attack twice."
         },
         {
-            "cardId": "ed080ae52a",
+            "cardId": "196",
             "name": "Ultimate Chimera",
             "manaCost": 11,
             "attribute": "Light",
@@ -3565,7 +3553,7 @@
             "rulesText": "Fusion; 1 Beast + 1 Beast-Warrior + 1 Dragon + 1 Reptile\n\nBattlecry; Destroy up to 3 Creatures on the field with less DEF than this card.\nDeath; Draw 1 card."
         },
         {
-            "cardId": "7b81b77aed",
+            "cardId": "197",
             "name": "Ultimate Eye Restrict",
             "manaCost": 3,
             "attribute": "Dark",
@@ -3577,7 +3565,7 @@
             "rulesText": "Fusion;  Dark Eyes Fiend + Dark Eyes Fiend + Eye Restrict\n\nPetrify all other creatures on the field."
         },
         {
-            "cardId": "c2e1570d2e",
+            "cardId": "198",
             "name": "Ultimate White Dragon",
             "manaCost": 12,
             "attribute": "Light",
@@ -3613,7 +3601,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "3b71032829",
+            "cardId": "199",
             "name": "Waking Fiend Dragon",
             "manaCost": 6,
             "attribute": "Dark",
@@ -3625,7 +3613,7 @@
             "rulesText": "Fusion; Moon Dragon + Horned Fiend\n\r\nWhen a Seal effect is activated, negated it. \r\n"
         },
         {
-            "cardId": "bcdfd1d187",
+            "cardId": "136",
             "name": "War Machine-Dragoon",
             "manaCost": 30,
             "attribute": "Earth",
@@ -3673,7 +3661,7 @@
             "rulesText": "Water creatures get +1 DEF and Earth creatures get -1 ATK."
         },
         {
-            "cardId": "c5dd1ec7bc",
+            "cardId": "137",
             "name": "White Dragon",
             "manaCost": 7,
             "attribute": "Light",
@@ -3685,7 +3673,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "525fda9cb0",
+            "cardId": "184",
             "name": "White Hole",
             "manaCost": 8,
             "attribute": "Neutral",
@@ -3709,7 +3697,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "b18ab364c9",
+            "cardId": "138",
             "name": "White Metal Dragon",
             "manaCost": 8,
             "attribute": "Light",
@@ -3730,7 +3718,7 @@
             "atk": 2,
             "def": 2,
             "image": "./images/cards/wonder_magician.png",
-            "rulesText": "At the end of your turn, if you have fewer than 3 cards in your hand, draw cards until you have 3 in your hand."
+            "rulesText": "If you have fewer than 3 cards in your hand at the end of your turn., draw cards until you have 3 in your hand."
         },
         {
             "cardId": "27",
@@ -3745,7 +3733,7 @@
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nThis cards ATK is always equal to your hand size. \nSeal; Gain the following effect until the end of next turn, when a creature is summoned with less ATK than this card, destroy it.\n"
         },
         {
-            "cardId": "b367891f4c",
+            "cardId": "139",
             "name": "X Double Cannon",
             "manaCost": 5,
             "attribute": "Dark",

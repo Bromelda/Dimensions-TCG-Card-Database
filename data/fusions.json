@@ -1,7 +1,7 @@
 {
     "Items": [
         {
-            "cardId": "5c840f292d",
+            "cardId": "186",
             "name": "Black Fiendish Dragon",
             "manaCost": 12,
             "attribute": "Dark",
@@ -25,7 +25,7 @@
             "rulesText": "Fusion; Wonder Magician + Magician Apprentice."
         },
         {
-            "cardId": "d813c24280",
+            "cardId": "187",
             "name": "Dark Dragoon Magician",
             "manaCost": 12,
             "attribute": "Fire",
@@ -61,19 +61,19 @@
             "rulesText": "Fusion; Darksider Ruler + 1 Dragon + 2 different Darksider creatures.\n\nBattlecry; Each player discards 1 card. \nQuick; Change the effect of 1 card to \"The enemy discards 1 card\" until the end of turn.\nDeath; Summon a different Darksider from your grave to the field. "
         },
         {
-            "cardId": "cd328ab8c3",
+            "cardId": "210",
             "name": "Dragon Lord Supreme",
             "manaCost": 10,
             "attribute": "Fire",
-            "archetype": "Fusion/Dragon",
+            "archetype": "Dragon",
             "cardType": "Fusion",
             "atk": 5,
             "def": 8,
             "image": "./images/cards/dragon_lord_supreme.png",
-            "rulesText": "Cannot be Summoned without listed cards.\n3 different level 8 Dragon Lord monsters.\nSpecial; Add 2 Banish Dragons into your deck.\nSeal; Banish 2 Dragon Lords from Grave to destroy 2 cards on the field.\nDeath; You can Banish 2 Fire monsters to return this to your Fusion deck instead."
+            "rulesText": "Fusion; 3 different 8 Mana cost Dragon Lord creatures.\nCannot be Summoned without listed cards.\n\n\nBattlecry; Add 2 Banished Dragons into your deck.\nSeal; Banish 2 Dragon Lord creatures from your grave to destroy 2 cards.\nDeath; You can Banish 2 Fire creatures from your grave to return this card to your Spatial deck instead."
         },
         {
-            "cardId": "24c5168590",
+            "cardId": "188",
             "name": "Flaming Swordsman",
             "manaCost": 5,
             "attribute": "Earth",
@@ -85,7 +85,7 @@
             "rulesText": "Fusion; Elf Warrior + 1 Fire card.\n\nGains +3 ATK when attacking until the end of turn."
         },
         {
-            "cardId": "861e4b105b",
+            "cardId": "189",
             "name": "Herald of Light",
             "manaCost": 6,
             "attribute": "Light",
@@ -97,7 +97,7 @@
             "rulesText": "Fusion; Forest Witch + Petit Fairy + Petit Fairy\n\nQuick; Negate a spell effect until the end of turn.\nDeath; Add 1 Spell from your grave to your hand."
         },
         {
-            "cardId": "95c340922f",
+            "cardId": "190",
             "name": "Knight Dragon Rider",
             "manaCost": 6,
             "attribute": "Earth",
@@ -109,7 +109,7 @@
             "rulesText": "Fusion; Elf Warrior + Moon Dragon\n\nDeath; Add 1 Warrior from your grave to your hand."
         },
         {
-            "cardId": "ebb67c4c26",
+            "cardId": "191",
             "name": "Light Shining Dragon",
             "manaCost": 12,
             "attribute": "Light",
@@ -145,7 +145,7 @@
             "rulesText": "Fusion; Triple Barrel Dragon + Blaster Spider + X Double Cannon\nCannot be Summoned without listed cards.\n\r\nSeal; Roll,\n1= draw 1 card. \n2-4= Deal 5 Damage to 1 creature on the field. \n5= Deal 3 Damage to all enemy creatures. \n6= Destroy up to 2 cards on the field.\r\n"
         },
         {
-            "cardId": "2fb4d9930d",
+            "cardId": "192",
             "name": "Phantom Night Fiend",
             "manaCost": 5,
             "attribute": "Dark",
@@ -217,7 +217,7 @@
             "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn."
         },
         {
-            "cardId": "53cf647c0a",
+            "cardId": "193",
             "name": "The Primal Warrior",
             "manaCost": 12,
             "attribute": "Dark",
@@ -241,7 +241,7 @@
             "rulesText": "Fusion; War Machine-Dragoon + Mecha Soldier + 3 Mech Defender\r\nCannot be Summoned without listed cards.\n\nOther Machines you control cannot be attacked. \nSeal; Add 1 Machine from your deck to your Hand.\nDeath; Add 3 Machines from your grave back to your hand.\r\n"
         },
         {
-            "cardId": "8be014b900",
+            "cardId": "194",
             "name": "Twin-Mouth Thunder Dragon",
             "manaCost": 8,
             "attribute": "Earth",
@@ -253,7 +253,7 @@
             "rulesText": "Fusion; Thunder Strike Dragon + Thunder Strike Dragon\n\nUnseal this card at the end of turn."
         },
         {
-            "cardId": "f57d409214",
+            "cardId": "195",
             "name": "Ultimate Black Dragon",
             "manaCost": 12,
             "attribute": "Fire",
@@ -265,7 +265,7 @@
             "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon\n\nDuring Battle Phase, this creature can attack twice."
         },
         {
-            "cardId": "ed080ae52a",
+            "cardId": "196",
             "name": "Ultimate Chimera",
             "manaCost": 11,
             "attribute": "Light",
@@ -277,7 +277,7 @@
             "rulesText": "Fusion; 1 Beast + 1 Beast-Warrior + 1 Dragon + 1 Reptile\n\nBattlecry; Destroy up to 3 Creatures on the field with less DEF than this card.\nDeath; Draw 1 card."
         },
         {
-            "cardId": "7b81b77aed",
+            "cardId": "197",
             "name": "Ultimate Eye Restrict",
             "manaCost": 3,
             "attribute": "Dark",
@@ -289,7 +289,7 @@
             "rulesText": "Fusion;  Dark Eyes Fiend + Dark Eyes Fiend + Eye Restrict\n\nPetrify all other creatures on the field."
         },
         {
-            "cardId": "c2e1570d2e",
+            "cardId": "198",
             "name": "Ultimate White Dragon",
             "manaCost": 12,
             "attribute": "Light",
@@ -301,7 +301,7 @@
             "rulesText": "Fusion; White Dragon + White Dragon + White Dragon\n\nDuring Battle Phase, this creature can attack twice."
         },
         {
-            "cardId": "3b71032829",
+            "cardId": "199",
             "name": "Waking Fiend Dragon",
             "manaCost": 6,
             "attribute": "Dark",

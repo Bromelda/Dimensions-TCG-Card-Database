@@ -127,7 +127,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   display: block;
   object-fit: cover;
   background: #343434;
-  filter: brightness(1.34) contrast(1.08) saturate(1.10) !important;
+  filter: none;
   opacity: 1;
 }
 
