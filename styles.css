@@ -114,7 +114,18 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   position: relative;
 }
 .card:hover { transform: translateY(-4px); border-color: #4d4d4d; box-shadow: 0 14px 24px rgba(0,0,0,0.28); }
-.card img { width: 100%; height: 320px; object-fit: cover; display: block; background: #202020; }
+
+.card img,
+.card-preview img,
+.modal-content img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  background: #202020;
+  filter: brightness(1.08) contrast(1.04);
+}
+
+.card img { height: 320px; }
 .card-body { padding: 12px; }
 .card-body h3 { margin: 0 0 8px 0; font-size: 18px; }
 .card-rules-preview { min-height: 48px; color: #efefef; }
@@ -171,7 +182,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   position: fixed; width: 240px; pointer-events: none; z-index: 60; background: rgba(18, 18, 18, 0.98);
   border: 1px solid #3a3a3a; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 28px rgba(0,0,0,0.35);
 }
-.card-preview img { width: 100%; display: block; height: 320px; object-fit: cover; }
+.card-preview img { height: 320px; }
 .hover-preview-body { padding: 10px; }
 .hover-preview-title { font-weight: 700; margin-bottom: 8px; }
 .hover-preview-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
@@ -187,7 +198,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   width: 100%; display: grid; grid-template-columns: 340px 1fr; gap: 22px; padding: 22px; position: relative;
   border: 1px solid #333; box-shadow: 0 20px 32px rgba(0,0,0,0.38); max-height: calc(100dvh - 40px); overflow: auto;
 }
-.modal-content img { width: 100%; border-radius: 12px; background: #222; }
+.modal-content img { border-radius: 12px; }
 .modal-info h2 { margin: 0; font-size: 34px; }
 .modal-info pre {
   white-space: pre-wrap; background: #101010; padding: 14px; border-radius: 10px; border: 1px solid #2d2d2d;
@@ -261,7 +272,6 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   .close-btn { padding: 7px 10px; }
 }
 
-
 .deck-header-actions { display: flex; align-items: center; gap: 8px; }
 .deck-suggestions { display: grid; gap: 8px; color: #e4e4e4; font-size: 14px; }
 .suggestion-item {
@@ -290,7 +300,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
     border-radius: 18px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.45);
   }
-    .deck-panel.collapsed { max-height: 82px; }
+  .deck-panel.collapsed { max-height: 82px; }
   .deck-panel .deck-panel-header { position: sticky; top: 0; background: linear-gradient(180deg, #191919 0%, #141414 100%); z-index: 2; padding-bottom: 4px; }
 }
 
