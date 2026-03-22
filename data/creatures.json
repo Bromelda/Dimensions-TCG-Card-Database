@@ -1081,18 +1081,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "44",
-            "name": "Legendary Swordmaster Assassin",
-            "manaCost": 8,
-            "attribute": "Earth",
-            "archetype": "Humanoid",
-            "cardType": "Creature",
-            "atk": 3,
-            "def": 6,
-            "image": "./images/cards/legendary_swordmaster_assassin.png",
-            "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand."
-        },
-        {
             "cardId": "e3323c3505",
             "name": "Light Dragon of Divine",
             "manaCost": 10,
@@ -1955,6 +1943,18 @@
             "def": 3,
             "image": "./images/cards/sweet_magician_girl.png",
             "rulesText": "Seal; Discard a spell card to draw a card."
+        },
+        {
+            "cardId": "44",
+            "name": "Swordmaster Assassin",
+            "manaCost": 8,
+            "attribute": "Earth",
+            "archetype": "Humanoid",
+            "cardType": "Creature",
+            "atk": 3,
+            "def": 6,
+            "image": "./images/cards/swordmaster_assassin.png",
+            "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand."
         },
         {
             "cardId": "98",

@@ -1765,18 +1765,6 @@
             "rulesText": ""
         },
         {
-            "cardId": "44",
-            "name": "Legendary Swordmaster Assassin",
-            "manaCost": 8,
-            "attribute": "Earth",
-            "archetype": "Humanoid",
-            "cardType": "Creature",
-            "atk": 3,
-            "def": 6,
-            "image": "./images/cards/legendary_swordmaster_assassin.png",
-            "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand."
-        },
-        {
             "cardId": "f9979d4e06",
             "name": "Level Up!",
             "manaCost": 3,
@@ -2101,6 +2089,18 @@
             "rulesText": "Play: Reveal 1 non-effect Fusion creature. Pay 5 Life for each mana it cost; if you do, summon it, ignoring its Fusion cost."
         },
         {
+            "cardId": "167",
+            "name": "Magical Borderline",
+            "manaCost": 3,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/magical_borderline.png",
+            "rulesText": "Hand; Negate an attack and end the Battle Phase."
+        },
+        {
             "cardId": "24",
             "name": "Magical Forest Plants",
             "manaCost": 2,
@@ -2111,18 +2111,6 @@
             "def": 1,
             "image": "./images/cards/magical_forest_plants.png",
             "rulesText": "Death; Summon 1 Magical Forest Plants from your deck."
-        },
-        {
-            "cardId": "167",
-            "name": "Magicial Borderline",
-            "manaCost": 3,
-            "attribute": "Neutral",
-            "archetype": "Spell",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/magicial_borderline.png",
-            "rulesText": "Hand; Negate an attack and end the Battle Phase."
         },
         {
             "cardId": "b2bc8775b1",
@@ -3155,6 +3143,18 @@
             "def": 1,
             "image": "./images/cards/sword_of_1000_souls.png",
             "rulesText": "This card can't be negated.\n\n+5 ATK.\nAfter the equipped creature attacks, Seal all the enemy creatures and Mana until the end of their turn.\nDestroy this card after the battle phase."
+        },
+        {
+            "cardId": "44",
+            "name": "Swordmaster Assassin",
+            "manaCost": 8,
+            "attribute": "Earth",
+            "archetype": "Humanoid",
+            "cardType": "Creature",
+            "atk": 3,
+            "def": 6,
+            "image": "./images/cards/swordmaster_assassin.png",
+            "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand."
         },
         {
             "cardId": "999999",

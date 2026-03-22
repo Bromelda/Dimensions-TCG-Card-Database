@@ -710,14 +710,14 @@
         },
         {
             "cardId": "167",
-            "name": "Magicial Borderline",
+            "name": "Magical Borderline",
             "manaCost": 3,
             "attribute": "Neutral",
             "archetype": "Spell",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/magicial_borderline.png",
+            "image": "./images/cards/magical_borderline.png",
             "rulesText": "Hand; Negate an attack and end the Battle Phase."
         },
         {
