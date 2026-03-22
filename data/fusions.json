@@ -157,6 +157,18 @@
             "rulesText": "Fusion; Dark Eyes Fiend + Hairy Fiend + Forest Witch\n\nBattlecry; Draw 5 cards then shuffle 3 cards from your hand back into your deck."
         },
         {
+            "cardId": "59",
+            "name": "Queen of Toxic Snakes",
+            "manaCost": 12,
+            "attribute": "Dark",
+            "archetype": "Reptile",
+            "cardType": "Fusion",
+            "atk": 4,
+            "def": 6,
+            "image": "./images/cards/queen_of_toxic_snakes.png",
+            "rulesText": "Cannot be Summoned without listed cards.\n\nFusion cost: Lord of Toxic Snakes + 3 Reptile monsters\nEffect: Toxic monsters with Seal effects are now Quick effects. If this was destroyed by an effect, you can banish 2 Reptile monsters from Grave instead."
+        },
+        {
             "cardId": "91",
             "name": "Relaxing Cow",
             "manaCost": 2,

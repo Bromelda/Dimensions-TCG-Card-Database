@@ -13,6 +13,18 @@
             "rulesText": "Fairy creatures get +1/+1 and Vampires creatures get -1 ATK."
         },
         {
+            "cardId": "140",
+            "name": "A New Era",
+            "manaCost": 6,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/a_new_era.png",
+            "rulesText": "Play; Add 1 spell card from your deck to your hand."
+        },
+        {
             "cardId": "25",
             "name": "Berserker Rage",
             "manaCost": 6,
@@ -85,63 +97,63 @@
             "rulesText": "Destroy; 1 Farm Land you control to play this card.\nSeal; destroy 1 Cow creature you control to gain 3 Milk Tokens on this card"
         },
         {
-            "cardId": "b70e1ab04b",
-            "name": "Cosmic Bookmark",
+            "cardId": "300",
+            "name": "Comic Bookmark",
             "manaCost": 3,
             "attribute": "Neutral",
             "archetype": "Spell",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/cosmic_bookmark.png",
+            "image": "./images/cards/comic_bookmark.png",
             "rulesText": "Add a TOON monster from your field into your hand then summon a TOON monster from your hand that cost less than the one added."
         },
         {
-            "cardId": "1eebd84010",
-            "name": "Cosmic Page Flip",
+            "cardId": "308",
+            "name": "Comic Page Flip",
             "manaCost": 1,
             "attribute": "Neutral",
             "archetype": "Spell",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/cosmic_page_flip.png",
+            "image": "./images/cards/comic_page_flip.png",
             "rulesText": "If TOON World is Sealed, Unseal it then return a TOON montser you control back to your deck."
         },
         {
-            "cardId": "ded34478f9",
-            "name": "Cosmic Protection",
+            "cardId": "309",
+            "name": "Comic Protection",
             "manaCost": 3,
             "attribute": "Neutral",
             "archetype": "Spell",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/cosmic_protection.png",
+            "image": "./images/cards/comic_protection.png",
             "rulesText": "If TOON World would be destroyed, you can destroy a TOON monster you control instead."
         },
         {
-            "cardId": "a0c078f518",
-            "name": "Cosmic Shadow",
+            "cardId": "311",
+            "name": "Comic Shadow",
             "manaCost": 4,
             "attribute": "Neutral",
             "archetype": "Spell",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/cosmic_shadow.png",
+            "image": "./images/cards/comic_shadow.png",
             "rulesText": "Add a TOON monster from your Grave into your deck."
         },
         {
-            "cardId": "ab983e7681",
-            "name": "Cosmic World",
+            "cardId": "315",
+            "name": "Comic World",
             "manaCost": 1,
             "attribute": "Neutral",
             "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
-            "image": "./images/cards/cosmic_world.png",
+            "image": "./images/cards/comic_world.png",
             "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost."
         },
         {
@@ -205,7 +217,7 @@
             "rulesText": "Play; Reveal 1 creature from your hand or deck that cannot be summoned without Dark Offering.\nSend creatures from your field or hand whose mana is equal to or more then the revealed creature, Summon that creature."
         },
         {
-            "cardId": "12f6a48744",
+            "cardId": "254",
             "name": "Dark Snake Syndrome",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -373,7 +385,7 @@
             "rulesText": "Any creature destroyed by a Dragon in battle deals Life damage to the enemy equal to the creatures DEF."
         },
         {
-            "cardId": "4e7608309b",
+            "cardId": "255",
             "name": "Endless Reptiles",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -505,7 +517,7 @@
             "rulesText": "Creatures you control with Cow in their name gain +1 ATK and +1 DEF."
         },
         {
-            "cardId": "e6434bf606",
+            "cardId": "285",
             "name": "Guardian Shadow Maze",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -517,7 +529,7 @@
             "rulesText": "Any monster summon below level 3 is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add a Guardian card from your Grave to your hand."
         },
         {
-            "cardId": "94b9a504a4",
+            "cardId": "287",
             "name": "Guardian Summoning",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -577,7 +589,7 @@
             "rulesText": "While this card is unsealed and any player draws a card at the start of their turn, they draw another one.\n"
         },
         {
-            "cardId": "f9979d4e06",
+            "cardId": "269",
             "name": "Level Up!",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -589,7 +601,7 @@
             "rulesText": "Give a monster with LVL in its name a Exp Token."
         },
         {
-            "cardId": "dbaa2d822a",
+            "cardId": "238",
             "name": "Library of the Magician",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -601,7 +613,7 @@
             "rulesText": "When you play a spell, this card gains a Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to use one effect.\n3, Draw a card.\n6, Add a spell card from your Grave to your hand."
         },
         {
-            "cardId": "75acdfd10c",
+            "cardId": "226",
             "name": "Lightborn Reborn",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -613,7 +625,7 @@
             "rulesText": "Summon a level 3 or lower Lightborn monster from your grave."
         },
         {
-            "cardId": "cb6ec5e59d",
+            "cardId": "227",
             "name": "Lightborn Recharge",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -625,7 +637,7 @@
             "rulesText": "Whenever a Lightborn monster effect makes you Mill, gain 1 Life."
         },
         {
-            "cardId": "873c47bf2d",
+            "cardId": "228",
             "name": "Lightborn Shield",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -637,7 +649,7 @@
             "rulesText": "When a Lightborn monster is attacked, you can Mill 3 cards to negate the attack."
         },
         {
-            "cardId": "05c85af1f7",
+            "cardId": "229",
             "name": "Lightborn Shrine",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -649,7 +661,7 @@
             "rulesText": "Gain a Light Token when using a Mill effect.\nSeal; Pay Tokens on this card to use one effect.\n3, Draw a card.\n5, Add a monster from your Grave to hand.\n8, Destroy a card on the field."
         },
         {
-            "cardId": "50fd563f8f",
+            "cardId": "230",
             "name": "Lightborn Solar Ray",
             "manaCost": 4,
             "attribute": "Neutral",
@@ -721,7 +733,7 @@
             "rulesText": "Hand; Negate an attack and end the Battle Phase."
         },
         {
-            "cardId": "13f4729b0b",
+            "cardId": "241",
             "name": "Magician Dark Blast",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -733,7 +745,7 @@
             "rulesText": "Target a Magician named monster you control and another monster on the field.\nDeal damage to that monster equal to the Magician monsters ATK."
         },
         {
-            "cardId": "1d7563e301",
+            "cardId": "242",
             "name": "Magician Illusion",
             "manaCost": 1,
             "attribute": "Neutral",
@@ -745,7 +757,7 @@
             "rulesText": "When a Magician is attacked, negate the attack then return that Magician back to your hand."
         },
         {
-            "cardId": "cbe07d1300",
+            "cardId": "244",
             "name": "Magician Magic Robe",
             "manaCost": 6,
             "attribute": "Neutral",
@@ -757,7 +769,7 @@
             "rulesText": "Pay 10 Life then summon a Magician from your deck."
         },
         {
-            "cardId": "072876df71",
+            "cardId": "249",
             "name": "Magician Scrolls",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -769,7 +781,7 @@
             "rulesText": "Add a Magician spell card from your deck to your hand."
         },
         {
-            "cardId": "a5cad2fc76",
+            "cardId": "250",
             "name": "Magician Shield Wall",
             "manaCost": 5,
             "attribute": "Neutral",
@@ -781,7 +793,7 @@
             "rulesText": "When a Magician is attacked, Destroy the attacking monster."
         },
         {
-            "cardId": "03913bffb7",
+            "cardId": "251",
             "name": "Magician Spell Book",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -793,7 +805,7 @@
             "rulesText": "When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn."
         },
         {
-            "cardId": "62d2dade54",
+            "cardId": "252",
             "name": "Magician Spell Orb",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -805,7 +817,7 @@
             "rulesText": "Target a card, that card gains a Spell Token. if you chain this spell to another spell you played this turn. That card gains another Token."
         },
         {
-            "cardId": "d82942475c",
+            "cardId": "294",
             "name": "Maze of the Guardian",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -1081,7 +1093,7 @@
             "rulesText": "Each player must pay 1 Life to attack with a creature."
         },
         {
-            "cardId": "f63935257f",
+            "cardId": "268",
             "name": "Toxic  Bite",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -1093,7 +1105,7 @@
             "rulesText": "Add a Venom Monster from your deck to your hand and give a monster a Venom Token"
         },
         {
-            "cardId": "647f5eab7a",
+            "cardId": "264",
             "name": "Toxic  Shot",
             "manaCost": 3,
             "attribute": "Neutral",
@@ -1105,7 +1117,7 @@
             "rulesText": "You can only activate this while you control a Venom monster.\nSend a Venom named monster from your deck to your Grave then give a monster on the field 2 Venom Tokens."
         },
         {
-            "cardId": "f2a78c1c4e",
+            "cardId": "267",
             "name": "Toxic  Swamp",
             "manaCost": 2,
             "attribute": "Neutral",

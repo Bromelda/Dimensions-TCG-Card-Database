@@ -25,7 +25,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "db68c95f0d",
+            "cardId": "234",
             "name": "Arch Magician",
             "manaCost": 5,
             "attribute": "Dark",
@@ -121,6 +121,150 @@
             "rulesText": "Seal; This card gains 1 Charge Token. \nYou can spend Tokens on this card instead of spending Mana to summon Machines.\n"
         },
         {
+            "cardId": "299",
+            "name": "Comic Black Dragon",
+            "manaCost": 7,
+            "attribute": "Dark",
+            "archetype": "TOON",
+            "cardType": "Creature",
+            "atk": 5,
+            "def": 6,
+            "image": "./images/cards/comic_black_dragon.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to your hand.\nTOON World can't be destroyed by monster effects."
+        },
+        {
+            "cardId": "301",
+            "name": "Comic Cannon Head",
+            "manaCost": 5,
+            "attribute": "Earth",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 2,
+            "def": 2,
+            "image": "./images/cards/comic_cannon_head.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Discard a monster, deal Life damage to the enemy equal to that monsters ATK."
+        },
+        {
+            "cardId": "302",
+            "name": "Comic Clownbox",
+            "manaCost": 5,
+            "attribute": "Dark",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 4,
+            "def": 4,
+            "image": "./images/cards/comic_clownbox.png",
+            "rulesText": "Dark Clown + TOON Page Flip\nYou can only control 1 TOON monster at a time.\nWhen this card Unseals, destroy a monster.\nDeath; Add a TOON card from your Grave back to your hand."
+        },
+        {
+            "cardId": "303",
+            "name": "Comic Elves",
+            "manaCost": 4,
+            "attribute": "Earth",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 3,
+            "def": 3,
+            "image": "./images/cards/comic_elves.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this attacks, Mill a card from the enemy deck."
+        },
+        {
+            "cardId": "304",
+            "name": "Comic Harpie",
+            "manaCost": 4,
+            "attribute": "Wind",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 3,
+            "def": 3,
+            "image": "./images/cards/comic_harpie.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Destroy a Sealed Spell card."
+        },
+        {
+            "cardId": "305",
+            "name": "Comic Luster Nightmare",
+            "manaCost": 8,
+            "attribute": "Dark",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 5,
+            "def": 6,
+            "image": "./images/cards/comic_luster_nightmare.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nThis card can't be destroyed by enemy spell cards.\nWhen this card destroys a monster by battle banish that monster."
+        },
+        {
+            "cardId": "306",
+            "name": "Comic Magician",
+            "manaCost": 5,
+            "attribute": "Dark",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 5,
+            "def": 5,
+            "image": "./images/cards/comic_magician.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Add a TOON Spell from your deck to your hand."
+        },
+        {
+            "cardId": "307",
+            "name": "Comic Mermaid",
+            "manaCost": 2,
+            "attribute": "Water",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 2,
+            "def": 3,
+            "image": "./images/cards/comic_mermaid.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Draw a card."
+        },
+        {
+            "cardId": "310",
+            "name": "Comic Rabbit",
+            "manaCost": 2,
+            "attribute": "Dark",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/comic_rabbit.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nBattlecry; Add TOON World from your deck to your hand."
+        },
+        {
+            "cardId": "312",
+            "name": "Comic Sorcerer",
+            "manaCost": 4,
+            "attribute": "Fire",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 2,
+            "def": 4,
+            "image": "./images/cards/comic_sorcerer.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this attacks, draw a card."
+        },
+        {
+            "cardId": "313",
+            "name": "Comic Ultimate Dragon",
+            "manaCost": 12,
+            "attribute": "Light",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 14,
+            "def": 10,
+            "image": "./images/cards/comic_ultimate_dragon.png",
+            "rulesText": "Ultimate White Dragon + TOON Page Flip\nYou can only control 1 TOON monster at a time.\nCan't be destroyed by spell cards.\nDeath; Add a card from your Grave back to your hand."
+        },
+        {
+            "cardId": "314",
+            "name": "Comic White Dragon",
+            "manaCost": 7,
+            "attribute": "Light",
+            "archetype": "Cosmic",
+            "cardType": "Creature",
+            "atk": 6,
+            "def": 5,
+            "image": "./images/cards/comic_white_dragon.png",
+            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to the deck.\nTOON World can't be destroyed by spell effects."
+        },
+        {
             "cardId": "13",
             "name": "Cool Cow",
             "manaCost": 5,
@@ -131,150 +275,6 @@
             "def": 2,
             "image": "./images/cards/cool_cow.png",
             "rulesText": "SpecialSummon; Pay 4 Milk Tokens.\nSeal; Unseal a different card with Cheese/Cow in their name."
-        },
-        {
-            "cardId": "6e3503c191",
-            "name": "Cosmic Black Dragon",
-            "manaCost": 7,
-            "attribute": "Dark",
-            "archetype": "TOON",
-            "cardType": "Creature",
-            "atk": 5,
-            "def": 6,
-            "image": "./images/cards/cosmic_black_dragon.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to your hand.\nTOON World can't be destroyed by monster effects."
-        },
-        {
-            "cardId": "09a3e9a107",
-            "name": "Cosmic Cannon Head",
-            "manaCost": 5,
-            "attribute": "Earth",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 2,
-            "def": 2,
-            "image": "./images/cards/cosmic_cannon_head.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Discard a monster, deal Life damage to the enemy equal to that monsters ATK."
-        },
-        {
-            "cardId": "9ee560fb37",
-            "name": "Cosmic Clownbox",
-            "manaCost": 5,
-            "attribute": "Dark",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 4,
-            "def": 4,
-            "image": "./images/cards/cosmic_clownbox.png",
-            "rulesText": "Dark Clown + TOON Page Flip\nYou can only control 1 TOON monster at a time.\nWhen this card Unseals, destroy a monster.\nDeath; Add a TOON card from your Grave back to your hand."
-        },
-        {
-            "cardId": "55d536c04f",
-            "name": "Cosmic Elves",
-            "manaCost": 4,
-            "attribute": "Earth",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 3,
-            "def": 3,
-            "image": "./images/cards/cosmic_elves.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this attacks, Mill a card from the enemy deck."
-        },
-        {
-            "cardId": "e3f6de48c3",
-            "name": "Cosmic Harpie",
-            "manaCost": 4,
-            "attribute": "Wind",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 3,
-            "def": 3,
-            "image": "./images/cards/cosmic_harpie.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Destroy a Sealed Spell card."
-        },
-        {
-            "cardId": "7723970888",
-            "name": "Cosmic Luster Nightmare",
-            "manaCost": 8,
-            "attribute": "Dark",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 5,
-            "def": 6,
-            "image": "./images/cards/cosmic_luster_nightmare.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nThis card can't be destroyed by enemy spell cards.\nWhen this card destroys a monster by battle banish that monster."
-        },
-        {
-            "cardId": "e65145c528",
-            "name": "Cosmic Magician",
-            "manaCost": 5,
-            "attribute": "Dark",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 5,
-            "def": 5,
-            "image": "./images/cards/cosmic_magician.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Add a TOON Spell from your deck to your hand."
-        },
-        {
-            "cardId": "aba5fd48f6",
-            "name": "Cosmic Mermaid",
-            "manaCost": 2,
-            "attribute": "Water",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 2,
-            "def": 3,
-            "image": "./images/cards/cosmic_mermaid.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nSeal; Draw a card."
-        },
-        {
-            "cardId": "18d11abfa3",
-            "name": "Cosmic Rabbit",
-            "manaCost": 2,
-            "attribute": "Dark",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/cosmic_rabbit.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nBattlecry; Add TOON World from your deck to your hand."
-        },
-        {
-            "cardId": "ae2a29dc3d",
-            "name": "Cosmic Sorcerer",
-            "manaCost": 4,
-            "attribute": "Fire",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 2,
-            "def": 4,
-            "image": "./images/cards/cosmic_sorcerer.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this attacks, draw a card."
-        },
-        {
-            "cardId": "a90909572e",
-            "name": "Cosmic Ultimate Dragon",
-            "manaCost": 12,
-            "attribute": "Light",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 14,
-            "def": 10,
-            "image": "./images/cards/cosmic_ultimate_dragon.png",
-            "rulesText": "Ultimate White Dragon + TOON Page Flip\nYou can only control 1 TOON monster at a time.\nCan't be destroyed by spell cards.\nDeath; Add a card from your Grave back to your hand."
-        },
-        {
-            "cardId": "758ef045db",
-            "name": "Cosmic White Dragon",
-            "manaCost": 7,
-            "attribute": "Light",
-            "archetype": "Cosmic",
-            "cardType": "Creature",
-            "atk": 6,
-            "def": 5,
-            "image": "./images/cards/cosmic_white_dragon.png",
-            "rulesText": "You can only control 1 TOON monster at a time.\nAfter this card attacks, you can return it back to the deck.\nTOON World can't be destroyed by spell effects."
         },
         {
             "cardId": "86",
@@ -697,7 +697,7 @@
             "rulesText": "Haste"
         },
         {
-            "cardId": "3c2e55a95a",
+            "cardId": "235",
             "name": "Enchanter Magician",
             "manaCost": 3,
             "attribute": "Dark",
@@ -733,7 +733,7 @@
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nBattlecry; Pay Life, this card gains ATK equal to the amount paid. \nOnce during your turn, you can banish 1 of your creatures to have this card gain ATK equal to the banished creature until the end of turn."
         },
         {
-            "cardId": "cebbf3e404",
+            "cardId": "236",
             "name": "Fiendish Magician",
             "manaCost": 4,
             "attribute": "Dark",
@@ -817,7 +817,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "223353a353",
+            "cardId": "237",
             "name": "Goddess Magician",
             "manaCost": 5,
             "attribute": "Light",
@@ -865,7 +865,7 @@
             "rulesText": "This card is always Sealed, cannot be Unsealed. \nWhen the enemy summons a creature from hand to their field, summon a 1/1 Tower Guard Token with Haste."
         },
         {
-            "cardId": "4027836b4a",
+            "cardId": "284",
             "name": "Guardian Fiend",
             "manaCost": 5,
             "attribute": "Dark",
@@ -877,7 +877,7 @@
             "rulesText": "You can discard this card to adda Maze of the Gardian card from your deck to your hand.\nWhile Maze of the Guardian is on the field, this card can't be attacked by enemy monsters."
         },
         {
-            "cardId": "fa2fd34f96",
+            "cardId": "286",
             "name": "Guardian Striker",
             "manaCost": 4,
             "attribute": "Dark",
@@ -889,7 +889,7 @@
             "rulesText": "While Maze of the Guardian is on the field, this card can't be attacked by enemy monsters.\nWhen a monster is summon, you can Seal this card to have both this card and the summon monster battle."
         },
         {
-            "cardId": "7dc06ded39",
+            "cardId": "288",
             "name": "Guardian Tank",
             "manaCost": 5,
             "attribute": "Earth",
@@ -901,7 +901,7 @@
             "rulesText": "Battlecry; You can put a Sanjin, Kazjin or Suzjin from your deck into your spells."
         },
         {
-            "cardId": "2eb353bd28",
+            "cardId": "289",
             "name": "Guardian Thinderjin",
             "manaCost": 5,
             "attribute": "Water",
@@ -913,7 +913,7 @@
             "rulesText": "This card is always a Guardian card.\nWhen a monster the enemy controls attacks, you can Seal this card to negate that attack."
         },
         {
-            "cardId": "6a3006936b",
+            "cardId": "290",
             "name": "Guardian Waterjin",
             "manaCost": 3,
             "attribute": "Water",
@@ -925,7 +925,7 @@
             "rulesText": "This card is always a Guardian card.\nSeal; Draw a card"
         },
         {
-            "cardId": "ccba9454de",
+            "cardId": "291",
             "name": "Guardian Windjin",
             "manaCost": 4,
             "attribute": "Earth",
@@ -937,7 +937,7 @@
             "rulesText": "This card is always a Guardian card.\nDeath; Add a card from your Grave to your hand."
         },
         {
-            "cardId": "bf94762335",
+            "cardId": "292",
             "name": "Guardian Worm",
             "manaCost": 4,
             "attribute": "Earth",
@@ -1081,7 +1081,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "e3323c3505",
+            "cardId": "219",
             "name": "Light Dragon of Divine",
             "manaCost": 10,
             "attribute": "Light",
@@ -1093,7 +1093,7 @@
             "rulesText": "Cannot be summoned, summon by returning 12 Lightborn monsters from your Grave to your deck.\nAt the end of the turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy ALL other cards on the field."
         },
         {
-            "cardId": "ed5677ec8e",
+            "cardId": "220",
             "name": "Lightborn Angel",
             "manaCost": 5,
             "attribute": "Light",
@@ -1105,7 +1105,7 @@
             "rulesText": "Battlecry; Destroy a card on the field then Mill 3 cards."
         },
         {
-            "cardId": "123e3e7910",
+            "cardId": "221",
             "name": "Lightborn Dragon",
             "manaCost": 5,
             "attribute": "Light",
@@ -1117,7 +1117,7 @@
             "rulesText": "Battlecry; Destroy a spell card on the field then add a Lightborn spell card from your Grave to your hand.\nAt the end of your turn, Mill 3 cards."
         },
         {
-            "cardId": "75b482d810",
+            "cardId": "222",
             "name": "Lightborn Faith",
             "manaCost": 3,
             "attribute": "Light",
@@ -1129,7 +1129,7 @@
             "rulesText": "Seal; Mill 2 then Unseal a different monster you control."
         },
         {
-            "cardId": "b86c8d2ab8",
+            "cardId": "223",
             "name": "Lightborn Fang",
             "manaCost": 3,
             "attribute": "Light",
@@ -1141,7 +1141,7 @@
             "rulesText": "Death; Destroy a monster on the field then Mill 3 cards."
         },
         {
-            "cardId": "390074f457",
+            "cardId": "224",
             "name": "Lightborn Maiden",
             "manaCost": 2,
             "attribute": "Light",
@@ -1153,7 +1153,7 @@
             "rulesText": "At the end of your turn, Mill 2 cards and gain 3 Life."
         },
         {
-            "cardId": "7d767f35b4",
+            "cardId": "225",
             "name": "Lightborn Priestess",
             "manaCost": 3,
             "attribute": "Light",
@@ -1165,7 +1165,7 @@
             "rulesText": "Seal; Mill a card then summon a level 3 or lower Lightborn from Grave.\nAt the end of your turn, Mill a card."
         },
         {
-            "cardId": "62b2bd98c4",
+            "cardId": "231",
             "name": "Lightborn Tamer",
             "manaCost": 2,
             "attribute": "Light",
@@ -1177,7 +1177,7 @@
             "rulesText": "Battlecry; Add a Lightborn card from deck to your hand.\nDeath; Mill 2 cards."
         },
         {
-            "cardId": "d886be42e1",
+            "cardId": "232",
             "name": "Lightborn Warrior",
             "manaCost": 3,
             "attribute": "Light",
@@ -1189,7 +1189,7 @@
             "rulesText": "At the end of your turn, Mill 2 cards."
         },
         {
-            "cardId": "7d54f0fcc1",
+            "cardId": "233",
             "name": "Lightborn Wolf",
             "manaCost": 5,
             "attribute": "Light",
@@ -1213,7 +1213,7 @@
             "rulesText": "Dragons in your hand cost 1 less Mana to summon."
         },
         {
-            "cardId": "18e1abab5f",
+            "cardId": "256",
             "name": "Lord of Toxic  Snakes",
             "manaCost": 12,
             "attribute": "Dark",
@@ -1273,7 +1273,7 @@
             "rulesText": "Death; Summon 1 Magical Forest Plants from your deck."
         },
         {
-            "cardId": "b2bc8775b1",
+            "cardId": "239",
             "name": "Magician Apprentice",
             "manaCost": 1,
             "attribute": "Dark",
@@ -1285,7 +1285,7 @@
             "rulesText": "Battlecry; Add a Magician spell from your deck to your hand."
         },
         {
-            "cardId": "fd9db2a277",
+            "cardId": "240",
             "name": "Magician Cat",
             "manaCost": 3,
             "attribute": "Dark",
@@ -1297,7 +1297,7 @@
             "rulesText": "If this card is used for a Fusion summon of a Magician named monster add a spell card from your Grave to your hand."
         },
         {
-            "cardId": "71853bbc06",
+            "cardId": "243",
             "name": "Magician Lord of Storm",
             "manaCost": 8,
             "attribute": "Dark",
@@ -1309,7 +1309,7 @@
             "rulesText": "Cannot be summoned, Banish 3 other Magicians and 5 Spell Tokens you control to summon.\nSpecial; Destroy up to 3 spell cards on the field.\nSeal; Add a spell card from your Grave back to your hand."
         },
         {
-            "cardId": "dbaa407974",
+            "cardId": "245",
             "name": "Magician of Chaos",
             "manaCost": 7,
             "attribute": "Dark",
@@ -1321,7 +1321,7 @@
             "rulesText": "Battlecry; Spend all your remaining Mana then Mill 5 cards, activate any non-field spell cards milled by this effect (reverse order)"
         },
         {
-            "cardId": "8957277456",
+            "cardId": "246",
             "name": "Magician of Darkness",
             "manaCost": 8,
             "attribute": "Dark",
@@ -1333,7 +1333,7 @@
             "rulesText": "When this card destroys a monster by battle, banish that monster.\nSeal; Remove 4 Spell Tokens you control then add a spell card from your Grave to your hand."
         },
         {
-            "cardId": "684ea20486",
+            "cardId": "247",
             "name": "Magician of Faith",
             "manaCost": 5,
             "attribute": "Light",
@@ -1345,7 +1345,7 @@
             "rulesText": "Battlecry; Summon a Level 3 or lower monster from your deck with a Seal effect.\nSeal; Remove 3 Spell Tokens then Seal all Unsealed monster you control, if those monsters have Seal effects, trigger them (lef to right)"
         },
         {
-            "cardId": "97a826f3d0",
+            "cardId": "248",
             "name": "Magician Sage",
             "manaCost": 7,
             "attribute": "Dark",
@@ -1369,7 +1369,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "7cf3febc7e",
+            "cardId": "293",
             "name": "Maze Guardian",
             "manaCost": 12,
             "attribute": "Light",
@@ -1453,7 +1453,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "b0c381f8a7",
+            "cardId": "270",
             "name": "Molten Dragon LVL1",
             "manaCost": 2,
             "attribute": "Fire",
@@ -1465,7 +1465,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 2 Exp Token you can add this card to your deck and summon from your deck or hand, Molten Dragon LVL2"
         },
         {
-            "cardId": "6f3b352fda",
+            "cardId": "271",
             "name": "Molten Dragon LVL2",
             "manaCost": 5,
             "attribute": "Fire",
@@ -1477,7 +1477,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 3 Exp Token you can add this card to your deck and summon from your deck or hand, Molten Dragon LVL3"
         },
         {
-            "cardId": "fb00845167",
+            "cardId": "272",
             "name": "Molten Dragon LVL3",
             "manaCost": 8,
             "attribute": "Fire",
@@ -1498,7 +1498,7 @@
             "atk": 5,
             "def": 5,
             "image": "./images/cards/moon_dragon.png",
-            "rulesText": "At the end of turn, Unseal this card."
+            "rulesText": "At the end of your turn, Unseal this card."
         },
         {
             "cardId": "168",
@@ -1609,7 +1609,7 @@
             "rulesText": "When another Psycho Warrior is summoned, you can seal this card to add 1 card from your deck to your mana pool."
         },
         {
-            "cardId": "2872ae5951",
+            "cardId": "273",
             "name": "Quest Objectives",
             "manaCost": 2,
             "attribute": "Neutral",
@@ -1765,7 +1765,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "ba5fdb2ab1",
+            "cardId": "274",
             "name": "Spirit Magician LVL1",
             "manaCost": 1,
             "attribute": "Water",
@@ -1777,7 +1777,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has a Exp Token you can add this card to your deck and summon from your deck or hand, Spirit Magician LVL2"
         },
         {
-            "cardId": "2dccd6d5ab",
+            "cardId": "275",
             "name": "Spirit Magician LVL2",
             "manaCost": 4,
             "attribute": "Water",
@@ -1789,7 +1789,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 2 Exp Token you can add this card to your deck and summon from your deck or hand, Spirit Magician LVL3\nSpecial; Draw a card."
         },
         {
-            "cardId": "636a72a953",
+            "cardId": "276",
             "name": "Spirit Magician LVL3",
             "manaCost": 7,
             "attribute": "Water",
@@ -1825,7 +1825,7 @@
             "rulesText": "Machine creatures you summon cost 1 less Mana."
         },
         {
-            "cardId": "f92e846d7e",
+            "cardId": "277",
             "name": "Steel Dragon King LVL1",
             "manaCost": 1,
             "attribute": "Earth",
@@ -1837,7 +1837,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has a Exp Token you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL2"
         },
         {
-            "cardId": "0152a03d97",
+            "cardId": "278",
             "name": "Steel Dragon King LVL2",
             "manaCost": 3,
             "attribute": "Earth",
@@ -1849,7 +1849,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 2 Exp Tokens you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL3\nSpecial; Unseal a monster you control."
         },
         {
-            "cardId": "6e5aef6804",
+            "cardId": "279",
             "name": "Steel Dragon King LVL3",
             "manaCost": 5,
             "attribute": "Earth",
@@ -1861,7 +1861,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 3 Exp Token you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL4\nSeal; Return a enemy monster to their hand."
         },
         {
-            "cardId": "4c5d6ac902",
+            "cardId": "280",
             "name": "Steel Dragon King LVL4",
             "manaCost": 7,
             "attribute": "Earth",
@@ -1873,7 +1873,7 @@
             "rulesText": "After this card battles, Gain a Exp Token.\nOnce this card has 3 Exp Tokens you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL5\nSpecial; Destroy a card on the field."
         },
         {
-            "cardId": "39d1d5a558",
+            "cardId": "281",
             "name": "Steel Dragon King LVL5",
             "manaCost": 8,
             "attribute": "Earth",
@@ -1885,7 +1885,7 @@
             "rulesText": "Cannot be summoned, summon using Steel Dragon King LVL4 effect.\nAfter this card battles, Gain a Exp Token.\nOnce this card has 4 Exp Tokens you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL6\nSpecial; Deal 5 Life Damage to the enemy"
         },
         {
-            "cardId": "b83cfec4c7",
+            "cardId": "282",
             "name": "Steel Dragon King LVL6",
             "manaCost": 9,
             "attribute": "Earth",
@@ -1897,7 +1897,7 @@
             "rulesText": "Cannot be summoned, summon using Steel Dragon King LVL5 effect.\nAfter this card battles, Gain a Exp Token.\nOnce this card has 5 Exp Tokens you can add this card to your deck and summon from your deck or hand, Steel Dragon King LVL7\nSpecial; Destroy 2 cards on the field, deal 3 Life damage to the owners of those cards."
         },
         {
-            "cardId": "17f3c6ca31",
+            "cardId": "283",
             "name": "Steel Dragon King LVL7",
             "manaCost": 10,
             "attribute": "Earth",
@@ -1921,7 +1921,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "baf180958a",
+            "cardId": "295",
             "name": "Supreme King Guardian",
             "manaCost": 12,
             "attribute": "Light",
@@ -1933,7 +1933,7 @@
             "rulesText": "Cannot be Summoned without listed cards.\nGate Guardian + 3 different Twin Guardian monsters.\nCan't be destroyed by spell cards.\nSeal; Destroy a card then draw a card.\nDeath; Summon a Twin Gardian from your Grave ignoring its summoning cost."
         },
         {
-            "cardId": "44e56cd1cf",
+            "cardId": "253",
             "name": "Sweet Magician Girl",
             "manaCost": 3,
             "attribute": "Dark",
@@ -1981,7 +1981,7 @@
             "rulesText": "Battlecry; Add 1 Thunder Strike Dragon from your deck to your hand."
         },
         {
-            "cardId": "645fa3cd64",
+            "cardId": "257",
             "name": "Toxic  Boa",
             "manaCost": 2,
             "attribute": "Earth",
@@ -1993,7 +1993,7 @@
             "rulesText": "Seal; Add 2 Venom Token to a monster on the field."
         },
         {
-            "cardId": "c7485ff296",
+            "cardId": "258",
             "name": "Toxic  Cobra",
             "manaCost": 4,
             "attribute": "Earth",
@@ -2005,7 +2005,7 @@
             "rulesText": "Negate the effects of monsters with at least 2 Venom Tokens"
         },
         {
-            "cardId": "d6efa80c82",
+            "cardId": "259",
             "name": "Toxic  Constrictors",
             "manaCost": 4,
             "attribute": "Earth",
@@ -2017,7 +2017,7 @@
             "rulesText": "Seal; Seal a different monster with Venom Tokens."
         },
         {
-            "cardId": "cbbf857497",
+            "cardId": "260",
             "name": "Toxic  Cultist",
             "manaCost": 3,
             "attribute": "Earth",
@@ -2029,7 +2029,7 @@
             "rulesText": "Venom monsters with Seal effects can be Sealed during the enemy turn.\nDeath; Add a Venom monster from your Grave to your hand."
         },
         {
-            "cardId": "a0e68f386f",
+            "cardId": "261",
             "name": "Toxic  Hatchling",
             "manaCost": 1,
             "attribute": "Earth",
@@ -2041,7 +2041,7 @@
             "rulesText": "After this attacks a monster, Roll\n1, Nothing\n2-4, That monster gains a Venom Token.\n5-6, That monster gains 2 Venom Token.\nDeath; Add a level 3 or lower Venom monster from deck to hand."
         },
         {
-            "cardId": "ee39e99141",
+            "cardId": "262",
             "name": "Toxic  Mamba",
             "manaCost": 2,
             "attribute": "Earth",
@@ -2053,7 +2053,7 @@
             "rulesText": "Death; Add a Venom Monster from your deck to your hand."
         },
         {
-            "cardId": "e04a5b34df",
+            "cardId": "263",
             "name": "Toxic  Serpent",
             "manaCost": 8,
             "attribute": "Earth",
@@ -2065,7 +2065,7 @@
             "rulesText": "Battlecry; Gain +1 ATK and DEF for each different Venom monster in your Grave.\nDeath; Summon 2 Venom monsters from your Grave."
         },
         {
-            "cardId": "4dc3c45fa7",
+            "cardId": "265",
             "name": "Toxic  Snake",
             "manaCost": 2,
             "attribute": "Earth",
@@ -2077,7 +2077,7 @@
             "rulesText": ""
         },
         {
-            "cardId": "9a58b6bd5e",
+            "cardId": "266",
             "name": "Toxic  Striker",
             "manaCost": 1,
             "attribute": "Earth",
@@ -2125,7 +2125,7 @@
             "rulesText": "Seal; Target 1 creature on the field then Roll, \n\n1= Nothing. \n2-4= Deal 3 damage to that target. \n5= Deal 3 damage to all enemy creatures.\n6= Destroy that target."
         },
         {
-            "cardId": "0451809940",
+            "cardId": "296",
             "name": "Twin Guardian Thunder & Wind",
             "manaCost": 9,
             "attribute": "Earth",
@@ -2137,7 +2137,7 @@
             "rulesText": "Cannot be summoned, summon by sending both Sanjin and Kazjin from field to Grave.\nSpecial; Destroy a monster on the field.\nDeath; Put a Sanjin or Kazjin from your Grave into your spells."
         },
         {
-            "cardId": "54fa1c38f6",
+            "cardId": "297",
             "name": "Twin Guardian Water & Thunder",
             "manaCost": 8,
             "attribute": "Water",
@@ -2149,7 +2149,7 @@
             "rulesText": "Cannot be summoned, summon by sending both Sanjin and Kazjin from field to Grave.\nSpecial; Add a Guardian card from deck to hand.\nDeath; Put a Sanjin or Suzjin from Grave into your spells."
         },
         {
-            "cardId": "e0f5ac1425",
+            "cardId": "298",
             "name": "Twin Guardian Wind & Water",
             "manaCost": 7,
             "attribute": "Wind",
