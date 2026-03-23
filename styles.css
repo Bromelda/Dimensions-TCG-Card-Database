@@ -314,3 +314,6 @@ button:focus-visible, input:focus-visible, select:focus-visible, .card:focus-vis
   .deck-panel { left: 8px; right: 8px; bottom: 8px; padding: 14px; }
   .suggestion-item { grid-template-columns: 1fr; }
 }
+
+.deck-code-row { margin-top: 10px; }
+#deckCodeInput { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #444; background: var(--panel-3); color: white; }
