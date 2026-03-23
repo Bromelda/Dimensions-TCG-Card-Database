@@ -10,7 +10,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/daylight.png",
-            "rulesText": "Fairy creatures get +1/+1 and Vampires creatures get -1 ATK."
+            "rulesText": "Fairy creatures get +1/+1 and Vampires creatures get -1 ATK.",
+            "normalizedName": "daylight",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "140",
@@ -22,7 +25,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/a_new_era.png",
-            "rulesText": "Play; Add 1 spell card from your deck to your hand."
+            "rulesText": "Play; Add 1 spell card from your deck to your hand.",
+            "normalizedName": "a new era",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "336",
@@ -34,7 +40,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/battle_plans.png",
-            "rulesText": "Play; If the enemy controls 3 more creatures than you do, draw 3 cards.\n"
+            "rulesText": "Play; If the enemy controls 3 more creatures than you do, draw 3 cards.\n",
+            "normalizedName": "battle plans",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "25",
@@ -46,7 +55,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/berserker_rage.png",
-            "rulesText": "After a creature you control deals Life damage by battle, you can active this card.\n\nHand; Draw one card at a time up to 10 and reveal that card to the enemy, if it is a creature card you can use this effect again until you draw a card that isn't a creature. \nDeal 1 Life damage to the enemy when a creature is drawn by this effect.\nBanish your hand at the end of this turn."
+            "rulesText": "After a creature you control deals Life damage by battle, you can active this card.\n\nHand; Draw one card at a time up to 10 and reveal that card to the enemy, if it is a creature card you can use this effect again until you draw a card that isn't a creature. \nDeal 1 Life damage to the enemy when a creature is drawn by this effect.\nBanish your hand at the end of this turn.",
+            "normalizedName": "berserker rage",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "141",
@@ -58,7 +70,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/black_hole.png",
-            "rulesText": "Play; Destroy all creatures on the field."
+            "rulesText": "Play; Destroy all creatures on the field.",
+            "normalizedName": "black hole",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "16",
@@ -70,7 +85,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/blue_cheese.png",
-            "rulesText": "Remove 15 Milk Tokens from your field then draw 5 cards."
+            "rulesText": "Remove 15 Milk Tokens from your field then draw 5 cards.",
+            "normalizedName": "blue cheese",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "142",
@@ -82,7 +100,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/bright_sky.png",
-            "rulesText": "Both players must turn their deck upside down and proceed with the current duel."
+            "rulesText": "Both players must turn their deck upside down and proceed with the current duel.",
+            "normalizedName": "bright sky",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "15",
@@ -94,7 +115,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/cheese_breaker.png",
-            "rulesText": "Seal; Pay 2 Milk Tokens, give 1 Cow creature Haste."
+            "rulesText": "Seal; Pay 2 Milk Tokens, give 1 Cow creature Haste.",
+            "normalizedName": "cheese breaker",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "17",
@@ -106,7 +130,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/cheese_factory.png",
-            "rulesText": "Destroy; 1 Farm Land you control to play this card.\nSeal; destroy 1 Cow creature you control to gain 3 Milk Tokens on this card"
+            "rulesText": "Destroy; 1 Farm Land you control to play this card.\nSeal; destroy 1 Cow creature you control to gain 3 Milk Tokens on this card",
+            "normalizedName": "cheese factory",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "300",
@@ -118,7 +145,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_bookmark.png",
-            "rulesText": "Add a TOON monster from your field into your hand then summon a TOON monster from your hand that cost less than the one added."
+            "rulesText": "Add a TOON monster from your field into your hand then summon a TOON monster from your hand that cost less than the one added.",
+            "normalizedName": "comic bookmark",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "308",
@@ -130,7 +160,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_page_flip.png",
-            "rulesText": "If TOON World is Sealed, Unseal it then return a TOON montser you control back to your deck."
+            "rulesText": "If TOON World is Sealed, Unseal it then return a TOON montser you control back to your deck.",
+            "normalizedName": "comic page flip",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "309",
@@ -142,7 +175,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_protection.png",
-            "rulesText": "If TOON World would be destroyed, you can destroy a TOON monster you control instead."
+            "rulesText": "If TOON World would be destroyed, you can destroy a TOON monster you control instead.",
+            "normalizedName": "comic protection",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "311",
@@ -154,7 +190,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_shadow.png",
-            "rulesText": "Add a TOON monster from your Grave into your deck."
+            "rulesText": "Add a TOON monster from your Grave into your deck.",
+            "normalizedName": "comic shadow",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "315",
@@ -166,7 +205,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_world.png",
-            "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost."
+            "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost.",
+            "normalizedName": "comic world",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "143",
@@ -178,7 +220,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/counter_blade.png",
-            "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature on the field."
+            "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature on the field.",
+            "normalizedName": "counter blade",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "144",
@@ -190,7 +235,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/counter_spell.png",
-            "rulesText": "Hand; When any effect is activated, negate that effect until end of turn."
+            "rulesText": "Hand; When any effect is activated, negate that effect until end of turn.",
+            "normalizedName": "counter spell",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "335",
@@ -202,7 +250,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/crystal_water.png",
-            "rulesText": "Play; Draw 2 cards."
+            "rulesText": "Play; Draw 2 cards.",
+            "normalizedName": "crystal water",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "145",
@@ -214,7 +265,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/cup_of_wealth.png",
-            "rulesText": "Play; Draw 2 cards."
+            "rulesText": "Play; Draw 2 cards.",
+            "normalizedName": "cup of wealth",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "72",
@@ -226,7 +280,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dark_lair.png",
-            "rulesText": "Fiend creatures get +1/+1 and Fairy creatures get -1 DEF."
+            "rulesText": "Fiend creatures get +1/+1 and Fairy creatures get -1 DEF.",
+            "normalizedName": "dark lair",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "147",
@@ -238,7 +295,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dark_offering.png",
-            "rulesText": "Play; Reveal 1 creature from your hand or deck that cannot be summoned without Dark Offering.\nSend creatures from your field or hand whose mana is equal to or more then the revealed creature, Summon that creature."
+            "rulesText": "Play; Reveal 1 creature from your hand or deck that cannot be summoned without Dark Offering.\nSend creatures from your field or hand whose mana is equal to or more then the revealed creature, Summon that creature.",
+            "normalizedName": "dark offering",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "254",
@@ -250,7 +310,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dark_snake_syndrome.png",
-            "rulesText": "When a monster with Venom Tokens is destroyed by battle, this card gains a Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card."
+            "rulesText": "When a monster with Venom Tokens is destroyed by battle, this card gains a Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card.",
+            "normalizedName": "dark snake syndrome",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "149",
@@ -262,7 +325,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dark_trader.png",
-            "rulesText": "Seal; Pay 2 Life to draw a card."
+            "rulesText": "Seal; Pay 2 Life to draw a card.",
+            "normalizedName": "dark trader",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "66",
@@ -274,7 +340,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darkness.png",
-            "rulesText": "Dark creatures get +1 ATK and Light creatures get -1 DEF."
+            "rulesText": "Dark creatures get +1 ATK and Light creatures get -1 DEF.",
+            "normalizedName": "darkness",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "114",
@@ -286,7 +355,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_calling.png",
-            "rulesText": "Play; Add 1 Darksider creature from your grave to your hand, but you cannot summon creatures for the rest of this turn.\n"
+            "rulesText": "Play; Add 1 Darksider creature from your grave to your hand, but you cannot summon creatures for the rest of this turn.\n",
+            "normalizedName": "darksider calling",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "115",
@@ -298,7 +370,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_dealing.png",
-            "rulesText": "Play; Both players draw 1 card, then discard 1 card."
+            "rulesText": "Play; Both players draw 1 card, then discard 1 card.",
+            "normalizedName": "darksider dealing",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "116",
@@ -310,7 +385,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_gate.png",
-            "rulesText": "Seal; Choose 1 effect.\n\n1: Discard then draw 1 card.\n2: Destroy this card, add 1 Darksider creature from your grave to your hand."
+            "rulesText": "Seal; Choose 1 effect.\n\n1: Discard then draw 1 card.\n2: Destroy this card, add 1 Darksider creature from your grave to your hand.",
+            "normalizedName": "darksider gate",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "118",
@@ -322,7 +400,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_grimoire.png",
-            "rulesText": "When a creature effect has you discard, this gains 1 Dark Token.\n\nSpend Dark Tokens\n3- Draw 1 card.\n5- Add 1 Darksider from your grave to your hand.\n8- Destroy 1 creature."
+            "rulesText": "When a creature effect has you discard, this gains 1 Dark Token.\n\nSpend Dark Tokens\n3- Draw 1 card.\n5- Add 1 Darksider from your grave to your hand.\n8- Destroy 1 creature.",
+            "normalizedName": "darksider grimoire",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "54",
@@ -334,7 +415,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_punishment.png",
-            "rulesText": "Play; Banish 3 Darksider cards from your grave then discard 1 card."
+            "rulesText": "Play; Banish 3 Darksider cards from your grave then discard 1 card.",
+            "normalizedName": "darksider punishment",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "125",
@@ -346,7 +430,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_study.png",
-            "rulesText": "Play; Discard 1 card, then add 1 Darksider creature from your deck to your hand.\n\nActivateFromGrave; If this Card is in your grave, you can banish 1 creature in your grave and destroy 1 Mana to add this card to your hand\n"
+            "rulesText": "Play; Discard 1 card, then add 1 Darksider creature from your deck to your hand.\n\nActivateFromGrave; If this Card is in your grave, you can banish 1 creature in your grave and destroy 1 Mana to add this card to your hand\n",
+            "normalizedName": "darksider study",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "150",
@@ -358,7 +445,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/data_world.png",
-            "rulesText": "Seal; Banish creatures from your field that is needed for a Fusion creature, summon that Fusion creature."
+            "rulesText": "Seal; Banish creatures from your field that is needed for a Fusion creature, summon that Fusion creature.",
+            "normalizedName": "data world",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "151",
@@ -370,7 +460,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dealers_trade.png",
-            "rulesText": "Play; Draw 3 cards then shuffle 2 cards from your hand back into your deck."
+            "rulesText": "Play; Draw 3 cards then shuffle 2 cards from your hand back into your deck.",
+            "normalizedName": "dealers trade",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "202",
@@ -382,7 +475,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragon_fireball.png",
-            "rulesText": "Play; While you control a Dragon creature choose 1 effect:\n\n1: Destroy 1 spell.\n2: Deal 5 Life damage to the enemy."
+            "rulesText": "Play; While you control a Dragon creature choose 1 effect:\n\n1: Destroy 1 spell.\n2: Deal 5 Life damage to the enemy.",
+            "normalizedName": "dragon fireball",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "203",
@@ -394,7 +490,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragon_hills.png",
-            "rulesText": "Seal; Discard 1 card then choose 1 effect.\n\n1: Add a 4 Mana or lower Dragon from your deck to your hand.\n2: Send 1 Dragon from your deck to your grave, then draw 1 card."
+            "rulesText": "Seal; Discard 1 card then choose 1 effect.\n\n1: Add a 4 Mana or lower Dragon from your deck to your hand.\n2: Send 1 Dragon from your deck to your grave, then draw 1 card.",
+            "normalizedName": "dragon hills",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "213",
@@ -406,7 +505,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragons_rampage.png",
-            "rulesText": "If a creature is destroyed by the equipped creature in battle, deal Life damage to the enemy equal to the creatures DEF."
+            "rulesText": "If a creature is destroyed by the equipped creature in battle, deal Life damage to the enemy equal to the creatures DEF.",
+            "normalizedName": "dragons rampage",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "255",
@@ -418,7 +520,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/endless_reptiles.png",
-            "rulesText": "Non-Reptile monsters you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed."
+            "rulesText": "Non-Reptile monsters you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed.",
+            "normalizedName": "endless reptiles",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "19",
@@ -430,7 +535,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/farm_land.png",
-            "rulesText": "Gain 1 Milk Token when summoning 1 creature with Cow in their name."
+            "rulesText": "Gain 1 Milk Token when summoning 1 creature with Cow in their name.",
+            "normalizedName": "farm land",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "68",
@@ -442,7 +550,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/forest.png",
-            "rulesText": "Wind creatures get +1 ATK and Fire creatures get -1 DEF."
+            "rulesText": "Wind creatures get +1 ATK and Fire creatures get -1 DEF.",
+            "normalizedName": "forest",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "69",
@@ -454,7 +565,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/fossil_canyon.png",
-            "rulesText": "Dino creatures get +1/+1 and Fish creatures get -1 ATK."
+            "rulesText": "Dino creatures get +1/+1 and Fish creatures get -1 ATK.",
+            "normalizedName": "fossil canyon",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "158",
@@ -466,7 +580,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/frost_wave.png",
-            "rulesText": "Play; Negate the effect of all enemy creatures on the field until the end of turn."
+            "rulesText": "Play; Negate the effect of all enemy creatures on the field until the end of turn.",
+            "normalizedName": "frost wave",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "28",
@@ -478,7 +595,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/fusion_deploy.png",
-            "rulesText": "Play; Reveal 1 Fusion creature in your Spatial Deck, add 1 creature that is listed on that fusion card to your hand from your deck."
+            "rulesText": "Play; Reveal 1 Fusion creature in your Spatial Deck, add 1 creature that is listed on that fusion card to your hand from your deck.",
+            "normalizedName": "fusion deploy",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "29",
@@ -490,7 +610,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/fusion_recall.png",
-            "rulesText": "Play; Add 1 Fusion Spell and 1 creature from your grave to your hand, from the last Fusion card that was summoned.\n"
+            "rulesText": "Play; Add 1 Fusion Spell and 1 creature from your grave to your hand, from the last Fusion card that was summoned.\n",
+            "normalizedName": "fusion recall",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "30",
@@ -502,7 +625,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/fusion_scrapyard.png",
-            "rulesText": "Seal; During your turn if you summon a Fusion card, you can add 1 Fusion Spell/creature card used for that Fusion back to your hand from your grave."
+            "rulesText": "Seal; During your turn if you summon a Fusion card, you can add 1 Fusion Spell/creature card used for that Fusion back to your hand from your grave.",
+            "normalizedName": "fusion scrapyard",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "159",
@@ -514,7 +640,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/fusion_spell.png",
-            "rulesText": "Play; Summon 1 Fusion creature by sending the listed cards for that Fusion creature from your hand or field to the Grave.  \n\r\nDraw 2 cards after a Fusion creature is summoned."
+            "rulesText": "Play; Summon 1 Fusion creature by sending the listed cards for that Fusion creature from your hand or field to the Grave.  \n\r\nDraw 2 cards after a Fusion creature is summoned.",
+            "normalizedName": "fusion spell",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "21",
@@ -526,7 +655,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/good_work_ethics.png",
-            "rulesText": "Can only be Activated while you control a Cheese Factory.\nSeal; Pay 9 Milk Tokens, Add 1 Spell card or Cow creature from your deck to your hand. "
+            "rulesText": "Can only be Activated while you control a Cheese Factory.\nSeal; Pay 9 Milk Tokens, Add 1 Spell card or Cow creature from your deck to your hand. ",
+            "normalizedName": "good work ethics",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "20",
@@ -538,7 +670,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/greenest_grass.png",
-            "rulesText": "Creatures you control with Cow in their name gain +1 ATK and +1 DEF."
+            "rulesText": "Creatures you control with Cow in their name gain +1 ATK and +1 DEF.",
+            "normalizedName": "greenest grass",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "285",
@@ -550,7 +685,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/guardian_shadow_maze.png",
-            "rulesText": "Any monster summon below level 3 is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add a Guardian card from your Grave to your hand."
+            "rulesText": "Any monster summon below level 3 is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add a Guardian card from your Grave to your hand.",
+            "normalizedName": "guardian shadow maze",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "287",
@@ -562,7 +700,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/guardian_summoning.png",
-            "rulesText": "You can put a Sanjin, Kazjin or Suzjin from your deck or hand on the field as a spell card."
+            "rulesText": "You can put a Sanjin, Kazjin or Suzjin from your deck or hand on the field as a spell card.",
+            "normalizedName": "guardian summoning",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "47",
@@ -574,7 +715,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/heavenly_twin_blade.png",
-            "rulesText": "When the equipped creature declares an attack, the creature it attacks has its effects negated until the end of turn."
+            "rulesText": "When the equipped creature declares an attack, the creature it attacks has its effects negated until the end of turn.",
+            "normalizedName": "heavenly twin blade",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "163",
@@ -586,7 +730,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/holy_awe.png",
-            "rulesText": "Play; Seal all enemy creatures."
+            "rulesText": "Play; Seal all enemy creatures.",
+            "normalizedName": "holy awe",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "162",
@@ -598,7 +745,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/holy_awe_bottle.png",
-            "rulesText": "The enemy \"Holy Awe\" spells are negated."
+            "rulesText": "The enemy \"Holy Awe\" spells are negated.",
+            "normalizedName": "holy awe bottle",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "31",
@@ -610,7 +760,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/howling_mine.png",
-            "rulesText": "While this card is unsealed and any player draws a card at the start of their turn, they draw another one.\n"
+            "rulesText": "While this card is unsealed and any player draws a card at the start of their turn, they draw another one.\n",
+            "normalizedName": "howling mine",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "269",
@@ -622,7 +775,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/level_up.png",
-            "rulesText": "Give a monster with LVL in its name a Exp Token."
+            "rulesText": "Give a monster with LVL in its name a Exp Token.",
+            "normalizedName": "level up",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "238",
@@ -634,7 +790,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/library_of_the_magician.png",
-            "rulesText": "When you play a spell, this card gains a Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to use one effect.\n3, Draw a card.\n6, Add a spell card from your Grave to your hand."
+            "rulesText": "When you play a spell, this card gains a Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to use one effect.\n3, Draw a card.\n6, Add a spell card from your Grave to your hand.",
+            "normalizedName": "library of the magician",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "226",
@@ -646,7 +805,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_reborn.png",
-            "rulesText": "Summon a level 3 or lower Lightborn monster from your grave."
+            "rulesText": "Summon a level 3 or lower Lightborn monster from your grave.",
+            "normalizedName": "lightborn reborn",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "227",
@@ -658,7 +820,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_recharge.png",
-            "rulesText": "Whenever a Lightborn monster effect makes you Mill, gain 1 Life."
+            "rulesText": "Whenever a Lightborn monster effect makes you Mill, gain 1 Life.",
+            "normalizedName": "lightborn recharge",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "228",
@@ -670,7 +835,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_shield.png",
-            "rulesText": "When a Lightborn monster is attacked, you can Mill 3 cards to negate the attack."
+            "rulesText": "When a Lightborn monster is attacked, you can Mill 3 cards to negate the attack.",
+            "normalizedName": "lightborn shield",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "229",
@@ -682,7 +850,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_shrine.png",
-            "rulesText": "Gain a Light Token when using a Mill effect.\nSeal; Pay Tokens on this card to use one effect.\n3, Draw a card.\n5, Add a monster from your Grave to hand.\n8, Destroy a card on the field."
+            "rulesText": "Gain a Light Token when using a Mill effect.\nSeal; Pay Tokens on this card to use one effect.\n3, Draw a card.\n5, Add a monster from your Grave to hand.\n8, Destroy a card on the field.",
+            "normalizedName": "lightborn shrine",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "230",
@@ -694,7 +865,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_solar_ray.png",
-            "rulesText": "Target a monster then Mill 4, that monster takes 1 damage for each Lightborn monster send to the Grave.\nIf that monster is destroyed by this effect, add 2 Lightborn monsters from your Grave to your deck."
+            "rulesText": "Target a monster then Mill 4, that monster takes 1 damage for each Lightborn monster send to the Grave.\nIf that monster is destroyed by this effect, add 2 Lightborn monsters from your Grave to your deck.",
+            "normalizedName": "lightborn solar ray",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "166",
@@ -706,7 +880,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lockdown.png",
-            "rulesText": "Both players are unable to ADD cards from their deck to their hand (beside drawing)."
+            "rulesText": "Both players are unable to ADD cards from their deck to their hand (beside drawing).",
+            "normalizedName": "lockdown",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "89",
@@ -718,7 +895,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/lucky_6_slots.png",
-            "rulesText": "Equip only to \"Slot Machine\".\n\nThe equipped creature gains +2 ATK.\nAfter \"Slot Machine\" activates its effect, you may Seal this card; reroll the result.\n (If three \"Lucky 6 Slots\" are equipped to the same \"Slot Machine\", you may Seal all three instead; choose the result instead of rolling.\n"
+            "rulesText": "Equip only to \"Slot Machine\".\n\nThe equipped creature gains +2 ATK.\nAfter \"Slot Machine\" activates its effect, you may Seal this card; reroll the result.\n (If three \"Lucky 6 Slots\" are equipped to the same \"Slot Machine\", you may Seal all three instead; choose the result instead of rolling.\n",
+            "normalizedName": "lucky 6 slots",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "185",
@@ -730,7 +910,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/madness_from_the_grave.png",
-            "rulesText": "If a effect is activated in a Chain, You can activate this effect to that card. Negate that card and Banish that card then send all copies of that card from your deck to your Grave."
+            "rulesText": "If a effect is activated in a Chain, You can activate this effect to that card. Negate that card and Banish that card then send all copies of that card from your deck to your Grave.",
+            "normalizedName": "madness from the grave",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "62",
@@ -742,7 +925,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magic_fusion.png",
-            "rulesText": "Play: Reveal 1 non-effect Fusion creature. Pay 5 Life for each mana it cost; if you do, summon it, ignoring its Fusion cost."
+            "rulesText": "Play: Reveal 1 non-effect Fusion creature. Pay 5 Life for each mana it cost; if you do, summon it, ignoring its Fusion cost.",
+            "normalizedName": "magic fusion",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "167",
@@ -754,7 +940,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magical_borderline.png",
-            "rulesText": "Hand; Negate an attack and end the Battle Phase."
+            "rulesText": "Hand; Negate an attack and end the Battle Phase.",
+            "normalizedName": "magical borderline",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "241",
@@ -766,7 +955,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_dark_blast.png",
-            "rulesText": "Target a Magician named monster you control and another monster on the field.\nDeal damage to that monster equal to the Magician monsters ATK."
+            "rulesText": "Target a Magician named monster you control and another monster on the field.\nDeal damage to that monster equal to the Magician monsters ATK.",
+            "normalizedName": "magician dark blast",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "242",
@@ -778,7 +970,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_illusion.png",
-            "rulesText": "When a Magician is attacked, negate the attack then return that Magician back to your hand."
+            "rulesText": "When a Magician is attacked, negate the attack then return that Magician back to your hand.",
+            "normalizedName": "magician illusion",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "244",
@@ -790,7 +985,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_magic_robe.png",
-            "rulesText": "Pay 10 Life then summon a Magician from your deck."
+            "rulesText": "Pay 10 Life then summon a Magician from your deck.",
+            "normalizedName": "magician magic robe",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "249",
@@ -802,7 +1000,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_scrolls.png",
-            "rulesText": "Add a Magician spell card from your deck to your hand."
+            "rulesText": "Add a Magician spell card from your deck to your hand.",
+            "normalizedName": "magician scrolls",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "250",
@@ -814,7 +1015,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_shield_wall.png",
-            "rulesText": "When a Magician is attacked, Destroy the attacking monster."
+            "rulesText": "When a Magician is attacked, Destroy the attacking monster.",
+            "normalizedName": "magician shield wall",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "251",
@@ -826,7 +1030,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_spell_book.png",
-            "rulesText": "When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn."
+            "rulesText": "When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn.",
+            "normalizedName": "magician spell book",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "252",
@@ -838,7 +1045,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_spell_orb.png",
-            "rulesText": "Target a card, that card gains a Spell Token. if you chain this spell to another spell you played this turn. That card gains another Token."
+            "rulesText": "Target a card, that card gains a Spell Token. if you chain this spell to another spell you played this turn. That card gains another Token.",
+            "normalizedName": "magician spell orb",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "294",
@@ -850,7 +1060,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/maze_of_the_guardian.png",
-            "rulesText": "Seal; Add a Guardian card from your deck to your hand.\n-or-\nYou can put a Sanjin, Kazjin or Suzjin into your spells from your deck."
+            "rulesText": "Seal; Add a Guardian card from your deck to your hand.\n-or-\nYou can put a Sanjin, Kazjin or Suzjin into your spells from your deck.",
+            "normalizedName": "maze of the guardian",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "64",
@@ -862,7 +1075,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/meadow.png",
-            "rulesText": "Light creatures get +1 DEF and Dark creatures get -1 ATK."
+            "rulesText": "Light creatures get +1 DEF and Dark creatures get -1 ATK.",
+            "normalizedName": "meadow",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "133",
@@ -874,7 +1090,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/metal_armor.png",
-            "rulesText": "Play; Equip to 1 creature you control. It gains +1 ATK and +2 DEF.\n\nThe Creature equipped with this becomes a Machine."
+            "rulesText": "Play; Equip to 1 creature you control. It gains +1 ATK and +2 DEF.\n\nThe Creature equipped with this becomes a Machine.",
+            "normalizedName": "metal armor",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "67",
@@ -886,7 +1105,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/mountains.png",
-            "rulesText": "Fire creatures get +1 ATK and Wind creatures get -1 DEF."
+            "rulesText": "Fire creatures get +1 ATK and Wind creatures get -1 DEF.",
+            "normalizedName": "mountains",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "71",
@@ -898,7 +1120,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/ocean.png",
-            "rulesText": "Fish creatures get +1/+1 and Dino creatures get -1 ATK."
+            "rulesText": "Fish creatures get +1/+1 and Dino creatures get -1 ATK.",
+            "normalizedName": "ocean",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "74",
@@ -910,7 +1135,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/paradise.png",
-            "rulesText": "Beast creatures get +1/+1 and Dragon creatures get -1 DEF."
+            "rulesText": "Beast creatures get +1/+1 and Dragon creatures get -1 DEF.",
+            "normalizedName": "paradise",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "169",
@@ -922,7 +1150,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/power_swap.png",
-            "rulesText": "Play; Swap the ATK and DEF of a creature until the end of turn."
+            "rulesText": "Play; Swap the ATK and DEF of a creature until the end of turn.",
+            "normalizedName": "power swap",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "38",
@@ -934,7 +1165,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/quick_draw.png",
-            "rulesText": "Play; Discard 1 card. \nMill cards equal to the number of cards on the enemy field, then draw 1 card and reveal it. \nIf that card is QUICK DRAW! send it to the grave, then destroy all enemy cards on the field and deal 6 Life damage for each card Milled by this effect."
+            "rulesText": "Play; Discard 1 card. \nMill cards equal to the number of cards on the enemy field, then draw 1 card and reveal it. \nIf that card is QUICK DRAW! send it to the grave, then destroy all enemy cards on the field and deal 6 Life damage for each card Milled by this effect.",
+            "normalizedName": "quick draw",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "170",
@@ -946,7 +1180,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/reckless_greed.png",
-            "rulesText": "Play; Banish 5 cards from the top of your Deck, then add 1 card from your deck to your hand."
+            "rulesText": "Play; Banish 5 cards from the top of your Deck, then add 1 card from your deck to your hand.",
+            "normalizedName": "reckless greed",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "216",
@@ -958,7 +1195,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/returning_dragon.png",
-            "rulesText": "Play; Destroy 1 Dragon you control, then banish 2 Dragons from your grave.\nSummon 1 different banished Dragon with less Mana cost then the one destroyed."
+            "rulesText": "Play; Destroy 1 Dragon you control, then banish 2 Dragons from your grave.\nSummon 1 different banished Dragon with less Mana cost then the one destroyed.",
+            "normalizedName": "returning dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "171",
@@ -970,7 +1210,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/returning_souls.png",
-            "rulesText": "Play; When you have 6 or more creatures in your grave.\nBanish 1 creature in your grave, then shuffle 5 creatures from your grave into your deck, draw 1 card."
+            "rulesText": "Play; When you have 6 or more creatures in your grave.\nBanish 1 creature in your grave, then shuffle 5 creatures from your grave into your deck, draw 1 card.",
+            "normalizedName": "returning souls",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "175",
@@ -982,7 +1225,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/sealed_sarcophagus.png",
-            "rulesText": "Play; Banish 1 card from your deck, after the start of your third turn after this card's activation, add the banished card to your hand."
+            "rulesText": "Play; Banish 1 card from your deck, after the start of your third turn after this card's activation, add the banished card to your hand.",
+            "normalizedName": "sealed sarcophagus",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "176",
@@ -994,7 +1240,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/soul_binding_gate.png",
-            "rulesText": "This effect only works if you control a creature that has more ATK than your Life.\nDestroy any summoned creature that has more ATK than your Life. \nWhen your highest ATK creature leaves the field, destroy this card."
+            "rulesText": "This effect only works if you control a creature that has more ATK than your Life.\nDestroy any summoned creature that has more ATK than your Life. \nWhen your highest ATK creature leaves the field, destroy this card.",
+            "normalizedName": "soul binding gate",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "177",
@@ -1006,7 +1255,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/soul_retrieval.png",
-            "rulesText": "Play; Summon 1 creature from your Grave."
+            "rulesText": "Play; Summon 1 creature from your Grave.",
+            "normalizedName": "soul retrieval",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "178",
@@ -1018,7 +1270,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/spell_stun.png",
-            "rulesText": "This card is not affected by spell effects.\n\nPlay; Seal all enemy spell cards on the field until the end of the next turn.\n"
+            "rulesText": "This card is not affected by spell effects.\n\nPlay; Seal all enemy spell cards on the field until the end of the next turn.\n",
+            "normalizedName": "spell stun",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "85",
@@ -1030,7 +1285,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/stop_seal.png",
-            "rulesText": "Play; Unseal 1 creature."
+            "rulesText": "Play; Unseal 1 creature.",
+            "normalizedName": "stop seal",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "180",
@@ -1042,7 +1300,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/sword_of_1000_souls.png",
-            "rulesText": "This card can't be negated.\n\n+5 ATK.\nAfter the equipped creature attacks, Seal all the enemy creatures and Mana until the end of their turn.\nDestroy this card after the battle phase."
+            "rulesText": "This card can't be negated.\n\n+5 ATK.\nAfter the equipped creature attacks, Seal all the enemy creatures and Mana until the end of their turn.\nDestroy this card after the battle phase.",
+            "normalizedName": "sword of 1000 souls",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "999999",
@@ -1054,7 +1315,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/test_card.png",
-            "rulesText": "Play; Negate an effect on the field until the end of turn."
+            "rulesText": "Play; Negate an effect on the field until the end of turn.",
+            "normalizedName": "test card",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "46",
@@ -1066,7 +1330,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/the_cursed_blade.png",
-            "rulesText": "+2 ATK but the equipped creature takes double DEF damage."
+            "rulesText": "+2 ATK but the equipped creature takes double DEF damage.",
+            "normalizedName": "the cursed blade",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "181",
@@ -1078,7 +1345,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/thunder_strike.png",
-            "rulesText": "Play; Destroy 1 spell card on the field."
+            "rulesText": "Play; Destroy 1 spell card on the field.",
+            "normalizedName": "thunder strike",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "182",
@@ -1090,7 +1360,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/time_changing_crystal.png",
-            "rulesText": "Each turn you draw 2 cards instead of 1 but you cannot use Spell or Creature effects from your hand during the enemy turn."
+            "rulesText": "Each turn you draw 2 cards instead of 1 but you cannot use Spell or Creature effects from your hand during the enemy turn.",
+            "normalizedName": "time changing crystal",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "84",
@@ -1102,7 +1375,10 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/time_machine.png",
-            "rulesText": "Play; If the last creature that died by battle was your Machine, then summon that Machine back to the field, sealed."
+            "rulesText": "Play; If the last creature that died by battle was your Machine, then summon that Machine back to the field, sealed.",
+            "normalizedName": "time machine",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "183",
@@ -1114,7 +1390,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toll.png",
-            "rulesText": "Each player must pay 1 Life to attack with a creature."
+            "rulesText": "Each player must pay 1 Life to attack with a creature.",
+            "normalizedName": "toll",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "268",
@@ -1126,7 +1405,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toxic_bite.png",
-            "rulesText": "Add a Venom Monster from your deck to your hand and give a monster a Venom Token"
+            "rulesText": "Add a Venom Monster from your deck to your hand and give a monster a Venom Token",
+            "normalizedName": "toxic bite",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "264",
@@ -1138,7 +1420,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toxic_shot.png",
-            "rulesText": "You can only activate this while you control a Venom monster.\nSend a Venom named monster from your deck to your Grave then give a monster on the field 2 Venom Tokens."
+            "rulesText": "You can only activate this while you control a Venom monster.\nSend a Venom named monster from your deck to your Grave then give a monster on the field 2 Venom Tokens.",
+            "normalizedName": "toxic shot",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "267",
@@ -1150,7 +1435,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toxic_swamp.png",
-            "rulesText": "Any monster summoned without Venom in its name Gains a Venom Token.\nMonsters with a Venom Token lose -1 ATK for each token. Any monsters with 0 ATK and at least 4 Venom Tokens is destroyed."
+            "rulesText": "Any monster summoned without Venom in its name Gains a Venom Token.\nMonsters with a Venom Token lose -1 ATK for each token. Any monsters with 0 ATK and at least 4 Venom Tokens is destroyed.",
+            "normalizedName": "toxic swamp",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "73",
@@ -1162,7 +1450,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/vally.png",
-            "rulesText": "Dragon creatures get +1/+1 and Fish creatures get -1 DEF."
+            "rulesText": "Dragon creatures get +1/+1 and Fish creatures get -1 DEF.",
+            "normalizedName": "vally",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "63",
@@ -1174,7 +1465,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/waste_land.png",
-            "rulesText": "Earth creatures get +1 DEF and Water creatures get -1 ATK."
+            "rulesText": "Earth creatures get +1 DEF and Water creatures get -1 ATK.",
+            "normalizedName": "waste land",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "65",
@@ -1186,7 +1480,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/wetlands.png",
-            "rulesText": "Water creatures get +1 DEF and Earth creatures get -1 ATK."
+            "rulesText": "Water creatures get +1 DEF and Earth creatures get -1 ATK.",
+            "normalizedName": "wetlands",
+            "isField": true,
+            "isDeckBuildable": true
         },
         {
             "cardId": "184",
@@ -1198,7 +1495,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/white_hole.png",
-            "rulesText": "Play; Destroy all Spells on the field."
+            "rulesText": "Play; Destroy all Spells on the field.",
+            "normalizedName": "white hole",
+            "isField": false,
+            "isDeckBuildable": true
         }
     ]
 }

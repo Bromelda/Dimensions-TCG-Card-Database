@@ -10,7 +10,10 @@
             "atk": 4,
             "def": 6,
             "image": "./images/cards/aqua_champion.png",
-            "rulesText": "Fusion; Aqua Knight + Aqua Supporter + Aqua Bouncer\n\nIf a different Aqua creature is destroyed by battle, it is added to your hand instead.\n"
+            "rulesText": "Fusion; Aqua Knight + Aqua Supporter + Aqua Bouncer\n\nIf a different Aqua creature is destroyed by battle, it is added to your hand instead.\n",
+            "normalizedName": "aqua champion",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "327",
@@ -22,7 +25,10 @@
             "atk": 3,
             "def": 6,
             "image": "./images/cards/aqua_radiant.png",
-            "rulesText": "Fusion; Aqua Hocus + Aqua Pocus + Aqua Focus\nBattlecry; Return all Unsealed creatures back to the owners hand.\n"
+            "rulesText": "Fusion; Aqua Hocus + Aqua Pocus + Aqua Focus\nBattlecry; Return all Unsealed creatures back to the owners hand.\n",
+            "normalizedName": "aqua radiant",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "186",
@@ -34,7 +40,10 @@
             "atk": 6,
             "def": 8,
             "image": "./images/cards/black_fiendish_dragon.png",
-            "rulesText": "Fusion; Fiendish Skull + Black Dragon\n\nWhen this card attacks and destroys 1 creature by battle, deal that creatures DEF as Life damage to the enemy."
+            "rulesText": "Fusion; Fiendish Skull + Black Dragon\n\nWhen this card attacks and destroys 1 creature by battle, deal that creatures DEF as Life damage to the enemy.",
+            "normalizedName": "black fiendish dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "61",
@@ -46,7 +55,10 @@
             "atk": 0,
             "def": 4,
             "image": "./images/cards/chilled_magician.png",
-            "rulesText": "Fusion; Wonder Magician + Magician Apprentice."
+            "rulesText": "Fusion; Wonder Magician + Magician Apprentice.",
+            "normalizedName": "chilled magician",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "187",
@@ -58,7 +70,10 @@
             "atk": 6,
             "def": 6,
             "image": "./images/cards/dark_dragoon_magician.png",
-            "rulesText": "Fusion; Black Dragon + Magician of Chaos + 2 Dark Swordsman\n\r\nCannot be destroyed by Spell effects \nQuick; Negate an effect until the end of turn."
+            "rulesText": "Fusion; Black Dragon + Magician of Chaos + 2 Dark Swordsman\n\r\nCannot be destroyed by Spell effects \nQuick; Negate an effect until the end of turn.",
+            "normalizedName": "dark dragoon magician",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "56",
@@ -70,7 +85,10 @@
             "atk": 10,
             "def": 10,
             "image": "./images/cards/darksider_chaos_angel.png",
-            "rulesText": "Fusion; Darksider Ruler + Darksider Dragon Overlord + 2 different Darksider creatures.\nCannot be Summoned without listed cards.\n\nThis card cannot be destroyed by spell effects. \n\nBattlecry; Destroy all other cards on the field. \nSeal; Add 2 banished Darksider cards to your hand."
+            "rulesText": "Fusion; Darksider Ruler + Darksider Dragon Overlord + 2 different Darksider creatures.\nCannot be Summoned without listed cards.\n\nThis card cannot be destroyed by spell effects. \n\nBattlecry; Destroy all other cards on the field. \nSeal; Add 2 banished Darksider cards to your hand.",
+            "normalizedName": "darksider chaos angel",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "55",
@@ -82,7 +100,10 @@
             "atk": 5,
             "def": 8,
             "image": "./images/cards/darksider_dragon_overlord.png",
-            "rulesText": "Fusion; Darksider Ruler + 1 Dragon + 2 different Darksider creatures.\n\nBattlecry; Each player discards 1 card. \nQuick; Change the effect of 1 card to \"The enemy discards 1 card\" until the end of turn.\nDeath; Summon a different Darksider from your grave to the field. "
+            "rulesText": "Fusion; Darksider Ruler + 1 Dragon + 2 different Darksider creatures.\n\nBattlecry; Each player discards 1 card. \nQuick; Change the effect of 1 card to \"The enemy discards 1 card\" until the end of turn.\nDeath; Summon a different Darksider from your grave to the field. ",
+            "normalizedName": "darksider dragon overlord",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "210",
@@ -94,7 +115,10 @@
             "atk": 5,
             "def": 8,
             "image": "./images/cards/dragon_lord_supreme.png",
-            "rulesText": "Fusion; 3 different 8 Mana cost Dragon Lord creatures.\nCannot be Summoned without listed cards.\n\n\nBattlecry; Add 2 Banished Dragons into your deck.\nSeal; Banish 2 Dragon Lord creatures from your grave to destroy 2 cards.\nDeath; You can Banish 2 Fire creatures from your grave to return this card to your Spatial deck instead."
+            "rulesText": "Fusion; 3 different 8 Mana cost Dragon Lord creatures.\nCannot be Summoned without listed cards.\n\n\nBattlecry; Add 2 Banished Dragons into your deck.\nSeal; Banish 2 Dragon Lord creatures from your grave to destroy 2 cards.\nDeath; You can Banish 2 Fire creatures from your grave to return this card to your Spatial deck instead.",
+            "normalizedName": "dragon lord supreme",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "188",
@@ -106,7 +130,10 @@
             "atk": 4,
             "def": 6,
             "image": "./images/cards/flaming_swordsman.png",
-            "rulesText": "Fusion; Elf Warrior + 1 Fire card.\n\nGains +3 ATK when attacking until the end of turn."
+            "rulesText": "Fusion; Elf Warrior + 1 Fire card.\n\nGains +3 ATK when attacking until the end of turn.",
+            "normalizedName": "flaming swordsman",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "189",
@@ -118,7 +145,10 @@
             "atk": 4,
             "def": 4,
             "image": "./images/cards/herald_of_light.png",
-            "rulesText": "Fusion; Forest Witch + Petit Fairy + Petit Fairy\n\nQuick; Negate a spell effect until the end of turn.\nDeath; Add 1 Spell from your grave to your hand."
+            "rulesText": "Fusion; Forest Witch + Petit Fairy + Petit Fairy\n\nQuick; Negate a spell effect until the end of turn.\nDeath; Add 1 Spell from your grave to your hand.",
+            "normalizedName": "herald of light",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "190",
@@ -130,7 +160,10 @@
             "atk": 5,
             "def": 5,
             "image": "./images/cards/knight_dragon_rider.png",
-            "rulesText": "Fusion; Elf Warrior + Moon Dragon\n\nDeath; Add 1 Warrior from your grave to your hand."
+            "rulesText": "Fusion; Elf Warrior + Moon Dragon\n\nDeath; Add 1 Warrior from your grave to your hand.",
+            "normalizedName": "knight dragon rider",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "191",
@@ -142,7 +175,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/light_shining_dragon.png",
-            "rulesText": "Fusion; Light Dragon of Divine + Herald of Light + White Dragon\n\r\nBattlecry; Get +1/+1 for each Light creature in your grave. \nDeath; Destroy all cards on the field."
+            "rulesText": "Fusion; Light Dragon of Divine + Herald of Light + White Dragon\n\r\nBattlecry; Get +1/+1 for each Light creature in your grave. \nDeath; Destroy all cards on the field.",
+            "normalizedName": "light shining dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "93",
@@ -154,7 +190,10 @@
             "atk": 4,
             "def": 4,
             "image": "./images/cards/muk_muk.png",
-            "rulesText": "Fusion; Dark Eyes Fiend + Dark Eyes Fiend + Dark Eyes Fiend"
+            "rulesText": "Fusion; Dark Eyes Fiend + Dark Eyes Fiend + Dark Eyes Fiend",
+            "normalizedName": "muk muk",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "87",
@@ -166,7 +205,10 @@
             "atk": 8,
             "def": 8,
             "image": "./images/cards/over_tech_blaster_dragon.png",
-            "rulesText": "Fusion; Triple Barrel Dragon + Blaster Spider + X Double Cannon\nCannot be Summoned without listed cards.\n\r\nSeal; Roll,\n1= draw 1 card. \n2-4= Deal 5 Damage to 1 creature on the field. \n5= Deal 3 Damage to all enemy creatures. \n6= Destroy up to 2 cards on the field.\r\n"
+            "rulesText": "Fusion; Triple Barrel Dragon + Blaster Spider + X Double Cannon\nCannot be Summoned without listed cards.\n\r\nSeal; Roll,\n1= draw 1 card. \n2-4= Deal 5 Damage to 1 creature on the field. \n5= Deal 3 Damage to all enemy creatures. \n6= Destroy up to 2 cards on the field.\r\n",
+            "normalizedName": "over tech blaster dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "192",
@@ -178,7 +220,10 @@
             "atk": 4,
             "def": 4,
             "image": "./images/cards/phantom_night_fiend.png",
-            "rulesText": "Fusion; Dark Eyes Fiend + Hairy Fiend + Forest Witch\n\nBattlecry; Draw 5 cards then shuffle 3 cards from your hand back into your deck."
+            "rulesText": "Fusion; Dark Eyes Fiend + Hairy Fiend + Forest Witch\n\nBattlecry; Draw 5 cards then shuffle 3 cards from your hand back into your deck.",
+            "normalizedName": "phantom night fiend",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "59",
@@ -190,7 +235,10 @@
             "atk": 4,
             "def": 6,
             "image": "./images/cards/queen_of_toxic_snakes.png",
-            "rulesText": "Cannot be Summoned without listed cards.\n\nFusion cost: Lord of Toxic Snakes + 3 Reptile monsters\nEffect: Toxic monsters with Seal effects are now Quick effects. If this was destroyed by an effect, you can banish 2 Reptile monsters from Grave instead."
+            "rulesText": "Cannot be Summoned without listed cards.\n\nFusion cost: Lord of Toxic Snakes + 3 Reptile monsters\nEffect: Toxic monsters with Seal effects are now Quick effects. If this was destroyed by an effect, you can banish 2 Reptile monsters from Grave instead.",
+            "normalizedName": "queen of toxic snakes",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "91",
@@ -202,7 +250,10 @@
             "atk": 1,
             "def": 3,
             "image": "./images/cards/relaxing_cow.png",
-            "rulesText": "Fusion; Dairy Cow + Dairy Cow"
+            "rulesText": "Fusion; Dairy Cow + Dairy Cow",
+            "normalizedName": "relaxing cow",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "90",
@@ -214,7 +265,10 @@
             "atk": 3,
             "def": 6,
             "image": "./images/cards/shipsunk_sea_ken.png",
-            "rulesText": "Fusion; Ship Sail Sailors + White Kraken"
+            "rulesText": "Fusion; Ship Sail Sailors + White Kraken",
+            "normalizedName": "shipsunk sea ken",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "92",
@@ -226,7 +280,10 @@
             "atk": 2,
             "def": 3,
             "image": "./images/cards/skelly_skeleton.png",
-            "rulesText": "Fusion; Skeleton + Skeleton"
+            "rulesText": "Fusion; Skeleton + Skeleton",
+            "normalizedName": "skelly skeleton",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "94",
@@ -238,7 +295,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/the_hooded_one.png",
-            "rulesText": "Fusion Cost: Fugue The Ancient Keeper + Nib the Primal Lord"
+            "rulesText": "Fusion Cost: Fugue The Ancient Keeper + Nib the Primal Lord",
+            "normalizedName": "the hooded one",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "60",
@@ -250,7 +310,10 @@
             "atk": 0,
             "def": 10,
             "image": "./images/cards/the_legendary_baal.png",
-            "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn."
+            "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn.",
+            "normalizedName": "the legendary baal",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "193",
@@ -262,7 +325,10 @@
             "atk": 5,
             "def": 10,
             "image": "./images/cards/the_primal_warrior.png",
-            "rulesText": "Fusion; Nib the Primal Lord + 1 Warrior Fusion\nCannot be Summoned without listed cards.\n\nBattlecry; Destroy all other creatures on the field.\nNeither player can summon creatures."
+            "rulesText": "Fusion; Nib the Primal Lord + 1 Warrior Fusion\nCannot be Summoned without listed cards.\n\nBattlecry; Destroy all other creatures on the field.\nNeither player can summon creatures.",
+            "normalizedName": "the primal warrior",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "88",
@@ -274,7 +340,10 @@
             "atk": 2,
             "def": 10,
             "image": "./images/cards/the_unstoppable_mech_fortress.png",
-            "rulesText": "Fusion; War Machine-Dragoon + Mecha Soldier + 3 Mech Defender\r\nCannot be Summoned without listed cards.\n\nOther Machines you control cannot be attacked. \nSeal; Add 1 Machine from your deck to your Hand.\nDeath; Add 3 Machines from your grave back to your hand.\r\n"
+            "rulesText": "Fusion; War Machine-Dragoon + Mecha Soldier + 3 Mech Defender\r\nCannot be Summoned without listed cards.\n\nOther Machines you control cannot be attacked. \nSeal; Add 1 Machine from your deck to your Hand.\nDeath; Add 3 Machines from your grave back to your hand.\r\n",
+            "normalizedName": "the unstoppable mech fortress",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "194",
@@ -286,7 +355,10 @@
             "atk": 6,
             "def": 4,
             "image": "./images/cards/twin_mouth_thunder_dragon.png",
-            "rulesText": "Fusion; Thunder Strike Dragon + Thunder Strike Dragon\n\nUnseal this card at the end of turn."
+            "rulesText": "Fusion; Thunder Strike Dragon + Thunder Strike Dragon\n\nUnseal this card at the end of turn.",
+            "normalizedName": "twin mouth thunder dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "195",
@@ -298,7 +370,10 @@
             "atk": 12,
             "def": 13,
             "image": "./images/cards/ultimate_black_dragon.png",
-            "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon\n\nDuring Battle Phase, this creature can attack twice."
+            "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon\n\nDuring Battle Phase, this creature can attack twice.",
+            "normalizedName": "ultimate black dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "196",
@@ -310,7 +385,10 @@
             "atk": 7,
             "def": 8,
             "image": "./images/cards/ultimate_chimera.png",
-            "rulesText": "Fusion; 1 Beast + 1 Beast-Warrior + 1 Dragon + 1 Reptile\n\nBattlecry; Destroy up to 3 Creatures on the field with less DEF than this card.\nDeath; Draw 1 card."
+            "rulesText": "Fusion; 1 Beast + 1 Beast-Warrior + 1 Dragon + 1 Reptile\n\nBattlecry; Destroy up to 3 Creatures on the field with less DEF than this card.\nDeath; Draw 1 card.",
+            "normalizedName": "ultimate chimera",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "197",
@@ -322,7 +400,10 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/ultimate_eye_restrict.png",
-            "rulesText": "Fusion;  Dark Eyes Fiend + Dark Eyes Fiend + Eye Restrict\n\nPetrify all other creatures on the field."
+            "rulesText": "Fusion;  Dark Eyes Fiend + Dark Eyes Fiend + Eye Restrict\n\nPetrify all other creatures on the field.",
+            "normalizedName": "ultimate eye restrict",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "198",
@@ -334,7 +415,10 @@
             "atk": 13,
             "def": 12,
             "image": "./images/cards/ultimate_white_dragon.png",
-            "rulesText": "Fusion; White Dragon + White Dragon + White Dragon\n\nDuring Battle Phase, this creature can attack twice."
+            "rulesText": "Fusion; White Dragon + White Dragon + White Dragon\n\nDuring Battle Phase, this creature can attack twice.",
+            "normalizedName": "ultimate white dragon",
+            "isField": false,
+            "isDeckBuildable": true
         },
         {
             "cardId": "199",
@@ -346,7 +430,10 @@
             "atk": 2,
             "def": 4,
             "image": "./images/cards/waking_fiend_dragon.png",
-            "rulesText": "Fusion; Moon Dragon + Horned Fiend\n\r\nWhen a Seal effect is activated, negated it. \r\n"
+            "rulesText": "Fusion; Moon Dragon + Horned Fiend\n\r\nWhen a Seal effect is activated, negated it. \r\n",
+            "normalizedName": "waking fiend dragon",
+            "isField": false,
+            "isDeckBuildable": true
         }
     ]
 }
