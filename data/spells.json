@@ -25,6 +25,18 @@
             "rulesText": "Play; Add 1 spell card from your deck to your hand."
         },
         {
+            "cardId": "336",
+            "name": "Battle Plans",
+            "manaCost": 4,
+            "attribute": "Water",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 0,
+            "def": 1,
+            "image": "./images/cards/battle_plans.png",
+            "rulesText": "Play; If the enemy controls 3 more creatures than you do, draw 3 cards.\n"
+        },
+        {
             "cardId": "25",
             "name": "Berserker Rage",
             "manaCost": 6,
@@ -179,6 +191,18 @@
             "def": 1,
             "image": "./images/cards/counter_spell.png",
             "rulesText": "Hand; When any effect is activated, negate that effect until end of turn."
+        },
+        {
+            "cardId": "335",
+            "name": "Crystal Water",
+            "manaCost": 4,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 0,
+            "def": 1,
+            "image": "./images/cards/crystal_water.png",
+            "rulesText": "Play; Draw 2 cards."
         },
         {
             "cardId": "145",
@@ -377,12 +401,12 @@
             "name": "Dragons Rampage",
             "manaCost": 4,
             "attribute": "Neutral",
-            "archetype": "Field",
+            "archetype": "Equipment",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragons_rampage.png",
-            "rulesText": "Any creature destroyed by a Dragon in battle deals Life damage to the enemy equal to the creatures DEF."
+            "rulesText": "If a creature is destroyed by the equipped creature in battle, deal Life damage to the enemy equal to the creatures DEF."
         },
         {
             "cardId": "255",

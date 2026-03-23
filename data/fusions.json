@@ -1,6 +1,30 @@
 {
     "Items": [
         {
+            "cardId": "321",
+            "name": "Aqua Champion",
+            "manaCost": 10,
+            "attribute": "Water",
+            "archetype": "Aqua",
+            "cardType": "Fusion",
+            "atk": 4,
+            "def": 6,
+            "image": "./images/cards/aqua_champion.png",
+            "rulesText": "Fusion; Aqua Knight + Aqua Supporter + Aqua Bouncer\n\nIf a different Aqua creature is destroyed by battle, it is added to your hand instead.\n"
+        },
+        {
+            "cardId": "327",
+            "name": "Aqua Radiant",
+            "manaCost": 12,
+            "attribute": "Water",
+            "archetype": "Aqua",
+            "cardType": "Fusion",
+            "atk": 3,
+            "def": 6,
+            "image": "./images/cards/aqua_radiant.png",
+            "rulesText": "Fusion; Aqua Hocus + Aqua Pocus + Aqua Focus\nBattlecry; Return all Unsealed creatures back to the owners hand.\n"
+        },
+        {
             "cardId": "186",
             "name": "Black Fiendish Dragon",
             "manaCost": 12,
