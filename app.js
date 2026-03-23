@@ -5,6 +5,9 @@ let visibleCount = 0;
 const DECK_LIBRARY_STORAGE_KEY = "dimensions_tcg_decks_v2";
 const LEGACY_DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
 const UI_STORAGE_KEY = "dimensions_tcg_ui_v2";
+const DECK_CODE_VERSION = 2;
+const DECK_CODE_PREFIX_V2 = "DECKV2|";
+const DECK_CODE_PREFIX_V1 = "DECKV1|";
 
 const appState = {
   activeDeckId: null,
@@ -844,24 +847,16 @@ function getCardCopyLimit(card) {
   return card?.isLegendary ? 1 : 3;
 }
 
-function getCanonicalCardKey(card) {
-  if (!card) return "";
-  const cardId = tidySpaces(card.cardId || card.id);
-  if (cardId) return cardId.toLowerCase();
-  return tidySpaces(card.name).toLowerCase();
-}
-
 function getCardCopiesInSection(card, section) {
   const list = section === "fusion" ? deckState.fusion : deckState.main;
-  const key = getCanonicalCardKey(card);
-  return list.filter((item) => getCanonicalCardKey(item) === key).length;
+  return list.filter((item) => String(item.name || "") === String(card?.name || "")).length;
 }
 
 function summarizeDeckSection(items) {
   const map = new Map();
 
   items.forEach((card) => {
-    const key = getCanonicalCardKey(card);
+    const key = String(card.name || "");
     if (!map.has(key)) {
       map.set(key, { card, count: 1 });
     } else {
@@ -911,15 +906,10 @@ function addCardToDeck(card) {
   }
 }
 
-function removeCardFromDeck(cardRef, section) {
+function removeCardFromDeck(cardName, section) {
   try {
     const list = section === "fusion" ? deckState.fusion : deckState.main;
-    const normalizedRef = tidySpaces(cardRef).toLowerCase();
-    const index = list.findIndex((card) => {
-      const id = tidySpaces(card?.cardId || card?.id).toLowerCase();
-      const name = tidySpaces(card?.name).toLowerCase();
-      return id === normalizedRef || name === normalizedRef;
-    });
+    const index = list.findIndex((card) => String(card.name || "") === String(cardName || ""));
     if (index === -1) return;
     list.splice(index, 1);
 
@@ -978,7 +968,7 @@ function renderDeck() {
             <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
           </div>
           <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-card-ref="${escapeHtml(entry.card.cardId || entry.card.name || "")}">Remove 1</button>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
         </div>
       `).join("")
       : `<div class="deck-empty">No main deck cards yet.</div>`;
@@ -991,14 +981,14 @@ function renderDeck() {
             <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
           </div>
           <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
-          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-card-ref="${escapeHtml(entry.card.cardId || entry.card.name || "")}">Remove 1</button>
+          <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
         </div>
       `).join("")
       : `<div class="deck-empty">No fusion cards yet.</div>`;
 
     deckPanel.querySelectorAll(".remove-deck-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
-        removeCardFromDeck(btn.dataset.cardRef || btn.dataset.name, btn.dataset.section);
+        removeCardFromDeck(btn.dataset.name, btn.dataset.section);
       });
     });
 
@@ -1071,7 +1061,7 @@ function renderDeckStats() {
 function countDeckNames(items) {
   const map = new Map();
   for (const card of items) {
-    const key = tidySpaces(card?.name).toLowerCase();
+    const key = String(card?.name || '').toLowerCase();
     map.set(key, (map.get(key) || 0) + 1);
   }
   return map;
@@ -1091,7 +1081,7 @@ function parseFusionMaterials(card) {
     const exact = part.match(/^(\d+)\s+(.+)$/i);
     const count = exact ? Number(exact[1]) : 1;
     const rawName = exact ? exact[2] : part;
-    const name = tidySpaces(rawName.replace(/(card|creature|monster|monsters)/gi, ''));
+    const name = tidySpaces(rawName.replace(/\b(card|creature|monster|monsters)\b/gi, ''));
     if (!name || /^(fire|water|wind|earth|light|dark|neutral)$/i.test(name)) continue;
     if (/^(different|listed cards|summon by using|cannot be summoned)/i.test(name)) continue;
     requirements.push({ name, count });
@@ -1220,19 +1210,10 @@ function hydrateDeckLibraryAgainstCardPool() {
 
   appState.deckLibrary.decks = appState.deckLibrary.decks.map((deck) => ({
     ...deck,
-    main: (deck.main || []).map((card) => {
-      const byId = poolById.get(tidySpaces(card?.cardId || card?.id).toLowerCase());
-      if (byId) return byId;
-      const byName = poolByName.get(tidySpaces(card?.name).toLowerCase());
-      return byName || normalizeCardData(card);
-    }),
-    fusion: (deck.fusion || []).map((card) => {
-      const byId = poolById.get(tidySpaces(card?.cardId || card?.id).toLowerCase());
-      if (byId) return byId;
-      const byName = poolByName.get(tidySpaces(card?.name).toLowerCase());
-      return byName || normalizeCardData(card);
-    })
+    main: deck.main.map((card) => resolveCardFromPool(card, poolById, poolByName, false)),
+    fusion: deck.fusion.map((card) => resolveCardFromPool(card, poolById, poolByName, true))
   }));
+
   deckState = getActiveDeck();
   syncActiveDeckReference();
   saveDeckLibrary();
@@ -1358,19 +1339,15 @@ function parseImportedDeck(text, fallbackName) {
     return decodeDeckCode(rawDeck);
   }
 
-  if (Array.isArray(rawDeck.cards) || Array.isArray(rawDeck.fusionCards)) {
-    return buildDeckFromPortableData({
-      deckName: rawDeck.deckName || rawDeck.name || fallbackName,
-      cards: rawDeck.cards || [],
-      fusionCards: rawDeck.fusionCards || []
-    }, fallbackName);
+  if (rawDeck && (Array.isArray(rawDeck.cards) || Array.isArray(rawDeck.fusionCards))) {
+    return sanitizeDeck(expandPortableDeck(rawDeck, tidySpaces(fallbackName.replace(/\.[^.]+$/, "")) || "Imported Deck"));
   }
 
   return sanitizeDeck({
     id: cryptoRandomId(),
-    name: tidySpaces(rawDeck.name || rawDeck.deckName) || tidySpaces(fallbackName.replace(/\.[^.]+$/, "")) || "Imported Deck",
-    main: importDeckSectionEntries(rawDeck.main || rawDeck.cards || [], "main"),
-    fusion: importDeckSectionEntries(rawDeck.fusion || rawDeck.fusionCards || [], "fusion")
+    name: tidySpaces(rawDeck.name) || tidySpaces(fallbackName.replace(/\.[^.]+$/, "")) || "Imported Deck",
+    main: rawDeck.main || [],
+    fusion: rawDeck.fusion || []
   });
 }
 
@@ -1386,147 +1363,22 @@ function downloadFile(filename, content, mimeType) {
   setTimeout(() => URL.revokeObjectURL(url), 0);
 }
 
-function encodeBase64Unicode(value) {
-  const text = String(value || "");
-  try {
-    const bytes = new TextEncoder().encode(text);
-    let binary = "";
-    for (const byte of bytes) binary += String.fromCharCode(byte);
-    return btoa(binary);
-  } catch (error) {
-    return btoa(unescape(encodeURIComponent(text)));
-  }
-}
-
-function decodeBase64Unicode(value) {
-  const binary = atob(String(value || "").trim());
-  try {
-    const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
-    return new TextDecoder().decode(bytes);
-  } catch (error) {
-    return decodeURIComponent(escape(binary));
-  }
-}
-
-function getCardPoolMaps() {
-  return {
-    byId: new Map(allCards.map((card) => [tidySpaces(card.cardId).toLowerCase(), card])),
-    byName: new Map(allCards.map((card) => [tidySpaces(card.name).toLowerCase(), card]))
-  };
-}
-
-function resolveCardFromPool(ref, defaultSection) {
-  const { byId, byName } = getCardPoolMaps();
-  if (ref && typeof ref === "object" && !Array.isArray(ref)) {
-    const idKey = tidySpaces(ref.cardId || ref.id).toLowerCase();
-    const nameKey = tidySpaces(ref.name).toLowerCase();
-    const exact = (idKey && byId.get(idKey)) || (nameKey && byName.get(nameKey));
-    if (exact) return exact;
-    return normalizeCardData({
-      ...ref,
-      cardType: ref.cardType || (defaultSection === "fusion" ? "Fusion" : ref.cardType)
-    });
-  }
-
-  const key = tidySpaces(ref).toLowerCase();
-  return byId.get(key) || byName.get(key) || normalizeCardData({
-    cardId: tidySpaces(ref),
-    name: tidySpaces(ref),
-    cardType: defaultSection === "fusion" ? "Fusion" : "Creature"
-  });
-}
-
-function expandPortableEntries(entries, defaultSection) {
-  const result = [];
-  for (const entry of Array.isArray(entries) ? entries : []) {
-    if (entry && typeof entry === "object" && !Array.isArray(entry)) {
-      const count = Math.max(0, Number(entry.count || 0));
-      const card = resolveCardFromPool(entry, defaultSection);
-      for (let i = 0; i < count; i += 1) result.push(card);
-      continue;
-    }
-    const card = resolveCardFromPool(entry, defaultSection);
-    result.push(card);
-  }
-  return result;
-}
-
-function importDeckSectionEntries(entries, defaultSection) {
-  return expandPortableEntries(entries, defaultSection);
-}
-
-function buildPortableDeckData(deck) {
-  const safeDeck = sanitizeDeck(deck);
-  return {
-    version: 1,
-    deckName: tidySpaces(safeDeck.name) || "Shared Deck",
-    cards: summarizeDeckSection(safeDeck.main).map((entry) => ({
-      cardId: tidySpaces(entry.card.cardId),
-      name: tidySpaces(entry.card.name),
-      count: entry.count
-    })),
-    fusionCards: summarizeDeckSection(safeDeck.fusion).map((entry) => ({
-      cardId: tidySpaces(entry.card.cardId),
-      name: tidySpaces(entry.card.name),
-      count: entry.count
-    }))
-  };
-}
-
-function buildDeckPayloadString(deck) {
-  const portable = buildPortableDeckData(deck);
-  return `DECKV1|${portable.deckName}|${encodeBase64Unicode(JSON.stringify(portable))}`;
-}
-
-function buildDeckFromPortableData(data, fallbackName) {
-  return sanitizeDeck({
-    id: cryptoRandomId(),
-    name: tidySpaces(data.deckName || data.name) || tidySpaces(String(fallbackName || "").replace(/\.[^.]+$/, "")) || "Imported Deck",
-    main: expandPortableEntries(data.cards || data.main || [], "main"),
-    fusion: expandPortableEntries(data.fusionCards || data.fusion || [], "fusion")
-  });
-}
-
-function tryExtractDeckCodeFromInput(input) {
-  const raw = String(input || "").trim();
-  if (!raw) throw new Error("Empty deck code");
-
-  if (/^https?:\/\//i.test(raw)) {
-    const url = new URL(raw);
-    const fromParam = url.searchParams.get("deck");
-    if (!fromParam) throw new Error("Share link is missing deck parameter");
-    return fromParam;
-  }
-
-  return raw;
-}
-
 function generateDeckCode(deck) {
-  return buildDeckPayloadString(deck);
+  return buildDeckCodeV2(deck);
 }
 
 function decodeDeckCode(code) {
   const extracted = tryExtractDeckCodeFromInput(code);
 
-  if (extracted.startsWith("DECKV1|")) {
-    const parts = extracted.split("|");
-    if (parts.length < 3) throw new Error("Invalid DECKV1 format");
-    const payload = parts.slice(2).join("|");
-    const decoded = JSON.parse(decodeBase64Unicode(payload));
-    return buildDeckFromPortableData(decoded, parts[1]);
+  if (extracted.startsWith(DECK_CODE_PREFIX_V2)) {
+    return sanitizeDeck(decodeDeckCodeV2(extracted));
   }
 
-  const legacyDecoded = JSON.parse(decodeBase64Unicode(extracted));
-  if (legacyDecoded && (Array.isArray(legacyDecoded.main) || Array.isArray(legacyDecoded.fusion))) {
-    return sanitizeDeck({
-      id: cryptoRandomId(),
-      name: tidySpaces(legacyDecoded.name) || "Imported Deck",
-      main: expandPortableEntries(legacyDecoded.main || [], "main"),
-      fusion: expandPortableEntries(legacyDecoded.fusion || [], "fusion")
-    });
+  if (extracted.startsWith(DECK_CODE_PREFIX_V1)) {
+    return sanitizeDeck(decodeDeckCodeV1(extracted));
   }
 
-  return buildDeckFromPortableData(legacyDecoded, "Imported Deck");
+  return sanitizeDeck(decodeLegacyDeckCode(extracted));
 }
 
 function loadDeckFromCode(code) {
@@ -1536,6 +1388,185 @@ function loadDeckFromCode(code) {
   deckState = imported;
   persistDeckState(`Imported ${imported.name}`);
   refreshView();
+}
+
+function buildDeckCodeV2(deck) {
+  const portable = createPortableDeckPayload(deck);
+  const json = JSON.stringify(portable);
+  return `${DECK_CODE_PREFIX_V2}${base64UrlEncodeUnicode(json)}`;
+}
+
+function createPortableDeckPayload(deck) {
+  const safeDeck = sanitizeDeck(deck);
+  return {
+    v: DECK_CODE_VERSION,
+    n: tidySpaces(safeDeck.name) || "Shared Deck",
+    m: summarizePortableSection(safeDeck.main),
+    f: summarizePortableSection(safeDeck.fusion)
+  };
+}
+
+function summarizePortableSection(items) {
+  const counts = new Map();
+  for (const rawCard of items || []) {
+    const card = normalizeCardData(rawCard);
+    const id = tidySpaces(card.cardId);
+    const key = id || `name:${tidySpaces(card.name).toLowerCase()}`;
+    if (!key) continue;
+
+    if (!counts.has(key)) {
+      counts.set(key, {
+        id,
+        name: tidySpaces(card.name),
+        count: 0
+      });
+    }
+
+    counts.get(key).count += 1;
+  }
+
+  const packed = [];
+  for (const entry of counts.values()) {
+    const token = entry.id || `~${entry.name}`;
+    packed.push(token, entry.count);
+  }
+  return packed;
+}
+
+function decodeDeckCodeV2(code) {
+  const encoded = code.slice(DECK_CODE_PREFIX_V2.length).trim();
+  if (!encoded) throw new Error("Missing DECKV2 payload");
+
+  const decoded = JSON.parse(base64UrlDecodeUnicode(encoded));
+  return expandPortableDeck(decoded, "Imported Deck");
+}
+
+function expandPortableDeck(payload, fallbackName) {
+  const deck = {
+    id: cryptoRandomId(),
+    name: tidySpaces(payload?.n || payload?.deckName || payload?.name) || fallbackName || "Imported Deck",
+    main: expandPortableSection(payload?.m || payload?.cards || payload?.main, false),
+    fusion: expandPortableSection(payload?.f || payload?.fusionCards || payload?.fusion, true)
+  };
+  return deck;
+}
+
+function expandPortableSection(source, forceFusion) {
+  if (!Array.isArray(source)) return [];
+
+  const result = [];
+
+  const poolById = new Map(allCards.map((card) => [tidySpaces(card.cardId).toLowerCase(), card]));
+  const poolByName = new Map(allCards.map((card) => [tidySpaces(card.name).toLowerCase(), card]));
+
+  const looksPacked = source.length > 0 && (typeof source[0] === "string" || typeof source[0] === "number");
+  if (looksPacked) {
+    for (let i = 0; i < source.length; i += 2) {
+      const token = String(source[i] ?? "");
+      const count = Math.max(0, Number(source[i + 1] || 0));
+      if (!token || count <= 0) continue;
+
+      const isNameToken = token.startsWith("~");
+      const lookup = isNameToken ? token.slice(1) : token;
+      const found = isNameToken
+        ? poolByName.get(tidySpaces(lookup).toLowerCase())
+        : poolById.get(tidySpaces(lookup).toLowerCase()) || poolByName.get(tidySpaces(lookup).toLowerCase());
+
+      const fallback = isNameToken
+        ? normalizeCardData({ name: lookup, cardType: forceFusion ? "Fusion" : undefined })
+        : normalizeCardData({ cardId: lookup, name: lookup, cardType: forceFusion ? "Fusion" : undefined });
+
+      for (let j = 0; j < count; j += 1) {
+        result.push(found || fallback);
+      }
+    }
+    return result;
+  }
+
+  for (const entry of source) {
+    if (!entry) continue;
+
+    if (typeof entry === "string") {
+      const byName = poolByName.get(tidySpaces(entry).toLowerCase());
+      result.push(byName || normalizeCardData({ name: entry, cardType: forceFusion ? "Fusion" : undefined }));
+      continue;
+    }
+
+    const count = Math.max(0, Number(entry.count || 0));
+    const found = resolveCardFromPool(entry, poolById, poolByName, forceFusion);
+    if (count > 0) {
+      for (let j = 0; j < count; j += 1) result.push(found);
+    } else {
+      result.push(found);
+    }
+  }
+
+  return result;
+}
+
+function decodeDeckCodeV1(code) {
+  const parts = String(code || "").trim().split("|");
+  if (parts.length < 3) throw new Error("Malformed DECKV1 code");
+
+  const payload = JSON.parse(decodeBase64Unicode(parts.slice(2).join("|")));
+  return {
+    id: cryptoRandomId(),
+    name: tidySpaces(payload.deckName || parts[1]) || "Imported Deck",
+    main: expandPortableSection(payload.cards || payload.main, false),
+    fusion: expandPortableSection(payload.fusionCards || payload.fusion, true)
+  };
+}
+
+function decodeLegacyDeckCode(code) {
+  const decoded = JSON.parse(decodeBase64Unicode(String(code || "").trim()));
+  const poolByName = new Map(allCards.map((card) => [tidySpaces(card.name).toLowerCase(), card]));
+  return {
+    id: cryptoRandomId(),
+    name: tidySpaces(decoded.name) || "Imported Deck",
+    main: Array.isArray(decoded.main) ? decoded.main.map((name) => poolByName.get(tidySpaces(name).toLowerCase()) || normalizeCardData({ name })) : [],
+    fusion: Array.isArray(decoded.fusion) ? decoded.fusion.map((name) => poolByName.get(tidySpaces(name).toLowerCase()) || normalizeCardData({ name, cardType: "Fusion" })) : []
+  };
+}
+
+function tryExtractDeckCodeFromInput(input) {
+  const raw = String(input || "").trim();
+  if (!raw) throw new Error("Deck code is empty");
+
+  if (/^https?:\/\//i.test(raw)) {
+    const url = new URL(raw);
+    const fromQuery = url.searchParams.get("deck");
+    if (!fromQuery) throw new Error("Share link does not contain a deck parameter");
+    return fromQuery.trim();
+  }
+
+  return raw;
+}
+
+function resolveCardFromPool(card, poolById, poolByName, forceFusion) {
+  const normalized = normalizeCardData(card);
+  const idKey = tidySpaces(normalized.cardId).toLowerCase();
+  const nameKey = tidySpaces(normalized.name).toLowerCase();
+  return poolById.get(idKey) || poolByName.get(nameKey) || normalizeCardData({
+    ...normalized,
+    cardType: forceFusion ? "Fusion" : normalized.cardType
+  });
+}
+
+function base64UrlEncodeUnicode(value) {
+  return encodeBase64Unicode(value).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+
+function base64UrlDecodeUnicode(value) {
+  const normalized = String(value || "").replace(/-/g, "+").replace(/_/g, "/");
+  return decodeBase64Unicode(normalized + "===".slice((normalized.length + 3) % 4));
+}
+
+function encodeBase64Unicode(value) {
+  return btoa(unescape(encodeURIComponent(String(value || ""))));
+}
+
+function decodeBase64Unicode(value) {
+  return decodeURIComponent(escape(atob(String(value || "").trim())));
 }
 
 function copyTextToClipboard(value, message) {
@@ -1568,13 +1599,13 @@ function copyCurrentDeckCode() {
 }
 
 function promptImportDeckCode() {
-  const code = window.prompt('Paste DECKV1 code or share link:');
+  const code = window.prompt('Paste deck code:');
   if (!code) return;
   try {
     loadDeckFromCode(code);
   } catch (error) {
     console.error('Deck code import failed:', error);
-    toast(`Invalid deck code or share link`);
+    toast(`Invalid deck code`);
   }
 }
 
@@ -1590,7 +1621,8 @@ function maybeLoadDeckFromUrl() {
   if (!deckCode) return;
   try {
     const imported = decodeDeckCode(deckCode);
-    const existing = appState.deckLibrary.decks.find((deck) => generateDeckCode(deck) === deckCode);
+    const normalizedIncomingCode = tryExtractDeckCodeFromInput(deckCode);
+    const existing = appState.deckLibrary.decks.find((deck) => generateDeckCode(deck) === normalizedIncomingCode);
     if (!existing) {
       appState.deckLibrary.decks.push(imported);
       appState.activeDeckId = imported.id;
