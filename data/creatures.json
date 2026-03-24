@@ -1045,7 +1045,7 @@
             "atk": 3,
             "def": 6,
             "image": "./images/cards/dragon_lord_waves.png",
-            "rulesText": "Battlecry; Draw 2 cards or reveal the top 4 cards of your deck, add one revealed card to your hand.\nSeal; Discard 1 card, add 1 Water creature from your grave to your hand.",
+            "rulesText": "Battlecry; Choose 1 effect.\n1: Draw 2 cards\n2: Reveal the top 4 cards of your deck, add one revealed card to your hand.\nSeal; Discard 1 card, add 1 Water creature from your grave to your hand.",
             "normalizedName": "dragon lord waves",
             "isField": false,
             "isDeckBuildable": true
@@ -1585,7 +1585,7 @@
             "atk": 7,
             "def": 7,
             "image": "./images/cards/light_dragon_of_divine.png",
-            "rulesText": "Cannot be summoned, summon by returning 12 Lightborn monsters from your Grave to your deck.\nAt the end of the turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy ALL other cards on the field.",
+            "rulesText": "SpecialSummon; Summon by returning 12 Lightborn creatures from your grave to your deck.\n\nAt the end of your turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy all other cards.",
             "normalizedName": "light dragon of divine",
             "isField": false,
             "isDeckBuildable": true
@@ -1600,7 +1600,7 @@
             "atk": 4,
             "def": 5,
             "image": "./images/cards/lightborn_angel.png",
-            "rulesText": "Battlecry; Destroy a card on the field then Mill 3 cards.",
+            "rulesText": "Battlecry; Destroy 1 card, then Mill 3 cards.",
             "normalizedName": "lightborn angel",
             "isField": false,
             "isDeckBuildable": true

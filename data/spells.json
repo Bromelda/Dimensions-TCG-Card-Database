@@ -61,6 +61,21 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "342",
+            "name": "Binds of the Light",
+            "manaCost": 2,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/binds_of_the_light.png",
+            "rulesText": "Play; Return 2 Lightborn creatures from your hand to your deck, then return 1 creature on the field to the deck.",
+            "normalizedName": "binds of the light",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "141",
             "name": "Black Hole",
             "manaCost": 8,
@@ -70,7 +85,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/black_hole.png",
-            "rulesText": "Play; Destroy all creatures on the field.",
+            "rulesText": "Play; Destroy all creatures.",
             "normalizedName": "black hole",
             "isField": false,
             "isDeckBuildable": true
@@ -220,7 +235,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/counter_blade.png",
-            "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature on the field.",
+            "rulesText": "Hand; When the enemy activates any effect during your turn.\n\nChoose one of the listed effects.\n1: Look at the enemy hand and discard 1 card.\n2: Banish the top card of the enemy deck.\n3: Seal 1 creature.",
             "normalizedName": "counter blade",
             "isField": false,
             "isDeckBuildable": true
@@ -462,6 +477,21 @@
             "image": "./images/cards/dealers_trade.png",
             "rulesText": "Play; Draw 3 cards then shuffle 2 cards from your hand back into your deck.",
             "normalizedName": "dealers trade",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "345",
+            "name": "Divine Judgment",
+            "manaCost": 3,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/divine_judgment.png",
+            "rulesText": "Hand; When any effect is activated, pay 10 Life to negate that effect and banish the card.",
+            "normalizedName": "divine judgment",
             "isField": false,
             "isDeckBuildable": true
         },
@@ -871,6 +901,21 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "344",
+            "name": "Lightborn Sword",
+            "manaCost": 3,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/lightborn_sword.png",
+            "rulesText": "If send from deck to grave, you can equip this card to a Lightborn instead. Give a creature +2 ATK.",
+            "normalizedName": "lightborn sword",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "166",
             "name": "Lockdown",
             "manaCost": 3,
@@ -1186,6 +1231,21 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "346",
+            "name": "Return to Light",
+            "manaCost": 3,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/return_to_light.png",
+            "rulesText": "Draw a card then place a card from your hand ontop of your deck.",
+            "normalizedName": "return to light",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "216",
             "name": "Returning Dragon",
             "manaCost": 5,
@@ -1291,6 +1351,21 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "343",
+            "name": "Strike of the Light",
+            "manaCost": 6,
+            "attribute": "Neutral",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/strike_of_the_light.png",
+            "rulesText": "Send a Lightborn creature from your deck to the grave, destroy a creatures on the field.",
+            "normalizedName": "strike of the light",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "180",
             "name": "Sword of 1000 Souls",
             "manaCost": 20,
@@ -1345,7 +1420,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/thunder_strike.png",
-            "rulesText": "Play; Destroy 1 spell card on the field.",
+            "rulesText": "Play; Destroy 1 spell.",
             "normalizedName": "thunder strike",
             "isField": false,
             "isDeckBuildable": true
@@ -1495,7 +1570,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/white_hole.png",
-            "rulesText": "Play; Destroy all Spells on the field.",
+            "rulesText": "Play; Destroy all Spells.",
             "normalizedName": "white hole",
             "isField": false,
             "isDeckBuildable": true
