@@ -1,36 +1,6 @@
 {
     "Items": [
         {
-            "cardId": "321",
-            "name": "Aqua Champion",
-            "manaCost": 10,
-            "attribute": "Water",
-            "archetype": "Aqua",
-            "cardType": "Fusion",
-            "atk": 4,
-            "def": 6,
-            "image": "./images/cards/aqua_champion.png",
-            "rulesText": "Fusion; Aqua Knight + Aqua Supporter + Aqua Bouncer\n\nIf a different Aqua creature is destroyed by battle, it is added to your hand instead.\n",
-            "normalizedName": "aqua champion",
-            "isField": false,
-            "isDeckBuildable": true
-        },
-        {
-            "cardId": "327",
-            "name": "Aqua Radiant",
-            "manaCost": 12,
-            "attribute": "Water",
-            "archetype": "Aqua",
-            "cardType": "Fusion",
-            "atk": 3,
-            "def": 6,
-            "image": "./images/cards/aqua_radiant.png",
-            "rulesText": "Fusion; Aqua Hocus + Aqua Pocus + Aqua Focus\nBattlecry; Return all Unsealed creatures back to the owners hand.\n",
-            "normalizedName": "aqua radiant",
-            "isField": false,
-            "isDeckBuildable": true
-        },
-        {
             "cardId": "186",
             "name": "Black Fiendish Dragon",
             "manaCost": 12,
@@ -121,6 +91,36 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "360",
+            "name": "Dragon Zombie Lord",
+            "manaCost": 10,
+            "attribute": "Dark",
+            "archetype": "Zombie",
+            "cardType": "Fusion",
+            "atk": 6,
+            "def": 5,
+            "image": "./images/cards/dragon_zombie_lord.png",
+            "rulesText": "Fusion; Zombie Dragon + 3 Zombie creatures.\nBattlecry; Summon a Creature from the enemy Graveyard to your Field, it becomes a Zombie type. \n",
+            "normalizedName": "dragon zombie lord",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "366",
+            "name": "Elmental Compound Dragon",
+            "manaCost": 12,
+            "attribute": "Fire",
+            "archetype": "Dragon/Elemental",
+            "cardType": "Fusion",
+            "atk": 12,
+            "def": 12,
+            "image": "./images/cards/elmental_compound_dragon.png",
+            "rulesText": "Fusion; 1 Dark Dragon + 1 Fire Dragon + 1 Earth Dragon + 1 Water Dragon + 1 Wind Dragon\n\nCan't be summoned without listed cards. Can't be destroyed by spell cards. Can't be destroyed by battle with creatures execpt Light creatures.\n",
+            "normalizedName": "elmental compound dragon",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "188",
             "name": "Flaming Swordsman",
             "manaCost": 5,
@@ -177,6 +177,21 @@
             "image": "./images/cards/light_shining_dragon.png",
             "rulesText": "Fusion; Light Dragon of Divine + Herald of Light + White Dragon\n\r\nBattlecry; Get +1/+1 for each Light creature in your grave. \nDeath; Destroy all cards on the field.",
             "normalizedName": "light shining dragon",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "385",
+            "name": "Mise Archangel of the End",
+            "manaCost": 20,
+            "attribute": "Light",
+            "archetype": "ALL",
+            "cardType": "Fusion",
+            "atk": 20,
+            "def": 20,
+            "image": "./images/cards/mise_archangel_of_the_end.png",
+            "rulesText": "Fusion; The Hooded One + The Primal Warrior + Phantom Night Fiend + Herald of Light\nCannot be summoned without listed cards.\n\n This card is unaffected by ALL other cards.\n",
+            "normalizedName": "mise archangel of the end",
             "isField": false,
             "isDeckBuildable": true
         },
@@ -295,7 +310,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/the_hooded_one.png",
-            "rulesText": "Fusion Cost: Fugue The Ancient Keeper + Nib the Primal Lord",
+            "rulesText": "Fusion; Fugue The Ancient Keeper + Nib the Primal Lord",
             "normalizedName": "the hooded one",
             "isField": false,
             "isDeckBuildable": true
@@ -342,6 +357,36 @@
             "image": "./images/cards/the_unstoppable_mech_fortress.png",
             "rulesText": "Fusion; War Machine-Dragoon + Mecha Soldier + 3 Mech Defender\r\nCannot be Summoned without listed cards.\n\nOther Machines you control cannot be attacked. \nSeal; Add 1 Machine from your deck to your Hand.\nDeath; Add 3 Machines from your grave back to your hand.\r\n",
             "normalizedName": "the unstoppable mech fortress",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "321",
+            "name": "Tide Champion",
+            "manaCost": 10,
+            "attribute": "Water",
+            "archetype": "Aqua",
+            "cardType": "Fusion",
+            "atk": 4,
+            "def": 6,
+            "image": "./images/cards/tide_champion.png",
+            "rulesText": "Fusion; Tide Knight + Tide Supporter + Tide Bouncer\n\nIf a different Aqua creature is destroyed by battle, it is added to your hand instead.\n",
+            "normalizedName": "tide champion",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "327",
+            "name": "Tide Radiant",
+            "manaCost": 12,
+            "attribute": "Water",
+            "archetype": "Aqua",
+            "cardType": "Fusion",
+            "atk": 3,
+            "def": 6,
+            "image": "./images/cards/tide_radiant.png",
+            "rulesText": "Fusion; Tide Hocus + Tide Pocus + Tide Focus\n\nBattlecry; Return all other Unsealed creatures back to the owners hand.\n",
+            "normalizedName": "tide radiant",
             "isField": false,
             "isDeckBuildable": true
         },
@@ -432,6 +477,21 @@
             "image": "./images/cards/waking_fiend_dragon.png",
             "rulesText": "Fusion; Moon Dragon + Horned Fiend\n\r\nWhen a Seal effect is activated, negated it. \r\n",
             "normalizedName": "waking fiend dragon",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "423",
+            "name": "Zombie king Kaiser ",
+            "manaCost": 12,
+            "attribute": "Dark",
+            "archetype": "Zombie",
+            "cardType": "Fusion",
+            "atk": 4,
+            "def": 8,
+            "image": "./images/cards/zombie_king_kaiser.png",
+            "rulesText": "Fusion; Pumpkin King + Ha King Kaiser + 2 Zombie Creatures\nCan't be summoned without listed cards. While on the field, all Creatures on Field and Grave are Zombies. Seal;  Summon a Zombie from either players Grave to your field.",
+            "normalizedName": "zombie king kaiser",
             "isField": false,
             "isDeckBuildable": true
         }
