@@ -55,7 +55,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/beginning_of_the_end.png",
-            "rulesText": "Send all players Mana from the Mana Pool to the grave.\n",
+            "rulesText": "Play; Send all players Mana from the Mana Pool to the grave.\n",
             "normalizedName": "beginning of the end",
             "isField": false,
             "isDeckBuildable": true
@@ -115,7 +115,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/blue_cheese.png",
-            "rulesText": "Remove 15 Milk Tokens from your field then draw 5 cards.",
+            "rulesText": "Play; Remove 15 Milk Tokens from your field, then draw 5 cards.",
             "normalizedName": "blue cheese",
             "isField": false,
             "isDeckBuildable": true
@@ -160,7 +160,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/bug_barrier.png",
-            "rulesText": "Insect creatures the enemy controls can't attack.",
+            "rulesText": "Insect creatures the enemy controls cannot attack.",
             "normalizedName": "bug barrier",
             "isField": true,
             "isDeckBuildable": true
@@ -175,7 +175,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/bug_begone.png",
-            "rulesText": "Destroy all Insect creatures.",
+            "rulesText": "Play; Destroy all Insect creatures.",
             "normalizedName": "bug begone",
             "isField": false,
             "isDeckBuildable": true
@@ -190,7 +190,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/card_exchange.png",
-            "rulesText": "Play; Choose 1 effect\n\n1: Banish 1 creature from your hand and deck, then add 1 creature that has the same Archetype as both Banished creatures.\n2: Banish 1 Spell from hand and deck to add 1 Spell from your deck to your hand.\n",
+            "rulesText": "Play; Choose 1 effect\n\n1: Banish 1 creature from your hand and deck, then add 1 creature that has the same Archetype as both Banished creatures from your deck to your hand.\n2: Banish 1 Spell from hand and deck to add 1 Spell from your deck to your hand.\n",
             "normalizedName": "card exchange",
             "isField": false,
             "isDeckBuildable": true
@@ -235,7 +235,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_bookmark.png",
-            "rulesText": "Add a TOON monster from your field into your hand then summon a TOON monster from your hand that cost less than the one added.",
+            "rulesText": "Play; Add 1 Comic creature from your field into your hand, then summon a Comic creature from your hand that cost less than the one added.",
             "normalizedName": "comic bookmark",
             "isField": false,
             "isDeckBuildable": true
@@ -250,7 +250,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_page_flip.png",
-            "rulesText": "If TOON World is Sealed, Unseal it then return a TOON montser you control back to your deck.",
+            "rulesText": "Play; If Comic World is Sealed, Unseal it then return a Comic creature you control back to your deck.",
             "normalizedName": "comic page flip",
             "isField": false,
             "isDeckBuildable": true
@@ -265,7 +265,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_protection.png",
-            "rulesText": "If TOON World would be destroyed, you can destroy a TOON monster you control instead.",
+            "rulesText": "Hand; If Comic World would be destroyed by an effect targeting it, you can destroy a Comic creature you control instead.",
             "normalizedName": "comic protection",
             "isField": false,
             "isDeckBuildable": true
@@ -280,7 +280,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_shadow.png",
-            "rulesText": "Add a TOON monster from your Grave into your deck.",
+            "rulesText": "Play; Add 1 Comic creature from your grave to your deck.",
             "normalizedName": "comic shadow",
             "isField": false,
             "isDeckBuildable": true
@@ -295,7 +295,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/comic_world.png",
-            "rulesText": "This effect can't be negated. While on the field you can control any number of TOON monsters and if this card leaves the field, destroy all TOON monsters you control.\nSeal; Return a TOON monster from your field to your deck then summon a different TOON monster from deck paying its Mana cost.",
+            "rulesText": "This effect can't be negated. \nWhile on the field you can control any number of Comic creatures and if this card leaves the field, destroy all Comic creatures you control.\nSeal; Return 1 Comic creature from your field to your deck, then summon a different Comic creature from your deck paying its Mana cost.",
             "normalizedName": "comic world",
             "isField": true,
             "isDeckBuildable": true
@@ -310,7 +310,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/consuming_insects.png",
-            "rulesText": "Destroy 1 Insect creature on the field then add 1 Insect from your deck to your hand.",
+            "rulesText": "Play; Destroy 1 Insect creature, then add 1 Insect from your deck to your hand.",
             "normalizedName": "consuming insects",
             "isField": false,
             "isDeckBuildable": true
@@ -376,21 +376,6 @@
             "isDeckBuildable": true
         },
         {
-            "cardId": "404",
-            "name": "Curse Letter N ",
-            "manaCost": 5,
-            "attribute": "Dark",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/curse_letter_n.png",
-            "rulesText": "Can't be played without Spirit Curse Letter C effect.",
-            "normalizedName": "curse letter n",
-            "isField": true,
-            "isDeckBuildable": true
-        },
-        {
             "cardId": "348",
             "name": "Curse of Flesh",
             "manaCost": 2,
@@ -400,7 +385,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/curse_of_flesh.png",
-            "rulesText": "Destory a monster you control then add a \"Cursed\" Monster from your deck to your hand.\n",
+            "rulesText": "Play; Destroy 1 creature you control then add 1 \"Cursed\" creature from your deck to your hand.\n",
             "normalizedName": "curse of flesh",
             "isField": false,
             "isDeckBuildable": true
@@ -415,7 +400,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/cursed_grain.png",
-            "rulesText": "Summon a level 3 or lower \"Cursed\" minion from your deck, destroy it at the end of this turn.\n",
+            "rulesText": "Play; Summon a  3 Mana cost or lower \"Cursed\" creature from your deck, destroy it at the end of this turn.\n",
             "normalizedName": "cursed grain",
             "isField": false,
             "isDeckBuildable": true
@@ -460,7 +445,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dark_snake_syndrome.png",
-            "rulesText": "When a monster with Venom Tokens is destroyed by battle, this card gains a Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card.",
+            "rulesText": "When a creature with Venom Tokens is destroyed by battle, this card gains 1 Venom Token.\nDuring the enemy Standby Phase, you can Seal this card and deal Life damage to the enemy equal to the Venom Tokens on this card.",
             "normalizedName": "dark snake syndrome",
             "isField": true,
             "isDeckBuildable": true
@@ -469,7 +454,7 @@
             "cardId": "149",
             "name": "Dark Trader",
             "manaCost": 2,
-            "attribute": "Neutral",
+            "attribute": "Dark",
             "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
@@ -550,7 +535,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/darksider_grimoire.png",
-            "rulesText": "When a creature effect has you discard, this gains 1 Dark Token.\n\nSpend Dark Tokens\n3- Draw 1 card.\n5- Add 1 Darksider from your grave to your hand.\n8- Destroy 1 creature.",
+            "rulesText": "When a creature effect has you discard, this gains 1 Dark Token.\n\nSeal; Spend Dark Tokens\n3- Draw 1 card.\n5- Add 1 Darksider from your grave to your hand.\n8- Destroy 1 creature.",
             "normalizedName": "darksider grimoire",
             "isField": true,
             "isDeckBuildable": true
@@ -625,7 +610,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/desires.png",
-            "rulesText": "Deal 2 Damage to the enemy for each creature they control.",
+            "rulesText": "Play; Deal 2 Damage to the enemy for each creature they control.",
             "normalizedName": "desires",
             "isField": false,
             "isDeckBuildable": true
@@ -655,7 +640,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/dna_split.png",
-            "rulesText": "Target a creature on your field that cost 2 Mana or less, destroy it then summon 2 creatures from your hand and deck with the same name.",
+            "rulesText": "Play; Target 1 creature you control that costs 2 Mana or less, destroy it then summon 2 creatures from your hand and deck with the same name.",
             "normalizedName": "dna split",
             "isField": false,
             "isDeckBuildable": true
@@ -670,7 +655,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/doom_clocktower.png",
-            "rulesText": "At the end of your turn, give all creatures 1 Doom Token. If a creature has 5 Doom Tokens, destroy it.",
+            "rulesText": "At the end of your turn, give all creatures 1 Doom Token. \nIf a creature has 5 Doom Tokens, destroy it.",
             "normalizedName": "doom clocktower",
             "isField": true,
             "isDeckBuildable": true
@@ -685,7 +670,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/dragged_down.png",
-            "rulesText": "Destroy a creature.\n",
+            "rulesText": "Play; Destroy 1 creature.\n",
             "normalizedName": "dragged down",
             "isField": false,
             "isDeckBuildable": true
@@ -745,7 +730,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/e_jack.png",
-            "rulesText": "Return a creature on the field to the owners hand.\n",
+            "rulesText": "Play; Return 1 creature on the field to the owners hand.\n",
             "normalizedName": "e jack",
             "isField": false,
             "isDeckBuildable": true
@@ -760,22 +745,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/endless_reptiles.png",
-            "rulesText": "Non-Reptile monsters you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed.",
-            "normalizedName": "endless reptiles",
-            "isField": true,
-            "isDeckBuildable": true
-        },
-        {
-            "cardId": "367",
-            "name": "Endless Reptiles",
-            "manaCost": 5,
-            "attribute": "Earth",
-            "archetype": "Field",
-            "cardType": "Spell",
-            "atk": 1,
-            "def": 1,
-            "image": "./images/cards/endless_reptiles.png",
-            "rulesText": "Non-Reptile monsters you control can't attack or be Sealed for effects. If a Reptile is destroyed by battle, you can summon a different Reptile from Grave with less ATK than the one that was destroyed.\n",
+            "rulesText": "Non-Reptile creatures you control can't be Sealed for effects or attack.\nIf a Reptile is destroyed by battle, you can summon a different Reptile from your grave with less ATK than the one that was destroyed.",
             "normalizedName": "endless reptiles",
             "isField": true,
             "isDeckBuildable": true
@@ -790,7 +760,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/eternal_blade.png",
-            "rulesText": "+1 ATK for each Rune Token on this card. When the equipped monster deals Life damage, this card gains a Rune Token.\n",
+            "rulesText": "+1 ATK for each Rune Token on this card. \nWhen the equipped creature deals Life damage, this card gains 1 Rune Token.\n",
             "normalizedName": "eternal blade",
             "isField": false,
             "isDeckBuildable": true
@@ -805,7 +775,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/eternal_flame.png",
-            "rulesText": "Give a monster +3 ATK After the equipped monster deals Life damage, destroy this card. Death; Banish this card, at the start of each enemy turn deal 2 Life damage to enemy.\n",
+            "rulesText": "Give a creature +3 ATK. \nAfter the equipped creature deals Life damage, destroy this card. \nDeath; Banish this card, at the start of each enemy turn deal 2 Life damage to enemy.\n",
             "normalizedName": "eternal flame",
             "isField": false,
             "isDeckBuildable": true
@@ -820,7 +790,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/evolving_insects.png",
-            "rulesText": "Destroy a Insect on the field then summon a Insect from your deck that cost 1 more Mana than the one destroyed.",
+            "rulesText": "Play; Destroy 1 Insect, then summon 1 Insect from your deck that cost 1 more Mana than the one destroyed.",
             "normalizedName": "evolving insects",
             "isField": false,
             "isDeckBuildable": true
@@ -1009,13 +979,13 @@
             "cardId": "285",
             "name": "Guardian Shadow Maze",
             "manaCost": 4,
-            "attribute": "Neutral",
+            "attribute": "Earth",
             "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/guardian_shadow_maze.png",
-            "rulesText": "Any monster summon below level 3 is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add a Guardian card from your Grave to your hand.",
+            "rulesText": "Any creature summoned below 3 mana is Sealed and can't attack the turn they are summoned.\nIf this card is destroyed, add 1 Guardian card from your grave to your hand.",
             "normalizedName": "guardian shadow maze",
             "isField": true,
             "isDeckBuildable": true
@@ -1030,7 +1000,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/guardian_summoning.png",
-            "rulesText": "You can put a Sanjin, Kazjin or Suzjin from your deck or hand on the field as a spell card.",
+            "rulesText": "Play; Put a Thunder Guardian, Wind Guardian, or Water Guardian from your deck or hand in the spell zone as a field spell.",
             "normalizedName": "guardian summoning",
             "isField": false,
             "isDeckBuildable": true
@@ -1045,7 +1015,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/haunted_graveyard.png",
-            "rulesText": "Summons a Zombie monster with 1 DEF from your Grave to the field and equip this card to it.",
+            "rulesText": "Play; Summons 1 Zombie creature with 1 DEF from your Grave to the field and equip this card to it.",
             "normalizedName": "haunted graveyard",
             "isField": false,
             "isDeckBuildable": true
@@ -1075,7 +1045,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/hollowed_cursed_forest.png",
-            "rulesText": "At the start of your turn, you can skip your draw phase to Seal this card and Mill 3 cards. Pick one of those 3 cards to add to your hand. Seal; Banish 2 Cursed cards in your Grave then Unseal all other Cursed Field cards that.\n",
+            "rulesText": "Quick; At the start of your turn skip your draw phase and Mill 3 cards, then pick one of those 3 cards to add to your hand. \nSeal; Banish 2 Cursed cards in your Grave then Unseal all other Cursed Field Spells.\n",
             "normalizedName": "hollowed cursed forest",
             "isField": true,
             "isDeckBuildable": true
@@ -1135,7 +1105,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/level_limit_zone_4.png",
-            "rulesText": "Any creatures with Mana higher than 4 can't attack.\n",
+            "rulesText": "Play; Any creatures with Mana higher than 4 can't attack.\n",
             "normalizedName": "level limit zone 4",
             "isField": false,
             "isDeckBuildable": true
@@ -1150,7 +1120,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/level_limit_zone_8.png",
-            "rulesText": "Any creatures with Mana higher than 8 can't attack.\n",
+            "rulesText": "Play; Any creatures with Mana higher than 8 can't attack.\n",
             "normalizedName": "level limit zone 8",
             "isField": false,
             "isDeckBuildable": true
@@ -1165,7 +1135,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/level_up.png",
-            "rulesText": "Give a monster with LVL in its name a Exp Token.",
+            "rulesText": "Play; Give 1 creature with LVL in its name 1 Exp Token.",
             "normalizedName": "level up",
             "isField": false,
             "isDeckBuildable": true
@@ -1180,7 +1150,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/library_of_the_magician.png",
-            "rulesText": "When you play a spell, this card gains a Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to use one effect.\n3, Draw a card.\n6, Add a spell card from your Grave to your hand.",
+            "rulesText": "When you play a spell, this card gains 1 Spell Token.\nYou can spend Tokens on this card instead of mana for Magician Spells.\nSeal; Pay Tokens to choose one effect.\n3: Draw 1 card.\n6: Add 1 spell card from your grave to your hand.",
             "normalizedName": "library of the magician",
             "isField": true,
             "isDeckBuildable": true
@@ -1240,7 +1210,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/lightborn_shrine.png",
-            "rulesText": "Gain 1 Light Token when using a Mill effect.\n\nSpend Light Tokens.\n3- Draw 1 card.\n5- Add 1 creature from your grave to your hand.\n8- Destroy 1 card.",
+            "rulesText": "Gain 1 Light Token when using a Mill effect.\n\nSeal; Spend Light Tokens.\n3- Draw 1 card.\n5- Add 1 creature from your grave to your hand.\n8- Destroy 1 card.",
             "normalizedName": "lightborn shrine",
             "isField": true,
             "isDeckBuildable": true
@@ -1345,7 +1315,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/magic_protection.png",
-            "rulesText": "Target 1 Field card and put a Shield Token on it. If that card is destroyed the Token is destroyed instead.",
+            "rulesText": "Play; Target 1 Field Spell and put 1 Shield Token on it.\nIf that card is destroyed the Token is destroyed instead.",
             "normalizedName": "magic protection",
             "isField": false,
             "isDeckBuildable": true
@@ -1375,7 +1345,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_dark_blast.png",
-            "rulesText": "Target a Magician named monster you control and another monster on the field.\nDeal damage to that monster equal to the Magician monsters ATK.",
+            "rulesText": "Play; Target a Magician named creature you control and another creature on the field, then\ndeal damage to that creature equal to the Magician creatures ATK.",
             "normalizedName": "magician dark blast",
             "isField": false,
             "isDeckBuildable": true
@@ -1390,7 +1360,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_illusion.png",
-            "rulesText": "When a Magician is attacked, negate the attack then return that Magician back to your hand.",
+            "rulesText": "Hand; When a Magician is attacked, negate the attack then return that Magician back to your hand.",
             "normalizedName": "magician illusion",
             "isField": false,
             "isDeckBuildable": true
@@ -1405,7 +1375,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_magic_robe.png",
-            "rulesText": "Pay 10 Life then summon a Magician from your deck.",
+            "rulesText": "Play; Pay 10 Life, then summon a Magician from your deck.",
             "normalizedName": "magician magic robe",
             "isField": false,
             "isDeckBuildable": true
@@ -1420,7 +1390,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_scrolls.png",
-            "rulesText": "Add a Magician spell card from your deck to your hand.",
+            "rulesText": "Play; Add a Magician spell card from your deck to your hand.",
             "normalizedName": "magician scrolls",
             "isField": false,
             "isDeckBuildable": true
@@ -1435,7 +1405,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_shield_wall.png",
-            "rulesText": "When a Magician is attacked, Destroy the attacking monster.",
+            "rulesText": "Hand; When a Magician is attacked, Destroy the attacking creature.",
             "normalizedName": "magician shield wall",
             "isField": false,
             "isDeckBuildable": true
@@ -1450,7 +1420,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_spell_book.png",
-            "rulesText": "When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn.",
+            "rulesText": "Hand; When a Magician is attacked or attacking, give that Magician +2 ATK until the end of this turn.",
             "normalizedName": "magician spell book",
             "isField": false,
             "isDeckBuildable": true
@@ -1465,7 +1435,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/magician_spell_orb.png",
-            "rulesText": "Target a card, that card gains a Spell Token. if you chain this spell to another spell you played this turn. That card gains another Token.",
+            "rulesText": "Pllay; Target a card, that card gains 1 Spell Token. \nif you chain this spell to another spell you played this turn, that card gains another Token.",
             "normalizedName": "magician spell orb",
             "isField": false,
             "isDeckBuildable": true
@@ -1474,13 +1444,13 @@
             "cardId": "294",
             "name": "Maze of the Guardian",
             "manaCost": 3,
-            "attribute": "Neutral",
+            "attribute": "Earth",
             "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/maze_of_the_guardian.png",
-            "rulesText": "Seal; Add a Guardian card from your deck to your hand.\n-or-\nYou can put a Sanjin, Kazjin or Suzjin into your spells from your deck.",
+            "rulesText": "Seal; Add 1 Guardian card from your deck to your hand.\n-or-\nYou can put a Thunder Guardian, Wind Guardian, or Water Guardian into your spell zone from your deck as a field spell.",
             "normalizedName": "maze of the guardian",
             "isField": true,
             "isDeckBuildable": true
@@ -1555,7 +1525,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/natures_vial.png",
-            "rulesText": "Destroy 1 enemy creature then add it to the owners Mana Pool.",
+            "rulesText": "Play; Destroy 1 enemy creature, then add it to the owners Mana Pool.",
             "normalizedName": "natures vial",
             "isField": false,
             "isDeckBuildable": true
@@ -1600,7 +1570,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/potion_decision.png",
-            "rulesText": "Choose one, 1 = Gain 3 Life. 2 = Deal 2 Life damage to the enemy.\n",
+            "rulesText": "Play; Choose one, \n1 = Gain 3 Life. \n2 = Deal 2 Life damage to the enemy.\n",
             "normalizedName": "potion decision",
             "isField": false,
             "isDeckBuildable": true
@@ -1715,14 +1685,14 @@
             "name": "Sanguine Bonds",
             "manaCost": 2,
             "attribute": "Light",
-            "archetype": "Spell",
+            "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/sanguine_bonds.png",
-            "rulesText": "When a player gains Life, the other players take 1 Life damage.\n",
+            "rulesText": "When a player gains Life, the other players takes 1 Life damage.\n",
             "normalizedName": "sanguine bonds",
-            "isField": false,
+            "isField": true,
             "isDeckBuildable": true
         },
         {
@@ -1750,7 +1720,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/snake_bite.png",
-            "rulesText": "If a Reptile monster is attacked, you can play this card, add a monster with Toxic in its name from deck to your hand and give the attacking monster 1 Toxic Token.\n",
+            "rulesText": "Play; If a Reptile creature is attacked, you can play this card, add 1 creature with Toxic in its name from your deck to your hand and give the attacking creature 1 Toxic Token.\n",
             "normalizedName": "snake bite",
             "isField": false,
             "isDeckBuildable": true
@@ -1810,7 +1780,7 @@
             "atk": 0,
             "def": 1,
             "image": "./images/cards/spiky_worm_nest.png",
-            "rulesText": "Both players Mill 4 cards.",
+            "rulesText": "Play; Both players Mill 4 cards.",
             "normalizedName": "spiky worm nest",
             "isField": false,
             "isDeckBuildable": true
@@ -1833,14 +1803,14 @@
         {
             "cardId": "402",
             "name": "Spirit Curse Letter C ",
-            "manaCost": 10,
+            "manaCost": 6,
             "attribute": "Dark",
             "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/spirit_curse_letter_c.png",
-            "rulesText": "Seal; Send 3 cards from your Mana pool to the Grave. Activate a \"Spirit Letter\" Field card from Deck or Hand to the field. If you have 8 \"Curse Spirit\" Field cards in your Spell Zone that spells the word \"C U R T A I N S\" you win the duel.\n",
+            "rulesText": "Seal; Send 3 cards from your Mana pool to the Grave. Activate a \"Spirit Letter\" Field Spell from Deck or Hand to the field. If you have 8 \"Curse Spirit\" Field Spells in your Spell Zone that spells the word \"C U R T A I N S\" you win the duel.\n",
             "normalizedName": "spirit curse letter c",
             "isField": true,
             "isDeckBuildable": true
@@ -1857,6 +1827,21 @@
             "image": "./images/cards/spirit_curse_letter_i.png",
             "rulesText": "Can't be played without Spirit Curse Letter C effect.\n",
             "normalizedName": "spirit curse letter i",
+            "isField": true,
+            "isDeckBuildable": true
+        },
+        {
+            "cardId": "404",
+            "name": "Spirit Curse Letter N ",
+            "manaCost": 5,
+            "attribute": "Dark",
+            "archetype": "Field",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/spirit_curse_letter_n.png",
+            "rulesText": "Can't be played without Spirit Curse Letter C effect.",
+            "normalizedName": "spirit curse letter n",
             "isField": true,
             "isDeckBuildable": true
         },
@@ -1880,14 +1865,14 @@
             "name": "Spirit Curse Letter S ",
             "manaCost": 5,
             "attribute": "Dark",
-            "archetype": "",
+            "archetype": "Field",
             "cardType": "Spell",
             "atk": 1,
             "def": 1,
             "image": "./images/cards/spirit_curse_letter_s.png",
             "rulesText": "Can't be played without Spirit Curse Letter C effect.\n",
             "normalizedName": "spirit curse letter s",
-            "isField": false,
+            "isField": true,
             "isDeckBuildable": true
         },
         {
@@ -1996,6 +1981,21 @@
             "isDeckBuildable": true
         },
         {
+            "cardId": "test4",
+            "name": "Test4",
+            "manaCost": 1,
+            "attribute": "Dark",
+            "archetype": "Spell",
+            "cardType": "Spell",
+            "atk": 1,
+            "def": 1,
+            "image": "./images/cards/test4.png",
+            "rulesText": "Play; Mill 2 cards.",
+            "normalizedName": "test4",
+            "isField": false,
+            "isDeckBuildable": true
+        },
+        {
             "cardId": "46",
             "name": "The Cursed Blade",
             "manaCost": 2,
@@ -2020,7 +2020,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/the_final_gamble.png",
-            "rulesText": "Until the end of this turn all cards in your hand cost 0 Mana but you can't draw or add cards to your hand for the rest of the turn. Banish your hand at the end of your turn.",
+            "rulesText": "Play; Until the end of this turn all cards in your hand cost 0 Mana but you can't draw or add cards to your hand for the rest of the turn. \nBanish your hand at the end of your turn.",
             "normalizedName": "the final gamble",
             "isField": false,
             "isDeckBuildable": true
@@ -2035,7 +2035,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/the_legendary_ring.png",
-            "rulesText": "This card can't be destroyed by effects. The creature equipped with this card can't be destroyed by effects. If the equipped creature deals Life damage by Battle, draw cards equal to the equipped creatures ATK. At the end of your turn lose 3 Life.\n",
+            "rulesText": "This card can't be destroyed by effects. \nThe creature equipped with this card can't be destroyed by effects. \nIf the equipped creature deals Life damage by Battle, draw cards equal to the equipped creatures ATK. \nAt the end of your turn lose 3 Life.\n",
             "normalizedName": "the legendary ring",
             "isField": false,
             "isDeckBuildable": true
@@ -2110,7 +2110,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toxic_shot.png",
-            "rulesText": "You can only activate this while you control a Venom monster.\nSend a Venom named monster from your deck to your Grave then give a monster on the field 2 Venom Tokens.",
+            "rulesText": "You can only activate this while you control a Venom creature.\nSend a Venom named creature from your deck to your grave, then give 1 creature on the field 2 Venom Tokens.",
             "normalizedName": "toxic shot",
             "isField": false,
             "isDeckBuildable": true
@@ -2125,7 +2125,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/toxic_swamp.png",
-            "rulesText": "Any monster summoned without Venom in its name Gains a Venom Token.\nMonsters with a Venom Token lose -1 ATK for each token. Any monsters with 0 ATK and at least 4 Venom Tokens is destroyed.",
+            "rulesText": "Any creature summoned without Venom in its name Gains 1 Venom Token.\nCreatures with a Venom Token lose -1 ATK for each token. \nAny creatures with 0 ATK and at least 4 Venom Tokens are destroyed.",
             "normalizedName": "toxic swamp",
             "isField": true,
             "isDeckBuildable": true
@@ -2140,7 +2140,7 @@
             "atk": 1,
             "def": 1,
             "image": "./images/cards/trap_hole.png",
-            "rulesText": "When a creature is summon you can activate this card, destroy that creature.\n",
+            "rulesText": "Hand; When a creature is summoned you can activate this card, destroy that creature.\n",
             "normalizedName": "trap hole",
             "isField": false,
             "isDeckBuildable": true
