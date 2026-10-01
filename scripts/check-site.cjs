@@ -46,8 +46,13 @@ async function main() {
       const missing = normalizeCardData({...raw,image:'./images/cards/unexported.png'});
       return cached.thumbnail.includes('/optimized/') && changed.thumbnail === raw.image && !changed.imageIssue && missing.imageIssue && !missing.thumbnail;
     }));
-    await page.locator('#loadMoreBtn').click();
+    await page.locator('#loadMoreBtn').evaluate(button => button.click());
     assert.equal(await page.locator('.card').count(), 72);
+    await page.locator('.load-more-row').scrollIntoViewIfNeeded();
+    await page.waitForFunction(() => document.querySelectorAll('.card').length > 72);
+    const automaticallyLoaded = await page.locator('.card').count();
+    assert.ok(automaticallyLoaded < 642, 'Scrolling appends a batch, not the entire catalog');
+    await page.evaluate(() => window.scrollTo(0, 0));
     await page.locator('#searchInput').fill('quest');
     await page.waitForFunction(() => document.querySelectorAll('.card').length > 0 && document.querySelectorAll('.card').length < 36);
     assert.match(await page.locator('.card-grid').innerText(), /Questing Villager/);
@@ -106,7 +111,14 @@ async function main() {
       await page.screenshot({path:path.join(root,`test-results/mobile-${width}.png`)});
     }
     assert.deepEqual(errors, []);
-    console.log('PASS: bounded gallery, progressive loading, partial/advanced search, filters, points/sorting/cap, card modal, deck persistence/rename/duplicate/delete, mobile 390/320px, no original PNG gallery requests, no JS errors.');
+    const fallback = await browser.newPage();
+    await fallback.addInitScript(() => { window.IntersectionObserver = undefined; });
+    await fallback.goto(origin);
+    await fallback.waitForFunction(() => document.querySelectorAll('.card').length === 36);
+    await fallback.locator('#loadMoreBtn').click();
+    assert.equal(await fallback.locator('.card').count(), 72);
+    await fallback.close();
+    console.log('PASS: bounded gallery, automatic scroll loading and manual fallback, partial/advanced search, filters, points/sorting/cap, card modal, deck persistence/rename/duplicate/delete, mobile 390/320px, no original PNG gallery requests, no JS errors.');
     console.log(`Artwork requests during checks: ${imageRequests.length} (WebP only).`);
   } finally { await browser.close(); }
 }

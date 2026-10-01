@@ -8,7 +8,7 @@ Static GitHub Pages card database and browser-local deck workshop. No framework,
 - Card points on tiles and details, point sorting, `points>=2` advanced search, and a combined Main + Fusion 100-point deck budget.
 - Named decks, automatic browser-local saves, renaming, duplication, deck stats, and Fusion suggestions. Existing `dimensions_tcg_decks_v2` saves are preserved.
 - Import/export, deck-code transfer, and shared-deck import controls have been removed. Filter URLs remain supported.
-- A 36-card initial gallery with append-only Load More and native lazy image decoding. No full-size PNG gallery downloads when optimized artwork is available.
+- A 36-card initial gallery that automatically appends the next batch as you approach the bottom, with a manual Load More fallback and native lazy image decoding. No full-size PNG gallery downloads when optimized artwork is available.
 
 ## Updating card data and artwork
 

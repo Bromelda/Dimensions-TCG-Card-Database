@@ -40,6 +40,13 @@ const hideFullToggle = document.getElementById("hideFullToggle");
 const cardGrid = document.getElementById("cardGrid");
 const resultsCount = document.getElementById("resultsCount");
 const loadMoreBtn = document.getElementById("loadMoreBtn");
+const gallerySentinel = document.querySelector(".load-more-row");
+const galleryObserver = typeof IntersectionObserver === "function" ? new IntersectionObserver((entries) => {
+  if (entries.some(entry => entry.isIntersecting) && visibleCount < filteredCards.length
+      && cardModal.classList.contains("hidden")) {
+    loadMoreCards();
+  }
+}, { rootMargin: "600px 0px" }) : null;
 const clearFiltersBtn = document.getElementById("clearFiltersBtn");
 const toggleDeckBtn = document.getElementById("toggleDeckBtn");
 const mobileFiltersToggle = document.getElementById("mobileFiltersToggle");
@@ -601,6 +608,7 @@ function decorateModalLabels(card) {
 function closeModalAndRestoreFocus() {
   cardModal.classList.add("hidden");
   document.body.classList.remove("modal-open");
+  updateLoadMore();
   hideHoverPreview();
   const focusTarget = appState.modalLastFocus;
   if (focusTarget && typeof focusTarget.focus === "function") {
@@ -729,6 +737,7 @@ function clearFilters() {
 }
 
 function loadMoreCards() {
+  if (visibleCount >= filteredCards.length) return;
   const previousCount = visibleCount;
   visibleCount = Math.min(visibleCount + PAGE_SIZE, filteredCards.length);
   renderCards(filteredCards.slice(previousCount, visibleCount), true);
@@ -736,6 +745,10 @@ function loadMoreCards() {
 }
 
 function updateLoadMore() {
+  // Re-arm after appending or changing filters. This also fills short result
+  // pages without waiting for another intersection crossing.
+  galleryObserver?.disconnect();
+  if (visibleCount < filteredCards.length) galleryObserver?.observe(gallerySentinel);
   loadMoreBtn.classList.toggle("hidden", visibleCount >= filteredCards.length);
   loadMoreBtn.textContent = "Load next " + Math.min(PAGE_SIZE, filteredCards.length - visibleCount) + " cards";
   document.querySelectorAll("[data-card-type]").forEach(button => {
