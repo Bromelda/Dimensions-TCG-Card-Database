@@ -34,6 +34,10 @@ async function main() {
     await page.waitForFunction(() => document.querySelectorAll('.card').length === 36);
     assert.equal(await page.locator('.card').count(), 36);
     assert.equal(await page.locator('.points-tag').count(), 36);
+    assert.equal(await page.locator('.card-art .mana-orb').count(), 0);
+    assert.equal(await page.locator('.card-body .tag-mana .mana-icon').count(), 36);
+    await page.locator('.card-body .tag-mana').first().waitFor({state:'visible'});
+    assert.match(await page.locator('.card-body .tag-mana').first().innerText(), /^Mana \d+$/);
     await page.waitForFunction(() => [...document.querySelectorAll('.card img')].slice(0,4).every(img => img.complete));
     fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
     await page.screenshot({path:path.join(root,'test-results/archive-desktop.png')});
@@ -97,6 +101,7 @@ async function main() {
       await page.reload();
       await page.waitForFunction(() => document.querySelectorAll('.card').length > 0);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No overflow at ${width}px`);
+      await page.locator('.card-body .tag-mana').first().waitFor({state:'visible'});
       await page.locator('#mobileFiltersToggle').click();
       await page.locator('#searchInput').fill('quest');
       await page.waitForFunction(() => filteredCards.length > 0 && filteredCards.length < 36);

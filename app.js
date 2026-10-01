@@ -490,11 +490,11 @@ function renderCards(cards, append = false) {
     const isFull = copies >= limit;
 
     div.innerHTML = `
-      <div class="card-art"><img src="${escapeHtml(card.thumbnail || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}" width="420" height="560" loading="lazy" decoding="async"><span class="mana-orb" aria-label="Mana ${card.manaCost}">${card.manaCost}</span></div>
+      <div class="card-art"><img src="${escapeHtml(card.thumbnail || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}" width="420" height="560" loading="lazy" decoding="async"></div>
       <div class="card-body">
         <h3>${escapeHtml(card.name || "")}</h3>
         <div class="tags">
-          <span class="tag tag-mana">Mana ${card.manaCost ?? 0}</span>
+          ${renderManaBadge(card)}
           <span class="tag points-tag">${card.deckPoints} PTS</span>
           <span class="tag attr-${slugify(card.attribute || "none")}">${escapeHtml(card.attribute || "None")}</span>
           <span class="tag archetype-tag">${escapeHtml(card.archetype || "None")}</span>
@@ -766,7 +766,7 @@ function showHoverPreview(card, event) {
     <div class="hover-preview-body">
       <div class="hover-preview-title">${escapeHtml(card.name || "")}</div>
       <div class="hover-preview-tags">
-        <span class="tag tag-mana">Mana ${card.manaCost ?? 0}</span>
+        ${renderManaBadge(card)}
         <span class="tag attr-${slugify(card.attribute || "none")}">${escapeHtml(card.attribute || "None")}</span>
         <span class="tag type-${slugify(card.cardType || "unknown")}">${escapeHtml(card.cardType || "Unknown")}</span>
       </div>
@@ -1471,4 +1471,8 @@ if (window.matchMedia("(max-width: 640px)").matches) {
 
 function getDeckPoints() {
   return [...deckState.main, ...deckState.fusion].reduce((sum, card) => sum + (card.deckPoints || 0), 0);
+}
+
+function renderManaBadge(card) {
+  return `<span class="tag tag-mana"><svg class="mana-icon" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 1.5C6.5 4 3.5 6.6 3.5 9.5a4.5 4.5 0 0 0 9 0C12.5 6.6 9.5 4 8 1.5Z"/><path d="M6 9.5a2 2 0 0 0 2 2"/></svg>Mana ${card.manaCost ?? 0}</span>`;
 }
