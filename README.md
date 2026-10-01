@@ -7,12 +7,13 @@ Static GitHub Pages card database and browser-local deck workshop. No framework,
 - Responsive purple/lime archive with card artwork, searchable effects, attribute/archetype/type filters, sorting, and accessible card details.
 - Card points on tiles and details, point sorting, `points>=2` advanced search, and a combined Main + Fusion 100-point deck budget.
 - Named decks, automatic browser-local saves, renaming, duplication, deck stats, and Fusion suggestions. Existing `dimensions_tcg_decks_v2` saves are preserved.
+- Related Cards in each card's details, with a visible count/jump button, partner previews, back navigation, and individual deck additions. The deck sidebar also suggests partners. Relationships come directly from Unity's `DeckRelatedCardLookup`: Fusion recipes, authored support filters, and Special Summon requirements, in both directions—not guessed from effect text or shared names. Partner lists load in small batches and use lazy WebP thumbnails.
 - Import/export, deck-code transfer, and shared-deck import controls have been removed. Filter URLs remain supported.
 - A 36-card initial gallery that automatically appends the next batch as you approach the bottom, with a manual Load More fallback and native lazy image decoding. No full-size PNG gallery downloads when optimized artwork is available.
 
 ## Updating card data and artwork
 
-1. Use the existing Unity Tools exports to update `data/*.json` and `images/cards/*.png`. The JSON exporter includes the game's authoritative `deckPoints` field.
+1. Use the existing Unity Tools exports to update `data/*.json` and `images/cards/*.png`. The JSON exporter includes the game's authoritative `deckPoints` and `relatedCardIds` fields. A relationship-only Unity snapshot can also be applied with `node scripts/sync-related.cjs <snapshot.json>`; this updates links in the existing four catalogs without adding cards or changing other card data.
 2. Install Node.js, then run `npm install` once in this repository.
 3. After artwork changes, run `npm run optimize`. This regenerates only changed artwork and `data/artwork-manifest.json`. Commit those outputs alongside the new original artwork/data.
 4. Commit and push through GitHub Desktop or Git. The existing GitHub Pages deployment publishes the website.

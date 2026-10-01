@@ -2,6 +2,10 @@
 let allCards = [];
 let filteredCards = [];
 let visibleCount = 0;
+let cardsById = new Map();
+let relatedHistory = [];
+let relatedModalLimit = 12;
+let relatedDeckLimit = 6;
 const DECK_LIBRARY_STORAGE_KEY = "dimensions_tcg_decks_v2";
 const LEGACY_DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
 const UI_STORAGE_KEY = "dimensions_tcg_ui_v2";
@@ -95,7 +99,7 @@ const modalPrevBtn = document.getElementById("modalPrevBtn");
 const modalNextBtn = document.getElementById("modalNextBtn");
 const modalAddDeckBtn = document.getElementById("modalAddDeckBtn");
 
-Promise.all([fetch("./data/cards.json"), fetch("./data/artwork-manifest.json").then(r => r.ok ? r.json() : {}).catch(() => ({}))])
+Promise.all([fetch("./data/cards.json?v=20260930-related-1"), fetch("./data/artwork-manifest.json?v=20260930-related-1").then(r => r.ok ? r.json() : {}).catch(() => ({}))])
   .then(([response, manifest]) => {
     artworkManifest = manifest;
     if (!response.ok) {
@@ -111,6 +115,7 @@ Promise.all([fetch("./data/cards.json"), fetch("./data/artwork-manifest.json").t
     }
 
     allCards = cards.map(normalizeCardData);
+    cardsById = new Map(allCards.map(card => [card.cardId, card]));
     buildFilters(allCards);
     hydrateDeckLibraryAgainstCardPool();
     applyUiState();
@@ -131,6 +136,7 @@ function normalizeCardData(rawCard) {
   card.cardType = normalizeCardType(card.cardType);
   card.manaCost = normalizeNumber(card.manaCost);
   card.deckPoints = Math.max(0, Math.floor(normalizeNumber(card.deckPoints)));
+  card.relatedCardIds = [...new Set((rawCard.relatedCardIds || []).map(String))].filter(id => id !== card.cardId);
   card.atk = normalizeNumber(card.atk);
   card.def = normalizeNumber(card.def);
   card.rulesText = normalizeRulesText(card.rulesText);
@@ -549,7 +555,10 @@ function renderCards(cards, append = false) {
   cardGrid.appendChild(fragment);
 }
 
-function openModal(card) {
+function openModal(card, options = {}) {
+  if (options.fromRelated && appState.currentModalCard) relatedHistory.push(appState.currentModalCard);
+  else if (!options.preserveHistory) relatedHistory = [];
+  relatedModalLimit = 12;
   const index = filteredCards.findIndex((item) => item.cardId === card.cardId);
   appState.currentModalCard = card;
   appState.currentModalIndex = index;
@@ -588,10 +597,75 @@ function openModal(card) {
   modalNextBtn.disabled = appState.currentModalIndex < 0 || appState.currentModalIndex >= filteredCards.length - 1;
 
   decorateModalLabels(card);
+  renderModalRelated();
+  document.getElementById("modalRelatedJumpBtn").textContent = `Related Cards (${getRelatedCards(card).length})`;
+  document.getElementById("modalRelatedBackBtn").classList.toggle("hidden", !relatedHistory.length);
+  cardModal.querySelector(".modal-content").scrollTop = 0;
   cardModal.classList.remove("hidden");
   document.body.classList.add("modal-open");
   trapFocusToModal();
 }
+
+function getRelatedCards(card) {
+  return (card?.relatedCardIds || []).map(id => cardsById.get(id)).filter(Boolean);
+}
+
+function renderRelatedList(container, items, inModal) {
+  container.innerHTML = items.map(({ card, sources }) => `
+    <article class="related-card">
+      <img src="${escapeHtml(card.thumbnail || createFallbackImage(card.name))}" alt="" loading="lazy" width="54" height="72">
+      <div class="related-info"><strong>${escapeHtml(card.name)}</strong>
+        <small>${escapeHtml(card.cardType)} · Mana ${card.manaCost} · ${card.deckPoints} PTS</small>
+        ${sources ? `<small>Related to ${escapeHtml(sources.join(", "))}</small>` : ""}
+        <div class="related-actions"><button class="mini-btn related-details" data-id="${escapeHtml(card.cardId)}" type="button">Details</button>
+        <button class="mini-btn related-add" data-id="${escapeHtml(card.cardId)}" type="button" ${getCardCopiesInSection(card, getDeckSection(card)) >= getCardCopyLimit(card) ? "disabled" : ""}>Add to Deck</button></div>
+      </div>
+    </article>`).join("");
+  container.querySelectorAll("img").forEach(img => attachImageFallback(img, "Related card"));
+  container.querySelectorAll(".related-details").forEach(button => button.addEventListener("click", () => {
+    openModal(cardsById.get(button.dataset.id), { fromRelated: inModal });
+  }));
+  container.querySelectorAll(".related-add").forEach(button => button.addEventListener("click", () => {
+    addCardToDeck(cardsById.get(button.dataset.id));
+    refreshView(false);
+    if (!cardModal.classList.contains("hidden")) renderModalRelated();
+  }));
+}
+
+function renderModalRelated() {
+  const related = getRelatedCards(appState.currentModalCard);
+  const container = document.getElementById("modalRelatedCards");
+  renderRelatedList(container, related.slice(0, relatedModalLimit).map(card => ({ card })), true);
+  if (!related.length) container.textContent = "No authored related cards in this catalog.";
+  document.getElementById("modalRelatedMoreBtn").classList.toggle("hidden", related.length <= relatedModalLimit);
+}
+
+function renderDeckRelated() {
+  const candidates = new Map();
+  const deckCards = new Map([...deckState.main, ...deckState.fusion].map(card => [card.cardId, card]));
+  for (const source of deckCards.values()) {
+    for (const card of getRelatedCards(source)) {
+      if (deckCards.has(card.cardId)) continue;
+      if (!candidates.has(card.cardId)) candidates.set(card.cardId, { card, sources: [] });
+      candidates.get(card.cardId).sources.push(source.name);
+    }
+  }
+  const items = [...candidates.values()].sort((a, b) => b.sources.length - a.sources.length || a.card.name.localeCompare(b.card.name));
+  const container = document.getElementById("deckRelatedCards");
+  renderRelatedList(container, items.slice(0, relatedDeckLimit), false);
+  if (!items.length) container.textContent = deckCards.size ? "No other authored partners in this catalog." : "Add a card to discover its related partners.";
+  document.getElementById("deckRelatedMoreBtn").classList.toggle("hidden", items.length <= relatedDeckLimit);
+}
+
+document.getElementById("modalRelatedMoreBtn").addEventListener("click", () => { relatedModalLimit += 12; renderModalRelated(); });
+document.getElementById("modalRelatedJumpBtn").addEventListener("click", () => {
+  document.getElementById("modalRelatedHeading").scrollIntoView({ block: "start" });
+});
+document.getElementById("deckRelatedMoreBtn").addEventListener("click", () => { relatedDeckLimit += 6; renderDeckRelated(); });
+document.getElementById("modalRelatedBackBtn").addEventListener("click", () => {
+  const card = relatedHistory.pop();
+  if (card) openModal(card, { preserveHistory: true });
+});
 
 function getFusionHint(card) {
   if (!isFusionCard(card)) return "";
@@ -622,7 +696,7 @@ modalNextBtn.addEventListener("click", () => moveModal(1));
 modalAddDeckBtn.addEventListener("click", () => {
   if (appState.currentModalCard) {
     addCardToDeck(appState.currentModalCard);
-    if (appState.currentModalCard) openModal(appState.currentModalCard);
+    if (appState.currentModalCard) openModal(appState.currentModalCard, { preserveHistory: true });
     refreshView();
   }
 });
@@ -1005,6 +1079,7 @@ function renderDeck() {
 }
 
 function renderDeckStats() {
+  renderDeckRelated();
   const typeCounts = countBy(deckState.main, (card) => card.cardType);
   const attrCounts = countBy(deckState.main, (card) => card.attribute);
   const archeCounts = countBy(deckState.main, (card) => card.archetype);

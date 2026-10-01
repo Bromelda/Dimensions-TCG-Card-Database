@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DIMENSIONS — Card Archive</title>
   <meta name="description" content="Explore the DIMENSIONS TCG card archive. Search cards, read effects, and build your next deck." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260930-related-1" />
 </head>
 <body>
   <a class="skip-link" href="#cardGrid">Skip to cards</a>
@@ -144,6 +144,10 @@
         <div id="deckStatsSummary" class="deck-stats-summary">No stats yet.</div>
         <div class="section-heading sub-heading">Checks</div>
         <div id="deckStatsWarnings" class="deck-stats-warnings">No fusion material warnings found.</div>
+        <div class="section-heading sub-heading">Related Cards</div>
+        <p class="related-note">Support cards and partners for cards in your deck.</p>
+        <div id="deckRelatedCards" class="deck-suggestions"></div>
+        <button id="deckRelatedMoreBtn" class="secondary-btn hidden" type="button">Show more related cards</button>
         <div class="section-heading sub-heading">Fusion Suggestions</div>
         <div id="fusionSuggestions" class="deck-suggestions">No fusion suggestions yet.</div>
       </section>
@@ -217,16 +221,24 @@
         <div id="modalFusionHint" class="modal-meta hidden"></div>
 
         <div class="deck-actions modal-actions">
+          <button id="modalRelatedJumpBtn" class="secondary-btn" type="button">Related Cards</button>
+          <button id="modalRelatedBackBtn" class="secondary-btn hidden" type="button">Back to previous card</button>
           <button id="modalAddDeckBtn" class="primary-btn" type="button">Add to Deck</button>
         </div>
 
         <div class="section-heading">Rules</div>
         <pre id="modalRules"></pre>
+        <section class="related-section" aria-labelledby="modalRelatedHeading">
+          <div class="section-heading" id="modalRelatedHeading">Related Cards</div>
+          <p class="related-note">The same authored relationships used by the DIMENSIONS Deck editor.</p>
+          <div id="modalRelatedCards" class="related-grid"></div>
+          <button id="modalRelatedMoreBtn" class="secondary-btn hidden" type="button">Show more related cards</button>
+        </section>
       </div>
     </div>
   </div>
 
   <footer class="site-footer">DIMENSIONS TCG <span>Every card is a doorway.</span></footer>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=20260930-related-1" defer></script>
 </body>
 </html>

@@ -42,6 +42,50 @@ async function main() {
     fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
     await page.screenshot({path:path.join(root,'test-results/archive-desktop.png')});
     assert.equal(await page.locator('[id*="import"], [id*="export"], #deckCodeInput').count(), 0);
+    assert.match(await page.locator('script[src*="app.js"]').getAttribute('src'), /\?v=/);
+    assert.ok(await page.evaluate(() => allCards.some(card => card.relatedCardIds.length > 0)), 'Published Unity relationships are present');
+    assert.ok(await page.evaluate(() => allCards.every(card => card.relatedCardIds.every(id =>
+      cardsById.has(id) && id !== card.cardId && cardsById.get(id).relatedCardIds.includes(card.cardId)))),
+      'Publication graph has no missing/self/asymmetric links');
+    const actualRelation = await page.evaluate(() => {
+      const source = allCards.find(card => !isFusionCard(card) && card.relatedCardIds.length > 0 &&
+        card.relatedCardIds.length <= 12 && !isFusionCard(getRelatedCards(card)[0]));
+      if (!source) throw new Error('No non-Fusion relationship sample in actual exported graph');
+      openModal(source);
+      return { source: source.name, partner: getRelatedCards(source)[0].name, count: source.relatedCardIds.length };
+    });
+    assert.match(await page.locator('#modalRelatedJumpBtn').innerText(), new RegExp(`\\(${actualRelation.count}\\)`));
+    assert.equal(await page.locator('#modalRelatedCards .related-card').count(), actualRelation.count);
+    await page.locator('#modalRelatedJumpBtn').click();
+    await page.screenshot({path:path.join(root,'test-results/related-cards-desktop.png')});
+    await page.locator('#modalRelatedCards .related-details').first().click();
+    assert.equal(await page.locator('#modalName').innerText(), actualRelation.partner);
+    await page.locator('#modalRelatedBackBtn').click();
+    assert.equal(await page.locator('#modalName').innerText(), actualRelation.source);
+    await page.locator('#closeModal').click();
+    // Small controlled fixture also covers single-card additions and sidebar relationships.
+    const relationFixture = await page.evaluate(() => {
+      const source = allCards[0], partner = allCards[1];
+      window.relatedGraphFixtureBackup = [source.relatedCardIds, partner.relatedCardIds];
+      source.relatedCardIds = [partner.cardId];
+      partner.relatedCardIds = [source.cardId];
+      openModal(source);
+      return { source: source.name, partner: partner.name };
+    });
+    assert.equal(await page.locator('#modalRelatedCards .related-card').count(), 1);
+    await page.locator('#modalRelatedCards .related-details').click();
+    assert.equal(await page.locator('#modalName').innerText(), relationFixture.partner);
+    await page.locator('#modalRelatedBackBtn').click();
+    assert.equal(await page.locator('#modalName').innerText(), relationFixture.source);
+    await page.locator('#modalRelatedCards .related-add').click();
+    assert.equal(await page.evaluate(() => deckState.main.length + deckState.fusion.length), 1);
+    assert.match(await page.locator('#deckRelatedCards').innerText(), new RegExp(relationFixture.source));
+    await page.evaluate(() => {
+      deckState.main = []; deckState.fusion = [];
+      [allCards[0].relatedCardIds, allCards[1].relatedCardIds] = window.relatedGraphFixtureBackup;
+      saveDeckLibrary(); renderDeck();
+    });
+    await page.locator('#closeModal').click();
     assert.ok(await page.evaluate(() => {
       const raw = { cardId: 'freshness-test', name: 'Test', image: './images/cards/questing_villager.png' };
       const revision = artworkManifest[raw.image].artworkRevision;
@@ -123,7 +167,7 @@ async function main() {
     await fallback.locator('#loadMoreBtn').click();
     assert.equal(await fallback.locator('.card').count(), 72);
     await fallback.close();
-    console.log('PASS: bounded gallery, automatic scroll loading and manual fallback, partial/advanced search, filters, points/sorting/cap, card modal, deck persistence/rename/duplicate/delete, mobile 390/320px, no original PNG gallery requests, no JS errors.');
+    console.log('PASS: actual Unity related-card graph and non-Fusion browsing, back navigation, single-card partner additions, cache-versioned assets, bounded gallery/scroll loading, search/filters/points/cap, deck persistence, mobile 390/320px, WebP gallery, no JS errors.');
     console.log(`Artwork requests during checks: ${imageRequests.length} (WebP only).`);
   } finally { await browser.close(); }
 }
