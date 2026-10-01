@@ -13,7 +13,8 @@
             "rulesText": "",
             "normalizedName": "fugue the ancient keeper",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "584",
@@ -28,7 +29,8 @@
             "rulesText": "",
             "normalizedName": "a rocket",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "431",
@@ -43,7 +45,8 @@
             "rulesText": "Death: Destroy the creature that destroyed this card.",
             "normalizedName": "acid bomb beetle",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "316",
@@ -58,7 +61,8 @@
             "rulesText": "When this card destroys a creature by battle, draw 1 card.",
             "normalizedName": "agent of horus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "95",
@@ -73,7 +77,8 @@
             "rulesText": "",
             "normalizedName": "amalgam",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "458",
@@ -88,7 +93,8 @@
             "rulesText": "",
             "normalizedName": "ancient wisdom",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "317",
@@ -103,7 +109,8 @@
             "rulesText": "Death; Summon 1 Ant of Ants from your Deck.\n",
             "normalizedName": "ant of ants",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "234",
@@ -118,7 +125,8 @@
             "rulesText": "Quick; After a Magician spell is played add a different Magician spell from your grave back to your hand.",
             "normalizedName": "arch magician",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "619",
@@ -133,7 +141,8 @@
             "rulesText": "",
             "normalizedName": "armed sea horse",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "472",
@@ -148,7 +157,8 @@
             "rulesText": "",
             "normalizedName": "armored beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "509",
@@ -163,7 +173,8 @@
             "rulesText": "",
             "normalizedName": "ashen born colossus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "460",
@@ -178,7 +189,8 @@
             "rulesText": "",
             "normalizedName": "axe drake",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "474",
@@ -193,7 +205,8 @@
             "rulesText": "",
             "normalizedName": "axe knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "590",
@@ -208,7 +221,8 @@
             "rulesText": "",
             "normalizedName": "b ram",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "200",
@@ -223,7 +237,8 @@
             "rulesText": "Death; Summon 1 Dragon from your deck that cost 3 or less Mana.",
             "normalizedName": "baby dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "580",
@@ -238,7 +253,8 @@
             "rulesText": "",
             "normalizedName": "badlands terror",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "337",
@@ -253,7 +269,8 @@
             "rulesText": "",
             "normalizedName": "bat",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "497",
@@ -268,7 +285,8 @@
             "rulesText": "",
             "normalizedName": "battle crab",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "534",
@@ -283,7 +301,8 @@
             "rulesText": "",
             "normalizedName": "battle horn bear",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "592",
@@ -298,7 +317,8 @@
             "rulesText": "",
             "normalizedName": "bean boxer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "536",
@@ -313,7 +333,8 @@
             "rulesText": "",
             "normalizedName": "bearly awake",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "456",
@@ -328,7 +349,8 @@
             "rulesText": "",
             "normalizedName": "beast raider",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "436",
@@ -343,7 +365,8 @@
             "rulesText": "",
             "normalizedName": "beetle knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "582",
@@ -358,7 +381,8 @@
             "rulesText": "",
             "normalizedName": "big base goblin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "478",
@@ -373,7 +397,8 @@
             "rulesText": "",
             "normalizedName": "big golem",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "611",
@@ -388,7 +413,8 @@
             "rulesText": "",
             "normalizedName": "big k roo",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "127",
@@ -403,7 +429,8 @@
             "rulesText": "",
             "normalizedName": "black dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "128",
@@ -418,7 +445,8 @@
             "rulesText": "SpecialSummon; Summon by sending 1 Black Dragon with Metal Armor equipped to the Grave.\nCannot be Summoned without listed cards.\n\nHaste\nSeal; Add 1 Machine creature from your grave to your hand.",
             "normalizedName": "black metal dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "635",
@@ -433,7 +461,8 @@
             "rulesText": "",
             "normalizedName": "blast spinner",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "82",
@@ -448,7 +477,8 @@
             "rulesText": "Pay 5 Mana to activate from hand. \n\nHand; If you are attacked while you control no creatures, negate the attack and equip this to that creature. \nDuring the end of next turn, destroy this and the equipped creature, then deal that creature's ATK as Life damage to the controller.\n",
             "normalizedName": "blaster mine",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "83",
@@ -463,7 +493,8 @@
             "rulesText": "Seal; Destroy 1 Machine you control and 1 creature the enemy controls, then deal 2 Life damage to the enemy.\n",
             "normalizedName": "blaster spider",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "565",
@@ -478,7 +509,8 @@
             "rulesText": "",
             "normalizedName": "blazing enforcer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "503",
@@ -493,7 +525,8 @@
             "rulesText": "",
             "normalizedName": "blazing treat",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "520",
@@ -508,7 +541,8 @@
             "rulesText": "",
             "normalizedName": "blood bat",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "532",
@@ -523,7 +557,8 @@
             "rulesText": "",
             "normalizedName": "bloodred raptor",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "201",
@@ -538,7 +573,8 @@
             "rulesText": "Haste",
             "normalizedName": "blue stone dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "518",
@@ -553,7 +589,8 @@
             "rulesText": "",
             "normalizedName": "bone dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "516",
@@ -568,7 +605,8 @@
             "rulesText": "",
             "normalizedName": "book o",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "549",
@@ -583,7 +621,8 @@
             "rulesText": "",
             "normalizedName": "booming sliver",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "339",
@@ -598,7 +637,8 @@
             "rulesText": "When you use a creatures Seal effect with Buddy in the name, draw 1 card. ",
             "normalizedName": "bubble buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "617",
@@ -613,7 +653,8 @@
             "rulesText": "",
             "normalizedName": "c slug",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "597",
@@ -628,7 +669,8 @@
             "rulesText": "",
             "normalizedName": "cn skull",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "600",
@@ -643,7 +685,8 @@
             "rulesText": "",
             "normalizedName": "candle witcher",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "347",
@@ -658,7 +701,8 @@
             "rulesText": "While this card is on the field, Zombies you control get +1 ATK at the start of your turn.\n\nOther Zombies cannot be destroyed by Spell cards while this is on the field.",
             "normalizedName": "castle of dark graveyards",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "477",
@@ -673,7 +717,8 @@
             "rulesText": "",
             "normalizedName": "castle walls",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "528",
@@ -688,7 +733,8 @@
             "rulesText": "",
             "normalizedName": "channeling seeker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "76",
@@ -703,7 +749,8 @@
             "rulesText": "Seal; This card gains 1 Charge Token. \nYou can spend Tokens on this card instead of spending Mana to summon Machines.\n",
             "normalizedName": "charge o tron",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "299",
@@ -718,7 +765,8 @@
             "rulesText": "You can only control 1 Comic creature  at a time.\nAfter this card attacks, you can return it back to your hand.\nComic World can't be destroyed by creature effects.",
             "normalizedName": "comic black dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "301",
@@ -733,7 +781,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nSeal; Discard 1 creature, deal Life damage to the enemy equal to that creatures ATK.",
             "normalizedName": "comic cannon head",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 20
         },
         {
             "cardId": "303",
@@ -748,7 +797,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nAfter this attacks, Mill 1 card from the enemy deck.",
             "normalizedName": "comic elves",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "304",
@@ -763,7 +813,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nSeal; Destroy 1 Sealed Spell card.",
             "normalizedName": "comic harpie",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "305",
@@ -778,7 +829,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nThis card can't be destroyed by enemy spell cards.\nWhen this card destroys a creature by battle banish that creature.",
             "normalizedName": "comic luster nightmare",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "306",
@@ -793,7 +845,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nSeal; Add 1 Comic Spell from your deck to your hand.",
             "normalizedName": "comic magician",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "307",
@@ -808,7 +861,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nSeal; Draw 1 card.",
             "normalizedName": "comic mermaid",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "310",
@@ -823,7 +877,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nBattlecry; Add Comic World from your deck to your hand.",
             "normalizedName": "comic rabbit",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "312",
@@ -838,7 +893,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nAfter this attacks, draw 1 card.",
             "normalizedName": "comic sorcerer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "314",
@@ -853,7 +909,8 @@
             "rulesText": "You can only control 1 Comic creature at a time.\nAfter this card attacks, you can return it back to the deck.\nComic World can't be destroyed by spell effects.",
             "normalizedName": "comic white dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "13",
@@ -868,7 +925,8 @@
             "rulesText": "SpecialSummon; Summon by Paying 4 Milk Tokens.\nSeal; Unseal a different card with Cheese/Cow in their name.",
             "normalizedName": "cool cow",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "540",
@@ -883,7 +941,8 @@
             "rulesText": "",
             "normalizedName": "corn buster",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "484",
@@ -898,7 +957,8 @@
             "rulesText": "",
             "normalizedName": "corn knights",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "430",
@@ -913,7 +973,8 @@
             "rulesText": "Battlecry: Destroy 1 creature.",
             "normalizedName": "creature eating bug",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "559",
@@ -928,7 +989,8 @@
             "rulesText": "",
             "normalizedName": "crimson crystal",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "507",
@@ -943,7 +1005,8 @@
             "rulesText": "",
             "normalizedName": "crimson fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "468",
@@ -958,7 +1021,8 @@
             "rulesText": "",
             "normalizedName": "crimson warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "537",
@@ -973,7 +1037,8 @@
             "rulesText": "",
             "normalizedName": "croc pot",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "554",
@@ -988,7 +1053,8 @@
             "rulesText": "",
             "normalizedName": "crocolisk",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "86",
@@ -1003,7 +1069,8 @@
             "rulesText": "",
             "normalizedName": "cross blade",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "620",
@@ -1018,7 +1085,8 @@
             "rulesText": "",
             "normalizedName": "crystal head",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "11",
@@ -1033,7 +1101,8 @@
             "rulesText": "Battlecry; Show the top 4 cards of your deck, add any card with Cheese/Cow in their name to your hand.",
             "normalizedName": "curious cow",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "349",
@@ -1048,7 +1117,8 @@
             "rulesText": "Death; Turn this card into a Field Spell and gain the following effect.\n-When the enemy actives a spell card, Deal 1 Life damage to the enemy.\n",
             "normalizedName": "cursed beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "350",
@@ -1063,7 +1133,8 @@
             "rulesText": "While this card is on the field, all your \"Cursed\" effects deal +1 extra damage.\n",
             "normalizedName": "cursed cultist",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "351",
@@ -1078,7 +1149,8 @@
             "rulesText": "Death; Turn this card into a Field Spell and gain the following effect. \n-When the enemy actives a creature effect, destroy this card and negate the effect until the end of this turn.\n",
             "normalizedName": "cursed fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "353",
@@ -1093,7 +1165,8 @@
             "rulesText": "Death; Turn this card into a Field Spell and gain the following effect.\n-When the enemy actives a creature effect, Deal 1 Life damage to the enemy.",
             "normalizedName": "cursed villager",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "354",
@@ -1108,7 +1181,8 @@
             "rulesText": "Battlecry; Destroy 1 Cursed card you control then Destroy 2 other cards on the field. \nDeath; Turn this card into a Field Spell and gain the following effect.\nSeal; Deal 2 Life damage to the enemy.\n",
             "normalizedName": "cursed warlord",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "355",
@@ -1123,7 +1197,8 @@
             "rulesText": "Death; Turn this card into a Field Spell and gain the following effect.\n-When the enemy draws a card, deal 1 Life damage to the enemy.",
             "normalizedName": "cursed warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "356",
@@ -1138,7 +1213,8 @@
             "rulesText": "Seal; Destroy 2 Spell cards you control then summon 1 Cursed creature from your graveyard as a Field Spell.\n",
             "normalizedName": "cursed witchcraft",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "129",
@@ -1153,7 +1229,8 @@
             "rulesText": "Field spell effects are negated.",
             "normalizedName": "cyber gimzo",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "476",
@@ -1168,7 +1245,8 @@
             "rulesText": "",
             "normalizedName": "cyber guard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "517",
@@ -1183,7 +1261,8 @@
             "rulesText": "",
             "normalizedName": "cyber mind",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "604",
@@ -1198,7 +1277,8 @@
             "rulesText": "",
             "normalizedName": "cyclone behemoth",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "14",
@@ -1213,7 +1293,8 @@
             "rulesText": "",
             "normalizedName": "dairy cow",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "451",
@@ -1228,7 +1309,8 @@
             "rulesText": "",
             "normalizedName": "dark assassin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "519",
@@ -1243,7 +1325,8 @@
             "rulesText": "",
             "normalizedName": "dark beetle",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "22",
@@ -1258,7 +1341,8 @@
             "rulesText": "",
             "normalizedName": "dark clown",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "146",
@@ -1273,7 +1357,8 @@
             "rulesText": "Battlecry; Reveal the top 3 cards of your deck, add 1 of those to your hand.",
             "normalizedName": "dark eyes fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "480",
@@ -1288,7 +1373,8 @@
             "rulesText": "",
             "normalizedName": "dark horn",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "514",
@@ -1303,7 +1389,8 @@
             "rulesText": "",
             "normalizedName": "dark scorpion",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "148",
@@ -1318,7 +1405,8 @@
             "rulesText": "After this card attacks, unseal itself once for every equipment card attached.",
             "normalizedName": "dark swordsman",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "112",
@@ -1333,7 +1421,8 @@
             "rulesText": "Discarded; Summon to the enemy field.\n\nDeath; controller sends 1 Mana to the grave.\n\n",
             "normalizedName": "darksider bane",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "113",
@@ -1348,7 +1437,8 @@
             "rulesText": "Death; Add a 3 Mana cost or lower Darksider from your deck to your hand.",
             "normalizedName": "darksider beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "50",
@@ -1363,7 +1453,8 @@
             "rulesText": "Battlecry; Destroy 1 spell on the field.",
             "normalizedName": "darksider dagger",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "117",
@@ -1378,7 +1469,8 @@
             "rulesText": "Discarded; By a creature effect, shuffle this card back into your deck.\n\nBattlecry; Destroy 1 creature on the field.",
             "normalizedName": "darksider goldmen",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "49",
@@ -1393,7 +1485,8 @@
             "rulesText": "",
             "normalizedName": "darksider halberd",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "48",
@@ -1408,7 +1501,8 @@
             "rulesText": "Discarded; by a creature effect, Summon 1 Fiend from your deck that cost 3 Mana or less.",
             "normalizedName": "darksider hermit",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "119",
@@ -1423,7 +1517,8 @@
             "rulesText": "Discarded; Draw 1 card.",
             "normalizedName": "darksider hunter",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "120",
@@ -1438,7 +1533,8 @@
             "rulesText": "Discarded; Shuffle 1 card from the enemy hand into their deck.",
             "normalizedName": "darksider knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "52",
@@ -1453,7 +1549,8 @@
             "rulesText": "Battlecry; Add 1 banished Darksider card back to your hand.\n\nAfter this card deals Life damage to the enemy, discard one card. \n",
             "normalizedName": "darksider madking",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "51",
@@ -1468,7 +1565,8 @@
             "rulesText": "",
             "normalizedName": "darksider maul",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "121",
@@ -1483,7 +1581,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon;  Summon by Banishing 3 Darksider creatures on your field.\nBattlecry; Discard 1 card then draw 1 card.\nSeal; Discard 2 card and destroy 1 creature on the field.\n",
             "normalizedName": "darksider ruler",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "122",
@@ -1498,7 +1597,8 @@
             "rulesText": "Discarded; Add this card into your Mana pool, Sealed.",
             "normalizedName": "darksider scholar",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "123",
@@ -1513,7 +1613,8 @@
             "rulesText": "Battlecry; Add 1 Darksider Gate from your deck to your hand.",
             "normalizedName": "darksider shield",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "124",
@@ -1528,7 +1629,8 @@
             "rulesText": "Discarded; Summon instead.",
             "normalizedName": "darksider spearman",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "126",
@@ -1543,7 +1645,8 @@
             "rulesText": "If you discard a card unseal this creature.\n\nHaste\n",
             "normalizedName": "darksider warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "53",
@@ -1558,7 +1661,8 @@
             "rulesText": "During Battle Phase, this creature can attack twice.",
             "normalizedName": "darksider zweihander",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "176",
@@ -1573,7 +1677,8 @@
             "rulesText": "Battlecry; Summon a 3 Mana or less creature from your Deck. \nThe cards effects are negated until it leaves the field.\n",
             "normalizedName": "darkworld care taker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "525",
@@ -1588,7 +1693,8 @@
             "rulesText": "",
             "normalizedName": "dawn archer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "622",
@@ -1603,7 +1709,8 @@
             "rulesText": "",
             "normalizedName": "deep sea specter",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "574",
@@ -1618,7 +1725,8 @@
             "rulesText": "",
             "normalizedName": "deepfire fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "02",
@@ -1633,7 +1741,8 @@
             "rulesText": "Battlecry; Banish 1 creature you control.\nDuring the end of the turn if this card was attacked more than once and destroyed during battle, you can banish 1 Psycho Warrior you control to summon this card, sealed.",
             "normalizedName": "dement the eternal one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "521",
@@ -1648,7 +1757,8 @@
             "rulesText": "",
             "normalizedName": "demon brute",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "606",
@@ -1663,7 +1773,8 @@
             "rulesText": "",
             "normalizedName": "desert striker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "428",
@@ -1678,7 +1789,8 @@
             "rulesText": "Death; Both players draw 5 cards.",
             "normalizedName": "devouring worm",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "461",
@@ -1693,7 +1805,8 @@
             "rulesText": "",
             "normalizedName": "divine shield",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "634",
@@ -1708,7 +1821,8 @@
             "rulesText": "",
             "normalizedName": "do b wizard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "18",
@@ -1723,7 +1837,8 @@
             "rulesText": "All Dragon creatures are sealed.",
             "normalizedName": "dragon charmer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "204",
@@ -1738,7 +1853,8 @@
             "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Waves from your deck to your hand.\nDeath; Banish this and 1 Dragon in your grave, then summon Dragon Lord Waves from your hand.",
             "normalizedName": "dragon lord drip",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "205",
@@ -1753,7 +1869,8 @@
             "rulesText": "Battlecry;  Deal 3 Life damage to the enemy.\nSeal; Discard 1 card, add 1 Fire creature from your grave to your hand.",
             "normalizedName": "dragon lord flames",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "206",
@@ -1768,7 +1885,8 @@
             "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Stones from your deck to your hand.\nDeath; Banish this card and 1 Dragon in your grave, then summon Dragon Lord Stones from your hand.",
             "normalizedName": "dragon lord peb",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "207",
@@ -1783,7 +1901,8 @@
             "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Flames from your deck to your hand.\nDeath; Banish this card and 1 Dragon in your grave, then summon Dragon Lord Flames from your hand.",
             "normalizedName": "dragon lord spark",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "208",
@@ -1798,7 +1917,8 @@
             "rulesText": "Battlecry; Destroy 1 creature.\nSeal; Discard 1 card, add 1 Dragon card from your grave to your hand.",
             "normalizedName": "dragon lord stones",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "209",
@@ -1813,7 +1933,8 @@
             "rulesText": "Battlecry; Destroy 1 spell.\nSeal; Discard 1 card, add 1 Wind creature from your grave to your hand.",
             "normalizedName": "dragon lord storms",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "211",
@@ -1828,7 +1949,8 @@
             "rulesText": "Battlecry; Choose 1 effect.\n1: Draw 2 cards\n2: Reveal the top 4 cards of your deck, add one revealed card to your hand.\nSeal; Discard 1 card, add 1 Water creature from your grave to your hand.",
             "normalizedName": "dragon lord waves",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "212",
@@ -1843,7 +1965,8 @@
             "rulesText": "Battlecry; Discard 1 Dragon to add Dragon Lord Storms from your deck to your hand.\nDeath; Banish this and 1 Dragon in your grave, then summon Dragon Lord Storms from your hand.",
             "normalizedName": "dragon lord wing",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "546",
@@ -1858,7 +1981,8 @@
             "rulesText": "",
             "normalizedName": "drake breezer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "361",
@@ -1873,7 +1997,8 @@
             "rulesText": "Death; Summon a 1/1 Whelpling Token.",
             "normalizedName": "drake egg",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "596",
@@ -1888,7 +2013,8 @@
             "rulesText": "",
             "normalizedName": "dread weezer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "539",
@@ -1903,7 +2029,8 @@
             "rulesText": "",
             "normalizedName": "drill drill",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "548",
@@ -1918,7 +2045,8 @@
             "rulesText": "",
             "normalizedName": "dusk wing",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "362",
@@ -1933,7 +2061,8 @@
             "rulesText": "Whelpling named creatures you control have HASTE.\n",
             "normalizedName": "dwelling whelp mother",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "363",
@@ -1948,7 +2077,8 @@
             "rulesText": "Gain +1 ATK if you control Wind Bug Buddy. If you control Water Bug Buddy, Fire Bug Buddy and Wind Bug Buddy this gains +1/+2 ",
             "normalizedName": "earth bug buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "365",
@@ -1963,7 +2093,8 @@
             "rulesText": "Cost 1 less Mana for each card in your Grave. \nThis card is unaffected by all other card effects. \nBattlecry; Destroy all other cards on the field.\n",
             "normalizedName": "eld saron the void lord",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "101",
@@ -1978,7 +2109,8 @@
             "rulesText": "",
             "normalizedName": "elf exemplar",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "493",
@@ -1993,7 +2125,8 @@
             "rulesText": "",
             "normalizedName": "elf penguin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "152",
@@ -2008,7 +2141,8 @@
             "rulesText": "Haste",
             "normalizedName": "elf warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "463",
@@ -2023,7 +2157,8 @@
             "rulesText": "",
             "normalizedName": "elf deen",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "612",
@@ -2038,7 +2173,8 @@
             "rulesText": "",
             "normalizedName": "elven vanguard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "235",
@@ -2053,7 +2189,8 @@
             "rulesText": "Battlecry; Add 1 Magician Spell from your grave to your hand.",
             "normalizedName": "enchanter magician",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "368",
@@ -2068,7 +2205,8 @@
             "rulesText": "When this creature deals Life damage, summon up to two 1/1 Serpent Tokens.\n",
             "normalizedName": "endless serpent winder",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "153",
@@ -2083,7 +2221,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon; Summon by using Dark Offering.\nBattlecry; Target 1 creature and Petrify it.\nDeath; Destroy the creature that was targeted.",
             "normalizedName": "eye restrict",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "545",
@@ -2098,7 +2237,8 @@
             "rulesText": "",
             "normalizedName": "fairy fox",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "34",
@@ -2113,7 +2253,8 @@
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nBattlecry; Pay Life, this card gains ATK equal to the amount paid. \nOnce during your turn, you can banish 1 of your creatures to have this card gain ATK equal to the banished creature until the end of turn.",
             "normalizedName": "farzel the flame god",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "236",
@@ -2128,7 +2269,8 @@
             "rulesText": "After playing a Spell card from your hand, deal 1 Life damage to the enemy player.",
             "normalizedName": "fiendish magician",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "154",
@@ -2143,7 +2285,8 @@
             "rulesText": "",
             "normalizedName": "fiendish skull",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "371",
@@ -2158,7 +2301,8 @@
             "rulesText": "Gain +1 DEF if you control Earth Bug Buddy. \nIf you control Water Bug Buddy, Earth Bug Buddy and Wind Bug Buddy this gains +2/+1 instead.\n",
             "normalizedName": "fire bug buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "637",
@@ -2173,7 +2317,8 @@
             "rulesText": "",
             "normalizedName": "fire elemental",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "502",
@@ -2188,7 +2333,8 @@
             "rulesText": "",
             "normalizedName": "fire warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "111",
@@ -2203,7 +2349,8 @@
             "rulesText": "This card is always Sealed, cannot be Unsealed. \nEnemy Spell cards in their hand cost 1 more Mana.  \n ",
             "normalizedName": "fire watch tower",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "372",
@@ -2218,7 +2365,8 @@
             "rulesText": "Battlecry; Gain 2 Life. \nSeal; Gain 1 Life.",
             "normalizedName": "first aid buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "508",
@@ -2233,7 +2381,8 @@
             "rulesText": "",
             "normalizedName": "fist flame fighter",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "639",
@@ -2248,7 +2397,8 @@
             "rulesText": "",
             "normalizedName": "flame mace goblin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "570",
@@ -2263,7 +2413,8 @@
             "rulesText": "",
             "normalizedName": "flame o saurus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "504",
@@ -2278,7 +2429,8 @@
             "rulesText": "",
             "normalizedName": "flame tech wolf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "568",
@@ -2293,7 +2445,8 @@
             "rulesText": "",
             "normalizedName": "flame wing thrasher",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "155",
@@ -2308,7 +2461,8 @@
             "rulesText": "Battlecry; Add 1 Fire creature from your deck to your hand.",
             "normalizedName": "flaming dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "576",
@@ -2323,7 +2477,8 @@
             "rulesText": "",
             "normalizedName": "flaming hellhound",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "581",
@@ -2338,7 +2493,8 @@
             "rulesText": "",
             "normalizedName": "flaming imp",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "464",
@@ -2353,7 +2509,8 @@
             "rulesText": "",
             "normalizedName": "flashy flash",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "452",
@@ -2368,7 +2525,8 @@
             "rulesText": "",
             "normalizedName": "floating hand",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "610",
@@ -2383,7 +2541,8 @@
             "rulesText": "",
             "normalizedName": "flower knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "429",
@@ -2398,7 +2557,8 @@
             "rulesText": "Death; Summon 1 Insect from your deck that cost 3 Mana or less.",
             "normalizedName": "flying hopper",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "607",
@@ -2413,7 +2573,8 @@
             "rulesText": "",
             "normalizedName": "flying tortoise",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "551",
@@ -2428,7 +2589,8 @@
             "rulesText": "",
             "normalizedName": "for int shell",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "156",
@@ -2443,7 +2605,8 @@
             "rulesText": "Battlecry; Add the top card of your deck to your mana pool.",
             "normalizedName": "forest sprite",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "157",
@@ -2458,7 +2621,8 @@
             "rulesText": "Death; Add 1 spell from your Deck to your hand that cost 3 or less Mana.",
             "normalizedName": "forest witch",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "490",
@@ -2473,7 +2637,8 @@
             "rulesText": "",
             "normalizedName": "forest wolf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "373",
@@ -2488,7 +2653,8 @@
             "rulesText": "When this card destroys a blocking creature by battle, draw 1 card. \nSeal; Destroy 2 of your mana, double the attack of one Beast creature you control until the end of the turn.\n",
             "normalizedName": "forest wolf leader",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "557",
@@ -2503,7 +2669,8 @@
             "rulesText": "",
             "normalizedName": "frost worm",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "555",
@@ -2518,7 +2685,8 @@
             "rulesText": "",
             "normalizedName": "frosthorn yeti",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "643",
@@ -2533,7 +2701,8 @@
             "rulesText": "",
             "normalizedName": "gal of light",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "543",
@@ -2548,7 +2717,8 @@
             "rulesText": "",
             "normalizedName": "gale wing",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "40",
@@ -2563,7 +2733,8 @@
             "rulesText": "",
             "normalizedName": "goblin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "510",
@@ -2578,7 +2749,8 @@
             "rulesText": "",
             "normalizedName": "goblin brawlers",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "623",
@@ -2593,7 +2765,8 @@
             "rulesText": "",
             "normalizedName": "googoo gi",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "26",
@@ -2608,7 +2781,8 @@
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nAfter this card attacks, banish all creatures in the enemy grave. \nSeal; Banish 3 other creatures you control, destroy all creatures your enemy controls.\n",
             "normalizedName": "gorlock god of darkness",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "567",
@@ -2623,7 +2797,8 @@
             "rulesText": "",
             "normalizedName": "grassfire",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "455",
@@ -2638,7 +2813,8 @@
             "rulesText": "",
             "normalizedName": "grave warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "481",
@@ -2653,7 +2829,8 @@
             "rulesText": "",
             "normalizedName": "gray wing",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "437",
@@ -2668,7 +2845,8 @@
             "rulesText": "Cannot be summoned without listed cards. \n\nSpecialSummon; Summon by using Larvae Cocoon effect.\nDuring the end of your turn, enemy creatures lose -1 ATK.",
             "normalizedName": "great moth",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "104",
@@ -2683,7 +2861,8 @@
             "rulesText": "",
             "normalizedName": "great white",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "587",
@@ -2698,7 +2877,8 @@
             "rulesText": "",
             "normalizedName": "grimfang",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "110",
@@ -2713,7 +2893,8 @@
             "rulesText": "This card is always Sealed, cannot be Unsealed. \nWhen the enemy summons a creature from hand to their field, summon a 1/1 Tower Guard Token with Haste.",
             "normalizedName": "grunt guard tower",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "284",
@@ -2728,7 +2909,8 @@
             "rulesText": "Battlecry; Add 1 Maze of the Guardian card from your deck to your hand.\nWhile Maze of the Guardian is on the field, this card can't be attacked by enemy creatures.",
             "normalizedName": "guardian fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "286",
@@ -2743,7 +2925,8 @@
             "rulesText": "While Maze of the Guardian is on the field, this card can't be attacked by enemy creatures.\nQuick; When an enemy creature is summoned, have both this card and the summoned creature battle.",
             "normalizedName": "guardian striker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "288",
@@ -2758,7 +2941,8 @@
             "rulesText": "Battlecry; Put a Thunder Guardian, Wind Guardian, or Water Guardian from your deck into your spell zone as a field spell..",
             "normalizedName": "guardian tank",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "292",
@@ -2773,7 +2957,8 @@
             "rulesText": "While Maze of the Guardian is on the field, this card can't be attacked by enemy creatures.\nSeal; Deal 3 Life damage to the enemy.",
             "normalizedName": "guardian worm",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "482",
@@ -2788,7 +2973,8 @@
             "rulesText": "",
             "normalizedName": "gust dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "376",
@@ -2803,7 +2989,8 @@
             "rulesText": "While this card is on the field, Creatures attacked by Demons have their effects negated. \nThis card can't be summoned from the Grave.\n",
             "normalizedName": "ha king kaiser",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "160",
@@ -2818,7 +3005,8 @@
             "rulesText": "Death; Add 1 creature from your deck to your hand that cost 2 or less Mana.",
             "normalizedName": "hairy fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "483",
@@ -2833,7 +3021,8 @@
             "rulesText": "",
             "normalizedName": "harpie girl",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "161",
@@ -2848,7 +3037,8 @@
             "rulesText": "This effect is unaffected by all other card effects.\n\nBattlecry; If you have 4 different \"The Sealed One\" cards in your hand, banish this card and the 4 other cards to summon \"The Legendary Baal\".\n",
             "normalizedName": "head of the sealed one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "535",
@@ -2863,7 +3053,8 @@
             "rulesText": "",
             "normalizedName": "heavy knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "45",
@@ -2878,7 +3069,8 @@
             "rulesText": "Battlecry; You can turn this card into Equipment and equip it to a creature you control.\n\nSeal; Play 1 Equipment Spell from your deck to a creature you control only if this is attached to a creature. You must pay its Mana cost.",
             "normalizedName": "hidden worm bag",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "130",
@@ -2893,7 +3085,8 @@
             "rulesText": "",
             "normalizedName": "horned fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "131",
@@ -2908,7 +3101,8 @@
             "rulesText": "SpecialSummon; Summon by sending 1 Horned Fiend with Metal Armor equipped to the Grave.\nCannot be Summoned without listed cards.\n\nHaste\nSeal; Add 1 spell card from your deck to your hand.",
             "normalizedName": "horned metal fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "638",
@@ -2923,7 +3117,8 @@
             "rulesText": "",
             "normalizedName": "hot tusk road boar",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "538",
@@ -2938,7 +3133,8 @@
             "rulesText": "",
             "normalizedName": "huge hog",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "99",
@@ -2953,7 +3149,8 @@
             "rulesText": "",
             "normalizedName": "hungry lizard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "495",
@@ -2968,7 +3165,8 @@
             "rulesText": "",
             "normalizedName": "ice mermaid",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "43",
@@ -2983,7 +3181,8 @@
             "rulesText": "",
             "normalizedName": "imp",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "511",
@@ -2998,7 +3197,8 @@
             "rulesText": "",
             "normalizedName": "infernal zombie",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "530",
@@ -3013,7 +3213,8 @@
             "rulesText": "",
             "normalizedName": "j sky",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "23",
@@ -3028,7 +3229,8 @@
             "rulesText": "After you draw a card seal this card,Roll\n\n1-5= Destroy all Spells with mana cost equal to the number rolled.\n6= Destroy all Spells with mana cost of 6 or higher.",
             "normalizedName": "jamming virus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "631",
@@ -3043,7 +3245,8 @@
             "rulesText": "",
             "normalizedName": "jax rising",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "496",
@@ -3058,7 +3261,8 @@
             "rulesText": "",
             "normalizedName": "jellyfish",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "439",
@@ -3073,7 +3277,8 @@
             "rulesText": "",
             "normalizedName": "killer sting",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "379",
@@ -3088,7 +3293,8 @@
             "rulesText": "When this card destroys a creature by battle you can Reveal your top 5 cards, if there are any are Beast with less ATK than this card, summon them Sealed and any other cards are place at the bottom of your deck.\n",
             "normalizedName": "kin king tyranno",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "531",
@@ -3103,7 +3309,8 @@
             "rulesText": "",
             "normalizedName": "km thunder",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "599",
@@ -3118,7 +3325,8 @@
             "rulesText": "",
             "normalizedName": "knuckle terror",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "432",
@@ -3133,7 +3341,8 @@
             "rulesText": "Battlecry: You can destroy this card and summon Larvae Cocoon from your hand or deck.",
             "normalizedName": "larvae bug",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "433",
@@ -3148,7 +3357,8 @@
             "rulesText": "This card is always Sealed, cannot be Unsealed.\n\nAt the start of your turn, this card gains 1 Insect Token. \nOnce this card has 3 Insect Tokens, destroy it and summon Great Moth from your hand or deck.",
             "normalizedName": "larvae cocoon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "32",
@@ -3163,7 +3373,8 @@
             "rulesText": "Hand; Pay 2 Mana to activate from hand.\nSend 1 creature on the enemy field to the grave, then summon this to the enemy field.\nDeal 2 Life damage to the controller of this card when they draw a card.",
             "normalizedName": "lava golem",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "594",
@@ -3178,7 +3389,8 @@
             "rulesText": "",
             "normalizedName": "leather elf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "164",
@@ -3193,7 +3405,8 @@
             "rulesText": "",
             "normalizedName": "left arm of the sealed one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "165",
@@ -3208,7 +3421,8 @@
             "rulesText": "",
             "normalizedName": "left leg of the sealed one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "219",
@@ -3223,7 +3437,8 @@
             "rulesText": "SpecialSummon; Summon by returning 12 Lightborn creatures from your grave to your deck.\n\nAt the end of your turn, Mill 5 cards.\nSeal; Pay 10 Life to Destroy all other cards.",
             "normalizedName": "light dragon of divine",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "462",
@@ -3238,7 +3453,8 @@
             "rulesText": "",
             "normalizedName": "light witch",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "628",
@@ -3253,7 +3469,8 @@
             "rulesText": "",
             "normalizedName": "light wyvern",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "626",
@@ -3268,7 +3485,8 @@
             "rulesText": "",
             "normalizedName": "light ray",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "630",
@@ -3283,7 +3501,8 @@
             "rulesText": "",
             "normalizedName": "light sky drake",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "220",
@@ -3298,7 +3517,8 @@
             "rulesText": "Battlecry; Destroy 1 card, then Mill 3 cards.",
             "normalizedName": "lightborn angel",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "221",
@@ -3313,7 +3533,8 @@
             "rulesText": "Battlecry; Destroy 1 spell, then add 1 Lightborn spell from your grave to your hand.\nAt the end of your turn, Mill 3 cards.",
             "normalizedName": "lightborn dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "222",
@@ -3328,7 +3549,8 @@
             "rulesText": "Seal; Mill 2, then Unseal a different creature you control.",
             "normalizedName": "lightborn faith",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "223",
@@ -3343,7 +3565,8 @@
             "rulesText": "Death; Destroy 1 creature, then Mill 3 cards.",
             "normalizedName": "lightborn fang",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "224",
@@ -3358,7 +3581,8 @@
             "rulesText": "At the end of your turn, Mill 2 cards and gain 3 Life.",
             "normalizedName": "lightborn maiden",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "225",
@@ -3373,7 +3597,8 @@
             "rulesText": "Seal; Mill 1 card, then summon a 3 Mana cost or lower Lightborn creature from your grave.\nAt the end of your turn, Mill 1 card.",
             "normalizedName": "lightborn priestess",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "231",
@@ -3388,7 +3613,8 @@
             "rulesText": "Battlecry; Add 1 Lightborn from your deck to your hand.\nDeath; Mill 2 cards.",
             "normalizedName": "lightborn tamer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "232",
@@ -3403,7 +3629,8 @@
             "rulesText": "At the end of your turn, Mill 2 cards.",
             "normalizedName": "lightborn warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "233",
@@ -3418,7 +3645,8 @@
             "rulesText": "If milled from your deck to your grave, summon this card instead.",
             "normalizedName": "lightborn wolf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "625",
@@ -3433,7 +3661,8 @@
             "rulesText": "",
             "normalizedName": "lighthorns",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "544",
@@ -3448,7 +3677,8 @@
             "rulesText": "",
             "normalizedName": "lightning blades",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "498",
@@ -3463,7 +3693,8 @@
             "rulesText": "",
             "normalizedName": "liquid beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "560",
@@ -3478,7 +3709,8 @@
             "rulesText": "",
             "normalizedName": "liquid hunter",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "487",
@@ -3493,7 +3725,8 @@
             "rulesText": "",
             "normalizedName": "little wind guard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "382",
@@ -3508,7 +3741,8 @@
             "rulesText": "Seal; Reveal 3 cards from the top of your deck, pick one to add to your hand and send the others to the Grave. \nNext turn skip your Draw Phase.\n",
             "normalizedName": "living dead",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "214",
@@ -3523,7 +3757,8 @@
             "rulesText": "Dragons in your hand cost 1 less Mana to summon.",
             "normalizedName": "lord of dragons",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "588",
@@ -3538,7 +3773,8 @@
             "rulesText": "",
             "normalizedName": "luster werewolf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "80",
@@ -3553,7 +3789,8 @@
             "rulesText": "",
             "normalizedName": "machine falcon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "79",
@@ -3568,7 +3805,8 @@
             "rulesText": "This card has +1 ATK for each other Machine on the field.\n",
             "normalizedName": "machine lord",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "33",
@@ -3583,7 +3821,8 @@
             "rulesText": "Once per turn, you can pay 10 Life to give this card +9 ATK until the end of turn.\n",
             "normalizedName": "mad bomber",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "24",
@@ -3598,7 +3837,8 @@
             "rulesText": "Death; Summon 1 Magical Forest Plants from your deck.",
             "normalizedName": "magical forest plants",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "239",
@@ -3613,7 +3853,8 @@
             "rulesText": "Battlecry; Add 1 Magician spell from your deck to your hand.",
             "normalizedName": "magician apprentice",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "240",
@@ -3628,7 +3869,8 @@
             "rulesText": "Seal; Remove 3 Spell Tokens from this card, add a Magician spell from your Grave to your hand.",
             "normalizedName": "magician cat",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "243",
@@ -3643,7 +3885,8 @@
             "rulesText": "Cannot be summoned, \nSpecialSummon; Banish 3 other Magicians and 5 Spell Tokens you control to summon.\nBattlecry; Destroy up to 3 spell cards on the field.\nSeal; Add a spell card from your Grave back to your hand.",
             "normalizedName": "magician lord of storm",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "245",
@@ -3658,7 +3901,8 @@
             "rulesText": "Battlecry; Spend all your remaining Mana, then Mill 5 cards, activate any non-field spell cards milled by this effect (reverse order)",
             "normalizedName": "magician of chaos",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "246",
@@ -3673,7 +3917,8 @@
             "rulesText": "When this card destroys a creature by battle, banish that creature.\nSeal; Remove 4 Spell Tokens you control, then add a spell card from your Grave to your hand.",
             "normalizedName": "magician of darkness",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "247",
@@ -3688,7 +3933,8 @@
             "rulesText": "Battlecry; Summon a Level 3 or lower creature from your deck with a Seal effect.\nSeal; Remove 3 Spell Tokens, then Seal all Unsealed creatures you control, if those creatures have Seal effects, trigger them (left to right)",
             "normalizedName": "magician of faith",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "248",
@@ -3703,7 +3949,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon; You can summon from your hand after you resolved the effect of Time Wizard while controlling a Magician creature, then banish 1 Magician creature you control.\nBattlecry; Add a spell from your grave to your hand.\nSeal; Add a spell card from your deck to your hand.",
             "normalizedName": "magician sage",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "579",
@@ -3718,7 +3965,8 @@
             "rulesText": "",
             "normalizedName": "magma rock beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "465",
@@ -3733,7 +3981,8 @@
             "rulesText": "",
             "normalizedName": "maiden of faith",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "97",
@@ -3748,7 +3997,8 @@
             "rulesText": "",
             "normalizedName": "mantis",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "293",
@@ -3763,7 +4013,8 @@
             "rulesText": "SpecialSummon; Summon by sending each Thunder Guardian, Wind Guardian and Water Guardian from your field to your grave.\nCannot be Summoned without listed cards.\nSeal; Destroy 1 creature or spell.\nDeath; Summon 1 Twin Guardian from your deck or hand ignoring its summoning cost.",
             "normalizedName": "maze guardian",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "132",
@@ -3778,7 +4029,8 @@
             "rulesText": "",
             "normalizedName": "mech defender",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "01",
@@ -3793,7 +4045,8 @@
             "rulesText": "Your other Machine creatures have Haste",
             "normalizedName": "mecha dj bot",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "383",
@@ -3808,7 +4061,8 @@
             "rulesText": "Gain +1 ATK for each other Buddy you control.\n",
             "normalizedName": "mecha fish buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "81",
@@ -3823,7 +4077,8 @@
             "rulesText": "",
             "normalizedName": "mecha knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "615",
@@ -3838,7 +4093,8 @@
             "rulesText": "",
             "normalizedName": "mecha sea dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "77",
@@ -3853,7 +4109,8 @@
             "rulesText": "",
             "normalizedName": "mecha soldier",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "492",
@@ -3868,7 +4125,8 @@
             "rulesText": "",
             "normalizedName": "mer maiden",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "499",
@@ -3883,7 +4141,8 @@
             "rulesText": "",
             "normalizedName": "metal fish",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "134",
@@ -3898,7 +4157,8 @@
             "rulesText": "Hand; If you are attacked while you control no creatures, pay 1 Mana and you can summon this card from your hand, negate the attack.",
             "normalizedName": "metal scarecrow",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "42",
@@ -3913,7 +4173,8 @@
             "rulesText": "",
             "normalizedName": "micro bot",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "270",
@@ -3928,7 +4189,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 2 Exp Tokens, return this card to your deck, then summon from your deck or hand, Molten Dragon LVL2.",
             "normalizedName": "molten dragon lvl1",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "271",
@@ -3943,7 +4205,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 3 Exp Tokens, return this card to your deck, then summon from your deck or hand, Molten Dragon LVL3.",
             "normalizedName": "molten dragon lvl2",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "272",
@@ -3958,7 +4221,8 @@
             "rulesText": "If this card was summoned by Molten Dragon Lvl2 effect, gain Haste.\nWhen this attacks, Mill 1 card from the enemy deck.",
             "normalizedName": "molten dragon lvl3",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "566",
@@ -3973,7 +4237,8 @@
             "rulesText": "",
             "normalizedName": "molten golem",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "505",
@@ -3988,7 +4253,8 @@
             "rulesText": "",
             "normalizedName": "molten rock",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "215",
@@ -4003,7 +4269,8 @@
             "rulesText": "At the end of your turn, Unseal this card.",
             "normalizedName": "moon dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "633",
@@ -4018,7 +4285,8 @@
             "rulesText": "",
             "normalizedName": "moonlight bell",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "523",
@@ -4033,7 +4301,8 @@
             "rulesText": "",
             "normalizedName": "mystic elf",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "522",
@@ -4048,7 +4317,8 @@
             "rulesText": "",
             "normalizedName": "mystic silver",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "598",
@@ -4063,7 +4333,8 @@
             "rulesText": "",
             "normalizedName": "necro dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "168",
@@ -4078,7 +4349,8 @@
             "rulesText": "Hand; pay 4 Mana to activate from your hand.\nBanish 1 creature the enemy controls, then summon this creature to the enemy field. \nThis creatures ATK and DEF becomes the ATK and DEF of the Banished creature.",
             "normalizedName": "nib the primal lord",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "512",
@@ -4093,7 +4365,8 @@
             "rulesText": "",
             "normalizedName": "nightboar",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "434",
@@ -4108,7 +4381,8 @@
             "rulesText": "Pay 3 Mana to activate from hand.\n\nHand; If you are attacked, you can attach this card to the attacker.\nDuring the end of your turn gain the equipped creatures DEF as Life.",
             "normalizedName": "paracide",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "438",
@@ -4123,7 +4397,8 @@
             "rulesText": "Death: Become a Field card when in the Battle zone. \nWhile this card is in the Spell Zone all enemy creatures are changed to insects.",
             "normalizedName": "parasite",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "629",
@@ -4138,7 +4413,8 @@
             "rulesText": "",
             "normalizedName": "peaceful monk",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "453",
@@ -4153,7 +4429,8 @@
             "rulesText": "",
             "normalizedName": "pendulum fiend",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "552",
@@ -4168,7 +4445,8 @@
             "rulesText": "",
             "normalizedName": "penguin trooper",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "96",
@@ -4183,7 +4461,8 @@
             "rulesText": "",
             "normalizedName": "petit fairy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "614",
@@ -4198,7 +4477,8 @@
             "rulesText": "",
             "normalizedName": "phantom fish",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "435",
@@ -4213,7 +4493,8 @@
             "rulesText": "This creature cannot be blocked.",
             "normalizedName": "pincher",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "609",
@@ -4228,7 +4509,8 @@
             "rulesText": "",
             "normalizedName": "pink tomato",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "387",
@@ -4243,7 +4525,8 @@
             "rulesText": "This card gains +1 ATK for each other Piranha you control.",
             "normalizedName": "piranha",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "642",
@@ -4258,7 +4541,8 @@
             "rulesText": "",
             "normalizedName": "primal trample",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "03",
@@ -4273,7 +4557,8 @@
             "rulesText": "Seal; Destroy 1 of your mana, then summon 2  2/2 Psycho Warrior Tokens, Sealed.",
             "normalizedName": "psycho commander",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "04",
@@ -4288,7 +4573,8 @@
             "rulesText": "Quick; When a Psycho Warrior is summoned destroy 1 Spell card on the field. ",
             "normalizedName": "psycho devestator",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "05",
@@ -4303,7 +4589,8 @@
             "rulesText": "If a Psycho Warrior is destroyed in battle, you can destroy 1  of your mana and discard 1 card to summon 1 Psycho Warrior from your deck. ",
             "normalizedName": "psycho high command",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "06",
@@ -4318,7 +4605,8 @@
             "rulesText": "Battlecry; If you control a Psycho Warrior Knight, summon 1 different Psycho Warrior from your deck.",
             "normalizedName": "psycho honour guard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "07",
@@ -4333,7 +4621,8 @@
             "rulesText": "",
             "normalizedName": "psycho warrior guard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "08",
@@ -4348,7 +4637,8 @@
             "rulesText": "Death; add this card to your mana pool.",
             "normalizedName": "psycho warrior knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "09",
@@ -4363,7 +4653,8 @@
             "rulesText": "Quick; When another Psycho Warrior is summoned, add 1 card from your deck to your mana pool.",
             "normalizedName": "psycho warrior scout",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "618",
@@ -4378,7 +4669,8 @@
             "rulesText": "",
             "normalizedName": "pudding buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "553",
@@ -4393,7 +4685,8 @@
             "rulesText": "",
             "normalizedName": "puddlefin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "389",
@@ -4408,7 +4701,8 @@
             "rulesText": "Battlecry; Add 1 Haunted Graveyard from your Deck to your hand. \nSeal; Add 1 Zombie Creature from your Deck to your hand.\n",
             "normalizedName": "pumpkin king",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "390",
@@ -4423,7 +4717,8 @@
             "rulesText": "Whenever something gains an Exp Token, this card also gains 1 Exp Token. \nThis card gains +1 ATK for each Token it has.\n",
             "normalizedName": "questing villager",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "527",
@@ -4438,7 +4733,8 @@
             "rulesText": "",
             "normalizedName": "radiance elemental",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "12",
@@ -4453,7 +4749,8 @@
             "rulesText": "",
             "normalizedName": "raging battle cow",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "391",
@@ -4468,7 +4765,8 @@
             "rulesText": "Gain +1 ATk for each of your Banished Cards.\n",
             "normalizedName": "raging stone beetle",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "392",
@@ -4483,7 +4781,8 @@
             "rulesText": "Serpent creatures can't be blocked by creatures that aren't Serpent type.\n",
             "normalizedName": "ray of dark deeps",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "603",
@@ -4498,7 +4797,8 @@
             "rulesText": "",
             "normalizedName": "razer horn",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "571",
@@ -4513,7 +4813,8 @@
             "rulesText": "",
             "normalizedName": "redeye",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "561",
@@ -4528,7 +4829,8 @@
             "rulesText": "",
             "normalizedName": "reef shark",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "217",
@@ -4543,7 +4845,8 @@
             "rulesText": "",
             "normalizedName": "resting dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "172",
@@ -4558,7 +4861,8 @@
             "rulesText": "",
             "normalizedName": "right arm of the sealed one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "173",
@@ -4573,7 +4877,8 @@
             "rulesText": "",
             "normalizedName": "right leg of the sealed one",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "621",
@@ -4588,7 +4893,8 @@
             "rulesText": "",
             "normalizedName": "riphide marauder",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "524",
@@ -4603,7 +4909,8 @@
             "rulesText": "",
             "normalizedName": "roaring light",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "636",
@@ -4618,7 +4925,8 @@
             "rulesText": "",
             "normalizedName": "rockjaw the unleashed beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "605",
@@ -4633,7 +4941,8 @@
             "rulesText": "",
             "normalizedName": "roo roo",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "613",
@@ -4648,7 +4957,8 @@
             "rulesText": "",
             "normalizedName": "root pikeman",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "550",
@@ -4663,7 +4973,8 @@
             "rulesText": "",
             "normalizedName": "sap the sapling",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "562",
@@ -4678,7 +4989,8 @@
             "rulesText": "",
             "normalizedName": "scale marksman",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "500",
@@ -4693,7 +5005,8 @@
             "rulesText": "",
             "normalizedName": "sea dolphin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "491",
@@ -4708,7 +5021,8 @@
             "rulesText": "",
             "normalizedName": "sea serpent dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "494",
@@ -4723,7 +5037,8 @@
             "rulesText": "",
             "normalizedName": "sea slime",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "586",
@@ -4738,7 +5053,8 @@
             "rulesText": "",
             "normalizedName": "shelly",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "475",
@@ -4753,7 +5069,8 @@
             "rulesText": "",
             "normalizedName": "shield knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "174",
@@ -4768,7 +5085,8 @@
             "rulesText": "",
             "normalizedName": "shield warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "467",
@@ -4783,7 +5101,8 @@
             "rulesText": "",
             "normalizedName": "shining fairy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "102",
@@ -4798,7 +5117,8 @@
             "rulesText": "",
             "normalizedName": "ship sail sailors",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "37",
@@ -4813,7 +5133,8 @@
             "rulesText": "After you draw a card seal this card, Roll\n\n1-5= Destroy all creatures with mana cost equal to the number.\n6= Destroy all creatures with mana cost 6 or higher.",
             "normalizedName": "shocking virus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "100",
@@ -4828,7 +5149,8 @@
             "rulesText": "",
             "normalizedName": "shocko",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "632",
@@ -4843,7 +5165,8 @@
             "rulesText": "",
             "normalizedName": "silver line golem",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "39",
@@ -4858,7 +5181,8 @@
             "rulesText": "",
             "normalizedName": "skeleton",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "395",
@@ -4873,7 +5197,8 @@
             "rulesText": "Seal; Return a different creature you control to your Deck, choose and summon a 1 Mana cost creature from your hand and draw 1 card.\n",
             "normalizedName": "skipper buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "608",
@@ -4888,7 +5213,8 @@
             "rulesText": "",
             "normalizedName": "sky drone",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "529",
@@ -4903,7 +5229,8 @@
             "rulesText": "",
             "normalizedName": "sky tiger",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "573",
@@ -4918,7 +5245,8 @@
             "rulesText": "",
             "normalizedName": "slingshock",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "135",
@@ -4933,7 +5261,8 @@
             "rulesText": "Seal; Roll,\n\n1= Destroy this card. \n2-5= Give all Machine creatures you control +2 ATK until the end of this turn. \n6= Add 1 Machine to your hand from your Deck.",
             "normalizedName": "slot machine",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "396",
@@ -4948,7 +5277,8 @@
             "rulesText": "Battlecry; Target a Creature, it is Petrified while this card is on the field.",
             "normalizedName": "snake hair zombie",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "556",
@@ -4963,7 +5293,8 @@
             "rulesText": "",
             "normalizedName": "snapping turtle",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "644",
@@ -4978,7 +5309,8 @@
             "rulesText": "",
             "normalizedName": "snow paws",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "572",
@@ -4993,7 +5325,8 @@
             "rulesText": "",
             "normalizedName": "solar flame",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "627",
@@ -5008,7 +5341,8 @@
             "rulesText": "",
             "normalizedName": "solar prism",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "35",
@@ -5023,7 +5357,8 @@
             "rulesText": "While this card is on your field, all your spells cost 1 less Mana.\nWhenever you play a spell, take 1 Life damage.\n",
             "normalizedName": "soul drinker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "398",
@@ -5038,7 +5373,8 @@
             "rulesText": "When a creature is destroyed, the controller of that creature takes 1 Life damage.\n",
             "normalizedName": "soul warden",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "106",
@@ -5053,7 +5389,8 @@
             "rulesText": "",
             "normalizedName": "sparkling",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "489",
@@ -5068,7 +5405,8 @@
             "rulesText": "",
             "normalizedName": "spear dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "593",
@@ -5083,7 +5421,8 @@
             "rulesText": "",
             "normalizedName": "spectral knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "399",
@@ -5098,7 +5437,8 @@
             "rulesText": "Give your other creatures with Buddy in the name HASTE.\n",
             "normalizedName": "speedway buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "466",
@@ -5113,7 +5453,8 @@
             "rulesText": "",
             "normalizedName": "spirit ball",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "457",
@@ -5128,7 +5469,8 @@
             "rulesText": "",
             "normalizedName": "spirit feeder",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "274",
@@ -5143,7 +5485,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 1 Exp Token, return this card to your deck, then summon from your deck or hand, Spirit Magician LVL2.",
             "normalizedName": "spirit magician lvl1",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "275",
@@ -5158,7 +5501,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 2 Exp Tokens, return this card to your deck, then summon from your deck or hand, Spirit Magician LVL3.\nBattlecry; Draw 1 card.",
             "normalizedName": "spirit magician lvl2",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "276",
@@ -5173,7 +5517,8 @@
             "rulesText": "If this card was summon by Spirit magician LVL2 effect, draw 3 cards.\nWhen a creature on the field is destroyed, place it on the bottom of the owners deck instead.",
             "normalizedName": "spirit magician lvl3",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "179",
@@ -5188,7 +5533,8 @@
             "rulesText": "Death; Put this card into your Mana pool.",
             "normalizedName": "spore",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "78",
@@ -5203,7 +5549,8 @@
             "rulesText": "Machine creatures you summon cost 1 less Mana.",
             "normalizedName": "spring o tron",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "624",
@@ -5218,7 +5565,8 @@
             "rulesText": "",
             "normalizedName": "staggin the bright",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "277",
@@ -5233,7 +5581,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 1 Exp Token return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL2.",
             "normalizedName": "steel dragon king lvl1",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "278",
@@ -5248,7 +5597,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 2 Exp Tokens return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL3.\nBattlecry; Unseal 1 creature you control.",
             "normalizedName": "steel dragon king lvl2",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "279",
@@ -5263,7 +5613,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 3 Exp Tokens return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL4.\nSeal; Return 1 enemy creature to their hand.",
             "normalizedName": "steel dragon king lvl3",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "280",
@@ -5278,7 +5629,8 @@
             "rulesText": "After this card battles, Gain 1 Exp Token.\nOnce this card has 3 Exp Tokens return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL5.\nBattlecry; Destroy 1 card on the field.",
             "normalizedName": "steel dragon king lvl4",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "281",
@@ -5293,7 +5645,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon; Summon by using the effect of Steel Dragon King LVL4.\nAfter this card battles, Gain 1 Exp Token.\nOnce this card has 4 Exp Tokens, return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL6.\nBattlecry; Deal 5 Life Damage to the enemy.",
             "normalizedName": "steel dragon king lvl5",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "282",
@@ -5308,7 +5661,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon; Summon by using the effect of Steel Dragon King LVL5.\nAfter this card battles, Gain 1 Exp Token.\nOnce this card has 5 Exp Tokens, return this card to your deck, then summon from your deck or hand, Steel Dragon King LVL7.\nBattlecry; Destroy 2 cards on the field, deal 3 Life damage to the owners of those cards.",
             "normalizedName": "steel dragon king lvl6",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "283",
@@ -5323,7 +5677,8 @@
             "rulesText": "Cannot be Summoned without listed cards.\n\nSpecialSummon; Summon by using the effect of Steel Dragon King LVL6.\nBattlecry; Destroy up to 3 cards on the field.\nThis card can't be destroyed by other effects.\nAfter this card destroys 1 creature by battle, deal that creatures DEF as Life damage to the enemy.",
             "normalizedName": "steel dragon king lvl7",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "471",
@@ -5338,7 +5693,8 @@
             "rulesText": "",
             "normalizedName": "stone dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "591",
@@ -5353,7 +5709,8 @@
             "rulesText": "",
             "normalizedName": "stone soldier",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "57",
@@ -5368,7 +5725,8 @@
             "rulesText": "",
             "normalizedName": "stone wall giant",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "577",
@@ -5383,7 +5741,8 @@
             "rulesText": "",
             "normalizedName": "stone saurus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "583",
@@ -5398,7 +5757,8 @@
             "rulesText": "",
             "normalizedName": "stonerumbler",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "575",
@@ -5413,7 +5773,8 @@
             "rulesText": "",
             "normalizedName": "sulfur elemental",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "526",
@@ -5428,7 +5789,8 @@
             "rulesText": "",
             "normalizedName": "sun warden",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "616",
@@ -5443,7 +5805,8 @@
             "rulesText": "",
             "normalizedName": "swamp bite",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "541",
@@ -5458,7 +5821,8 @@
             "rulesText": "",
             "normalizedName": "swamp moss",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "409",
@@ -5473,7 +5837,8 @@
             "rulesText": "Death; Give your Whelpling named creatures +1/+1 for the rest of the game.\n",
             "normalizedName": "swarming whelpling",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "578",
@@ -5488,7 +5853,8 @@
             "rulesText": "",
             "normalizedName": "sweeping fire",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "253",
@@ -5503,7 +5869,8 @@
             "rulesText": "Seal; Discard a spell card to draw a card.",
             "normalizedName": "sweet magician girl",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "473",
@@ -5518,7 +5885,8 @@
             "rulesText": "",
             "normalizedName": "sword knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "44",
@@ -5533,7 +5901,8 @@
             "rulesText": "Once during your turn, you can return 1 Equipment spell on this card back to your deck, add 1 new Equipment spell from your deck to your hand.",
             "normalizedName": "swordmaster assassin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "533",
@@ -5548,7 +5917,8 @@
             "rulesText": "",
             "normalizedName": "tank crawler",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "547",
@@ -5563,7 +5933,8 @@
             "rulesText": "",
             "normalizedName": "terror giant",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "595",
@@ -5578,7 +5949,8 @@
             "rulesText": "",
             "normalizedName": "the dark sorcerer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "602",
@@ -5593,7 +5965,8 @@
             "rulesText": "",
             "normalizedName": "the mutant",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "98",
@@ -5608,7 +5981,8 @@
             "rulesText": "",
             "normalizedName": "thorny plant",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "289",
@@ -5623,7 +5997,8 @@
             "rulesText": "Quick; When a creature the enemy controls attacks, negate that attack.",
             "normalizedName": "thunder guardian",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "469",
@@ -5638,7 +6013,8 @@
             "rulesText": "",
             "normalizedName": "thunder ship",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "218",
@@ -5653,7 +6029,8 @@
             "rulesText": "Battlecry; Add 1 Thunder Strike Dragon from your deck to your hand.",
             "normalizedName": "thunder strike dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "318",
@@ -5668,7 +6045,8 @@
             "rulesText": "This creature cannot be blocked.",
             "normalizedName": "tide assassin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "319",
@@ -5683,7 +6061,8 @@
             "rulesText": "Battlecry; Destroy 1 spell.",
             "normalizedName": "tide blaster",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "320",
@@ -5698,7 +6077,8 @@
             "rulesText": "Battlecry; Target up to 2 other creatures and return them to their owners hands.",
             "normalizedName": "tide bouncer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "323",
@@ -5713,7 +6093,8 @@
             "rulesText": "Battlecry; Seal 1 card.",
             "normalizedName": "tide focus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "322",
@@ -5728,7 +6109,8 @@
             "rulesText": "Battlecry; Draw 1 card.",
             "normalizedName": "tide hocus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "324",
@@ -5743,7 +6125,8 @@
             "rulesText": "Death; Return this card to your hand instead.",
             "normalizedName": "tide knight",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "325",
@@ -5758,7 +6141,8 @@
             "rulesText": "",
             "normalizedName": "tide lancer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "326",
@@ -5773,7 +6157,8 @@
             "rulesText": "Battlecry; Return 1 card from the enemy Mana Pool back to their hand.",
             "normalizedName": "tide pocus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "328",
@@ -5788,7 +6173,8 @@
             "rulesText": "",
             "normalizedName": "tide rider",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "329",
@@ -5803,7 +6189,8 @@
             "rulesText": "Battlecry; Both players return 2 cards from their Mana Pool back to their hand.\n",
             "normalizedName": "tide sea strider",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "330",
@@ -5818,7 +6205,8 @@
             "rulesText": "Battlecry; Target 1 creature, negate its effects until the end of turn.\n",
             "normalizedName": "tide silent",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "331",
@@ -5833,7 +6221,8 @@
             "rulesText": "This card can only attack creatures.",
             "normalizedName": "tide slasher",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "332",
@@ -5848,7 +6237,8 @@
             "rulesText": "Seal; Return 1 Mana card from your Mana pool to your hand.",
             "normalizedName": "tide sorcerer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "333",
@@ -5863,7 +6253,8 @@
             "rulesText": "Battlecry; Reveal the top 3 cards of your deck, add any Aqua creatures to your hand, then put the other cards at the bottom of your deck.",
             "normalizedName": "tide supporter",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "334",
@@ -5878,7 +6269,8 @@
             "rulesText": "",
             "normalizedName": "tide warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "10",
@@ -5893,7 +6285,8 @@
             "rulesText": "Seal; Roll. \n\n1 = Destroy all your creatures. \n2-5 = Draw a card. \n6 = Destroy all enemy creatures.",
             "normalizedName": "time wizard",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "601",
@@ -5908,7 +6301,8 @@
             "rulesText": "",
             "normalizedName": "tomb vermin",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "459",
@@ -5923,7 +6317,8 @@
             "rulesText": "",
             "normalizedName": "tool bot",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "257",
@@ -5938,7 +6333,8 @@
             "rulesText": "Seal; Add 2 Toxic Tokens to 1 creature on the field.",
             "normalizedName": "toxic boa",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "258",
@@ -5953,7 +6349,8 @@
             "rulesText": "Quick; Negate the effect of creatures with at least 2 Toxic Tokens until the end of turn.",
             "normalizedName": "toxic cobra",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "259",
@@ -5968,7 +6365,8 @@
             "rulesText": "Seal; Seal 1 creature with Toxic Tokens.",
             "normalizedName": "toxic constrictors",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "260",
@@ -5983,7 +6381,8 @@
             "rulesText": "Battlecry; Add a 3 Mana or lower Toxic card from your deck to your hand.",
             "normalizedName": "toxic cultist",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "261",
@@ -5998,7 +6397,8 @@
             "rulesText": "Death; Roll\n\n1= Give 1 creature a Toxic Token.\n\n2-5= Give 1 creature 2 Toxic Tokens.\n\n6= Add 1 Reptile creature from your deck to your hand.",
             "normalizedName": "toxic hatchling",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "262",
@@ -6013,7 +6413,8 @@
             "rulesText": "Death; Add 1 Toxic creature from your deck to your hand.",
             "normalizedName": "toxic mamba",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "263",
@@ -6028,7 +6429,8 @@
             "rulesText": "Battlecry; Gain +1 ATK and +1 DEF for each different Toxic creature in your grave.\nDeath; Summon 2 different Toxic creatures from your grave that cost 4 Mana or less.",
             "normalizedName": "toxic serpent",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "265",
@@ -6043,7 +6445,8 @@
             "rulesText": "Seal; Add 1 Toxic Token to a creature.",
             "normalizedName": "toxic snake",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "266",
@@ -6058,7 +6461,8 @@
             "rulesText": "Battlecry; Add 1 Toxic Token to a creature on the field.",
             "normalizedName": "toxic striker",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "470",
@@ -6073,7 +6477,8 @@
             "rulesText": "",
             "normalizedName": "traveler of light",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "41",
@@ -6088,7 +6493,8 @@
             "rulesText": "",
             "normalizedName": "treant",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "108",
@@ -6103,7 +6509,8 @@
             "rulesText": "",
             "normalizedName": "tri saurus",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "75",
@@ -6118,7 +6525,8 @@
             "rulesText": "Seal; Target 1 creature on the field then Roll, \n\n1= Nothing. \n2-4= Deal 3 damage to that target. \n5= Deal 3 damage to all enemy creatures.\n6= Destroy that target.",
             "normalizedName": "triple barrel dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "414",
@@ -6133,7 +6541,8 @@
             "rulesText": "Gains +1/+1 for each other Buddy you control. \nSeal; Return 1 Buddy to your deck, destroy 1 creature on the field.\n",
             "normalizedName": "tron crawler buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 10
         },
         {
             "cardId": "558",
@@ -6148,7 +6557,8 @@
             "rulesText": "",
             "normalizedName": "turtally rad",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "501",
@@ -6163,7 +6573,8 @@
             "rulesText": "",
             "normalizedName": "turtle warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "589",
@@ -6178,7 +6589,8 @@
             "rulesText": "",
             "normalizedName": "tusk beast",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "296",
@@ -6193,7 +6605,8 @@
             "rulesText": "SpecialSummon; Summon by sending both Thunder Guardian and Wind Guardian from your field to your grave.\nCannot be Summoned without listed cards.\nBattlecry; Destroy 1 creature on the field.\nDeath; Put 1 Thunder Guardian or Wind Guardian from your grave into your spell zone as a field spell.",
             "normalizedName": "twin guardian thunder and wind",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "297",
@@ -6208,7 +6621,8 @@
             "rulesText": "SpecialSummon; Summon by sending both Thunder Guardian and Water Guardian from your field to your grave.\nCannot be Summoned without listed cards.\nBattlecry; Add 1 Guardian card from your deck to your hand.\nDeath; Put 1 Thunder Guardian or Water Guardian from your grave into your spell zone as a field spell.",
             "normalizedName": "twin guardian water and thunder",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "298",
@@ -6223,7 +6637,8 @@
             "rulesText": "SpecialSummon; Summon by sending both Wind Guardian and Water Guardian from your field to your grave.\nCannot be Summoned without listed cards.\nBattlecry; Destroy 1 spell on the field.\nDeath; Put 1 Wind Guardian or Water Guardian from your grave into your Spell zone as a field spell.",
             "normalizedName": "twin guardian wind and water",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "488",
@@ -6238,7 +6653,8 @@
             "rulesText": "",
             "normalizedName": "twin bite bird",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "563",
@@ -6253,7 +6669,8 @@
             "rulesText": "",
             "normalizedName": "twin blazing mage",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "564",
@@ -6268,7 +6685,8 @@
             "rulesText": "",
             "normalizedName": "twin headed hound",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "585",
@@ -6283,7 +6701,8 @@
             "rulesText": "",
             "normalizedName": "undercoffer",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "485",
@@ -6298,7 +6717,8 @@
             "rulesText": "",
             "normalizedName": "valley falcon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "107",
@@ -6313,7 +6733,8 @@
             "rulesText": "",
             "normalizedName": "vampire prowler",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "415",
@@ -6328,7 +6749,8 @@
             "rulesText": "When this deals Life damage, you gain that Life damage.\n",
             "normalizedName": "vampire squid",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "136",
@@ -6343,7 +6765,8 @@
             "rulesText": "Must be normal summoned.\nThis card costs 5 less Mana for each Machine you control.\n\nThis creature can attack Unsealed creatures.\nHaste\nDuring the Battle Phase, this creature can attack each enemy creature once.",
             "normalizedName": "war machine dragoon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "105",
@@ -6358,7 +6781,8 @@
             "rulesText": "",
             "normalizedName": "warr hog",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "416",
@@ -6373,7 +6797,8 @@
             "rulesText": "Gain +1 ATK if you control Fire Bug Buddy. If you control Fire Bug Buddy, Earth Bug Buddy and Wind Bug Buddy this gains +1/+1 instead.\n",
             "normalizedName": "water bug buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "290",
@@ -6388,7 +6813,8 @@
             "rulesText": "Seal; Draw 1 card.",
             "normalizedName": "water guardian",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "417",
@@ -6403,7 +6829,8 @@
             "rulesText": "Give your Whelpling named creatures +2/+2 until the end of the turn.\n",
             "normalizedName": "whelp leader",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "418",
@@ -6418,7 +6845,8 @@
             "rulesText": "",
             "normalizedName": "whelpling",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "137",
@@ -6433,7 +6861,8 @@
             "rulesText": "",
             "normalizedName": "white dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "103",
@@ -6448,7 +6877,8 @@
             "rulesText": "",
             "normalizedName": "white kraken",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "138",
@@ -6463,7 +6893,8 @@
             "rulesText": "SpecialSummon; Summon by sending 1 White Dragon with Metal Armor equipped to the Grave.\nCannot be Summoned without listed cards.\n\nHaste\nSeal; Add 1 Machine creature from your deck to your hand.",
             "normalizedName": "white metal dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 1
         },
         {
             "cardId": "645",
@@ -6478,7 +6909,8 @@
             "rulesText": "",
             "normalizedName": "white scale dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "569",
@@ -6493,7 +6925,8 @@
             "rulesText": "",
             "normalizedName": "wicked flames",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "506",
@@ -6508,7 +6941,8 @@
             "rulesText": "",
             "normalizedName": "wild fire",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "419",
@@ -6523,7 +6957,8 @@
             "rulesText": "Death; Summon 1 Wild Wolf Pack from your Deck.\n",
             "normalizedName": "wild wolf pack",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "420",
@@ -6538,7 +6973,8 @@
             "rulesText": "Gain +1 DEF if you control Fire Bug Buddy. If you control Water Bug Buddy, Fire Bug Buddy and Earth Bug Buddy this gains +1/+2 instead.\n",
             "normalizedName": "wind bug buddy",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "291",
@@ -6553,7 +6989,8 @@
             "rulesText": "Death; Add 1 card from your grave to your hand.",
             "normalizedName": "wind guardian",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "641",
@@ -6568,7 +7005,8 @@
             "rulesText": "",
             "normalizedName": "wind slash mole",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "486",
@@ -6583,7 +7021,8 @@
             "rulesText": "",
             "normalizedName": "winged valkyrie",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "542",
@@ -6598,7 +7037,8 @@
             "rulesText": "",
             "normalizedName": "wisp",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "36",
@@ -6613,7 +7053,8 @@
             "rulesText": "If you have fewer than 3 cards in your hand at the end of your turn., draw cards until you have 3 in your hand.",
             "normalizedName": "wonder magician",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "513",
@@ -6628,7 +7069,8 @@
             "rulesText": "",
             "normalizedName": "wondering souls",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "640",
@@ -6643,7 +7085,8 @@
             "rulesText": "",
             "normalizedName": "wooden warwagon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "27",
@@ -6658,7 +7101,8 @@
             "rulesText": "SpecialSummon;  Summon by banishing 3 creatures you control.\nThis card is unaffected by all other card effects. \n\nThis cards ATK is always equal to your hand size. \nSeal; Gain the following effect until the end of next turn, when a creature is summoned with less ATK than this card, destroy it.\n",
             "normalizedName": "wrathion the serpent god",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 5
         },
         {
             "cardId": "454",
@@ -6673,7 +7117,8 @@
             "rulesText": "",
             "normalizedName": "wrecking ball",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "479",
@@ -6688,7 +7133,8 @@
             "rulesText": "",
             "normalizedName": "x blader",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "139",
@@ -6703,7 +7149,8 @@
             "rulesText": "Seal; Destroy 1 Machine creature you control, then deal 3 Life damage to the enemy.",
             "normalizedName": "x double cannon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "421",
@@ -6718,7 +7165,8 @@
             "rulesText": "Seal; Send a 3 Mana Zombie type from your Deck to the Grave\n",
             "normalizedName": "zom d",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "422",
@@ -6733,7 +7181,8 @@
             "rulesText": "",
             "normalizedName": "zombie clown",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "109",
@@ -6748,7 +7197,8 @@
             "rulesText": "",
             "normalizedName": "zombie dragon",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "424",
@@ -6763,7 +7213,8 @@
             "rulesText": "Battlecry; If you control a Haunted Graveyard, destroy 1 creature on the field.",
             "normalizedName": "zombie mammoth",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 2
         },
         {
             "cardId": "425",
@@ -6778,7 +7229,8 @@
             "rulesText": "Seal; Discard 1 card to summon a 3 Mana or less Zombie with 1 DEF from the Grave to the field.\n",
             "normalizedName": "zombie master",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 3
         },
         {
             "cardId": "515",
@@ -6793,7 +7245,8 @@
             "rulesText": "",
             "normalizedName": "zombie rat",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "426",
@@ -6808,7 +7261,8 @@
             "rulesText": "",
             "normalizedName": "zombie shark",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         },
         {
             "cardId": "427",
@@ -6823,7 +7277,8 @@
             "rulesText": "",
             "normalizedName": "zombie warrior",
             "isField": false,
-            "isDeckBuildable": true
+            "isDeckBuildable": true,
+            "deckPoints": 0
         }
     ]
 }

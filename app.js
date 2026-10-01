@@ -5,9 +5,8 @@ let visibleCount = 0;
 const DECK_LIBRARY_STORAGE_KEY = "dimensions_tcg_decks_v2";
 const LEGACY_DECK_STORAGE_KEY = "dimensions_tcg_deck_v1";
 const UI_STORAGE_KEY = "dimensions_tcg_ui_v2";
-const DECK_CODE_PREFIX_V2 = "DECKV2|";
-const DECK_CODE_PREFIX_V1 = "DECKV1|";
-const DECK_CODE_VERSION = 2;
+const PAGE_SIZE = 36;
+let artworkManifest = {};
 
 const appState = {
   activeDeckId: null,
@@ -55,10 +54,6 @@ const deckWarning = document.getElementById("deckWarning");
 const mainDeckList = document.getElementById("mainDeckList");
 const fusionDeckList = document.getElementById("fusionDeckList");
 const clearDeckBtn = document.getElementById("clearDeckBtn");
-const exportDeckBtn = document.getElementById("exportDeckBtn");
-const exportDeckTxtBtn = document.getElementById("exportDeckTxtBtn");
-const importDeckBtn = document.getElementById("importDeckBtn");
-const importDeckInput = document.getElementById("importDeckInput");
 const duplicateDeckBtn = document.getElementById("duplicateDeckBtn");
 const renameDeckBtn = document.getElementById("renameDeckBtn");
 const deleteDeckBtn = document.getElementById("deleteDeckBtn");
@@ -71,12 +66,6 @@ const deckStatsSummary = document.getElementById("deckStatsSummary");
 const deckStatsWarnings = document.getElementById("deckStatsWarnings");
 const fusionSuggestions = document.getElementById("fusionSuggestions");
 const deckCollapseBtn = document.getElementById("deckCollapseBtn");
-const copyDeckCodeBtn = document.getElementById("copyDeckCodeBtn");
-const importDeckCodeBtn = document.getElementById("importDeckCodeBtn");
-const copyDeckLinkBtn = document.getElementById("copyDeckLinkBtn");
-const deckCodeInput = document.getElementById("deckCodeInput");
-
-let searchIndex = null;
 
 const cardPreview = document.getElementById("cardPreview");
 const toastEl = document.getElementById("toast");
@@ -99,8 +88,9 @@ const modalPrevBtn = document.getElementById("modalPrevBtn");
 const modalNextBtn = document.getElementById("modalNextBtn");
 const modalAddDeckBtn = document.getElementById("modalAddDeckBtn");
 
-fetch("./data/cards.json")
-  .then((response) => {
+Promise.all([fetch("./data/cards.json"), fetch("./data/artwork-manifest.json").then(r => r.ok ? r.json() : {}).catch(() => ({}))])
+  .then(([response, manifest]) => {
+    artworkManifest = manifest;
     if (!response.ok) {
       throw new Error(`HTTP ${response.status} loading cards.json`);
     }
@@ -114,7 +104,6 @@ fetch("./data/cards.json")
     }
 
     allCards = cards.map(normalizeCardData);
-    buildSearchIndex(allCards);
     buildFilters(allCards);
     hydrateDeckLibraryAgainstCardPool();
     applyUiState();
@@ -134,15 +123,20 @@ function normalizeCardData(rawCard) {
   card.archetype = normalizeTitleValue(card.archetype, "None");
   card.cardType = normalizeCardType(card.cardType);
   card.manaCost = normalizeNumber(card.manaCost);
+  card.deckPoints = Math.max(0, Math.floor(normalizeNumber(card.deckPoints)));
   card.atk = normalizeNumber(card.atk);
   card.def = normalizeNumber(card.def);
   card.rulesText = normalizeRulesText(card.rulesText);
   card.image = normalizeImagePath(card.image);
+  const artwork = artworkManifest[card.image];
+  const hasManifest = Object.keys(artworkManifest).length > 0;
+  card.thumbnail = artwork?.thumb || (hasManifest ? "" : card.image);
+  card.detailImage = artwork?.detail || (hasManifest ? "" : card.image);
   card.keywords = extractKeywords(card.rulesText || "");
   card.cleanedRules = cleanRulesText(card.rulesText || "");
   card.searchBlob = [card.name, card.cleanedRules, card.archetype, card.attribute, card.cardType, ...card.keywords].join(" ").toLowerCase();
   card.isLegendary = String(card.archetype || "").toLowerCase() === "legendary";
-  card.imageIssue = !card.image;
+  card.imageIssue = !card.image || (hasManifest && !artwork);
   return card;
 }
 
@@ -302,28 +296,9 @@ function buildSearchIndex(cards) {
 }
 
 function getSearchCandidates(search) {
-  if (!searchIndex || !search) return allCards;
-  const tokens = (search.match(/(?:[^\s"]+|"[^"]*")+/g) || [])
-    .map((token) => token.trim())
-    .filter((token) => token && !isFieldToken(token))
-    .map((token) => stripQuotes(token).toLowerCase())
-    .filter(Boolean);
-
-  if (!tokens.length) return allCards;
-
-  let candidateIds = null;
-  for (const token of tokens) {
-    const tokenSet = searchIndex.tokenMap.get(token);
-    if (!tokenSet) return [];
-    if (candidateIds === null) {
-      candidateIds = new Set(tokenSet);
-      continue;
-    }
-    candidateIds = new Set([...candidateIds].filter((id) => tokenSet.has(id)));
-    if (!candidateIds.size) return [];
-  }
-
-  return [...candidateIds].map((id) => searchIndex.cardsById.get(id)).filter(Boolean);
+  // A few hundred indexed records are cheap to scan. Do not reject partial
+  // words or quoted phrases before the authoritative search matcher runs.
+  return allCards;
 }
 
 function tokenizeSearchText(value) {
@@ -359,18 +334,19 @@ function matchesAdvancedSearch(card, context) {
 }
 
 function isFieldToken(token) {
-  return /^(mana|atk|def|attribute|type|archetype|keyword|name|text|deck|legendary|has|copies|section|fusion)\s*[:<>=]/i.test(token);
+  return /^(mana|points|atk|def|attribute|type|archetype|keyword|name|text|deck|legendary|has|copies|section|fusion)\s*[:<>=]/i.test(token);
 }
 
 function matchesFieldToken(card, token) {
   const normalizedToken = token.replace(/^section\s*[:=]/i, "deck:");
-  const numericMatch = normalizedToken.match(/^(mana|atk|def|copies)\s*(>=|<=|=|>|<|:)\s*(\d+)$/i);
+  const numericMatch = normalizedToken.match(/^(mana|points|atk|def|copies)\s*(>=|<=|=|>|<|:)\s*(\d+)$/i);
   if (numericMatch) {
     const field = numericMatch[1].toLowerCase();
     const operator = numericMatch[2] === ":" ? "=" : numericMatch[2];
     const expected = Number(numericMatch[3]);
     const actual =
       field === "mana" ? Number(card.manaCost || 0)
+      : field === "points" ? card.deckPoints
       : field === "atk" ? Number(card.atk || 0)
       : field === "def" ? Number(card.def || 0)
       : getCardCopiesInSection(card, getDeckSection(card));
@@ -429,6 +405,8 @@ function sortCards(cards, sortMode) {
   const copy = [...cards];
 
   switch (sortMode) {
+    case "points-asc": return copy.sort((a,b) => a.deckPoints - b.deckPoints || a.name.localeCompare(b.name));
+    case "points-desc": return copy.sort((a,b) => b.deckPoints - a.deckPoints || a.name.localeCompare(b.name));
     case "name-asc":
       return copy.sort((a, b) => String(a.name || "").localeCompare(String(b.name || "")));
     case "name-desc":
@@ -466,18 +444,19 @@ function isFusionCard(card) {
   return String(card.cardType || "").toLowerCase() === "fusion";
 }
 
-function refreshView() {
+function refreshView(resetPage = true) {
   saveUiState();
   filteredCards = getFilteredCards();
-  visibleCount = filteredCards.length;
-  renderCards(filteredCards);
+  visibleCount = Math.min(resetPage === false ? Math.max(PAGE_SIZE, visibleCount) : PAGE_SIZE, filteredCards.length);
+  renderCards(filteredCards.slice(0, visibleCount));
   updateLoadMore();
   syncUrlFromUi();
 }
 
-function renderCards(cards) {
-  cardGrid.innerHTML = "";
-  resultsCount.textContent = `${filteredCards.length} card(s) found`;
+function renderCards(cards, append = false) {
+  if (!append) cardGrid.replaceChildren();
+  const fragment = document.createDocumentFragment();
+  resultsCount.textContent = `${filteredCards.length} cards · showing ${visibleCount}`;
 
   if (!cards.length) {
     if (emptyState) emptyState.classList.remove("hidden");
@@ -488,9 +467,9 @@ function renderCards(cards) {
 
   for (const card of cards) {
     const div = document.createElement("article");
-    div.className = "card";
+    div.className = `card card-${slugify(card.attribute)}`;
     div.tabIndex = 0;
-    div.setAttribute("role", "button");
+    div.setAttribute("role", "group");
     div.setAttribute("aria-label", `Open details for ${card.name || "card"}`);
 
     const keywords = card.keywords;
@@ -501,11 +480,12 @@ function renderCards(cards) {
     const isFull = copies >= limit;
 
     div.innerHTML = `
-      <img src="${escapeHtml(card.image || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}" loading="lazy" decoding="async">
+      <div class="card-art"><img src="${escapeHtml(card.thumbnail || createFallbackImage(card.name || "No Image"))}" alt="${escapeHtml(card.name || "")}" width="420" height="560" loading="lazy" decoding="async"><span class="mana-orb" aria-label="Mana ${card.manaCost}">${card.manaCost}</span></div>
       <div class="card-body">
         <h3>${escapeHtml(card.name || "")}</h3>
         <div class="tags">
           <span class="tag tag-mana">Mana ${card.manaCost ?? 0}</span>
+          <span class="tag points-tag">${card.deckPoints} PTS</span>
           <span class="tag attr-${slugify(card.attribute || "none")}">${escapeHtml(card.attribute || "None")}</span>
           <span class="tag archetype-tag">${escapeHtml(card.archetype || "None")}</span>
           <span class="tag type-${slugify(card.cardType || "unknown")}">${escapeHtml(card.cardType || "Unknown")}</span>
@@ -536,13 +516,13 @@ function renderCards(cards) {
         e.preventDefault();
         e.stopPropagation();
         addCardToDeck(card);
-        refreshView();
+        refreshView(false);
       });
     }
 
     div.addEventListener("click", () => openModal(card));
     div.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
+      if (e.target === div && (e.key === "Enter" || e.key === " ")) {
         e.preventDefault();
         openModal(card);
       }
@@ -554,20 +534,22 @@ function renderCards(cards) {
       div.addEventListener("mouseleave", hideHoverPreview);
     }
 
-    cardGrid.appendChild(div);
+    fragment.appendChild(div);
   }
+  cardGrid.appendChild(fragment);
 }
 
 function openModal(card) {
   const index = filteredCards.findIndex((item) => item.cardId === card.cardId);
   appState.currentModalCard = card;
   appState.currentModalIndex = index;
-  appState.modalLastFocus = document.activeElement;
+  if (cardModal.classList.contains("hidden")) appState.modalLastFocus = document.activeElement;
 
-  modalImage.src = card.image || createFallbackImage(card.name || "No Image");
+  modalImage.src = card.detailImage || createFallbackImage(card.name || "No Image");
   modalImage.alt = card.name || "";
   modalName.textContent = card.name || "";
   modalMana.textContent = card.manaCost ?? 0;
+  document.getElementById("modalPoints").textContent = card.deckPoints;
   modalAttribute.textContent = card.attribute || "None";
   modalArchetype.textContent = card.archetype || "None";
   modalType.textContent = card.cardType || "Unknown";
@@ -576,7 +558,7 @@ function openModal(card) {
   attachImageFallback(modalImage, card.name || "No Image", () => {
     modalImageStatus.textContent = "Showing fallback image";
   });
-  preloadImage(card.image);
+
 
   const keywords = card.keywords;
   const cleanedRules = card.cleanedRules;
@@ -587,7 +569,7 @@ function openModal(card) {
   modalKeywordBadges.innerHTML = keywords.map((k) => `<span class="keyword-badge">${escapeHtml(k)}</span>`).join("");
   modalRules.textContent = cleanedRules || "No rules text.";
   modalDeckCount.textContent = `${copies}/${limit} in ${section === "fusion" ? "Fusion" : "Main"} Deck`;
-  modalImageStatus.textContent = card.imageIssue ? "Image path missing from data" : "";
+  modalImageStatus.textContent = card.imageIssue ? "Artwork not yet exported to the archive." : "";
   modalFusionHint.textContent = getFusionHint(card);
   modalFusionHint.classList.toggle("hidden", !modalFusionHint.textContent);
   modalAddDeckBtn.textContent = `Add to ${section === "fusion" ? "Fusion" : "Main"} Deck`;
@@ -597,6 +579,7 @@ function openModal(card) {
 
   decorateModalLabels(card);
   cardModal.classList.remove("hidden");
+  document.body.classList.add("modal-open");
   trapFocusToModal();
 }
 
@@ -614,6 +597,7 @@ function decorateModalLabels(card) {
 
 function closeModalAndRestoreFocus() {
   cardModal.classList.add("hidden");
+  document.body.classList.remove("modal-open");
   hideHoverPreview();
   const focusTarget = appState.modalLastFocus;
   if (focusTarget && typeof focusTarget.focus === "function") {
@@ -684,8 +668,8 @@ function getFocusableElements(container) {
     .filter((el) => !el.classList.contains("hidden"));
 }
 
-[searchInput, manaFilter, attributeFilter, archetypeFilter, typeFilter, fusionFilter, deckViewFilter].forEach((el) => {
-  el.addEventListener("input", debounce(refreshView, 150));
+searchInput.addEventListener("input", debounce(refreshView, 150));
+[manaFilter, attributeFilter, archetypeFilter, typeFilter, fusionFilter, deckViewFilter].forEach((el) => {
   el.addEventListener("change", refreshView);
 });
 hideFullToggle.addEventListener("change", refreshView);
@@ -715,13 +699,6 @@ if (closeDeckBtn) {
 }
 
 clearDeckBtn.addEventListener("click", clearDeck);
-exportDeckBtn.addEventListener("click", () => exportDeck("json"));
-exportDeckTxtBtn.addEventListener("click", () => exportDeck("txt"));
-importDeckBtn.addEventListener("click", () => importDeckInput.click());
-importDeckInput.addEventListener("change", handleImportDeck);
-if (copyDeckCodeBtn) copyDeckCodeBtn.addEventListener("click", copyCurrentDeckCode);
-if (importDeckCodeBtn) importDeckCodeBtn.addEventListener("click", promptImportDeckCode);
-if (copyDeckLinkBtn) copyDeckLinkBtn.addEventListener("click", copyCurrentDeckLink);
 if (deckCollapseBtn) {
   deckCollapseBtn.addEventListener("click", toggleDeckCollapse);
 }
@@ -749,13 +726,18 @@ function clearFilters() {
 }
 
 function loadMoreCards() {
-  visibleCount = filteredCards.length;
-  renderCards(filteredCards);
+  const previousCount = visibleCount;
+  visibleCount = Math.min(visibleCount + PAGE_SIZE, filteredCards.length);
+  renderCards(filteredCards.slice(previousCount, visibleCount), true);
   updateLoadMore();
 }
 
 function updateLoadMore() {
-  loadMoreBtn.classList.add("hidden");
+  loadMoreBtn.classList.toggle("hidden", visibleCount >= filteredCards.length);
+  loadMoreBtn.textContent = "Load next " + Math.min(PAGE_SIZE, filteredCards.length - visibleCount) + " cards";
+  document.querySelectorAll("[data-card-type]").forEach(button => {
+    button.setAttribute("aria-pressed", String(button.dataset.cardType === typeFilter.value));
+  });
 }
 
 function showHoverPreview(card, event) {
@@ -873,6 +855,7 @@ function summarizeDeckSection(items) {
 function addCardToDeck(card) {
   try {
     if (!card) return;
+    if (getDeckPoints() + card.deckPoints > 100) { toast("That card would exceed the 100-point Main + Fusion deck limit."); return; }
 
     const section = getDeckSection(card);
     const copyLimit = getCardCopyLimit(card);
@@ -946,6 +929,9 @@ function renderDeck() {
       ? (deckState.main.reduce((sum, card) => sum + Number(card.manaCost || 0), 0) / mainCount).toFixed(1)
       : "0.0";
     avgManaValue.textContent = avgMana;
+    const pointTotal = getDeckPoints();
+    document.getElementById("deckPointsValue").textContent = `${pointTotal} / 100`;
+    document.querySelector(".point-summary").classList.toggle("over-limit", pointTotal > 100);
 
     deckStatus.textContent = `Main: ${mainCount}/60-80 · Fusion: ${fusionCount}/10`;
 
@@ -953,6 +939,7 @@ function renderDeck() {
     if (mainCount < 60) warning = "Main deck must have at least 60 cards.";
     else if (mainCount > 80) warning = "Main deck cannot exceed 80 cards.";
     else if (fusionCount > 10) warning = "Fusion deck cannot exceed 10 cards.";
+    else if (pointTotal > 100) warning = "Main + Fusion deck exceeds the 100-point limit.";
     else warning = "Deck is valid.";
 
     deckWarning.textContent = warning;
@@ -966,7 +953,7 @@ function renderDeck() {
         <div class="deck-item">
           <div class="deck-item-name">
             <span>${escapeHtml(entry.card.name || "")}</span>
-            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
+            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0} · ${entry.card.deckPoints} PTS each</small>
           </div>
           <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
           <button type="button" class="mini-btn remove-deck-btn" data-section="main" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
@@ -979,7 +966,7 @@ function renderDeck() {
         <div class="deck-item">
           <div class="deck-item-name">
             <span>${escapeHtml(entry.card.name || "")}</span>
-            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0}</small>
+            <small>${escapeHtml(entry.card.cardType || "Unknown")} · Mana ${entry.card.manaCost ?? 0} · ${entry.card.deckPoints} PTS each</small>
           </div>
           <span class="deck-qty">${entry.count}/${getCardCopyLimit(entry.card)}</span>
           <button type="button" class="mini-btn remove-deck-btn" data-section="fusion" data-name="${escapeHtml(entry.card.name || "")}">Remove 1</button>
@@ -1293,315 +1280,6 @@ function deleteCurrentDeck() {
   refreshView();
 }
 
-function exportDeck(format) {
-  const deck = sanitizeDeck(deckState);
-  const safeName = slugify(deck.name || "deck") || "deck";
-  if (format === "txt") {
-    const lines = [
-      `${deck.name}`,
-      `Main Deck (${deck.main.length})`,
-      ...summarizeDeckSection(deck.main).map((entry) => `${entry.count}x ${entry.card.name}`),
-      "",
-      `Fusion Deck (${deck.fusion.length})`,
-      ...summarizeDeckSection(deck.fusion).map((entry) => `${entry.count}x ${entry.card.name}`)
-    ];
-    downloadFile(`${safeName}.txt`, lines.join("\n"), "text/plain;charset=utf-8");
-    toast("Deck exported as TXT");
-    return;
-  }
-
-  const payload = JSON.stringify({
-    exportedAt: new Date().toISOString(),
-    deck
-  }, null, 2);
-  downloadFile(`${safeName}.json`, payload, "application/json;charset=utf-8");
-  toast("Deck exported as JSON");
-}
-
-function handleImportDeck(event) {
-  const file = event.target.files?.[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const text = String(reader.result || "");
-      const imported = parseImportedDeck(text, file.name || "Imported Deck");
-      appState.deckLibrary.decks.push(imported);
-      appState.activeDeckId = imported.id;
-      deckState = imported;
-      persistDeckState(`Imported ${imported.name}`);
-      refreshView();
-    } catch (error) {
-      console.error("Import failed:", error);
-      toast(`Import failed: ${error.message}`);
-    } finally {
-      importDeckInput.value = "";
-    }
-  };
-  reader.readAsText(file);
-}
-
-function parseImportedDeck(text, fallbackName) {
-  const parsed = JSON.parse(text);
-  const rawDeck = parsed.deck || parsed;
-  return sanitizeDeck({
-    id: cryptoRandomId(),
-    name: tidySpaces(rawDeck.name || rawDeck.deckName) || tidySpaces(fallbackName.replace(/\.[^.]+$/, "")) || "Imported Deck",
-    main: rawDeck.main || rawDeck.cards || [],
-    fusion: rawDeck.fusion || rawDeck.fusionCards || []
-  });
-}
-
-function downloadFile(filename, content, mimeType) {
-  const blob = new Blob([content], { type: mimeType });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = filename;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 0);
-}
-
-function generateDeckCode(deck) {
-  return buildDeckCodeV2(deck);
-}
-
-function decodeDeckCode(code) {
-  const extracted = tryExtractDeckCodeFromInput(code);
-
-  if (extracted.startsWith(DECK_CODE_PREFIX_V2)) {
-    return sanitizeDeck(decodeDeckCodeV2(extracted));
-  }
-
-  if (extracted.startsWith(DECK_CODE_PREFIX_V1)) {
-    return sanitizeDeck(decodeDeckCodeV1(extracted));
-  }
-
-  return sanitizeDeck(decodeLegacyDeckCode(extracted));
-}
-
-function loadDeckFromCode(code) {
-  const imported = decodeDeckCode(code);
-  appState.deckLibrary.decks.push(imported);
-  appState.activeDeckId = imported.id;
-  deckState = imported;
-  persistDeckState(`Imported ${imported.name}`);
-  refreshView();
-}
-
-function buildDeckCodeV2(deck) {
-  const portable = createPortableDeckPayload(deck);
-  const json = JSON.stringify(portable);
-  return `${DECK_CODE_PREFIX_V2}${base64UrlEncodeUnicode(json)}`;
-}
-
-function createPortableDeckPayload(deck) {
-  const safeDeck = sanitizeDeck(deck);
-  return {
-    v: DECK_CODE_VERSION,
-    n: tidySpaces(safeDeck.name) || "Shared Deck",
-    m: summarizePortableSection(safeDeck.main),
-    f: summarizePortableSection(safeDeck.fusion)
-  };
-}
-
-function summarizePortableSection(items) {
-  const counts = new Map();
-  for (const rawCard of items || []) {
-    const card = normalizeCardData(rawCard);
-    const id = tidySpaces(card.cardId);
-    const key = id || `name:${tidySpaces(card.name).toLowerCase()}`;
-    if (!key) continue;
-    if (!counts.has(key)) counts.set(key, { id, name: tidySpaces(card.name), count: 0 });
-    counts.get(key).count += 1;
-  }
-  const packed = [];
-  for (const entry of counts.values()) {
-    packed.push({ t: entry.id || `~${entry.name}`, c: entry.count });
-  }
-  return packed;
-}
-
-function decodeDeckCodeV2(code) {
-  const encoded = code.slice(DECK_CODE_PREFIX_V2.length).trim();
-  if (!encoded) throw new Error("Missing DECKV2 payload");
-  const decoded = JSON.parse(base64UrlDecodeUnicode(encoded));
-  return expandPortableDeck(decoded, "Imported Deck");
-}
-
-function expandPortableDeck(payload, fallbackName) {
-  return {
-    id: cryptoRandomId(),
-    name: tidySpaces(payload?.n || payload?.deckName || payload?.name) || fallbackName || "Imported Deck",
-    main: expandPortableSection(payload?.m || payload?.cards || payload?.main, false),
-    fusion: expandPortableSection(payload?.f || payload?.fusionCards || payload?.fusion, true)
-  };
-}
-
-function expandPortableSection(source, forceFusion) {
-  if (!Array.isArray(source)) return [];
-  const result = [];
-  const poolById = new Map(allCards.map((card) => [tidySpaces(card.cardId).toLowerCase(), card]));
-  const poolByName = new Map(allCards.map((card) => [tidySpaces(card.name).toLowerCase(), card]));
-
-  for (const item of source) {
-    const token = tidySpaces(item?.t || item?.id || item?.cardId || item?.name || item);
-    const count = Math.max(0, Number(item?.c ?? item?.count ?? 1) || 0);
-    if (!token || !count) continue;
-
-    let resolved = null;
-    if (token.startsWith('~')) resolved = poolByName.get(tidySpaces(token.slice(1)).toLowerCase()) || normalizeCardData({ name: token.slice(1), cardType: forceFusion ? 'Fusion' : undefined });
-    else resolved = poolById.get(token.toLowerCase()) || poolByName.get(token.toLowerCase()) || normalizeCardData({ cardId: token, name: token, cardType: forceFusion ? 'Fusion' : undefined });
-
-    for (let i = 0; i < count; i += 1) result.push(resolved);
-  }
-
-  return result;
-}
-
-function decodeDeckCodeV1(code) {
-  const parts = String(code || '').trim().split('|');
-  if (parts.length < 3) throw new Error('Malformed DECKV1 code');
-  const payload = JSON.parse(decodeBase64Unicode(parts.slice(2).join('|')));
-  const deck = {
-    id: cryptoRandomId(),
-    name: tidySpaces(payload?.deckName || parts[1] || 'Imported Deck'),
-    main: expandEntryArray(payload?.cards || [], false),
-    fusion: expandEntryArray(payload?.fusionCards || [], true)
-  };
-  return deck;
-}
-
-function expandEntryArray(entries, forceFusion) {
-  const result = [];
-  const poolById = new Map(allCards.map((card) => [tidySpaces(card.cardId).toLowerCase(), card]));
-  const poolByName = new Map(allCards.map((card) => [tidySpaces(card.name).toLowerCase(), card]));
-  for (const entry of entries || []) {
-    const id = tidySpaces(entry?.cardId || entry?.card || '');
-    const name = tidySpaces(entry?.cardName || '');
-    const count = Math.max(0, Number(entry?.count || 0));
-    if (!count) continue;
-    const resolved = (id && poolById.get(id.toLowerCase())) || (name && poolByName.get(name.toLowerCase())) || normalizeCardData({ cardId: id, name: name || id, cardType: forceFusion ? 'Fusion' : undefined });
-    for (let i = 0; i < count; i += 1) result.push(resolved);
-  }
-  return result;
-}
-
-function decodeLegacyDeckCode(code) {
-  const decoded = JSON.parse(decodeBase64Unicode(String(code || '').trim()));
-  const nameMap = new Map(allCards.map((card) => [String(card.name || '').toLowerCase(), card]));
-  return {
-    id: cryptoRandomId(),
-    name: tidySpaces(decoded.name) || 'Imported Deck',
-    main: Array.isArray(decoded.main) ? decoded.main.map((name) => nameMap.get(String(name || '').toLowerCase()) || normalizeCardData({ name })) : [],
-    fusion: Array.isArray(decoded.fusion) ? decoded.fusion.map((name) => nameMap.get(String(name || '').toLowerCase()) || normalizeCardData({ name, cardType: 'Fusion' })) : []
-  };
-}
-
-function tryExtractDeckCodeFromInput(value) {
-  const raw = String(value || '').trim();
-  if (!raw) throw new Error('Missing deck code');
-  if (raw.startsWith(DECK_CODE_PREFIX_V2) || raw.startsWith(DECK_CODE_PREFIX_V1)) return raw;
-  try {
-    const url = new URL(raw);
-    const param = url.searchParams.get('deck');
-    if (param) return param;
-  } catch (_) {}
-  const match = raw.match(/[?&]deck=([^&#]+)/i);
-  if (match && match[1]) return decodeURIComponent(match[1]);
-  return raw;
-}
-
-function base64UrlEncodeUnicode(value) {
-  return encodeBase64Unicode(value).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
-}
-
-function base64UrlDecodeUnicode(value) {
-  let normalized = String(value || '').replace(/-/g, '+').replace(/_/g, '/');
-  while (normalized.length % 4) normalized += '=';
-  return decodeBase64Unicode(normalized);
-}
-
-function encodeBase64Unicode(value) {
-  return btoa(unescape(encodeURIComponent(String(value || ''))));
-}
-
-function decodeBase64Unicode(value) {
-  return decodeURIComponent(escape(atob(String(value || '').trim())));
-}
-
-function copyTextToClipboard(value, message) {
-  const text = String(value || '');
-  if (!text) return;
-  if (navigator.clipboard?.writeText) {
-    navigator.clipboard.writeText(text)
-      .then(() => toast(message))
-      .catch(() => fallbackCopyText(text, message));
-    return;
-  }
-  fallbackCopyText(text, message);
-}
-
-function fallbackCopyText(value, message) {
-  const input = document.createElement('textarea');
-  input.value = value;
-  input.setAttribute('readonly', '');
-  input.style.position = 'absolute';
-  input.style.left = '-9999px';
-  document.body.appendChild(input);
-  input.select();
-  document.execCommand('copy');
-  input.remove();
-  toast(message);
-}
-
-function copyCurrentDeckCode() {
-  const code = generateDeckCode(sanitizeDeck(deckState));
-  if (deckCodeInput) deckCodeInput.value = code;
-  copyTextToClipboard(code, 'Deck code copied');
-}
-
-function promptImportDeckCode() {
-  const code = deckCodeInput ? deckCodeInput.value : window.prompt('Paste deck code or share link:');
-  if (!code) return;
-  try {
-    loadDeckFromCode(code);
-    if (deckCodeInput) deckCodeInput.value = '';
-  } catch (error) {
-    console.error('Deck code import failed:', error);
-    toast('Invalid deck code');
-  }
-}
-
-function copyCurrentDeckLink() {
-  const url = new URL(window.location.href);
-  const code = generateDeckCode(sanitizeDeck(deckState));
-  url.searchParams.set('deck', code);
-  if (deckCodeInput) deckCodeInput.value = url.toString();
-  copyTextToClipboard(url.toString(), 'Share link copied');
-}
-
-function maybeLoadDeckFromUrl() {
-  const params = new URLSearchParams(window.location.search);
-  const deckCode = params.get('deck');
-  if (!deckCode) return;
-  try {
-    const imported = decodeDeckCode(deckCode);
-    const existing = appState.deckLibrary.decks.find((deck) => generateDeckCode(deck) === deckCode);
-    if (!existing) {
-      appState.deckLibrary.decks.push(imported);
-      appState.activeDeckId = imported.id;
-      deckState = imported;
-      saveDeckLibrary();
-      toast(`Loaded shared deck: ${imported.name}`);
-    }
-  } catch (error) {
-    console.warn('Could not load deck from URL:', error);
-  }
-}
-
 function toggleDeckCollapse() {
   if (!deckPanel || !deckCollapseBtn) return;
   const isCollapsed = deckPanel.classList.toggle('collapsed');
@@ -1621,7 +1299,7 @@ function applyUiState() {
   hideFullToggle.checked = Boolean(ui.hideFull);
   sortSelect.value = ui.sort || "name-asc";
   readUiFromUrl();
-  maybeLoadDeckFromUrl();
+
 }
 
 function saveUiState() {
@@ -1756,4 +1434,25 @@ function escapeXml(value) {
 
 function cryptoRandomId() {
   return `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 8)}`;
+}
+
+
+// Compact type shortcuts retain the existing advanced filters and saved UI state.
+document.querySelectorAll("[data-card-type]").forEach(button => {
+  button.addEventListener("click", () => { typeFilter.value = button.dataset.cardType; refreshView(); });
+});
+document.getElementById("searchHelpBtn").addEventListener("click", () => {
+  const help = document.getElementById("searchHelp");
+  help.hidden = !help.hidden;
+  document.getElementById("searchHelpBtn").setAttribute("aria-expanded", String(!help.hidden));
+});
+if (window.matchMedia("(max-width: 640px)").matches) {
+  deckPanel.classList.add("collapsed");
+  deckCollapseBtn.textContent = "Expand";
+  deckCollapseBtn.setAttribute("aria-expanded", "false");
+}
+
+
+function getDeckPoints() {
+  return [...deckState.main, ...deckState.fusion].reduce((sum, card) => sum + (card.deckPoints || 0), 0);
 }

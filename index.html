@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Database</title>
+  <title>DIMENSIONS — Card Archive</title>
+  <meta name="description" content="Explore the DIMENSIONS TCG card archive. Search cards, read effects, and build your next deck." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#cardGrid">Skip to cards</a>
   <header class="topbar">
     <div class="topbar-row">
       <div>
-        <h1>Card Database</h1>
-        <p class="subtitle">Browse cards, build decks, compare effects, and save named decks.</p>
+        <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">◈</span> DIMENSIONS <span>TCG</span></a>
       </div>
       <div class="topbar-actions">
         <button id="mobileFiltersToggle" class="secondary-btn mobile-only" type="button" aria-expanded="false">Filters</button>
@@ -57,6 +58,8 @@
           <option value="name-desc">Sort: Name Z-A</option>
           <option value="mana-asc">Sort: Mana Low-High</option>
           <option value="mana-desc">Sort: Mana High-Low</option>
+          <option value="points-asc">Sort: Points Low-High</option>
+          <option value="points-desc">Sort: Points High-Low</option>
           <option value="atk-desc">Sort: Highest ATK</option>
           <option value="def-desc">Sort: Highest DEF</option>
           <option value="attribute-asc">Sort: Attribute</option>
@@ -76,18 +79,27 @@
 
   <main class="page-layout">
     <section class="content-area">
+      <div class="archive-heading"><div><p class="eyebrow">EXPLORE THE MULTIVERSE</p><h1>The card archive.</h1><p class="subtitle">Find your next synergy. Read every effect. Build something unexpected.</p></div><span class="archive-seal" aria-hidden="true">◈</span></div>
+      <nav class="type-tabs" aria-label="Card categories">
+        <button type="button" data-card-type="" aria-pressed="true">All cards</button>
+        <button type="button" data-card-type="Creature" aria-pressed="false">Creatures</button>
+        <button type="button" data-card-type="Spell" aria-pressed="false">Spells</button>
+        <button type="button" data-card-type="Fusion" aria-pressed="false">Fusions</button>
+      </nav>
       <div class="toolbar-row">
-        <div id="resultsCount" class="results-count">Loading cards...</div>
-        <button id="loadMoreBtn" class="secondary-btn hidden" type="button">Load More</button>
+        <div id="resultsCount" class="results-count" role="status">Loading cards...</div>
+        <button id="searchHelpBtn" class="text-btn" type="button" aria-expanded="false" aria-controls="searchHelp">Search tips ↗</button>
       </div>
+      <p id="searchHelp" class="search-help" hidden>Search names or effects, or combine filters: <code>mana&lt;=4</code> <code>type:spell</code> <code>text:"draw 1"</code> <code>points&gt;=2</code> <code>copies&gt;=1</code>.</p>
       <div id="emptyState" class="empty-state hidden">No cards matched your search.</div>
       <div id="cardGrid" class="card-grid"></div>
+      <div class="load-more-row"><button id="loadMoreBtn" class="secondary-btn hidden" type="button">Load More</button></div>
     </section>
 
     <aside id="deckPanel" class="deck-panel">
       <div class="deck-panel-header">
         <div>
-          <h2>Deck Builder</h2>
+          <p class="eyebrow">YOUR NEXT STRATEGY</p><h2>Deck workshop</h2>
           <p id="deckStatus" class="deck-status">Main: 0/60-80 · Fusion: 0/10</p>
         </div>
         <div class="deck-header-actions">
@@ -122,6 +134,7 @@
           <span>Avg Mana</span>
           <strong id="avgManaValue">0.0</strong>
         </div>
+        <div class="summary-card point-summary"><span>Deck Points · Main + Fusion</span><strong id="deckPointsValue">0 / 100</strong></div>
       </div>
 
       <div id="deckWarning" class="deck-warning"></div>
@@ -137,17 +150,8 @@
 
       <div class="deck-actions wrap-actions">
         <button id="clearDeckBtn" class="danger-btn" type="button">Clear Deck</button>
-        <button id="exportDeckBtn" class="secondary-btn" type="button">Export JSON</button>
-        <button id="exportDeckTxtBtn" class="secondary-btn" type="button">Export TXT</button>
-        <button id="importDeckBtn" class="secondary-btn" type="button">Import Deck</button>
-        <button id="copyDeckCodeBtn" class="secondary-btn" type="button">Copy Deck Code</button>
-        <button id="importDeckCodeBtn" class="secondary-btn" type="button">Import Code</button>
-        <button id="copyDeckLinkBtn" class="secondary-btn" type="button">Copy Share Link</button>
-        <input id="importDeckInput" type="file" accept=".json,application/json" class="hidden" />
       </div>
-      <div class="deck-code-row">
-        <input id="deckCodeInput" type="text" placeholder="Paste DECKV2 / DECKV1 code or share link here" autocomplete="off" />
-      </div>
+      <p class="local-save-note">Decks save automatically in this browser.</p>
 
       <div class="deck-columns">
         <section>
@@ -206,6 +210,7 @@
             <span>Deck Copies</span>
             <strong id="modalDeckCount"></strong>
           </div>
+          <div class="detail-card"><span>Deck Points · per copy</span><strong id="modalPoints"></strong></div>
         </div>
 
         <div id="modalImageStatus" class="modal-meta"></div>
@@ -221,6 +226,7 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <footer class="site-footer">DIMENSIONS TCG <span>Every card is a doorway.</span></footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
