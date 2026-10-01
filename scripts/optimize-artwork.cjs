@@ -32,6 +32,7 @@ async function main() {
     thumbnailBytes += (await fs.stat(thumb)).size;
     detailBytes += (await fs.stat(detail)).size;
     manifest['./images/cards/' + name] = {
+      artworkRevision: String(Math.floor((await fs.stat(path.join(source, name))).mtimeMs)),
       thumb: './images/optimized/thumb/' + base + '?v=' + hash,
       detail: './images/optimized/detail/' + base + '?v=' + hash
     };

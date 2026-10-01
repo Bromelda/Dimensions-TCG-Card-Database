@@ -128,15 +128,18 @@ function normalizeCardData(rawCard) {
   card.def = normalizeNumber(card.def);
   card.rulesText = normalizeRulesText(card.rulesText);
   card.image = normalizeImagePath(card.image);
-  const artwork = artworkManifest[card.image];
+  const candidateArtwork = artworkManifest[card.image];
+  const artwork = candidateArtwork && (!card.artworkRevision || candidateArtwork.artworkRevision === card.artworkRevision)
+    ? candidateArtwork : null;
   const hasManifest = Object.keys(artworkManifest).length > 0;
-  card.thumbnail = artwork?.thumb || (hasManifest ? "" : card.image);
-  card.detailImage = artwork?.detail || (hasManifest ? "" : card.image);
+  const originalAvailable = !hasManifest || Boolean(card.artworkRevision);
+  card.thumbnail = artwork?.thumb || (originalAvailable ? card.image : "");
+  card.detailImage = artwork?.detail || (originalAvailable ? card.image : "");
   card.keywords = extractKeywords(card.rulesText || "");
   card.cleanedRules = cleanRulesText(card.rulesText || "");
   card.searchBlob = [card.name, card.cleanedRules, card.archetype, card.attribute, card.cardType, ...card.keywords].join(" ").toLowerCase();
   card.isLegendary = String(card.archetype || "").toLowerCase() === "legendary";
-  card.imageIssue = !card.image || (hasManifest && !artwork);
+  card.imageIssue = !card.image || (hasManifest && !artwork && !originalAvailable);
   return card;
 }
 

@@ -17,7 +17,7 @@ Static GitHub Pages card database and browser-local deck workshop. No framework,
 3. After artwork changes, run `npm run optimize`. This regenerates only changed artwork and `data/artwork-manifest.json`. Commit those outputs alongside the new original artwork/data.
 4. Commit and push through GitHub Desktop or Git. The existing GitHub Pages deployment publishes the website.
 
-The original PNGs are preserved. Web derivatives live in `images/optimized/thumb` (420px, WebP quality 80) and `images/optimized/detail` (1000px, quality 88). Content hashes in image URLs invalidate browser caches after regeneration. Records without exported artwork deliberately show a placeholder; they are not silently removed from the catalog.
+The original PNGs are preserved. Web derivatives live in `images/optimized/thumb` (420px, WebP quality 80) and `images/optimized/detail` (1000px, quality 88). Content hashes in image URLs invalidate browser caches after regeneration. The Unity JSON exporter also records the PNG revision: if fresh artwork has not yet been optimized, the site temporarily uses the new original instead of showing an outdated thumbnail. Records without exported artwork deliberately show a placeholder; they are not silently removed from the catalog.
 
 ## Verification
 

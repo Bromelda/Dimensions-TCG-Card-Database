@@ -38,6 +38,14 @@ async function main() {
     fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
     await page.screenshot({path:path.join(root,'test-results/archive-desktop.png')});
     assert.equal(await page.locator('[id*="import"], [id*="export"], #deckCodeInput').count(), 0);
+    assert.ok(await page.evaluate(() => {
+      const raw = { cardId: 'freshness-test', name: 'Test', image: './images/cards/questing_villager.png' };
+      const revision = artworkManifest[raw.image].artworkRevision;
+      const cached = normalizeCardData({...raw,artworkRevision:revision});
+      const changed = normalizeCardData({...raw,artworkRevision:'new-revision'});
+      const missing = normalizeCardData({...raw,image:'./images/cards/unexported.png'});
+      return cached.thumbnail.includes('/optimized/') && changed.thumbnail === raw.image && !changed.imageIssue && missing.imageIssue && !missing.thumbnail;
+    }));
     await page.locator('#loadMoreBtn').click();
     assert.equal(await page.locator('.card').count(), 72);
     await page.locator('#searchInput').fill('quest');
