@@ -5,7 +5,7 @@ Static GitHub Pages card database and browser-local deck workshop. No framework,
 ## Features
 
 - Responsive purple/lime archive with card artwork, searchable effects, attribute/archetype/type filters, sorting, and accessible card details.
-- Card points on tiles and details, point sorting, `points>=2` advanced search, and a combined Main + Fusion 100-point deck budget.
+- Card points on tiles and details, a dedicated Any Points/exact-point filter (including zero), point sorting, `points>=2` advanced search, and a combined Main + Fusion 100-point deck budget.
 - Named decks, automatic browser-local saves, renaming, duplication, deck stats, and Fusion suggestions. Existing `dimensions_tcg_decks_v2` saves are preserved.
 - Related Cards in each card's details, with a visible count/jump button, partner previews, back navigation, and individual deck additions. The deck sidebar also suggests partners. Relationships come directly from Unity's `DeckRelatedCardLookup`: Fusion recipes, authored support filters, and Special Summon requirements, in both directions—not guessed from effect text or shared names. Partner lists load in small batches and use lazy WebP thumbnails.
 - Import/export, deck-code transfer, and shared-deck import controls have been removed. Filter URLs remain supported.

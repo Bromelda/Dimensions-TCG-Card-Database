@@ -35,6 +35,7 @@ let deckState = getActiveDeck();
 
 const searchInput = document.getElementById("searchInput");
 const manaFilter = document.getElementById("manaFilter");
+const pointsFilter = document.getElementById("pointsFilter");
 const attributeFilter = document.getElementById("attributeFilter");
 const archetypeFilter = document.getElementById("archetypeFilter");
 const typeFilter = document.getElementById("typeFilter");
@@ -235,6 +236,8 @@ function buildFilters(cards) {
   const types = [...new Set(cards.map((c) => c.cardType).filter(Boolean))].sort();
 
   fillSelect(manaFilter, "Any Mana", manaValues);
+  fillSelect(pointsFilter, "Any Points", [...new Set(cards.map(card => card.deckPoints))].sort((a, b) => a - b));
+  for (const option of [...pointsFilter.options].slice(1)) option.textContent = `${option.value} Points`;
   fillSelect(attributeFilter, "Any Attribute", attributes);
   fillSelect(archetypeFilter, "Any Archetype", archetypes);
   fillSelect(typeFilter, "Any Type", types);
@@ -258,6 +261,7 @@ function fillSelect(select, placeholder, values) {
 function getFilteredCards() {
   const search = searchInput.value.trim().toLowerCase();
   const mana = manaFilter.value;
+  const points = pointsFilter.value;
   const attribute = attributeFilter.value;
   const archetype = archetypeFilter.value;
   const type = typeFilter.value;
@@ -275,6 +279,7 @@ function getFilteredCards() {
     });
 
     const matchesMana = !mana || String(card.manaCost) === mana;
+    const matchesPoints = points === "" || String(card.deckPoints) === points;
     const matchesAttribute = !attribute || card.attribute === attribute;
     const matchesArchetype = !archetype || card.archetype === archetype;
     const matchesType = !type || card.cardType === type;
@@ -291,7 +296,7 @@ function getFilteredCards() {
       (deckMode === "fusion" && section === "fusion");
     const matchesHideFull = !hideFull || copies < limit;
 
-    return matchesSearch && matchesMana && matchesAttribute && matchesArchetype && matchesType && matchesFusion && matchesDeckMode && matchesHideFull;
+    return matchesSearch && matchesMana && matchesPoints && matchesAttribute && matchesArchetype && matchesType && matchesFusion && matchesDeckMode && matchesHideFull;
   });
 
   cards = sortCards(cards, sortMode);
@@ -754,7 +759,7 @@ function getFocusableElements(container) {
 }
 
 searchInput.addEventListener("input", debounce(refreshView, 150));
-[manaFilter, attributeFilter, archetypeFilter, typeFilter, fusionFilter, deckViewFilter].forEach((el) => {
+[manaFilter, pointsFilter, attributeFilter, archetypeFilter, typeFilter, fusionFilter, deckViewFilter].forEach((el) => {
   el.addEventListener("change", refreshView);
 });
 hideFullToggle.addEventListener("change", refreshView);
@@ -799,6 +804,7 @@ deckNameInput.addEventListener("keydown", (e) => {
 function clearFilters() {
   searchInput.value = "";
   manaFilter.value = "";
+  pointsFilter.value = "";
   attributeFilter.value = "";
   archetypeFilter.value = "";
   typeFilter.value = "";
@@ -1382,6 +1388,7 @@ function applyUiState() {
   const ui = appState.ui || {};
   searchInput.value = ui.search || "";
   manaFilter.value = ui.mana || "";
+  pointsFilter.value = ui.points ?? "";
   attributeFilter.value = ui.attribute || "";
   archetypeFilter.value = ui.archetype || "";
   typeFilter.value = ui.type || "";
@@ -1397,6 +1404,7 @@ function saveUiState() {
   appState.ui = {
     search: searchInput.value,
     mana: manaFilter.value,
+    points: pointsFilter.value,
     attribute: attributeFilter.value,
     archetype: archetypeFilter.value,
     type: typeFilter.value,
@@ -1425,6 +1433,7 @@ function syncUrlFromUi() {
   const params = new URLSearchParams();
   if (searchInput.value) params.set("search", searchInput.value);
   if (manaFilter.value) params.set("mana", manaFilter.value);
+  if (pointsFilter.value !== "") params.set("points", pointsFilter.value);
   if (attributeFilter.value) params.set("attribute", attributeFilter.value);
   if (archetypeFilter.value) params.set("archetype", archetypeFilter.value);
   if (typeFilter.value) params.set("type", typeFilter.value);
@@ -1440,6 +1449,7 @@ function readUiFromUrl() {
   const params = new URLSearchParams(window.location.search);
   searchInput.value = params.get("search") || searchInput.value;
   manaFilter.value = params.get("mana") || manaFilter.value;
+  if (params.has("points")) pointsFilter.value = params.get("points");
   attributeFilter.value = params.get("attribute") || attributeFilter.value;
   archetypeFilter.value = params.get("archetype") || archetypeFilter.value;
   typeFilter.value = params.get("type") || typeFilter.value;

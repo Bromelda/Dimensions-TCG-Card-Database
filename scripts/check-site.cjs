@@ -37,11 +37,32 @@ async function main() {
     assert.equal(await page.locator('.card-art .mana-orb').count(), 0);
     assert.equal(await page.locator('.card-body .tag-mana .mana-icon').count(), 36);
     await page.locator('.card-body .tag-mana').first().waitFor({state:'visible'});
-    assert.match(await page.locator('.card-body .tag-mana').first().innerText(), /^Mana \d+$/);
+    await page.locator('.card-body .tag-mana').first().scrollIntoViewIfNeeded();
+    assert.match((await page.locator('.card-body .tag-mana').first().textContent()).trim(), /^Mana \d+$/);
     await page.waitForFunction(() => [...document.querySelectorAll('.card img')].slice(0,4).every(img => img.complete));
     fs.mkdirSync(path.join(root,'test-results'),{recursive:true});
     await page.screenshot({path:path.join(root,'test-results/archive-desktop.png')});
     assert.equal(await page.locator('[id*="import"], [id*="export"], #deckCodeInput').count(), 0);
+    await page.locator('#pointsFilter').selectOption('0');
+    assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 0)));
+    assert.match(page.url(), /points=0/);
+    await page.reload();
+    await page.waitForFunction(() => allCards.length === 642);
+    assert.equal(await page.locator('#pointsFilter').inputValue(), '0');
+    assert.ok(await page.evaluate(() => filteredCards.every(card => card.deckPoints === 0)));
+    await page.locator('#pointsFilter').selectOption('2');
+    const compatibleMana = await page.evaluate(() => String(filteredCards[0].manaCost));
+    await page.locator('#manaFilter').selectOption(compatibleMana);
+    assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 2 && String(card.manaCost) === manaFilter.value)));
+    await page.locator('#clearFiltersBtn').click();
+    assert.equal(await page.locator('#pointsFilter').inputValue(), '');
+    assert.ok(await page.evaluate(() => filteredCards.length === allCards.length));
+    // URL filter takes priority over a previously saved selection.
+    await page.goto(origin + '/?points=3');
+    await page.waitForFunction(() => allCards.length === 642);
+    assert.equal(await page.locator('#pointsFilter').inputValue(), '3');
+    assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 3)));
+    await page.locator('#clearFiltersBtn').click();
     assert.match(await page.locator('script[src*="app.js"]').getAttribute('src'), /\?v=/);
     assert.ok(await page.evaluate(() => allCards.some(card => card.relatedCardIds.length > 0)), 'Published Unity relationships are present');
     assert.ok(await page.evaluate(() => allCards.every(card => card.relatedCardIds.every(id =>
@@ -147,6 +168,10 @@ async function main() {
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `No overflow at ${width}px`);
       await page.locator('.card-body .tag-mana').first().waitFor({state:'visible'});
       await page.locator('#mobileFiltersToggle').click();
+      await page.locator('#clearFiltersBtn').click();
+      await page.locator('#pointsFilter').selectOption('0');
+      assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 0)));
+      await page.locator('#pointsFilter').selectOption('');
       await page.locator('#searchInput').fill('quest');
       await page.waitForFunction(() => filteredCards.length > 0 && filteredCards.length < 36);
       await page.locator('.details-btn').first().click();
