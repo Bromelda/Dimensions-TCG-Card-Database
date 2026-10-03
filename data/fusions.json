@@ -1200,32 +1200,6 @@
             ]
         },
         {
-            "cardId": "385",
-            "name": "Mise Archangel of the End",
-            "manaCost": 20,
-            "deckPoints": 0,
-            "attribute": "Light",
-            "archetype": "ALL",
-            "cardType": "Fusion",
-            "atk": 20,
-            "def": 20,
-            "image": "./images/cards/mise_archangel_of_the_end.png",
-            "artworkRevision": "",
-            "rulesText": "Fusion; The Hooded One + The Primal Warrior + Phantom Night Fiend + Herald of Light\nCannot be summoned without listed cards.\n\nThis card is unaffected by ALL other cards.\n",
-            "normalizedName": "mise archangel of the end",
-            "isField": false,
-            "isDeckBuildable": true,
-            "relatedCardIds": [
-                "189",
-                "256",
-                "192",
-                "193",
-                "88",
-                "94",
-                "59"
-            ]
-        },
-        {
             "cardId": "93",
             "name": "Muk Muk",
             "manaCost": 6,
@@ -1325,6 +1299,32 @@
                 "606",
                 "607",
                 "616"
+            ]
+        },
+        {
+            "cardId": "385",
+            "name": "Rav Archangel of the End",
+            "manaCost": 20,
+            "deckPoints": 0,
+            "attribute": "Light",
+            "archetype": "ALL",
+            "cardType": "Fusion",
+            "atk": 40,
+            "def": 40,
+            "image": "./images/cards/rav_archangel_of_the_end.png",
+            "artworkRevision": "1791005338761",
+            "rulesText": "Fusion; The Hooded One + The Primal Warrior + Phantom Night Fiend + Herald of Light\nCannot be summoned without listed cards.\n\nThis card is unaffected by ALL other cards.\n",
+            "normalizedName": "rav archangel of the end",
+            "isField": false,
+            "isDeckBuildable": true,
+            "relatedCardIds": [
+                "189",
+                "256",
+                "192",
+                "193",
+                "88",
+                "94",
+                "59"
             ]
         },
         {
