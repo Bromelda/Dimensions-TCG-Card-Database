@@ -276,7 +276,6 @@
                 "10",
                 "412",
                 "646",
-                "648",
                 "651"
             ]
         },
@@ -325,7 +324,7 @@
         {
             "cardId": "61",
             "name": "Chilled Magician",
-            "manaCost": 5,
+            "manaCost": 2,
             "deckPoints": 0,
             "attribute": "Water",
             "archetype": "Spellcaster",
@@ -1330,7 +1329,7 @@
         {
             "cardId": "91",
             "name": "Relaxing Cow",
-            "manaCost": 2,
+            "manaCost": 1,
             "deckPoints": 0,
             "attribute": "Earth",
             "archetype": "Beast",
@@ -1352,7 +1351,7 @@
         {
             "cardId": "90",
             "name": "Shipsunk Sea-Ken",
-            "manaCost": 6,
+            "manaCost": 5,
             "deckPoints": 0,
             "attribute": "Water",
             "archetype": "Serpent",
@@ -1373,7 +1372,7 @@
         {
             "cardId": "92",
             "name": "Skelly Skeleton",
-            "manaCost": 3,
+            "manaCost": 2,
             "deckPoints": 0,
             "attribute": "Dark",
             "archetype": "Undead",
@@ -1459,7 +1458,7 @@
         {
             "cardId": "94",
             "name": "The Hooded One",
-            "manaCost": 8,
+            "manaCost": 6,
             "deckPoints": 0,
             "attribute": "Earth",
             "archetype": "Humanoid",
@@ -1659,7 +1658,7 @@
             "def": 13,
             "image": "./images/cards/ultimate_black_dragon.png",
             "artworkRevision": "1790783679432",
-            "rulesText": "Fusion; 3 Black Dragon. \n\nDuring Battle Phase, this creature can attack twice.",
+            "rulesText": "Fusion; Black Dragon + Black Dragon + Black Dragon.\n\nAfter this card attacks, deal 5 damage to all enemy creatures.",
             "normalizedName": "ultimate black dragon",
             "isField": false,
             "isDeckBuildable": true,
@@ -2187,7 +2186,7 @@
             "def": 12,
             "image": "./images/cards/ultimate_white_dragon.png",
             "artworkRevision": "1790783679896",
-            "rulesText": "Fusion; 3 White Dragon.\n\nDuring Battle Phase, this creature can attack twice.",
+            "rulesText": "Fusion; White Dragon + White Dragon + White Dragon.\n\nAfter this card attacks, deal 6 damage to all enemy creatures.",
             "normalizedName": "ultimate white dragon",
             "isField": false,
             "isDeckBuildable": true,
@@ -2226,9 +2225,9 @@
             "archetype": "Zombie",
             "cardType": "Fusion",
             "atk": 4,
-            "def": 8,
+            "def": 6,
             "image": "./images/cards/zombie_king_kaiser.png",
-            "artworkRevision": "",
+            "artworkRevision": "1791179533712",
             "rulesText": "Fusion; Pumpkin King + Ha King Kaiser + 2 Zombie Creatures\nCan't be summoned without listed cards. \nWhile on the field, all Creatures on Field and Grave are Zombies. \nSeal; Summon 1 Zombie from either players Grave to your field.",
             "normalizedName": "zombie king kaiser",
             "isField": false,
