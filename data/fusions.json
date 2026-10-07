@@ -276,7 +276,17 @@
                 "10",
                 "412",
                 "646",
-                "651"
+                "651",
+                "658",
+                "660",
+                "661",
+                "662",
+                "664",
+                "673",
+                "679",
+                "683",
+                "687",
+                "689"
             ]
         },
         {
@@ -966,7 +976,21 @@
                 "648",
                 "649",
                 "650",
-                "651"
+                "651",
+                "658",
+                "660",
+                "661",
+                "662",
+                "664",
+                "673",
+                "679",
+                "680",
+                "681",
+                "682",
+                "683",
+                "685",
+                "687",
+                "689"
             ]
         },
         {
@@ -981,7 +1005,7 @@
             "def": 12,
             "image": "./images/cards/elemental_compound_dragon.png",
             "artworkRevision": "1790922197649",
-            "rulesText": "Fusion; Black Dragon + Flaming Dragon + Moon Dragon + Dragon Lord Waves + Thunder Strike Dragon.\n\nCan't be summoned without listed cards. \nCan't be destroyed by spell cards. \nCan't be destroyed by battle with creatures execpt Light creatures.\n",
+            "rulesText": "Fusion; Black Dragon + Flaming Dragon + Moon Dragon + Dragon Lord Waves + Thunder Strike Dragon.\n\nCannot be Summoned without listed cards. \nCan't be destroyed by spell cards. \nCan't be destroyed by battle with creatures execpt Light creatures.\n",
             "normalizedName": "elemental compound dragon",
             "isField": false,
             "isDeckBuildable": true,
@@ -1311,7 +1335,7 @@
             "def": 40,
             "image": "./images/cards/rav_archangel_of_the_end.png",
             "artworkRevision": "1791005338761",
-            "rulesText": "Fusion; The Hooded One + Phantom Night Fiend + Herald of Light.\nCannot be summoned without listed cards.\n\nThis card is unaffected by ALL other cards.\n",
+            "rulesText": "Fusion; The Hooded One + Phantom Night Fiend + Herald of Light.\nCannot be Summoned without listed cards.\n\nThis card is unaffected by ALL other cards.\n",
             "normalizedName": "rav archangel of the end",
             "isField": false,
             "isDeckBuildable": true,
@@ -1321,7 +1345,8 @@
                 "192",
                 "88",
                 "94",
-                "59"
+                "59",
+                "663"
             ]
         },
         {
@@ -1477,7 +1502,7 @@
         },
         {
             "cardId": "60",
-            "name": "The Legendary Baal ",
+            "name": "The Legendary Necross",
             "manaCost": 12,
             "deckPoints": 0,
             "attribute": "Dark",
@@ -1485,10 +1510,10 @@
             "cardType": "Fusion",
             "atk": 0,
             "def": 10,
-            "image": "./images/cards/the_legendary_baal.png",
-            "artworkRevision": "1790783679141",
-            "rulesText": "Fusion; Summon by using \"Head of the Sealed One\" effect. \nCannot be Summoned without listed cards.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn.",
-            "normalizedName": "the legendary baal",
+            "image": "./images/cards/the_legendary_necross.png",
+            "artworkRevision": "1791387396014",
+            "rulesText": "Fusion; Can only be summoned by using the effect of Head of the Sealed One.\n\nThis card is unaffected by all other card effects. \nWhenever this card Battles, its ATK is always equal to your Life.\nWhile this card is on the field, you lose 4 life when you end your turn.\n\nOnce during your turn destroy 1 creature/spell on the field.\nQuick; Negate an effect until the end of turn.",
+            "normalizedName": "the legendary necross",
             "isField": false,
             "isDeckBuildable": true,
             "relatedCardIds": []
@@ -1686,7 +1711,8 @@
                 "105",
                 "99",
                 "59",
-                "337"
+                "337",
+                "663"
             ]
         },
         {
@@ -2168,7 +2194,21 @@
                 "648",
                 "649",
                 "650",
-                "651"
+                "651",
+                "658",
+                "660",
+                "661",
+                "662",
+                "664",
+                "673",
+                "679",
+                "680",
+                "681",
+                "682",
+                "683",
+                "685",
+                "687",
+                "689"
             ]
         },
         {
@@ -2225,7 +2265,7 @@
             "def": 6,
             "image": "./images/cards/zombie_king_kaiser.png",
             "artworkRevision": "1791179533712",
-            "rulesText": "Fusion; Pumpkin King + Ha King Kaiser + 2 Zombie Creatures\nCan't be summoned without listed cards. \nWhile on the field, all Creatures on Field and Grave are Zombies. \nSeal; Summon 1 Zombie from either players Grave to your field.",
+            "rulesText": "Fusion; Pumpkin King + Ha King Kaiser + 2 Zombie Creatures\nCannot be Summoned without listed cards. \nWhile on the field, all Creatures on Field and Grave are Zombies. \nSeal; Summon 1 Zombie from either players Grave to your field.",
             "normalizedName": "zombie king kaiser",
             "isField": false,
             "isDeckBuildable": true,
@@ -2693,7 +2733,21 @@
                 "648",
                 "649",
                 "650",
-                "651"
+                "651",
+                "658",
+                "660",
+                "661",
+                "662",
+                "664",
+                "673",
+                "679",
+                "680",
+                "681",
+                "682",
+                "683",
+                "685",
+                "687",
+                "689"
             ]
         }
     ]
