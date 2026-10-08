@@ -26849,7 +26849,7 @@
             "def": 1,
             "image": "./images/cards/the_pig.png",
             "artworkRevision": "1791387472654",
-            "rulesText": "Seal; Destroy all field cards with Corn in the name",
+            "rulesText": "Seal; Destroy all field cards with Corn in its name",
             "normalizedName": "the pig",
             "isField": false,
             "isDeckBuildable": true,
