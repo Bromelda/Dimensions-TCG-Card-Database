@@ -4,16 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DIMENSIONS — Card Archive</title>
+  <meta name="theme-color" content="#07080f" />
   <meta name="description" content="Explore the DIMENSIONS TCG card archive. Search cards, read effects, and build your next deck." />
-  <link rel="stylesheet" href="styles.css?v=20260930-points-1" />
+  <link rel="stylesheet" href="styles.css?v=20261009-rift-1" />
 </head>
 <body>
   <a class="skip-link" href="#cardGrid">Skip to cards</a>
   <header class="topbar">
     <div class="topbar-row">
-      <div>
-        <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">◈</span> DIMENSIONS <span>TCG</span></a>
-      </div>
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-word">DIMENSIONS</span><span class="brand-sub">TCG</span></a>
+      <label class="search-field" for="searchInput">
+        <svg class="search-icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
+        <input id="searchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search cards" placeholder="Search names, effects… try text:&quot;draw 1&quot; mana&lt;=3" />
+      </label>
       <div class="topbar-actions">
         <button id="mobileFiltersToggle" class="secondary-btn mobile-only" type="button" aria-expanded="false">Filters</button>
       </div>
@@ -21,8 +24,6 @@
 
     <div id="filtersPanel" class="filters-panel">
       <div class="filters">
-        <input id="searchInput" type="text" aria-label="Search cards" placeholder="Search cards... (try: text:&quot;draw 1&quot; deck:main copies>=1)" />
-
         <select id="manaFilter" aria-label="Filter by mana">
           <option value="">Any Mana</option>
         </select>
@@ -82,7 +83,7 @@
 
   <main class="page-layout">
     <section class="content-area">
-      <div class="archive-heading"><div><p class="eyebrow">EXPLORE THE MULTIVERSE</p><h1>The card archive.</h1><p class="subtitle">Find your next synergy. Read every effect. Build something unexpected.</p></div><span class="archive-seal" aria-hidden="true">◈</span></div>
+      <div class="archive-heading"><div><p class="eyebrow">EXPLORE THE MULTIVERSE</p><h1>The card archive.</h1><p class="subtitle">Find your next synergy. Read every effect. Build something unexpected.</p></div><span class="archive-seal" aria-hidden="true"><span></span></span></div>
       <nav class="type-tabs" aria-label="Card categories">
         <button type="button" data-card-type="" aria-pressed="true">All cards</button>
         <button type="button" data-card-type="Creature" aria-pressed="false">Creatures</button>
@@ -137,7 +138,7 @@
           <span>Avg Mana</span>
           <strong id="avgManaValue">0.0</strong>
         </div>
-        <div class="summary-card point-summary"><span>Deck Points · Main + Fusion</span><strong id="deckPointsValue">0 / 100</strong></div>
+        <div class="summary-card point-summary"><span>Deck Points · Main + Fusion</span><strong id="deckPointsValue">0 / 100</strong><span class="points-meter" aria-hidden="true"><span></span></span></div>
       </div>
 
       <div id="deckWarning" class="deck-warning"></div>
@@ -178,8 +179,8 @@
 
   <div id="cardModal" class="modal hidden" aria-modal="true" role="dialog" aria-labelledby="modalName">
     <div class="modal-content">
-      <button id="closeModal" class="close-btn" type="button" aria-label="Close details">X</button>
-      <img id="modalImage" src="" alt="" />
+      <div class="modal-art"><img id="modalImage" src="" alt="" /></div>
+      <button id="closeModal" class="close-btn" type="button" aria-label="Close details"><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"/></svg></button>
       <div class="modal-info">
         <div class="modal-header-row">
           <div>
@@ -241,7 +242,7 @@
     </div>
   </div>
 
-  <footer class="site-footer">DIMENSIONS TCG <span>Every card is a doorway.</span></footer>
-  <script src="app.js?v=20260930-points-1" defer></script>
+  <footer class="site-footer"><span class="footer-brand">◈ DIMENSIONS TCG</span> <span>Every card is a doorway.</span></footer>
+  <script src="app.js?v=20261009-rift-1" defer></script>
 </body>
 </html>

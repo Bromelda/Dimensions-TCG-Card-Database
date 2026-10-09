@@ -518,7 +518,7 @@ function renderCards(cards, append = false) {
         <p class="card-rules-preview">${escapeHtml(shorten(cleanedRules || "No rules text.", 90))}</p>
         <div class="card-actions">
           <button class="mini-btn details-btn" type="button">Details</button>
-          <button class="mini-btn add-deck-btn" type="button" ${isFull ? "disabled" : ""}>${copies ? `Add (${copies}/${limit})` : `Add to Deck (${copies}/${limit})`}</button>
+          <button class="mini-btn add-deck-btn" type="button" aria-label="Add ${escapeHtml(card.name || "card")} to deck (${copies} of ${limit})" ${isFull ? "disabled" : ""}>+ Add <span class="add-count">${copies}/${limit}</span></button>
         </div>
       </div>
     `;
@@ -682,6 +682,7 @@ function getFusionHint(card) {
 function decorateModalLabels(card) {
   modalAttribute.className = `detail-pill attr-${slugify(card.attribute || "none")}`;
   modalType.className = `detail-pill type-${slugify(card.cardType || "unknown")}`;
+  cardModal.dataset.attr = slugify(card.attribute || "none");
 }
 
 function closeModalAndRestoreFocus() {
@@ -1027,7 +1028,9 @@ function renderDeck() {
     avgManaValue.textContent = avgMana;
     const pointTotal = getDeckPoints();
     document.getElementById("deckPointsValue").textContent = `${pointTotal} / 100`;
-    document.querySelector(".point-summary").classList.toggle("over-limit", pointTotal > 100);
+    const pointSummary = document.querySelector(".point-summary");
+    pointSummary.classList.toggle("over-limit", pointTotal > 100);
+    pointSummary.style.setProperty("--points-fill", `${Math.min(pointTotal, 100)}%`);
 
     deckStatus.textContent = `Main: ${mainCount}/60-80 · Fusion: ${fusionCount}/10`;
 
