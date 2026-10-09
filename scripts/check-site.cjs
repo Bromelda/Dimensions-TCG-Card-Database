@@ -5,6 +5,7 @@ const path = require('node:path');
 const http = require('node:http');
 const assert = require('node:assert/strict');
 const root = path.resolve(__dirname, '..');
+const totalCards = JSON.parse(fs.readFileSync(path.join(root, 'data/cards.json'), 'utf8')).Items.length;
 const mime = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.json':'application/json', '.webp':'image/webp', '.png':'image/png' };
 const server = http.createServer((req, res) => {
   const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
@@ -47,7 +48,7 @@ async function main() {
     assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 0)));
     assert.match(page.url(), /points=0/);
     await page.reload();
-    await page.waitForFunction(() => allCards.length === 642);
+    await page.waitForFunction(total => allCards.length === total, totalCards);
     assert.equal(await page.locator('#pointsFilter').inputValue(), '0');
     assert.ok(await page.evaluate(() => filteredCards.every(card => card.deckPoints === 0)));
     await page.locator('#pointsFilter').selectOption('2');
@@ -59,7 +60,7 @@ async function main() {
     assert.ok(await page.evaluate(() => filteredCards.length === allCards.length));
     // URL filter takes priority over a previously saved selection.
     await page.goto(origin + '/?points=3');
-    await page.waitForFunction(() => allCards.length === 642);
+    await page.waitForFunction(total => allCards.length === total, totalCards);
     assert.equal(await page.locator('#pointsFilter').inputValue(), '3');
     assert.ok(await page.evaluate(() => filteredCards.length > 0 && filteredCards.every(card => card.deckPoints === 3)));
     await page.locator('#clearFiltersBtn').click();
@@ -120,7 +121,7 @@ async function main() {
     await page.locator('.load-more-row').scrollIntoViewIfNeeded();
     await page.waitForFunction(() => document.querySelectorAll('.card').length > 72);
     const automaticallyLoaded = await page.locator('.card').count();
-    assert.ok(automaticallyLoaded < 642, 'Scrolling appends a batch, not the entire catalog');
+    assert.ok(automaticallyLoaded < totalCards, 'Scrolling appends a batch, not the entire catalog');
     await page.evaluate(() => window.scrollTo(0, 0));
     await page.locator('#searchInput').fill('quest');
     await page.waitForFunction(() => document.querySelectorAll('.card').length > 0 && document.querySelectorAll('.card').length < 36);
