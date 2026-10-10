@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Play — DIMENSIONS TCG</title>
+  <meta name="theme-color" content="#07080f" />
+  <meta name="description" content="Learn to play DIMENSIONS TCG: the goal, your turn, Mana, combat, keywords and deck building, explained for new players." />
+  <link rel="stylesheet" href="styles.css?v=20261010-guide-1" />
+</head>
+<body class="guide-page">
+  <a class="skip-link" href="#guide">Skip to guide</a>
+  <header class="topbar">
+    <div class="topbar-row">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-word">DIMENSIONS</span><span class="brand-sub">TCG</span></a>
+      <span aria-hidden="true"></span>
+      <nav class="topbar-actions site-nav" aria-label="Site">
+        <a class="nav-link" href="./">Card archive</a>
+        <a class="nav-link" href="how-to-play.html" aria-current="page">How to play</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="guide" class="guide-layout">
+    <section class="archive-heading guide-hero">
+      <div>
+        <p class="eyebrow">NEW PLAYER GUIDE</p>
+        <h1>How to play.</h1>
+        <p class="subtitle">Everything you need for your first duel: the goal, how a turn works, Mana, combat and the keywords printed on cards.</p>
+        <div class="hero-stats" aria-label="Key numbers">
+          <div><strong>40</strong><span>Starting Life</span></div>
+          <div><strong>7</strong><span>Opening hand</span></div>
+          <div><strong>60–80</strong><span>Main deck</span></div>
+          <div><strong>100</strong><span>Deck points</span></div>
+        </div>
+      </div>
+      <span class="archive-seal" aria-hidden="true"><span></span></span>
+    </section>
+
+    <div class="guide-body">
+      <nav class="guide-toc" aria-label="On this page">
+        <p class="toc-title">On this page</p>
+        <ol>
+          <li><a href="#goal">The goal</a></li>
+          <li><a href="#setup">Starting a duel</a></li>
+          <li><a href="#turn">Your turn</a></li>
+          <li><a href="#mana">Mana</a></li>
+          <li><a href="#sealed">Sealed &amp; unsealed</a></li>
+          <li><a href="#board">The board</a></li>
+          <li><a href="#cards">Card types</a></li>
+          <li><a href="#combat">Combat</a></li>
+          <li><a href="#keywords">Keywords</a></li>
+          <li><a href="#responses">Responses &amp; chains</a></li>
+          <li><a href="#fusion">Fusion</a></li>
+          <li><a href="#deck">Building a deck</a></li>
+          <li><a href="#tips">First-game tips</a></li>
+        </ol>
+      </nav>
+
+      <article class="guide-content">
+        <section id="goal" class="guide-section">
+          <p class="step-num">01</p>
+          <h2>The goal</h2>
+          <p class="lead">Both players start with <strong>40 Life</strong>. Bring your opponent's Life to <strong>0</strong> and you win.</p>
+          <p>Most damage comes from creatures attacking your opponent directly. Some cards also deal damage or have their own special ways to win.</p>
+          <div class="callout">
+            <strong>Running out of cards doesn't lose the game.</strong> If you need to draw from an empty deck, you take <em>fatigue</em> damage instead: 1 the first time, then 2, then 3, and so on.
+          </div>
+        </section>
+
+        <section id="setup" class="guide-section">
+          <p class="step-num">02</p>
+          <h2>Starting a duel</h2>
+          <ul class="check-list">
+            <li>Both decks and both Fusion decks are shuffled.</li>
+            <li>Each player draws an opening hand of <strong>7 cards</strong>.</li>
+            <li>A random player goes first.</li>
+            <li>There is <strong>no hand size limit</strong>, so you never have to discard for holding too many cards.</li>
+          </ul>
+        </section>
+
+        <section id="turn" class="guide-section">
+          <p class="step-num">03</p>
+          <h2>Your turn</h2>
+          <p class="lead">At the start of your turn, all of your cards <a href="#sealed">unseal</a>. Then the turn moves through four phases:</p>
+          <ol class="phase-flow">
+            <li class="phase"><span class="phase-tag">1</span><h3>Draw</h3><p>Click your Deck to draw <strong>1 card</strong>. You must draw before you can move on.</p></li>
+            <li class="phase"><span class="phase-tag">2</span><h3>Main</h3><p>Put <strong>1 card</strong> into Mana, summon creatures, play Spells and Fields, and use <em>Seal</em> abilities.</p></li>
+            <li class="phase"><span class="phase-tag">3</span><h3>Battle</h3><p>Attack with your creatures. Your opponent can block.</p></li>
+            <li class="phase"><span class="phase-tag">4</span><h3>End</h3><p>You can still play cards and place Mana. Then end your turn.</p></li>
+          </ol>
+          <p class="note">When a turn ends, <strong>every creature on both sides heals back to full DEF</strong>. Damage on creatures never carries over between turns.</p>
+        </section>
+
+        <section id="mana" class="guide-section">
+          <p class="step-num">04</p>
+          <h2>Mana</h2>
+          <p class="lead">Mana is how you pay for cards. <strong>Any card from your hand</strong> can be put into your Mana zone, <strong>once per turn</strong>, during Main or End.</p>
+          <p>To play a card you need <strong>both</strong> of these:</p>
+          <div class="rule-pair">
+            <div class="rule-card">
+              <span class="rule-icon" aria-hidden="true">◆</span>
+              <h3>A matching attribute</h3>
+              <p>At least one card in your Mana must share the card's attribute (Fire, Water, Earth, Wind, Light or Dark). <strong>Sealed Mana still counts.</strong></p>
+            </div>
+            <div class="rule-card">
+              <span class="rule-icon" aria-hidden="true">◇</span>
+              <h3>Enough unsealed Mana</h3>
+              <p>Pay the card's Mana cost by sealing that many unsealed Mana cards. <strong>Any attribute can pay the cost.</strong></p>
+            </div>
+          </div>
+          <div class="example">
+            <p class="example-title">Example</p>
+            <p>You want to summon a <span class="attr-chip attr-fire">Fire</span> creature that costs <strong>3</strong>. Your Mana holds 1 Fire card and 3 Water cards, all unsealed. You have Fire, so the attribute check passes. You seal any 3 of your Mana cards to pay. Next turn they all unseal again.</p>
+          </div>
+          <p class="note">Mixing attributes in your Mana early on opens up more of your hand. Your first card of a new attribute is often the best one to put into Mana.</p>
+        </section>
+
+        <section id="sealed" class="guide-section">
+          <p class="step-num">05</p>
+          <h2>Sealed &amp; unsealed</h2>
+          <p class="lead">Every card in play is either <strong>unsealed</strong> (ready) or <strong>sealed</strong> (used up for this turn). Your cards unseal at the start of your turn.</p>
+          <div class="state-grid">
+            <div class="state-card ready"><h3>Unsealed</h3><ul><li>Mana can pay costs</li><li>Creatures can attack or block</li><li>Cards can use a <em>Seal</em> ability</li><li><strong>Creatures can't be attacked</strong> (usually)</li></ul></div>
+            <div class="state-card used"><h3>Sealed</h3><ul><li>Mana can't pay costs (but still gives its attribute)</li><li>Creatures can't attack or block</li><li>A creature becomes sealed after it attacks or blocks</li><li><strong>Creatures can be attacked</strong></li></ul></div>
+          </div>
+          <p class="note">This is the key to combat: a creature you used this turn stays sealed during your opponent's turn, so it's open to attack.</p>
+        </section>
+
+        <section id="board" class="guide-section">
+          <p class="step-num">06</p>
+          <h2>The board</h2>
+          <div class="board-map" role="img" aria-label="Board layout: Deck, Fusion deck, Graveyard and Banish beside 5 Battle slots, 7 Spell slots and the Mana zone, with your hand below.">
+            <div class="zone z-side">Deck</div>
+            <div class="zone z-battle"><span>Battle zone</span><div class="slots">
+              <i></i><i></i><i></i><i></i><i></i></div><small>5 creature slots</small></div>
+            <div class="zone z-side">Grave</div>
+            <div class="zone z-side">Fusion deck</div>
+            <div class="zone z-spell"><span>Spell zone</span><div class="slots small">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>7 slots for Spells &amp; Fields</small></div>
+            <div class="zone z-side">Banish</div>
+            <div class="zone z-mana"><span>Mana</span><small>1 card added per turn</small></div>
+            <div class="zone z-hand"><span>Hand</span><small>No size limit</small></div>
+          </div>
+          <dl class="zone-list">
+            <div><dt>Graveyard</dt><dd>Where destroyed creatures and used Spells go.</dd></div>
+            <div><dt>Banish</dt><dd>Some effects remove cards here instead of the Graveyard.</dd></div>
+            <div><dt>Fusion deck</dt><dd>Holds your Fusion creatures, separate from your main deck.</dd></div>
+          </dl>
+        </section>
+
+        <section id="cards" class="guide-section">
+          <p class="step-num">07</p>
+          <h2>Card types</h2>
+          <div class="type-grid">
+            <div class="type-card"><h3>Creature</h3><p>Summon it from your hand into an empty Battle slot. Creatures have <strong>ATK</strong> (damage dealt) and <strong>DEF</strong> (health). You can summon as many as your Mana and slots allow.</p><a href="./?type=Creature">Browse creatures →</a></div>
+            <div class="type-card"><h3>Spell</h3><p>Placed in a Spell slot. A normal Spell resolves and goes to the Graveyard. <strong>Field</strong> Spells stay in play, and <strong>Equipment</strong> attaches to a creature. Some Spells, like Counter Spell, are only used as responses.</p><a href="./?type=Spell">Browse spells →</a></div>
+            <div class="type-card"><h3>Fusion</h3><p>Powerful creatures kept in your Fusion deck. You bring them out by combining material cards, usually with a Fusion Spell.</p><a href="./?type=Fusion">Browse fusions →</a></div>
+          </div>
+          <p class="note"><strong>Summoning sickness:</strong> a creature can't attack or use most abilities on the turn it's summoned, unless it has <em>Haste</em>.</p>
+        </section>
+
+        <section id="combat" class="guide-section">
+          <p class="step-num">08</p>
+          <h2>Combat</h2>
+          <p class="lead">In your Battle phase, each <strong>unsealed</strong> creature that's been out since your last turn can attack once.</p>
+          <div class="rule-pair">
+            <div class="rule-card">
+              <span class="rule-icon" aria-hidden="true">⚔</span>
+              <h3>Attack the player</h3>
+              <p>If it isn't blocked, your opponent loses Life equal to your creature's ATK.</p>
+            </div>
+            <div class="rule-card">
+              <span class="rule-icon" aria-hidden="true">✦</span>
+              <h3>Attack a creature</h3>
+              <p>You can only target a <strong>sealed</strong> enemy creature (unless a card says otherwise).</p>
+            </div>
+          </div>
+          <ul class="check-list">
+            <li><strong>Blocking:</strong> your opponent can block any attack, including direct ones, with one of their <em>unsealed</em> creatures.</li>
+            <li><strong>Damage:</strong> the two creatures hit each other at the same time. Each deals its ATK to the other's DEF.</li>
+            <li>A creature whose DEF drops to 0 is <strong>destroyed</strong> and goes to the Graveyard.</li>
+            <li>Creature fights never damage Life. Only unblocked attacks on the player do.</li>
+            <li>Attackers and blockers become <strong>sealed</strong>.</li>
+          </ul>
+          <div class="example">
+            <p class="example-title">Example</p>
+            <p>Your <strong>ATK 5 / DEF 3</strong> creature attacks. Your opponent blocks with an <strong>ATK 2 / DEF 4</strong> creature. Yours deals 5 to its 4 DEF, so the blocker is destroyed. It deals 2 back to your 3 DEF, so your creature survives and heals at the end of the turn.</p>
+          </div>
+        </section>
+
+        <section id="keywords" class="guide-section">
+          <p class="step-num">09</p>
+          <h2>Keywords</h2>
+          <p class="lead">Card effects start with a keyword that says <em>when</em> they happen, like <code>Battlecry; Draw 1 card.</code> Tap a keyword to see cards that use it.</p>
+          <dl class="keyword-list">
+            <div><dt><a href="./?search=Battlecry">Battlecry</a></dt><dd>Happens when the creature is summoned.</dd></div>
+            <div><dt><a href="./?search=keyword%3Aplay">Play</a></dt><dd>Happens when the card is played.</dd></div>
+            <div><dt><a href="./?search=text%3A%22Seal%3B%22">Seal</a></dt><dd>An ability you choose to use on your turn (Main or End). Using it seals the card, so it's once per turn. You can't use it the turn the card comes into play.</dd></div>
+            <div><dt><a href="./?search=Death">Death</a></dt><dd>Happens when the creature is destroyed.</dd></div>
+            <div><dt><a href="./?search=text%3A%22Quick%3B%22">Quick</a></dt><dd>Like Seal, but you can also use it on your opponent's turn as a response.</dd></div>
+            <div><dt><a href="./?search=keyword%3Ahand">Hand</a></dt><dd>Used straight from your hand as a response, for example to stop an effect or an attack.</dd></div>
+            <div><dt><a href="./?search=Haste">Haste</a></dt><dd>Ignores summoning sickness, so the creature can attack the turn it arrives.</dd></div>
+            <div><dt><a href="./?search=Discarded">Discarded</a></dt><dd>Happens when the card is discarded from your hand.</dd></div>
+            <div><dt><a href="./?search=Roll">Roll</a></dt><dd>Roll a six-sided die. The effect depends on the result.</dd></div>
+            <div><dt><a href="./?search=keyword%3Afusion">Fusion</a></dt><dd>On a Fusion card, lists the materials needed to summon it.</dd></div>
+          </dl>
+          <p class="note">Some cards also use <strong>tokens</strong>, small counters placed on cards. For example, <em>Exp</em> tokens can level a card up, and a <em>Shield</em> token is used up instead of the creature being destroyed.</p>
+        </section>
+
+        <section id="responses" class="guide-section">
+          <p class="step-num">10</p>
+          <h2>Responses &amp; chains</h2>
+          <p class="lead">When a Spell or effect is played, your opponent gets a chance to <strong>respond</strong> first, with a <em>Hand</em> card, a <em>Quick</em> effect, or a card like Counter Spell.</p>
+          <ol class="chain-demo" aria-label="Example chain">
+            <li><span>1</span>You play a Spell</li>
+            <li><span>2</span>Opponent responds with Counter Spell</li>
+            <li><span>3</span>You respond again…</li>
+          </ol>
+          <p>Players keep taking turns to respond until both pass. Then the chain resolves <strong>from the last card added back to the first</strong>, so the newest response happens first.</p>
+        </section>
+
+        <section id="fusion" class="guide-section">
+          <p class="step-num">11</p>
+          <h2>Fusion</h2>
+          <p class="lead">Fusion creatures wait in your Fusion deck until you combine the right <strong>materials</strong>.</p>
+          <ul class="check-list">
+            <li>Play a Fusion Spell and choose a Fusion card whose recipe you can meet.</li>
+            <li>Pick the material cards it lists. They can come from your hand or the field.</li>
+            <li>The materials and the Fusion Spell go to the Graveyard, and the Fusion creature is summoned.</li>
+            <li>If your Battle zone is full, at least one material must come from it to free a slot.</li>
+          </ul>
+          <p class="note">Open a Fusion card in the <a href="./?type=Fusion">archive</a> and check its <strong>Related Cards</strong> to see its materials.</p>
+        </section>
+
+        <section id="deck" class="guide-section">
+          <p class="step-num">12</p>
+          <h2>Building a deck</h2>
+          <div class="deck-rules">
+            <div><strong>60–80</strong><span>cards in your main deck</span></div>
+            <div><strong>0–10</strong><span>cards in your Fusion deck</span></div>
+            <div><strong>3</strong><span>copies of a card, at most</span></div>
+            <div><strong>100</strong><span>deck points, at most</span></div>
+          </div>
+          <p>Each card has a <strong>points</strong> value (shown as <em>PTS</em> in the archive). Stronger cards cost more points. Every copy in both your main and Fusion decks counts toward the 100-point budget, so you have to choose your power cards carefully.</p>
+          <p class="note">Try it: the <a href="./">Deck workshop</a> in the archive tracks your counts and points as you add cards.</p>
+        </section>
+
+        <section id="tips" class="guide-section">
+          <p class="step-num">13</p>
+          <h2>First-game tips</h2>
+          <ul class="tip-list">
+            <li><strong>Play the in-game Training.</strong> The <em>TRAINING</em> button on the main menu walks you through real moves in three short chapters: Basics, Effects and Advanced.</li>
+            <li><strong>Place Mana every turn.</strong> Missing a Mana drop slows you down for the whole game.</li>
+            <li><strong>Watch what's sealed.</strong> Attacking with everything leaves your creatures sealed and open to attack on your opponent's turn.</li>
+            <li><strong>Keep a blocker unsealed</strong> when you're low on Life.</li>
+            <li><strong>Read Battlecry and Death effects.</strong> A creature that looks weak may do a lot when it arrives or when it's destroyed.</li>
+          </ul>
+          <a class="primary-btn cta" href="./">Explore the card archive →</a>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer"><span class="footer-brand">◈ DIMENSIONS TCG</span> <span>Every card is a doorway.</span></footer>
+</body>
+</html>

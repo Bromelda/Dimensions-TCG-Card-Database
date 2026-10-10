@@ -1450,16 +1450,20 @@ function syncUrlFromUi() {
 
 function readUiFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  searchInput.value = params.get("search") || searchInput.value;
-  manaFilter.value = params.get("mana") || manaFilter.value;
-  if (params.has("points")) pointsFilter.value = params.get("points");
-  attributeFilter.value = params.get("attribute") || attributeFilter.value;
-  archetypeFilter.value = params.get("archetype") || archetypeFilter.value;
-  typeFilter.value = params.get("type") || typeFilter.value;
-  fusionFilter.value = params.get("fusion") || fusionFilter.value;
-  deckViewFilter.value = params.get("deckView") || deckViewFilter.value;
-  hideFullToggle.checked = params.get("hideFull") === "1" || hideFullToggle.checked;
-  sortSelect.value = params.get("sort") || sortSelect.value;
+  const filterKeys = ["search", "mana", "points", "attribute", "archetype", "type", "fusion", "deckView", "hideFull", "sort"];
+  // A link that carries filters shows exactly those filters, not a mix with
+  // the visitor's saved selection. A plain visit keeps the saved selection.
+  if (!filterKeys.some((key) => params.has(key))) return;
+  searchInput.value = params.get("search") || "";
+  manaFilter.value = params.get("mana") || "";
+  pointsFilter.value = params.get("points") || "";
+  attributeFilter.value = params.get("attribute") || "";
+  archetypeFilter.value = params.get("archetype") || "";
+  typeFilter.value = params.get("type") || "";
+  fusionFilter.value = params.get("fusion") || "";
+  deckViewFilter.value = params.get("deckView") || "";
+  hideFullToggle.checked = params.get("hideFull") === "1";
+  sortSelect.value = params.get("sort") || "name-asc";
 }
 
 function attachImageFallback(img, label, onFallback) {
