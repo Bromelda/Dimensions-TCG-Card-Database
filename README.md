@@ -4,6 +4,8 @@ Static GitHub Pages card database and browser-local deck workshop. No framework,
 
 ## Features
 
+- A **How to Play** page (`how-to-play.html`) for new players, covering the goal, turn phases, Mana, sealing, the board, card types, combat, keywords, chains, Fusion and deck rules. Its facts come from the Unity game's rules engine; update the page if those rules change. Keyword links open the archive filtered to cards that use each keyword.
+- Archive links that carry filters (for example `?type=Spell`) show exactly those filters instead of mixing in the visitor's saved selection.
 - "Rift" visual theme: sticky glass header with an always-visible search bar, pill filters (one scrollable row on desktop, a grid on mobile), attribute-tinted card frames with hover glow, a segmented category control, a deck-points progress meter, and an attribute-accented card details dialog.
 - Responsive purple/lime archive with card artwork, searchable effects, attribute/archetype/type filters, sorting, and accessible card details.
 - Card points on tiles and details, a dedicated Any Points/exact-point filter (including zero), point sorting, `points>=2` advanced search, and a combined Main + Fusion 100-point deck budget.
