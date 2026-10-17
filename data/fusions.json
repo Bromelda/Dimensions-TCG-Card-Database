@@ -439,7 +439,7 @@
             "atk": 10,
             "def": 10,
             "image": "./images/cards/darksider_chaos_angel.png",
-            "artworkRevision": "1792099715956",
+            "artworkRevision": "1792251355403",
             "rulesText": "Fusion; Darksider Ruler + Darksider Dragon Overlord + Darksider Madking.\nCannot be summoned without listed cards.\nThis card can't be destroyed by Spell effects.\nBattlecry; Destroy all other cards on the field.\nSeal; Add 2 cards with Darksider in their names from your Banish Zone to your hand.",
             "normalizedName": "darksider chaos angel",
             "isField": false,
