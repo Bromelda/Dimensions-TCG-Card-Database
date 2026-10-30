@@ -24296,7 +24296,7 @@
             "atk": 0,
             "def": 5,
             "image": "./images/cards/potato_bomb.png",
-            "artworkRevision": "",
+            "artworkRevision": "1793388468134",
             "rulesText": "This card is always sealed. At the end of the turn, give control of this card to the enemy, if they have creature space. Death; Controller of this card takes 100 Life damage",
             "normalizedName": "potato bomb",
             "isField": false,
