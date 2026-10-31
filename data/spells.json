@@ -870,7 +870,7 @@
         {
             "cardId": "732",
             "name": "Battle Ready",
-            "manaCost": 1,
+            "manaCost": 3,
             "deckPoints": 0,
             "attribute": "Earth",
             "archetype": "Spell",
