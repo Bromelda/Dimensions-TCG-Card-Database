@@ -1065,7 +1065,7 @@
             "def": 1,
             "image": "./images/cards/bright_sky.png",
             "artworkRevision": "1792099689088",
-            "rulesText": "Both players draw from the bottom of their Decks instead of the top.",
+            "rulesText": "The top card of both players' Decks is flipped face up.",
             "normalizedName": "bright sky",
             "isField": true,
             "aiOnly": false,
